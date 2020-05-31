@@ -23,7 +23,6 @@
         <link rel="stylesheet" href="css/bootstrap-datepicker.css">
         <link rel="stylesheet" href="css/custom.css">
     </head>
-    </head>
 
     <body class="dashboard-body">
 
@@ -39,13 +38,13 @@
                         <ul class="nav navbar-nav ml-auto">
 
                             <li class="nav-item px-md-1">
-                                <a class="nav-link text-dark" href="message.html">
+                                <a class="nav-link text-dark" href="message.html" data-target="#acc_details">
                                     <img src="img/mail.svg" alt="Messages" class="mt-1">
                                 </a>
                             </li>
 
-                            <li class="nav-item px-md-1">
-                                <a class="nav-link text-dark" href="#" data-target="#notifications" data-toggle="modal">
+                            <li class="nav-item px-md-1 d-none">
+                                <a class="nav-link text-dark" href="#" data-target="#acc_details">
                                     <img src="img/notification.svg" alt="user name" class="">
                                 </a>
                             </li>
@@ -89,13 +88,7 @@
 
                     </li>
 
-                    <p class="text-dull text-left ml-4 my-2 font-12">Company Management</p>
-
-                    <li class="active">
-                        <a href="companies.html">
-                            <img src="img/company.svg" alt="company" class="mb-1 mr-3 img-fluid" width="15" /> Company
-                        </a>
-                    </li>
+                    <p class="text-dull text-left ml-4 my-2 font-12">Staff Management</p>
 
                     <li>
                         <a href="staff.html">
@@ -121,7 +114,7 @@
                         </a>
                     </li>
 
-                    <li>
+                    <li class="active">
                         <a href="quizes.html">
                             <img src="img/department_sidebar.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Quizzes
                         </a>
@@ -192,16 +185,16 @@
                 </ul>
 
 
-
             </nav>
 
             <div class="dasboard-top-wrapper">
 
             </div>
+
             <!-- Page Content  -->
             <div id="content">
-                <div class="position-relative">
 
+                <div class="position-relative">
 
                     <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light d-none display border">
                         <div class="container-fluid">
@@ -214,177 +207,125 @@
 
                     <div class="row mx-md-2 my-5">
                         <div class="col-md-12">
-                            <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
-                                <div class="col-lg-1 px-0">
-                                    <span class="text-green text-uppercase">Companies</span>
-                                </div>
 
-                                <div class="col-lg-2 my-2">
-                                    <input type="text" id="searchbox" placeholder="Search Companies" class="form-control form-control-sm font-13 form-border-default bg-trans" />
-                                </div>
+                            
+                            <div class="d-flex">
+                                <div class="col px-0">
+                                    <p class="text-grey text-uppercase font-13"><a href="c_courses.html"><img src="img/back_button.png" alt="go back to create course" /> Back</a></p>
+                                </div> 
+                            </div>
 
-                                <div class="col-lg-7 px-lg-0 my-2 d-flex align-items-center">
-                                    <span class="mr-1">Sort: </span>
-                                    <span id="filters-area" class="d-block d-md-flex">
-                                        <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
-                                        <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To Date:">
-                                    </span>
-                                    </tr>
-                                </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                   <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
 
-                                <div class="col-lg-2 text-md-right my-2 text-center px-0">
-                                    <button class="btn btn-green py-1 font-13" type="button" data-toggle="modal" data-target="#dept-modal">Add New Company</button>
+                                        <div class="col px-0">
+                                            <p class="text-green text-uppercase">Quizzes</p>
+                                        </div>
+
+                                        <div class="col-lg-2 my-2">
+                                            <input type="text" id="searchbox" placeholder="Search Course" class="form-control form-control-sm font-13 form-border-default bg-trans" />
+                                        </div>
+
+                                        <div class="col-lg-7 my-2 d-flex align-items-center ml-auto w-100">
+                                            <span class="mr-1">Sort: </span>
+                                            <span id="filters-area" class="d-flex">
+                                                <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
+                                                <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To Date:">
+                                                
+                                            </span>
+                                        </div>
+
+                                        <div class="col text-right px-0">
+                                            <a href="create_quiz.html" class="btn btn-green py-1">Add Quiz</a>
+                                        </div>
+                                    </div>   
                                 </div>
+                                
                             </div>
 
                             <div class="card--dashboard">
                                 <div class="px-4 py-5 mt-5 text-center d-none">
                                     <img src="img/sad.png" class="img-fluid mt-5" />
-                                    <p class="mb-0 mt-3 font-weight-light font-13">You currently have no department at the moments.</p>
-                                    <p class="mb-0 font-weight-light font-13">Click “Add New Company to create new departments.</p>
+                                    <p class="mb-0 mt-3 font-weight-light font-13">You currently have no Quizzes at the moments.</p>
+                                    <p class="mb-0 font-weight-light font-13">Click “Add Quiz” to create new quiz.</p>
 
-                                    <button type="button" class="btn btn-green my-4" data-toggle="modal" data-target="#dept-modal">Add New Company</button>
+                                    <a href="create_quiz.html" class="btn btn-green my-4">Add Quiz</a>
                                 </div>
                             </div>
 
 
-                            <div class="card--dashboard mt-5 p-3">
-                                <table id="leaders" class="table-responsive leaders dataTables_wrapper table table-striped" style="width:100%">
+                            <div class="card--dashboard mt-5">
+                                <table id="quiz" class="table-responsive-sm leaders dataTables_wrapper table table-striped" style="width:100%">
                                     <thead class="border-top--0">
                                         <tr>
                                             <th class="text-dark text-center">#</th>
-                                            <th class="text-dark">Name</th>
-                                            <th class="text-dark select-filter">Staff</th>
-                                            <th class="text-dark">Departments</th>
-                                            <th class="text-dark select-filter">Courses</th>
-                                            <th class="text-dark select-filter">Status</th>
-                                            <th class="text-dark select-filter"> Location</th>
-                                            <th class="text-dark">Date Joined</th>
+                                            <th class="text-dark">Title</th>
+                                            <th class="text-dark">No. of Quizes</th>
+                                            <th class="text-dark">Created On</th>
                                             <th class="text-dark text-center">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <tr>
+                                            <td class="text-center"><a href="#" class="text-dim">1</a></td>
+                                            <td><a href="#"  class="link">Project Management</a></td>
+                                            <td><a href="#" class="link">20</a></td>
+                                            <td class="text-center dropleft">
+                                                <button class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline">Edit Detail</button>
+                                                <a class="dropdown-togge" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <img src="img/table_option.svg" alt="options" />
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item font-12 d-lg-none" href="#">Edit</a>
+                                                    <a class="dropdown-item font-12" href="#">View quizzes</a>
+                                                    <a class="dropdown-item font-12" href="#">View scores</a>
+                                                    <a class="dropdown-item font-12" href="#">Delete</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td class="text-center"><a href="#" class="text-dim">1</a></td>
+                                            <td><a href="#"  class="link">Angel Simmmons</a></td>
+                                            <td><a href="#" class="link">50</a></td>
+                                            <td class="text-center dropleft">
+                                                <button class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline">Edit Detail</button>
+                                                <a class="dropdown-togge" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <img src="img/table_option.svg" alt="options" />
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                     <a class="dropdown-item font-12 d-lg-none" href="#">Edit</a>
+                                                    <a class="dropdown-item font-12" href="#">View quizzes</a>
+                                                    <a class="dropdown-item font-12" href="#">View scores</a>
+                                                    <a class="dropdown-item font-12" href="#">Delete</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td class="text-center"><a href="#" class="text-dim">1</a></td>
+                                            <td><a href="#"  class="link">Angel Simmmons</a></td>
+                                            <td><a href="#" class="link">35</a></td>
+                                            <td class="text-center dropleft">
+                                                <button class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline">Edit Detail</button>
+                                                <a class="dropdown-togge" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <img src="img/table_option.svg" alt="options" />
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                     <a class="dropdown-item font-12 d-lg-none" href="#">Edit</a>
+                                                    <a class="dropdown-item font-12" href="#">View quizzes</a>
+                                                    <a class="dropdown-item font-12" href="#">View scores</a>
+                                                    <a class="dropdown-item font-12" href="#">Delete</a>
+                                                </div>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
-
                             </div>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div  aria-hidden="true" class="onboarding-modal modal fade animated" id="acc_details" role="dialog" tabindex="-1">
-                <div class="modal-dialog modal-right" role="document">
-                    <div class="modal-content text-center">
-                        <button aria-label="Close" class="close text-right pr-2" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                        <div class="onboarding-content with-radient px-3">
-
-                            <ul class="list-unstyled">
-                                <li class="font-weight-bold text-left text-green my-2"><a href="#">Sign Out</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Comapny Modal -->
-            <div class="modal fade" id="dept-modal" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Add New Comapny</h6>
-                            <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal"/></span> </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-row">
-                                    <div class="form-group col-lg-12">
-                                        <input id="departmentModalInput" type="text" placeholder="Company Name" class="form-control"> 
-                                    </div>
-                                    <div class="form-group col-lg-12">
-                                        <input id="departmentModalInput" type="text" placeholder="Comapny Email" class="form-control"> 
-                                    </div>
-                                    <div class="form-group col-lg-12">
-                                        <input id="departmentModalInput" type="text" placeholder="Contact No" class="form-control"> 
-                                    </div>
-                                </div>
-                                <div class="form-row" id="departmentModalItems"></div>
-                                <div class="row mt-5">
-                                    <div class="col-lg-3 ml-auto mx-0">
-                                        <button type="button" class="btn btn-success btn-block">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Company Modal End -->
-
-            <!-- Edit Company Modal -->
-            <div class="modal fade" id="edit-department" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Edit Company</h6>
-                            <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal"/></span> </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-row">
-                                    <div class="form-group col-lg-12">
-                                        <input id="" type="text" placeholder="" class="form-control"> </div>
-                                </div>
-
-                                <div class="row mt-5">
-                                    <div class="col-lg-3 ml-auto mx-0">
-                                        <button type="button" class="btn btn-success btn-block">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Department Modal End -->
-
-
-            <!--Notification Modal-->
-            <div  aria-hidden="true" class="onboarding-modal modal fade animated" id="notifications" role="dialog" tabindex="-1">
-                <div class="modal-dialog modal-right" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h6 class="modal-title text-left text-green">Notifications</h6>
-                            <button   class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
-                        </div>
-
-                        <div class="onboarding-content with-radient px-3 pt-3">
-
-                            <div class="row">
-                                <div class="col-lg-2">
-                                    <img src="img/notify.png" alt="notify" />
-                                </div>
-
-                                <div class="col-lg-9">
-                                    <p class="font-weight-500 mb-1">Dui nulla id massa turpis.</p>
-                                    <p class="font-13 mb-2">Gravida odio id commodo libero, aliquam. Tempus bibendum vestibulum aliquet morbi amet.</p>
-                                    <p class="font-12"><img class="img-fluid mr-2" src="img/notification_time.png" alt="Time received 20 mins ago"/>20 mins ago</p>
-                                </div>
-                            </div>
-                            <hr class="mb-3 mt-0" />
-                            <div class="row">
-                                <div class="col-lg-2">
-                                    <img src="img/notify.png" alt="notify" />
-                                </div>
-
-                                <div class="col-lg-9">
-                                    <p class="font-weight-500 mb-1">Dui nulla id massa turpis.</p>
-                                    <p class="font-13 mb-2">Gravida odio id commodo libero, aliquam. Tempus bibendum vestibulum aliquet morbi amet.</p>
-                                    <p class="font-12"><img class="img-fluid mr-2" src="img/notification_time.png" alt="Time received 20 mins ago"/>20 mins ago</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -396,7 +337,7 @@
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script src="js/jquery.min.js"></script>
         <!-- Popper.JS -->
-        <script src="js/libs/popper.js/1.14.0/umd/popper.min.js" ></script>
+        <script src="../../cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" ></script>
         <!-- Bootstrap JS -->
         <script src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
@@ -404,9 +345,10 @@
         <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
         <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
         <script src="js/utility.js"></script>
+
         <script>
             $(document).ready( function () {
-                var table = $('#leaders').DataTable({
+                var table = $('#quiz').DataTable({
                     initComplete: function () {
                         this.api().columns('.select-filter').every( function () {
                             var column = this;
@@ -434,26 +376,19 @@
                     columns: [
                         { data: 'id' },
                         { data: 'employee_name' },
-                        { data: 'employee_salary' },
                         { data: 'employee_age' },
-                        { data: 'employee_age' },
-                        { data: 'employee_age' },
-                        { data: 'employee_salary' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
                           "defaultContent": `
-                                            <button class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline" data-toggle="modal" data-target="#edit-department">Edit Detail</button>
+                                            <button class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline">Edit Detail</button>
                                             <a class="dropdown-togge" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <img src="img/table_option.svg" alt="options" />
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item font-12 d-lg-none" href="#" data-toggle="modal" data-target="#edit-department">Edit</a>
-                                                <a class="dropdown-item font-12" href="c_reports.html">Company Report</a>
-                                                <a class="dropdown-item font-12" href="c_staff.html">Staff</a>
-                                                <a class="dropdown-item font-12" href="c_departments.html">Departments</a>
-                                                <a class="dropdown-item font-12" href="c_courses.html">Courses</a>
-                                                <a class="dropdown-item font-12" href="#">Disable</a>
+                                                <a class="dropdown-item font-12 d-lg-none" href="#">Edit</a>
+                                                <a class="dropdown-item font-12" href="#">View quizzes</a>
+                                                <a class="dropdown-item font-12" href="#">View scores</a>
                                                 <a class="dropdown-item font-12" href="#">Delete</a>
                                             </div>
                                             `
@@ -492,6 +427,7 @@
 
             });
         </script>
+
     </body>
 
 </html>

@@ -813,21 +813,28 @@ button.dropdown-toggle::after {
     border-top-right-radius: .25rem;
 }
 
-#nav-home-tab.active {
+#nav-home-tab.active, #nav-other-tab.active, #nav-path-tab.active, #nav-cat-tab.active, #nav-assigned-tab.active {
     background-color: #20A354 !important;
     color: #fff !important;
+}
+
+#nav-home-tab.active {
     border-radius: 9px 0px 0px 0px;
 }
 
 #nav-other-tab.active {
-    background-color: #20A354 !important;
-    color: #fff !important;
+    border-radius: 0px 9px 0px 0px;
+}
+
+#nav-path-tab.active {
+    border-radius: 0px 0px 0px 0px;
+}
+
+#nav-cat-tab.active {
     border-radius: 0px 9px 0px 0px;
 }
 
 #nav-assigned-tab.active {
-    background-color: #20A354 !important;
-    color: #fff !important;
     border-radius: 0px;
 }
 
