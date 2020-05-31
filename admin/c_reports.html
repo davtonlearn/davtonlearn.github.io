@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-    
-<!-- Mirrored from davtonlearn.herokuapp.com/dashboard/reports.html by HTTrack Website Copier/3.x [XR&CO'2017], Mon, 25 May 2020 21:45:34 GMT -->
 <head>
         <meta charset="utf-8">
         <!--        <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
@@ -17,10 +15,12 @@
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="css/style.css">
 
+        <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+
         <!-- Font Awesome JS -->
-        <script defer src="../../use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-        <script defer src="../../use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-        <link href="css/select2.min.css" rel="stylesheet" />
+        <script defer src="js/solid.js"></script>
+        <script defer src="js/fontawesome.js"></script>
+        <link rel="stylesheet" href="css/bootstrap-datepicker.css">
         <link rel="stylesheet" href="css/custom.css">
 
     </head>
@@ -218,15 +218,16 @@
                         <div class="card--dashboard">
                             <div class="d-flex border-bottom px-2">
                                 <div class="col">
-                                    <h6 class="text-green my-3 weight-semi-bold text-uppercase">Company Report</h6>                            </div>
+                                    <h6 class="text-green my-3 weight-semi-bold text-uppercase">Company Report</h6>                            
+                                </div>
 
-                                <div class="col-lg-3">
+                                <!-- <div class="col-lg-3">
                                     <select class="ml-auto custom-select my-2" style="border: 0px solid #4F4F4F; background-color: #fff0;">
                                         <option disabled selected>Daily</option>
                                         <option value="Filter">Monthly</option>
                                         <option value="WY">Anually</option>
                                     </select>                        
-                                </div>
+                                </div> -->
                             </div>
 
                         </div>
@@ -236,28 +237,40 @@
                             <div class="row mt-3 pb-5">
                                 <div class="col-lg-12 my-3">
                                     <div class="row h-100">
-                                        <div class="col-lg-6 my-2">
+                                        <div class="col-lg-4 col-md-6 my-2">
+                                            <div class="report-card py-3 h-100">
+                                                <h6 class="mb-2 font-18">Status</h6>
+                                                <h1 class="font-weight-900 font-60 text_primary">Active</h1>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 my-2">
+                                            <div class="report-card py-3 h-100">
+                                                <h6 class="mb-2 font-18">Subscrition Plan</h6>
+                                                <h1 class="font-weight-900 font-60 text_primary">N399/month</h1>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 my-2">
+                                            <div class="report-card py-3 h-100">
+                                                <h6 class="mb-2 font-18">Due Date</h6>
+                                                <h1 class="font-weight-900 font-60 text_primary">2020/09/15</h1>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 my-2">
                                             <div class="report-card py-3 h-100">
                                                 <h6 class="mb-2 font-18">Active Users</h6>
                                                 <h1 class="font-weight-900 font-60 text_primary">184/200</h1>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 my-2">
+                                        <div class="col-lg-4 col-md-6 my-2">
                                             <div class="report-card py-3 h-100">
                                                 <h6 class="mb-2 font-18">Total Courses Bought</h6>
                                                 <h1 class="font-weight-900 font-60 text_primary">200</h1>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 my-2">
+                                        <div class="col-lg-4 col-md-6 my-2">
                                             <div class="report-card py-3 h-100">
                                                 <h6 class="mb-2 font-18">Total Custom Courses</h6>
                                                 <h1 class="font-weight-900 font-60 text_primary">200</h1>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 my-2">
-                                            <div class="report-card py-3 h-100">
-                                                <h6 class="mb-2 font-18">Average Course Rating</h6>
-                                                <h1 class="font-weight-900 font-60 text_primary">184</h1>
                                             </div>
                                         </div>
                                     </div>
@@ -275,7 +288,7 @@
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script src="js/jquery.min.js"></script>
         <!-- Popper.JS -->
-        <script src="../../cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" ></script>
+        <script src="js/popper.js/1.14.0/umd/popper.min.js" ></script>
         <!-- Bootstrap JS -->
         <script src="js/bootstrap.min.js"></script>
 
@@ -351,6 +364,4 @@
 
     </body>
 
-
-<!-- Mirrored from davtonlearn.herokuapp.com/dashboard/reports.html by HTTrack Website Copier/3.x [XR&CO'2017], Mon, 25 May 2020 21:45:39 GMT -->
 </html>

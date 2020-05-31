@@ -17,14 +17,17 @@
    display: none;
 }
 #min,#max{
-	max-width: 130px;
+	/*max-width: 130px;*/
 }
 .font-60{
-	font-size: 40px
+	font-size: 30px
 }
 .dropdown-item.font-12{
 	border-bottom: 1px solid #ccc
 }
 .dropdown-item.font-12:hover{
 	background: #eee;
+}
+.font-weight-900 {
+    font-weight: 800;
 }

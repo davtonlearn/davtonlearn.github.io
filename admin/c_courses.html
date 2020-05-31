@@ -206,11 +206,10 @@
                 <div class="row mx-md-2 my-5">
                     <div class="col-md-12">
                         <div class="d-flex">
-                            <div class="col px-0">
-                                <p class="text-green text-uppercase">Courses</p>                                
-                            </div> 
+                            <div class="col px-0 my-3">
+                                <a href="companies.html" class="text-grey" class="fkont-13"><img src="img/back_button.svg" alt="go back" class="img-fluid" /> Back</a>     
+                            </div>
                         </div>
-
 
                         <div class="card--dashboard">
 
@@ -220,24 +219,40 @@
                                     <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                         <a class="nav-dash nav-item nav-link active text-uppercase weight-semi-bold py-3" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">courses</a>
 
-                                        <a class="nav-item nav-link text-uppercase weight-semi-bold py-3" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">LEARNING PATH</a>
+                                        <a class="nav-item nav-link text-uppercase weight-semi-bold py-3" id="nav-path-tab" data-toggle="tab" href="#nav-path" role="tab" aria-controls="nav-path" aria-selected="false">LEARNING PATH</a>
+
+                                        <a class="nav-item nav-link text-uppercase weight-semi-bold py-3" id="nav-cat-tab" data-toggle="tab" href="#nav-cat" role="tab" aria-controls="nav-cat" aria-selected="false">Categories</a>
                                     </div>
                                 </nav>
                                 <div class="tab-content my-3 px-3" id="nav-tabContent">
                                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                        <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                               <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
+                                                    <div class="col-lg-2 my-2">
+                                                        <input type="text" id="searchbox" placeholder="Search Course" class="form-control form-control-sm font-13 form-border-default bg-trans" />
+                                                    </div>
 
-                                            <div class="col-lg-2 my-2">
-                                                <input type="text" id="searchbox" placeholder="Search Companies" class="form-control form-control-sm font-13 form-border-default bg-trans" />
-                                            </div>
+                                                    <div class="col-lg-7 my-2 d-flex align-items-center ml-auto w-100">
+                                                        <span class="mr-1">Sort: </span>
+                                                        <span id="filters-area" class="d-flex">
+                                                            <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
+                                                            <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To Date:">
+                                                            
+                                                        </span>
+                                                    </div>
 
-                                            <div class="col-lg-6 px-lg-0 my-2 d-flex align-items-center">
-                                                <span class="mr-1">Sort: </span>
-                                                <span id="filters-area" class="d-flex"></span>
-                                                    <span><input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:"></span>
-                                                    <span><input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To Date:"></span>
-                                                </tr>
+                                                    <div class="col-lg-2 my-4 text-right dropleft ml-auto">
+                                                        <button class="text-white btn btn-green btn-sm font-13 dropdown-toggle dropleft btn-block"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Add New Course </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                            <button onclick="location.href='create_course.html'" class="btn dropdown-item font-12" data-toggle="modal" data-target="#multiple-modal">Add Customized Course</button>
+                                                            <hr class="p-0 m-0">
+                                                            <button onclick="location.href='course_library.html'" class="btn dropdown-item font-12" data-toggle="modal" data-target="#single-modal">Add Course From Library</button>
+                                                        </div>
+                                                    </div>
+                                                </div>   
                                             </div>
+                                            
                                         </div>
 
                                         <div class="px-4 py-5 mt-5 text-center d-none">
@@ -255,8 +270,8 @@
                                                 <tr>
                                                     <th class="text-dark text-center">#</th>
                                                     <th class="text-dark">Title</th>
-                                                    <th class="text-dark">Catergory</th>
-                                                    <th class="text-dark">Owner</th>
+                                                    <th class="text-dark select-filter">Catergory</th>
+                                                    <th class="text-dark select-filter">Owner</th>
                                                     <th class="text-dark">Created On</th>
                                                     <th class="text-dark">Action</th>
                                                 </tr>
@@ -268,7 +283,30 @@
 
                                     </div>
 
-                                    <div class="tab-pane fade" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab">
+                                    <div class="tab-pane fade" id="nav-path" role="tabpanel" aria-labelledby="nav-path-tab">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                               <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
+                                                    <div class="col-lg-2 my-2">
+                                                        <input type="text" id="searchbox-group" placeholder="Search Learning Path" class="form-control form-control-sm font-13 form-border-default bg-trans" />
+                                                    </div>
+
+                                                    <div class="col-lg-7 my-2 d-flex align-items-center ml-auto w-100">
+                                                        <span class="mr-1">Sort: </span>
+                                                        <span id="filters-group" class="d-flex">
+                                                            <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min-group" type="text" placeholder="From Date:">
+                                                            <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max-group" type="text" placeholder="To Date:">
+                                                        </span>
+                                                    </div>
+
+                                                    <div class="col-lg-3 my-4 text-right dropleft ml-auto">
+                                                        <button   class="btn btn-outline--green my-4 font-12" data-toggle="modal" data-target="#path-Modal">+ Create Learning Path</button>
+                                                    </div>
+                                                </div>   
+                                            </div>
+                                            
+                                        </div>
+
                                         <div class="px-4 py-5 mt-5 text-center d-none">
                                             <img src="img/sad.png" class="img-fluid mt-5" />
                                             <p class="mb-0 mt-3 font-weight-light font-13">You currently have no Learning Path added at the moment.</p>
@@ -282,81 +320,64 @@
                                         <table id="learning_path" class="leaders dataTables_wrapper table table-striped" style="width:100%">
                                             <thead class="border-top--0">
                                                 <tr>
+                                                    <th class="text-dark text-center">#</th>
                                                     <th class="text-dark">Path Title</th>
-                                                    <th class="text-dark">Level</th>
-                                                    <th class="text-dark">Stage</th>
+                                                    <th class="text-dark group-filter">Level</th>
+                                                    <th class="text-dark group-filter">Stage</th>
+                                                    <th class="text-dark">Created On</th>
                                                     <th class="text-dark">ACTION</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="nav-cat" role="tabpanel" aria-labelledby="nav-cat-tab">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                               <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
+                                                    <div class="col-lg-2 my-2">
+                                                        <input type="text" id="searchbox-cat" placeholder="Search Catergory" class="form-control form-control-sm font-13 form-border-default bg-trans" />
+                                                    </div>
+
+                                                    <div class="col-lg-5 my-2 d-flex align-items-center ml-auto w-100">
+                                                        <span class="mr-1">Sort: </span>
+                                                        <span id="filters-cat" class="d-flex">
+                                                            <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min-cat" type="text" placeholder="From Date:">
+                                                            <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max-cat" type="text" placeholder="To Date:">
+                                                        </span>
+                                                    </div>
+
+                                                    <div class="col-lg-3 my-4 text-right dropleft ml-auto">
+                                                        <a class="page-top btn px-3 btn-success dropown-toggle font-13 text-white" href="#" data-toggle="modal" data-target="#category-Modal">Create New Category </a>
+                                                    </div>
+                                                </div>   
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="px-4 py-5 mt-5 text-center d-none">
+                                            <img src="img/sad.png" class="img-fluid mt-5" />
+                                            <p class="mb-0 mt-3 font-weight-light font-13">You currently have no Category added at the moment.</p>
+                                            <p class="mb-0 font-weight-light font-13">Click “Add New Category” to create new course.</p>
+
+                                            <button   class="btn btn-outline--green my-4 font-12" data-toggle="modal" data-target="#category-Modal">+ Add New Category</button>
+                                        </div>
+
+
+
+                                        <table id="categories" class="leaders dataTables_wrapper table table-striped" style="width:100%">
+                                            <thead class="border-top--0">
                                                 <tr>
-                                                    <td>
-                                                        Project Management
-                                                    </td>
-                                                    <td>05</td>
-                                                    <td>05</td>
-
-                                                    <td class="dropleft">
-                                                        <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline" data-target="#edit-path-Modal" data-toggle="modal">Edit Detail</a>
-                                                        <a class="dropdown-togge"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <img src="img/table_option.svg" alt="options" />
-                                                        </a>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                            <a class="dropdown-item font-12" href="topic.html">View details</a>
-                                                            <a class="dropdown-item font-12" href="categories.html">View Stages</a>
-                                                            <a class="dropdown-item font-12" href="#">View Staff</a>
-                                                            <a class="dropdown-item font-12" href="assign_staff.html">Assign Staff</a>
-                                                            <a class="dropdown-item font-12 d-lg-none" href="#" data-target="#edit-path-Modal" data-toggle="modal">Edit</a>
-                                                            <a class="dropdown-item font-12" href="#">Delete </a>
-                                                        </div>
-                                                    </td>
+                                                    <th class="text-dark text-center">#</th>
+                                                    <th class="text-dark">Category Title</th>
+                                                    <th class="text-dark">Created On</th>
+                                                    <th class="text-dark">ACTION</th>
                                                 </tr>
-
-
-                                                <tr>
-                                                    <td>
-                                                        Project Management
-                                                    </td>
-                                                    <td>08</td>
-                                                    <td>02</td>
-                                                    <td class="dropleft">
-                                                        <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline" data-target="#edit-path-Modal" data-toggle="modal">Edit Detail</a>
-                                                        <a class="dropdown-togge"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <img src="img/table_option.svg" alt="options" />
-                                                        </a>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                            <a class="dropdown-item font-12" href="topic.html">View details</a>
-                                                            <a class="dropdown-item font-12" href="categories.html">View Stages</a>
-                                                            <a class="dropdown-item font-12" href="#">View Staff</a>
-                                                            <a class="dropdown-item font-12" href="assign_staff.html">Assign Staff</a>
-                                                            <a class="dropdown-item font-12 d-lg-none" href="#" data-target="#edit-path-Modal" data-toggle="modal">Edit</a>
-                                                            <a class="dropdown-item font-12" href="#">Delete </a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-
-                                                <tr>
-                                                    <td>
-                                                        Project Management
-                                                    </td>
-                                                    <td>05</td>
-                                                    <td>25</td>
-                                                    <td class="dropleft">
-                                                        <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline" data-target="#edit-path-Modal" data-toggle="modal">Edit Detail</a>
-                                                        <a class="dropdown-togge"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <img src="img/table_option.svg" alt="options" />
-                                                        </a>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                            <a class="dropdown-item font-12" href="topic.html">View details</a>
-                                                            <a class="dropdown-item font-12" href="categories.html">View Stages</a>
-                                                            <a class="dropdown-item font-12" href="#">View Staff</a>
-                                                            <a class="dropdown-item font-12" href="assign_staff.html">Assign Staff</a>
-                                                            <a class="dropdown-item font-12 d-lg-none" href="#" data-target="#edit-path-Modal" data-toggle="modal">Edit</a>
-                                                            <a class="dropdown-item font-12" href="#">Delete </a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                            </thead>
+                                            <tbody>
 
                                             </tbody>
                                         </table>
@@ -408,7 +429,39 @@
             </div>
             <!-- Learning path End -->
 
+            <!-- Edit Course Modal -->
+            <div class="modal fade" id="edit-course" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title text-center mx-auto">Edit Course</h6>
+                            <button   class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="get" action="../../external.html?link=https://davtonlearn.herokuapp.com/dashboard/course_stage.html">
+                                <div class="form-row">
+                                    <div class="form-group col-lg-12">
+                                        <input id="" type="text" placeholder="Edit Course Title" class="form-control">
+                                    </div>
+                                </div>
 
+                                <div class="form-row">
+                                    <div class="form-group col-lg-12">
+                                        <input id="" type="text" placeholder="Edit Course Category" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3 ml-auto mx-0 mt-5">
+                                        <button   class="btn btn-success btn-sm btn-block mt-5">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Edit Course End -->
 
             <!-- Edit Learning path Modal -->
             <div class="modal fade" id="edit-path-Modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
@@ -447,7 +500,56 @@
             <!-- Learning path End -->
 
 
+            <!-- Category Modal -->
+            <div class="modal fade" id="category-Modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title text-center mx-auto">Create New Catergory(s)</h6>
+                            <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-lg-9">
+                                        <input id="departmentModalInput" type="text" placeholder="Enter a Catergory name" class="form-control"> </div>
+                                    <div class="form-group col-lg-3">
+                                        <button id="departmentSubmit" class="btn btn-success btn-modal btn-block" type="button">Add</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Category Modal End -->
 
+            <!--Edit Category Modal -->
+            <div class="modal fade" id="edit-category-modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title text-center mx-auto">Create New Catergory(s)</h6>
+                            <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-lg-12">
+                                        <input id="" type="text" placeholder="Enter a Catergory name" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3 ml-auto mx-0 mt-4">
+                                        <button type="button" class="btn btn-success btn-block">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Category Modal End -->
 
             <!--Notification Modal-->
             <div  aria-hidden="true" class="onboarding-modal modal fade animated" id="notifications" role="dialog" tabindex="-1">
@@ -511,7 +613,7 @@
                             var column = this;
                             var colTitle = this.header().innerHTML
                             var select = $('<select class="custom-select custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
-                                .appendTo( $('#filters-area') )
+                                .prependTo( $('#filters-area') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
                                         $(this).val()
@@ -535,22 +637,21 @@
                         { data: 'employee_name' },
                         { data: 'employee_salary' },
                         { data: 'employee_age' },
-                        { data: 'employee_age' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
                           "defaultContent": `
-                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Edit Detail</a>
-                                                        <a class="dropdown-togge"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <img src="img/table_option.svg" alt="options" />
-                                                        </a>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                            <a class="dropdown-item font-12" href="topic.html">View Topics</a>
-                                                            <a class="dropdown-item font-12" href="categories.html">View categories</a>
-                                                            <a class="dropdown-item font-12" href="c_assign_staff.html">Assign Staff</a>
-                                                            <a class="dropdown-item font-12 d-lg-none" href="#">Edit</a>
-                                                            <a class="dropdown-item font-12" href="#">Delete </a>
-                                                        </div>
+                                            <a href="c_edit_course.html" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Edit Detail</a>
+                                            <a class="dropdown-togge"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <img src="img/table_option.svg" alt="options" />
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item font-12" href="c_topics.html">View Topics</a>
+                                                <a class="dropdown-item font-12" href="c_quizes.html">View Quizzes</a>
+                                                <a class="dropdown-item font-12" href="c_assign_staff.html">Assign Staff</a>
+                                                <a class="dropdown-item font-12 d-lg-none" href="c_edit.html">Edit</a>
+                                                <a class="dropdown-item font-12" href="#">Delete </a>
+                                            </div>
                                             `
                         }
                     ]
@@ -588,5 +689,167 @@
             });
         </script>
 
+        <script>
+            $(document).ready( function () {
+                var table = $('#learning_path').DataTable({
+                    initComplete: function () {
+                        this.api().columns('.group-filter').every( function () {
+                            var column = this;
+                            var colTitle = this.header().innerHTML
+                            var select = $('<select class="custom-select custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
+                                .prependTo( $('#filters-group') )
+                                .on( 'change', function () {
+                                    var val = $.fn.dataTable.util.escapeRegex(
+                                        $(this).val()
+                                    );
+             
+                                    column
+                                        .search( val ? '^'+val+'$' : '', true, false )
+                                        .draw();
+                                } );
+             
+                            column.data().unique().sort().each( function ( d, j ) {
+                                select.append( '<option>'+d+'</option>' )
+                            } );
+                        } );
+                    },
+                    // processing: true,
+                    // serverSide: true,
+                    ajax: 'http://dummy.restapiexample.com/api/v1/employees',
+                    columns: [
+                        { data: 'id' },
+                        { data: 'employee_name' },
+                        { data: 'employee_salary' },
+                        { data: 'employee_age' },
+                        { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
+                        {
+                          "data": null,
+                          "defaultContent": `
+                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline" data-target="#edit-path-Modal" data-toggle="modal">Edit Detail</a>
+                                            <a class="dropdown-togge"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <img src="img/table_option.svg" alt="options" />
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item font-12" href="topic.html">View details</a>
+                                                <a class="dropdown-item font-12" href="categories.html">View Stages</a>
+                                                <a class="dropdown-item font-12" href="#">View Staff</a>
+                                                <a class="dropdown-item font-12" href="assign_staff.html">Assign Staff</a>
+                                                <a class="dropdown-item font-12 d-lg-none" href="#" data-target="#edit-path-Modal" data-toggle="modal">Edit</a>
+                                                <a class="dropdown-item font-12" href="#">Delete </a>
+                                            </div>
+                                            `
+                        }
+                    ]
+                }); 
+                $('#searchbox-group').on( 'keyup', function () {
+                   table.search( this.value ).draw();
+                } );
+
+
+
+                $.fn.dataTable.ext.search.push(
+                function (settings, data, dataIndex) {
+                    var min = $('#min-group').datepicker("getDate");
+                    var max = $('#max-group').datepicker("getDate");
+                    var startDate = new Date(data[data.length - 2]);
+                    if (min == null && max == null) { return true; }
+                    if (min == null && startDate <= max) { return true;}
+                    if(max == null && startDate >= min) {return true;}
+                    if (startDate <= max && startDate >= min) { return true; }
+                    return false;
+                }
+                );
+
+           
+                $("#min-group").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+                $("#max-group").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+
+                // Event listener to the two range filtering inputs to redraw on input
+                $('#min-group, #max-group').change(function () {
+                    table.draw();
+                });
+
+
+
+            });
+        </script>
+
+        <script>
+            $(document).ready( function () {
+                var table = $('#categories').DataTable({
+                    initComplete: function () {
+                        this.api().columns('.cat-filter').every( function () {
+                            var column = this;
+                            var colTitle = this.header().innerHTML
+                            var select = $('<select class="custom-select custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
+                                .prependTo( $('#filters-cat') )
+                                .on( 'change', function () {
+                                    var val = $.fn.dataTable.util.escapeRegex(
+                                        $(this).val()
+                                    );
+             
+                                    column
+                                        .search( val ? '^'+val+'$' : '', true, false )
+                                        .draw();
+                                } );
+             
+                            column.data().unique().sort().each( function ( d, j ) {
+                                select.append( '<option>'+d+'</option>' )
+                            } );
+                        } );
+                    },
+                    // processing: true,
+                    // serverSide: true,
+                    ajax: 'http://dummy.restapiexample.com/api/v1/employees',
+                    columns: [
+                        { data: 'id' },
+                        { data: 'employee_name' },
+                        { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
+                        {
+                          "data": null,
+                          "defaultContent": `
+                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent" data-toggle="modal" data-target="#edit-category-modal">Edit Detail</a>
+                                            <a class="dropdown-togge" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <img src="img/table_option.svg" alt="options" />
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item font-12" href="#">Delete</a>
+                                            </div>
+                                            `
+                        }
+                    ]
+                }); 
+                $('#searchbox-cat').on( 'keyup', function () {
+                   table.search( this.value ).draw();
+                } );
+
+
+
+                $.fn.dataTable.ext.search.push(
+                function (settings, data, dataIndex) {
+                    var min = $('#min-cat').datepicker("getDate");
+                    var max = $('#max-cat').datepicker("getDate");
+                    var startDate = new Date(data[data.length - 2]);
+                    if (min == null && max == null) { return true; }
+                    if (min == null && startDate <= max) { return true;}
+                    if(max == null && startDate >= min) {return true;}
+                    if (startDate <= max && startDate >= min) { return true; }
+                    return false;
+                }
+                );
+
+           
+                $("#min-cat").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+                $("#max-cat").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+
+                // Event listener to the two range filtering inputs to redraw on input
+                $('#min-cat, #max-cat').change(function () {
+                    table.draw();
+                });
+
+
+
+            });
+        </script>
     </body>
 </html>
