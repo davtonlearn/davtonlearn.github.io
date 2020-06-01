@@ -261,7 +261,7 @@
                             </div>
 
 
-                            <div class="card--dashboard mt-5">
+                            <div class="card--dashboard mt-5 p-4">
                                 <table id="quiz" class="table-responsive-lg leaders dataTables_wrapper table table-striped" style="width:100%">
                                     <thead class="border-top--0">
                                         <tr>
@@ -269,7 +269,7 @@
                                             <th class="text-dark">Title</th>
                                             <th class="text-dark">No. of Quizes</th>
                                             <th class="text-dark">Created On</th>
-                                            <th class="text-dark text-center">Action</th>
+                                            <th class="text-dark">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -378,11 +378,11 @@
                     },
                     // processing: true,
                     // serverSide: true,
-                    ajax: 'http://dummy.restapiexample.com/api/v1/employees',
+                    ajax: 'https://reqres.in/api/users',
                     columns: [
                         { data: 'id' },
-                        { data: 'employee_name' },
-                        { data: 'employee_age' },
+                        { data: 'first_name' },
+                        { data: 'last_name' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,

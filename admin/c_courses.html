@@ -279,7 +279,7 @@
                                                     <th class="text-dark select-filter">Catergory</th>
                                                     <th class="text-dark select-filter">Owner</th>
                                                     <th class="text-dark">Created On</th>
-                                                    <th class="text-dark">Action</th>
+                                                    <th class="text-dark" style="min-width: 100px">ACTION</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -331,7 +331,7 @@
                                                     <th class="text-dark group-filter">Level</th>
                                                     <th class="text-dark group-filter">Stage</th>
                                                     <th class="text-dark">Created On</th>
-                                                    <th class="text-dark">ACTION</th>
+                                                    <th class="text-dark" style="min-width: 100px">ACTION</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -380,7 +380,7 @@
                                                     <th class="text-dark text-center">#</th>
                                                     <th class="text-dark">Category Title</th>
                                                     <th class="text-dark">Created On</th>
-                                                    <th class="text-dark">ACTION</th>
+                                                    <th class="text-dark" style="min-width: 100px">ACTION</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -637,12 +637,12 @@
                     },
                     // processing: true,
                     // serverSide: true,
-                    ajax: 'http://dummy.restapiexample.com/api/v1/employees',
+                    ajax: 'https://reqres.in/api/users',
                     columns: [
                         { data: 'id' },
-                        { data: 'employee_name' },
-                        { data: 'employee_salary' },
-                        { data: 'employee_age' },
+                        { data: 'first_name' },
+                        { data: 'last_name' },
+                        { data: 'email' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
@@ -721,12 +721,12 @@
                     },
                     // processing: true,
                     // serverSide: true,
-                    ajax: 'http://dummy.restapiexample.com/api/v1/employees',
+                    ajax: 'https://reqres.in/api/users',
                     columns: [
                         { data: 'id' },
-                        { data: 'employee_name' },
-                        { data: 'employee_salary' },
-                        { data: 'employee_age' },
+                        { data: 'first_name' },
+                        { data: 'last_name' },
+                        { data: 'email' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
@@ -806,10 +806,10 @@
                     },
                     // processing: true,
                     // serverSide: true,
-                    ajax: 'http://dummy.restapiexample.com/api/v1/employees',
+                    ajax: 'https://reqres.in/api/users',
                     columns: [
                         { data: 'id' },
-                        { data: 'employee_name' },
+                        { data: 'first_name' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,

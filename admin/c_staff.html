@@ -226,7 +226,7 @@
                                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist"> <a class="nav-dash nav-item nav-link active text-uppercase weight-semi-bold py-3" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Staff</a> <a class="nav-item nav-link text-uppercase weight-semi-bold py-3" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Staff Group</a> </div>
                                     </nav>
                                     <div class="tab-content my-3" id="nav-tabContent">
-                                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                        <div class="tab-pane fade px-4 show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                    <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
@@ -272,7 +272,7 @@
                                                         <th class="text-dark select-filter">Department</th>
                                                         <th class="text-dark select-filter">Tier</th>
                                                         <th class="text-dark">Registered On</th>
-                                                        <th class="text-dark">ACTION</th>
+                                                        <th class="text-dark" style="min-width: 100px">ACTION</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -280,7 +280,7 @@
                                             </table>
 
                                         </div>
-                                        <div class="tab-pane fade" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab">
+                                        <div class="tab-pane fade px-4" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                    <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
@@ -315,7 +315,7 @@
                                                         <th class="text-dark">Group Name</th>
                                                         <th class="text-dark group-filter">No. of Staff</th>
                                                         <th class="text-dark">Date Created</th>
-                                                        <th class="text-dark">ACTION</th>
+                                                        <th class="text-dark" style="min-width: 100px">ACTION</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -666,15 +666,15 @@
                     },
                     // processing: true,
                     // serverSide: true,
-                    ajax: 'http://dummy.restapiexample.com/api/v1/employees',
+                    ajax: 'https://reqres.in/api/users',
                     columns: [
                         { data: 'id' },
-                        { data: 'employee_name' },
-                        { data: 'employee_salary' },
-                        { data: 'employee_age' },
-                        { data: 'employee_age' },
-                        { data: 'employee_age' },
-                        { data: 'employee_age' },
+                        { data: 'first_name' },
+                        { data: 'last_name' },
+                        { data: 'email' },
+                        { data: 'first_name' },
+                        { data: 'last_name' },
+                        { data: 'email' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
@@ -750,11 +750,11 @@
                     },
                     // processing: true,
                     // serverSide: true,
-                    ajax: 'http://dummy.restapiexample.com/api/v1/employees',
+                    ajax: 'https://reqres.in/api/users',
                     columns: [
                         { data: 'id' },
-                        { data: 'employee_name' },
-                        { data: 'employee_age' },
+                        { data: 'first_name' },
+                        { data: 'last_name' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
