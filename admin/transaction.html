@@ -368,14 +368,14 @@
                     },
                     // processing: true,
                     // serverSide: true,
-                    ajax: 'http://dummy.restapiexample.com/api/v1/employees',
+                    ajax: 'https://reqres.in/api/users',
                     columns: [
                         { data: 'id' },
-                        { data: 'employee_name' },
-                        { data: 'employee_salary' },
+                        { data: 'first_name' },
+                        { data: 'last_name' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
-                        { data: 'employee_age' },
-                        { data: 'employee_age' }
+                        { data: 'email' },
+                        { data: 'email' }
                     ]
                 }); 
                 $('#searchbox').on( 'keyup', function () {
