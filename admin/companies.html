@@ -223,7 +223,7 @@
                                     <input type="text" id="searchbox" placeholder="Search Companies" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                 </div>
 
-                                <div class="col-lg-7 px-lg-0 my-2 d-flex align-items-center">
+                                <div class="col-lg-7 px-lg-0 my-2 d-md-flex d-block align-items-center">
                                     <span class="mr-1">Sort: </span>
                                     <span id="filters-area" class="d-block d-md-flex">
                                         <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
@@ -430,15 +430,15 @@
                     },
                     // processing: true,
                     // serverSide: true,
-                    ajax: 'http://dummy.restapiexample.com/api/v1/employees',
+                    ajax: 'https://reqres.in/api/users',
                     columns: [
                         { data: 'id' },
-                        { data: 'employee_name' },
-                        { data: 'employee_salary' },
-                        { data: 'employee_age' },
-                        { data: 'employee_age' },
-                        { data: 'employee_age' },
-                        { data: 'employee_salary' },
+                        { data: 'first_name' },
+                        { data: 'last_name' },
+                        { data: 'email' },
+                        { data: 'first_name' },
+                        { data: 'last_name' },
+                        { data: 'email' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,

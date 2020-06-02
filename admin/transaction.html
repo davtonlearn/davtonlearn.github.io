@@ -218,12 +218,12 @@
                                     </select>
                                 </div> -->
 
-                                <div class="col-lg-7 my-2 d-flex align-items-center">
+                                <div class="col-lg-7 my-2 d-md-flex d-block align-items-center">
                                     <span class="mr-1">Sort: </span>
-                                    <span id="filters-area" class="d-flex"></span>
-                                        <span><input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From"></span>
-                                        <span><input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To:"></span>
-                                    </tr>
+                                    <span id="filters-area" class="d-flex">
+                                        <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From">
+                                        <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To:">                                        
+                                    </span>
                                 </div>
                             </div>
                             <div class="card--dashboard">
@@ -350,7 +350,7 @@
                             var column = this;
                             var colTitle = this.header().innerHTML
                             var select = $('<select class="custom-select custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
-                                .appendTo( $('#filters-area') )
+                                .prependTo( $('#filters-area') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
                                         $(this).val()
