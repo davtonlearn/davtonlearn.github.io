@@ -204,7 +204,7 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-lg-2 my-2">
-                                    <p class="text-green text-uppercase mb-0">Trainers</p>
+                                    <p class="text-green text-uppercase mb-0">Users</p>
                                 </div>
 
                                 <div class="col-lg-2 my-2">
@@ -220,13 +220,16 @@
 
                                 <div class="col-lg-6 my-2 d-md-flex d-block align-items-center">
                                     <span class="mr-1">Sort: </span>
-                                    <span id="filters-area" class="d-flex"></span>
+                                    <span id="filters-area" class="d-flex">
+                                        <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
+                                        <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To Date:">
+                                    </span>
                                 </div>
 
                                 
 
                                 <div class="col-lg-2 my-2 text-right dropleft">
-                                    <button class="text-white btn btn-green btn-sm font-13 dropdown-toggle dropleft btn-block"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Upload Trainer </button>
+                                    <button class="text-white btn btn-green btn-sm font-13 dropdown-toggle dropleft btn-block"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Upload User </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <button class="btn dropdown-item font-12" data-toggle="modal" data-target="#multiple-modal">Multiple Upload</button>
                                         <hr class="p-0 m-0">
@@ -244,16 +247,16 @@
                                                 <p class="mb-0 font-weight-light font-13">Click Upload Trainer to add new members.</p> <img src="img/Arrow.png" alt="pointer to add staff button" class="position-absolute arrow_position d-none d-lg-block" /> 
                                             </div>
 
-                                            <table id="table_id" class="table-responsive-sm leaders dataTables_wrapper table table-striped" style="width:100%">
+                                            <table id="users" class="table-responsive-sm leaders dataTables_wrapper table table-striped" style="width:100%">
                                                 <thead class="border-top--0">
                                                     <tr>
                                                         <th class="text-dark text-center">#</th>
                                                         <th class="text-dark">Full Name</th>
                                                         <th class="text-dark">Email</th>
                                                         <th class="text-dark select-filter">Company</th>
-                                                        <th class="text-dark select-filter">User Type</th>
-                                                        <th class="text-dark select-filter">Date Joined</th>
                                                         <th class="text-dark select-filter">Payement Status</th>
+                                                        <th class="text-dark select-filter">User Type</th>
+                                                        <th class="text-dark">Date Joined</th>
                                                         <th class="text-dark">ACTION</th>
                                                     </tr>
                                                 </thead>
@@ -433,7 +436,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Add Multiple Member of Staff</h6>
+                            <h6 class="modal-title text-center mx-auto">Add Multiple Users</h6>
                             <button   class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal"/></span> </button>
                         </div>
                         <div class="modal-body">
@@ -475,7 +478,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Add a Single Staff Member</h6>
+                            <h6 class="modal-title text-center mx-auto">Add a Single User</h6>
                             <button   class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal"/></span> </button>
                         </div>
                         <div class="modal-body">
@@ -661,14 +664,14 @@
         <script src="js/utility.js"></script>
         <script>
             $(document).ready( function () {
-                var table = $('#table_id').DataTable({
+                var table = $('#users').DataTable({
                     initComplete: function () {
                     console.log(this.api().columns());
                         this.api().columns('.select-filter').every( function () {
                             var column = this;
                             var colTitle = this.header().innerHTML
                             var select = $('<select class="custom-select custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
-                                .appendTo( $('#filters-area') )
+                                .prependTo( $('#filters-area') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
                                         $(this).val()
