@@ -90,7 +90,7 @@
 
                     <p class="text-dull text-left ml-4 my-2 font-12">Company Management</p>
 
-                    <li class="active">
+                    <li>
                         <a href="companies.html">
                             <img src="img/company.svg" alt="company" class="mb-1 mr-3 img-fluid" width="15" /> Company
                         </a>
@@ -108,7 +108,7 @@
                         </a>
                     </li>
 
-                    <li>
+                    <li class="active">
                         <a href="courses.html">
                             <img src="img/courses.svg" alt="courses" class="mb-1 mr-3 img-fluid" width="15" /> Courses
                         </a>
@@ -238,12 +238,11 @@
                                             <span id="filters-area" class="d-flex">
                                                 <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
                                                 <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To Date:">
-                                                
                                             </span>
                                         </div>
 
                                         <div class="col text-right px-0">
-                                            <a href="c_create_quiz.html" class="btn btn-green py-1">Add Quiz</a>
+                                            <a href="create_quiz.html" class="btn btn-green py-1">Add Quiz</a>
                                         </div>
                                     </div>   
                                 </div>
@@ -261,73 +260,20 @@
                             </div>
 
 
-                            <div class="card--dashboard p-4">
+                            <div class="card--dashboard mt-5">
                                 <table id="quiz" class="table-responsive-lg leaders dataTables_wrapper table table-striped" style="width:100%">
                                     <thead class="border-top--0">
                                         <tr>
                                             <th class="text-dark text-center">#</th>
                                             <th class="text-dark">Title</th>
                                             <th class="text-dark">No. of Quizes</th>
+                                            <th class="text-dark select-filter">Company</th>
+                                            <th class="text-dark select-filter">Course</th>
                                             <th class="text-dark">Created On</th>
-                                            <th class="text-dark">Action</th>
+                                            <th class="text-dark" style="min-width: 100px">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="text-center"><a href="#" class="text-dim">1</a></td>
-                                            <td><a href="#"  class="link">Project Management</a></td>
-                                            <td><a href="#" class="link">20</a></td>
-                                            <td class="text-center dropleft">
-                                                <button class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline">Edit Detail</button>
-                                                <a class="dropdown-togge" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <img src="img/table_option.svg" alt="options" />
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item font-12 d-lg-none" href="#">Edit</a>
-                                                    <a class="dropdown-item font-12" href="#">View quizzes</a>
-                                                    <a class="dropdown-item font-12" href="#">View scores</a>
-                                                    <a class="dropdown-item font-12" href="#">Delete</a>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-
-                                        <tr>
-                                            <td class="text-center"><a href="#" class="text-dim">1</a></td>
-                                            <td><a href="#"  class="link">Angel Simmmons</a></td>
-                                            <td><a href="#" class="link">50</a></td>
-                                            <td class="text-center dropleft">
-                                                <button class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline">Edit Detail</button>
-                                                <a class="dropdown-togge" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <img src="img/table_option.svg" alt="options" />
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                     <a class="dropdown-item font-12 d-lg-none" href="#">Edit</a>
-                                                    <a class="dropdown-item font-12" href="#">View quizzes</a>
-                                                    <a class="dropdown-item font-12" href="#">View scores</a>
-                                                    <a class="dropdown-item font-12" href="#">Delete</a>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-
-                                        <tr>
-                                            <td class="text-center"><a href="#" class="text-dim">1</a></td>
-                                            <td><a href="#"  class="link">Angel Simmmons</a></td>
-                                            <td><a href="#" class="link">35</a></td>
-                                            <td class="text-center dropleft">
-                                                <button class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline">Edit Detail</button>
-                                                <a class="dropdown-togge" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <img src="img/table_option.svg" alt="options" />
-                                                </a>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                     <a class="dropdown-item font-12 d-lg-none" href="#">Edit</a>
-                                                    <a class="dropdown-item font-12" href="#">View quizzes</a>
-                                                    <a class="dropdown-item font-12" href="#">View scores</a>
-                                                    <a class="dropdown-item font-12" href="#">Delete</a>
-                                                </div>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -383,16 +329,18 @@
                         { data: 'id' },
                         { data: 'first_name' },
                         { data: 'last_name' },
+                        { data: 'first_name' },
+                        { data: 'last_name' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
                           "defaultContent": `
-                                            <a href="c_view_quiz.html" class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline">Edit Detail</a>
+                                            <a href="view_quiz.html" class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline">Edit Detail</a>
                                             <a class="dropdown-togge" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <img src="img/table_option.svg" alt="options" />
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item font-12 d-lg-none" href="c_view_quiz.html">Edit</a>
+                                                <a class="dropdown-item font-12 d-lg-none" href="view_quiz.html">Edit</a>
                                                 <a class="dropdown-item font-12" href="#">Delete</a>
                                             </div>
                                             `
