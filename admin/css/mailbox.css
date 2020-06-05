@@ -1,0 +1,10 @@
+p, h6{
+    font-weight: 300;
+}
+.mails{
+    max-height: 510px;
+    overflow: auto;
+}
+.select2-container{
+	width: 100%!important;
+}
