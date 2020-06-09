@@ -420,7 +420,7 @@ $(document).ready(function () {
                     slidesToShow: 1
                 }
             }]
-            , nextArrow: '<button class="btn right-slide-arrow"><img src="img/right_arrow.svg" class="img-fluid pl-1" alt="slide right"></button>'
+            , nextArrow: '<button class="btn right-slide-arrow"><img src="img/right_arrow.svg" class="img-fluid px-2" alt="slide right"></button>'
             , prevArrow: '<button class="btn left-slide-arrow d-none"><i class="fa fa-angle-left fa-1x"></i></button>'
         });
     }

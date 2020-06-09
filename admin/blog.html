@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/select2.min.css">
         <link href="css/materialdesignicons.min.css" rel="stylesheet">
+        <link href="css/fontawesome.css" rel="stylesheet">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="css/dropzone.min.css">
         <link rel="stylesheet" href="css/stylee.css">
@@ -84,19 +85,24 @@
                 </div>
 
 
-
                 <ul class="list-unstyled components">
                     <p class="text-dark text-left ml-4 mb-2 font-35">Hi Adeyemi Inc. </p>
                     <p class="text-dull text-left ml-4 my-2 font-14 font-weight-light">Hr247@asanta.com</p>
 
-                    <li class="">
+                    <li>
                         <a href="index.html">
                             <img src="img/dashboard.svg" alt="Dashboard" class="mb-1 mr-3 img-fluid" width="15" /> Dashboard
                         </a>
 
                     </li>
 
-                    <p class="text-dull text-left ml-4 my-2 font-12">Staff Management</p>
+                    <p class="text-dull text-left ml-4 my-2 font-12">Company Management</p>
+
+                    <li>
+                        <a href="companies.html">
+                            <img src="img/company.svg" alt="company" class="mb-1 mr-3 img-fluid" width="15" /> Company
+                        </a>
+                    </li>
 
                     <li>
                         <a href="staff.html">
@@ -128,6 +134,12 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="transaction.html">
+                            <img src="img/money-transfer.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Transaction
+                        </a>
+                    </li>
+
                     <p class="text-dull text-left ml-4 my-2 font-12">Communications</p>
 
                     <li>
@@ -142,11 +154,23 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="webinar.html">
+                            <img src="img/webinar.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Webinar
+                        </a>
+                    </li>
+
                     <p class="text-dull text-left ml-4 my-2 font-12">Account Management</p>
 
                     <li>
                         <a href="admin.html">
                             <img src="img/admins.png" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Admins
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="audit.html">
+                            <img src="img/activity.svg" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Audit Trails
                         </a>
                     </li>
 
@@ -191,9 +215,6 @@
                         </li>
                     </div>
                 </ul>
-
-
-
             </nav>
 
 
@@ -323,7 +344,7 @@
                                                         <p class="d-none" id="comment-reply-comment-id"></p>
                                                     </div>
                                                     <div class="ml-auto mt-2">
-                                                        <a href="#" class="hide-comment"><i class="mdi mdi-close"></i></a>
+                                                        <a href="#" class="hide-comment"><i class="fa fa-close"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -429,12 +450,12 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Replys 1  </p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="w-100 text-center mt-1 mb-3">
-                                                        <a href="#" class="btn btn-green loadReply" data-id="r1" id="r1"><i class="mdi mdi-chevron-down mdi-24px"></i></a>
+                                                        <a href="#" class="btn btn-green loadReply" data-id="r1" id="r1"><i class="fa fa-angle-down fa-2px"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -534,7 +555,7 @@
                                                         <p class="d-none" id="comment-reply-comment-id"></p>
                                                     </div>
                                                     <div class="ml-auto mt-2">
-                                                        <a href="#" class="hide-comment"><i class="mdi mdi-close"></i></a>
+                                                        <a href="#" class="hide-comment"><i class="fa fa-close"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -648,7 +669,7 @@
                                                 <div id="actions" class="columns is-multiline no-mb">
                                                     <div class="column is-12">
                                                         <span class="button has-icon is-solid grey-button fileinput-button">
-                                                                <i class="mdi mdi-plus"></i>
+                                                                <i class="fa fa-plus"></i>
                                                             </span>
                                                         <button type="submit" class="button start is-hidden">
                                                             <span>Upload</span>
@@ -678,7 +699,7 @@
                                                         <div class="preview-box">
                                                             <!-- This is used as the file preview template -->
                                                             <!-- <div class="remove-button" data-dz-remove>
-                                                                <i class="mdi mdi-close"></i>
+                                                                <i class="fa fa-close"></i>
                                                             </div> -->
                                                             <div>
                                                                 <span class="preview"><img src="" data-dz-thumbnail alt=""/></span>
@@ -747,11 +768,11 @@
                             <h6 class="modal-course-title"></h6>
                             <h6 class="modal-course-url"></h6>
                             <div class="footer-link mx-auto text-center py-4">
-                                <a class="fb mr-3" href="#"><i class="mdi mdi-36px mdi-facebook"></i></a>
-                                <a class="twit mr-3" href="#"><i class="mdi mdi-36px mdi-twitter"></i></a>
-                                <a class="insta mr-3" href="#"><i class="mdi mdi-36px mdi-instagram"></i></a>
-                                <a class="google mr-3" href="#"><i class="mdi mdi-36px mdi-email"></i></a>
-                                <a class="whatsapp mr-3" href="#"><i class="mdi mdi-36px mdi-whatsapp"></i></a>
+                                <a class="fb mr-3" href="#"><i class="fa fa-facebook"></i></a>
+                                <a class="twit mr-3" href="#"><i class="fa fa-twitter"></i></a>
+                                <a class="insta mr-3" href="#"><i class="fa fa-instagram"></i></a>
+                                <a class="google mr-3" href="#"><i class="fa fa-email"></i></a>
+                                <a class="whatsapp mr-3" href="#"><i class="fa fa-whatsapp"></i></a>
                             </div>
                         </div>
                     </div>
@@ -843,7 +864,6 @@
         <script src="js/dropzone.js"></script>
         <script src="js/utility.js"></script>
         <script src="js/modal-uploader.js"></script>
-        <script src="js/intlTelInput.js"></script>
         <script src="js/select2.min.js"></script>
         <script src="js/jquery.redirect.js"></script>
 

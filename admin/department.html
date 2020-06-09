@@ -81,14 +81,20 @@
                     <p class="text-dark text-left ml-4 mb-2 font-35">Hi Adeyemi Inc. </p>
                     <p class="text-dull text-left ml-4 my-2 font-14 font-weight-light">Hr247@asanta.com</p>
 
-                    <li class="">
+                    <li>
                         <a href="index.html">
                             <img src="img/dashboard.svg" alt="Dashboard" class="mb-1 mr-3 img-fluid" width="15" /> Dashboard
                         </a>
 
                     </li>
 
-                    <p class="text-dull text-left ml-4 my-2 font-12">Staff Management</p>
+                    <p class="text-dull text-left ml-4 my-2 font-12">Company Management</p>
+
+                    <li>
+                        <a href="companies.html">
+                            <img src="img/company.svg" alt="company" class="mb-1 mr-3 img-fluid" width="15" /> Company
+                        </a>
+                    </li>
 
                     <li>
                         <a href="staff.html">
@@ -120,6 +126,12 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="transaction.html">
+                            <img src="img/money-transfer.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Transaction
+                        </a>
+                    </li>
+
                     <p class="text-dull text-left ml-4 my-2 font-12">Communications</p>
 
                     <li>
@@ -134,11 +146,23 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="webinar.html">
+                            <img src="img/webinar.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Webinar
+                        </a>
+                    </li>
+
                     <p class="text-dull text-left ml-4 my-2 font-12">Account Management</p>
 
                     <li>
                         <a href="admin.html">
                             <img src="img/admins.png" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Admins
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="audit.html">
+                            <img src="img/activity.svg" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Audit Trails
                         </a>
                     </li>
 
@@ -183,9 +207,6 @@
                         </li>
                     </div>
                 </ul>
-
-
-
             </nav>
 
             <div class="dasboard-top-wrapper">
@@ -209,7 +230,7 @@
                         <div class="col-md-12">
 
                             <div class="row">
-                                <div class="col-lg-2 my-2">
+                                <div class="col-lg-3 my-2">
                                     <p class="text-green text-uppercase mb-0">Department</p>
                                 </div>
 
@@ -217,26 +238,17 @@
                                     <input type="text" id="searchbox" placeholder="Search Department" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                 </div>
 
-                                <!-- <div class="col-lg-2 my-2">
-                                    <select class="custom-select custom-select-sm font-13 form-border-default" style="background-color: #fff0;">
-                                        <option disabled selected>FILTER</option>
-                                        <option>Filter</option>
-                                    </select>
-                                </div> -->
-
-                                <div class="col-lg-5 my-2 d-md-flex d-block align-items-center">
+                                <div class="col-lg-7 my-2 d-md-flex d-block align-items-center">
                                     <span class="mr-1">Sort: </span>
                                     <span id="filters-area" class="d-flex">
                                         <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
                                         <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To Date:">
                                     </span>
                                 </div>
+                            </div>
 
-                                
-
-                                <div class="col-lg-3 my-2 text-right dropleft">
-                                    <button class="btn btn-green py-1 font-13" type="button" data-toggle="modal" data-target="#dept-modal">Add New Department</button>
-                                </div>
+                            <div class="text-right mt-3">
+                                <button class="btn btn-green py-1 font-13" type="button" data-toggle="modal" data-target="#dept-modal">Add New Department</button>
                             </div>
 
                             <div class="card--dashboard">
@@ -255,7 +267,7 @@
                                     <thead class="border-top--0">
                                         <tr>
                                             <th class="text-dark text-center">#</th>
-                                            <th class="text-dark">Name</th>
+                                            <th class="text-dark">Department</th>
                                             <th class="text-dark select-filter">Company</th>
                                             <th class="text-dark select-filter">Staff</th>
                                             <th class="text-dark">Date Created</th>
@@ -287,9 +299,7 @@
                     </div>
                 </div>
             </div>
-
-
-
+            
             <!-- Department Modal -->
             <div class="modal fade" id="dept-modal" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -301,17 +311,13 @@
                         <div class="modal-body">
                             <form>
                                 <div class="form-row">
-                                    <div class="form-group col-lg-9">
-                                        <input id="departmentModalInput" type="text" placeholder="Enter a department name" class="form-control"> </div>
-                                    <div class="form-group col-lg-3">
-                                        <button id="departmentSubmit" class="btn btn-success btn-modal btn-block" type="button">Add</button>
+                                    <div class="form-group col-lg-12">
+                                        <input id="departmentModalInput" type="text" placeholder="Enter a department name" class="form-control"> 
                                     </div>
                                 </div>
-                                <div class="form-row" id="departmentModalItems"></div>
-                                <p class="modal-paragraph font-10 text-blue mt-3">You can create a minimum of 10 role at a time by entering a name and adding it.</p>
                                 <div class="row mt-5">
                                     <div class="col-lg-3 ml-auto mx-0">
-                                        <button type="button" class="btn btn-success btn-block">Submit</button>
+                                        <button type="button" class="btn btn-success font-14 btn-block">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -333,12 +339,13 @@
                             <form>
                                 <div class="form-row">
                                     <div class="form-group col-lg-12">
-                                        <input id="" type="text" placeholder="" class="form-control"> </div>
+                                        <input id="" type="text" placeholder="" class="form-control font-14" value="Department"> 
+                                    </div>
                                 </div>
 
-                                <div class="row mt-5">
+                                <div class="row">
                                     <div class="col-lg-3 ml-auto mx-0">
-                                        <button type="button" class="btn btn-success btn-block">Submit</button>
+                                        <button type="button" class="btn btn-success font-14 btn-block">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -432,9 +439,9 @@
                     ajax: 'https://reqres.in/api/users',
                     columns: [
                         { data: 'id' },
-                        { data: 'first_name' },
                         { data: 'last_name' },
-                        { data: 'email' },
+                        { data: 'last_name' },
+                        { data: 'id', render: function (dataField) { return '1'+dataField; } },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,

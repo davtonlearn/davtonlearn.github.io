@@ -82,7 +82,7 @@
                     <p class="text-dark text-left ml-4 mb-2 font-35">Hi Adeyemi Inc. </p>
                     <p class="text-dull text-left ml-4 my-2 font-14 font-weight-light">Hr247@asanta.com</p>
 
-                    <li class="">
+                    <li>
                         <a href="index.html">
                             <img src="img/dashboard.svg" alt="Dashboard" class="mb-1 mr-3 img-fluid" width="15" /> Dashboard
                         </a>
@@ -127,6 +127,12 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="transaction.html">
+                            <img src="img/money-transfer.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Transaction
+                        </a>
+                    </li>
+
                     <p class="text-dull text-left ml-4 my-2 font-12">Communications</p>
 
                     <li>
@@ -141,11 +147,23 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="webinar.html">
+                            <img src="img/webinar.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Webinar
+                        </a>
+                    </li>
+
                     <p class="text-dull text-left ml-4 my-2 font-12">Account Management</p>
 
                     <li>
                         <a href="admin.html">
                             <img src="img/admins.png" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Admins
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="audit.html">
+                            <img src="img/activity.svg" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Audit Trails
                         </a>
                     </li>
 
@@ -190,9 +208,6 @@
                         </li>
                     </div>
                 </ul>
-
-
-
             </nav>
 
             <div class="dasboard-top-wrapper">
@@ -212,10 +227,10 @@
                     </nav>
 
 
-                    <div class="row mx-md-2 my-5">
+                    <div class="row mx-md-2 my-4">
                         <div class="col-md-12">
                             <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
-                                <div class="col-lg-1 px-0">
+                                <div class="col-lg-2 px-0">
                                     <span class="text-green text-uppercase">Companies</span>
                                 </div>
 
@@ -223,17 +238,12 @@
                                     <input type="text" id="searchbox" placeholder="Search Companies" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                 </div>
 
-                                <div class="col-lg-7 px-lg-0 my-2 d-md-flex d-block align-items-center">
+                                <div class="col-lg-8 px-lg-0 my-2 d-md-flex d-block align-items-center">
                                     <span class="mr-1">Sort: </span>
                                     <span id="filters-area" class="d-block d-md-flex">
                                         <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
                                         <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To Date:">
                                     </span>
-                                    </tr>
-                                </div>
-
-                                <div class="col-lg-2 text-md-right my-2 text-center px-0">
-                                    <button class="btn btn-green py-1 font-13" type="button" data-toggle="modal" data-target="#dept-modal">Add New Company</button>
                                 </div>
                             </div>
 
@@ -242,18 +252,19 @@
                                     <img src="img/sad.png" class="img-fluid mt-5" />
                                     <p class="mb-0 mt-3 font-weight-light font-13">You currently have no department at the moments.</p>
                                     <p class="mb-0 font-weight-light font-13">Click “Add New Company to create new departments.</p>
-
-                                    <button type="button" class="btn btn-green my-4" data-toggle="modal" data-target="#dept-modal">Add New Company</button>
                                 </div>
                             </div>
 
+                            <div class="text-right">
+                                <button type="button" class="btn btn-green mt-3 mb-0 font-13" data-toggle="modal" data-target="#dept-modal">Add New Company</button>
+                            </div>
 
                             <div class="card--dashboard mt-5 p-3">
                                 <table id="leaders" class="table-responsive-lg leaders dataTables_wrapper table table-striped" style="width:100%">
                                     <thead class="border-top--0">
                                         <tr>
                                             <th class="text-dark text-center">#</th>
-                                            <th class="text-dark">Name</th>
+                                            <th class="text-dark">Company</th>
                                             <th class="text-dark select-filter">Staff</th>
                                             <th class="text-dark">Departments</th>
                                             <th class="text-dark select-filter">Courses</th>
@@ -324,22 +335,34 @@
             <!-- Company Modal End -->
 
             <!-- Edit Company Modal -->
-            <div class="modal fade" id="edit-department" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
+            <div class="modal fade" id="edit-company" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Edit Company</h6>
+                            <h6 class="modal-title text-center mx-auto">Company Detail</h6>
                             <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal"/></span> </button>
                         </div>
                         <div class="modal-body">
                             <form>
-                                <div class="form-row">
-                                    <div class="form-group col-lg-12">
-                                        <input id="" type="text" placeholder="" class="form-control"> </div>
+                                
+                                <div class="form-group col-lg-12">
+                                    <label class="font-12">Company Name</label>
+                                    <input id="departmentModalInput" type="text" placeholder="Company Name" class="form-control view font-12" value="Company Name"> 
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label class="font-12">Company Email</label>
+                                    <input id="departmentModalInput" type="text" placeholder="Company Email" class="form-control view font-12" value="Company Email"> 
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label class="font-12">Contact No</label>
+                                    <input id="departmentModalInput" type="text" placeholder="Contact No" class="form-control view font-12" value="Contact No"> 
                                 </div>
 
                                 <div class="row mt-5">
-                                    <div class="col-lg-3 ml-auto mx-0">
+                                    <div class="col-lg-3 ml-auto mx-0" id="edit">
+                                        <button type="button" class="btn btn-success btn-block">Edit</button>
+                                    </div>
+                                    <div class="col-lg-3 ml-auto mx-0" id="submit" style="display: none;">
                                         <button type="button" class="btn btn-success btn-block">Submit</button>
                                     </div>
                                 </div>
@@ -406,6 +429,21 @@
         <script src="js/utility.js"></script>
         <script>
             $(document).ready( function () {
+                $(".view").attr('disabled','disabled');
+                $('#edit').on('click', function () {
+                   $("input").removeAttr('disabled');
+                   $('#edit').hide();
+                   $('#submit').show();
+                } );
+                $('#edit-company').on('hidden.bs.modal', function (event) {
+                   $(".view").attr('disabled','disabled');
+                   $('#edit').show();
+                   $('#submit').hide();
+                });
+            });
+        </script>
+        <script>
+            $(document).ready( function () {
                 var table = $('#leaders').DataTable({
                     initComplete: function () {
                         this.api().columns('.select-filter').every( function () {
@@ -433,25 +471,26 @@
                     ajax: 'https://reqres.in/api/users',
                     columns: [
                         { data: 'id' },
-                        { data: 'first_name' },
                         { data: 'last_name' },
-                        { data: 'email' },
-                        { data: 'first_name' },
+                        { data: 'id', render: function (dataField) { return dataField+'0'; } },
+                        { data: 'id', render: function (dataField) { return dataField+'5'; } },
+                        { data: 'id', render: function (dataField) { return dataField+'2'; } },
                         { data: 'last_name' },
-                        { data: 'email' },
+                        { data: 'first_name' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
                           "defaultContent": `
-                                            <button class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline" data-toggle="modal" data-target="#edit-department">Edit Detail</button>
+                                            <button class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline" data-toggle="modal" data-target="#edit-company">View Detail</button>
                                             <a class="dropdown-togge" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <img src="img/table_option.svg" alt="options" />
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item font-12 d-lg-none" href="#" data-toggle="modal" data-target="#edit-department">Edit</a>
+                                                <a class="dropdown-item font-12 d-lg-none" href="#" data-toggle="modal" data-target="#edit-company">View</a>
                                                 <a class="dropdown-item font-12" href="c_reports.html">Company Report</a>
+                                                <a class="dropdown-item font-12" href="c_leaderboard.html">Leaderboard</a>
                                                 <a class="dropdown-item font-12" href="c_staff.html">Staff</a>
-                                                <a class="dropdown-item font-12" href="c_departments.html">Departments</a>
+                                                <a class="dropdown-item font-12" href="c_department.html">Departments</a>
                                                 <a class="dropdown-item font-12" href="c_courses.html">Courses</a>
                                                 <a class="dropdown-item font-12" href="#">Disable</a>
                                                 <a class="dropdown-item font-12" href="#">Delete</a>

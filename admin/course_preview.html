@@ -15,12 +15,12 @@
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="css/style.css">
 
-        <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+        <link href="https://unpkg.com/video.js%407.8.1/dist/video-js.min.css" rel="stylesheet" />
 
         <!-- Font Awesome JS -->
         <script defer src="js/solid.js"></script>
         <script defer src="js/fontawesome.js"></script>
-        <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="css/select2.min.css">
         <link rel="stylesheet" href="css/custom.css">
     </head>
 
@@ -108,7 +108,7 @@
                         </a>
                     </li>
 
-                    <li>
+                    <li class="active">
                         <a href="courses.html">
                             <img src="img/courses.svg" alt="courses" class="mb-1 mr-3 img-fluid" width="15" /> Courses
                         </a>
@@ -120,7 +120,7 @@
                         </a>
                     </li>
 
-                    <li class="active">
+                    <li>
                         <a href="quizes.html">
                             <img src="img/department_sidebar.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Quizzes
                         </a>
@@ -212,90 +212,157 @@
             <div class="dasboard-top-wrapper">
 
             </div>
-
             <!-- Page Content  -->
             <div id="content">
+                <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light d-none display border">
+                    <div class="container-fluid">
+                        <button id="sidebarCollapse" class="btn bg-trans d-inline-block d-lg-none ml-auto" type="button">
+                            <i alt="menu" class="fas fa-align-justify text-consolidated"></i>
+                        </button>
+                    </div>
+                </nav>
 
-                <div class="position-relative">
-
-                    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light d-none display border">
-                        <div class="container-fluid">
-                            <button id="sidebarCollapse" class="btn bg-trans d-inline-block d-lg-none ml-auto" type="button">
-                                <i alt="menu" class="fas fa-align-justify text-consolidated"></i>
-                            </button>
-                        </div>
-                    </nav>
-
-
-                    <div class="row mx-md-2 my-5">
-                        <div class="col-md-12">
-                            
-                            <div class="d-flex">
-                                <div class="col px-0">
-                                    <p class="text-grey text-uppercase font-13"><a href="courses.html"><img src="img/back_button.png" alt="go back to create course" /> Back</a></p>
-                                </div> 
+                <div class="row mx-md-2 my-5">
+                    <div class="col-md-12">
+                        <div class="d-flex">
+                            <div class="col px-0">
+                                <p class="text-dark text-uppercase font-13"><a href="staff_course.html"><img src="img/back_button.svg" alt="go back" class="img-fluid" /> Back</a></p>
                             </div>
+                        </div>
 
+                        <div class="card--dashboard">
+                            <div class="d-flex border-bottom">
+                                <div class="col">
+                                    <h6 class="text-green my-2 font-weight-light">Business Management </h6>
+                                </div>
+                            </div>
                             <div class="row">
-                                <div class="col-sm-12">
-                                   <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
+                                <div class="col-md-4 border-right pr-0">
+                                    <div class="px-3 text-enter border-bottom">
+                                        <p class="my-2 font-13">Selected Course Topics </p>
+                                    </div>
 
-                                        <div class="col px-0">
-                                            <span class="text-green text-uppercase">Quizzes</span>
+
+                                    <div class="border-bottom backgrond-muted question_detail">
+                                        <div class="px-3 position-relative">
+                                            <p class="py-2 mb-0 font-13 weight-semi-bold">Project Management Professional (PMP) </p>
                                         </div>
 
-                                        <div class="col-lg-2 my-2">
-                                            <input type="text" id="searchbox" placeholder="Search Course" class="form-control form-control-sm font-13 form-border-default bg-trans" />
+                                        <div class="border-top pt-2 question_info_2">
+                                            <div class="px-3">
+                                                <p class="mb-3 font-13 text-muted">Course Document(s)</p>
+                                            </div>
+                                            <div class="d-flex mb-3">
+                                                <div class="px-3 col-lg-4 text-center">
+                                                    <img src="img/xls.svg" class="img-fluid" />
+                                                    <p class="small my-2 text-center"><a href="#" class="">Download</a></p>
+                                                </div>
+                                                <div class="px-3 col-lg-4 text-center">
+                                                    <img src="img/pdf.svg" class="img-fluid" />
+                                                    <p class="small my-2 text-center"><a href="#" class="">Download</a></p>
+                                                </div>
+                                                <div class="px-3 col-lg-4 text-center">
+                                                    <img src="img/xls.svg" class="img-fluid" />
+                                                    <p class="small my-2 text-center"><a href="#" class="">Download</a></p>
+                                                </div>
+                                            </div>
+                                            <div class="px-3 mb-3">
+                                                <a href="staff_quiz.html" class="btn btn-green btn-sm font-12">Take Quiz</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-bottom backgrond-muted question_detail">
+                                        <div class="px-3 position-relative">
+                                            <p class="py-2 mb-0 font-13 weight-semi-bold">Project Management Professional (PMP) </p>
                                         </div>
 
-                                        <div class="col-lg-6 my-2 d-flex align-items-center ml-auto w-100 px-0">
-                                            <span class="mr-1">Sort: </span>
-                                            <span id="filters-area" class="d-flex">
-                                                <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
-                                                <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To Date:">
-                                            </span>
+                                        <div class="border-top pt-2 question_info_2">
+                                            <div class="px-3">
+                                                <p class="mb-3 font-13 text-muted">Course Document(s)</p>
+                                            </div>
+                                            <div class="d-flex mb-3">
+                                                <div class="px-3 col-lg-4 text-center">
+                                                    <img src="img/xls.svg" class="img-fluid" />
+                                                    <p class="small my-2 text-center"><a href="#" class="">Download</a></p>
+                                                </div>
+                                                <div class="px-3 col-lg-4 text-center">
+                                                    <img src="img/pdf.svg" class="img-fluid" />
+                                                    <p class="small my-2 text-center"><a href="#" class="">Download</a></p>
+                                                </div>
+                                                <div class="px-3 col-lg-4 text-center">
+                                                    <img src="img/xls.svg" class="img-fluid" />
+                                                    <p class="small my-2 text-center"><a href="#" class="">Download</a></p>
+                                                </div>
+                                            </div>
+                                            <div class="px-3 mb-3">
+                                                <a href="staff_quiz.html" class="btn btn-green btn-sm font-12">Take Quiz</a>
+                                            </div>
                                         </div>
-                                    </div>   
+                                    </div>
 
-                                    <div class="text-right my-4">
-                                        <a href="create_quiz.html" class="btn font-13 btn-green py-1">Add Quiz</a>
+
+                                </div>
+
+                                <div class="col-md-8">
+                                    <div class="px-1 mt-3">
+                                        <div>
+                                            <video
+                                                   id="vid1"
+                                                   class="video-js vjs-default-skin"
+                                                   controls
+                                                   autoplay
+                                                   width="640" height="350"
+                                                   data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=xjS6SftYQaQ"}] }'
+                                                   >
+                                            </video>
+
+                                            <h6 class="mt-4 text-dark">Project Management Professional (PMP) </h6>
+
+                                            <p class="text-muted font-13">3,650,368 views • Uploaded Sep 6, 2019</p>
+
+                                            <div class="d-flex flex-column flex-lg-row mt-4">
+                                                <div class="col-lg-2">
+                                                    <img src="img/user.png" class="img-fluid" alt="user name" />
+                                                </div>
+
+                                                <div class="col-lg-10">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-lg-12 mb-0">                                                    <div class="form-group">
+                                                            <input type="text" class="form-control rounded-0 comment_input" id="" placeholder="Add pubilc comment...">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="mb-4 text-right">
+                                                        <button class="btn btn-outline--green font-12 my-2 md-btn-block px-5 text-uppercase ">Cancel</button>
+                                                        <button class="btn btn-green font-12 px-4 text-uppercase ml-lg-3 my-2 md-btn-block">Comment</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <h6 class="mt-4 text-dark">670 Comments</h6>
+                                            <div class="d-flex flex-column flex-lg-row my-4">
+                                                <div class="col-lg-2">
+                                                    <img src="img/user.png" class="img-fluid" alt="user name" />
+                                                </div>
+
+                                                <div class="col-lg-10">
+                                                    <h6 class="text-dark">Bella Henz <span class="font-12">2 hrs Ago</span> </h6>
+                                                    <p class="text-muted font-13">Can’t wait, I’ve been using the visualizer 😂😂❤️🇳🇦</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
-                                
                             </div>
-
-                            <div class="card--dashboard">
-                                <div class="px-4 py-5 mt-5 text-center d-none">
-                                    <img src="img/sad.png" class="img-fluid mt-5" />
-                                    <p class="mb-0 mt-3 font-weight-light font-13">You currently have no Quizzes at the moments.</p>
-                                    <p class="mb-0 font-weight-light font-13">Click “Add Quiz” to create new quiz.</p>
-
-                                    <a href="create_quiz.html" class="btn btn-green my-4">Add Quiz</a>
-                                </div>
-                            </div>
-
-
-                            <div class="card--dashboard mt-4 p-3">
-                                <table id="quiz" class="table-responsive-lg leaders dataTables_wrapper table table-striped" style="width:100%">
-                                    <thead class="border-top--0">
-                                        <tr>
-                                            <th class="text-dark text-center">#</th>
-                                            <th class="text-dark">Course name</th>
-                                            <th class="text-dark">No. of Quizes</th>
-                                            <th class="text-dark select-filter">Company</th>
-                                            <th class="text-dark">Created On</th>
-                                            <th class="text-dark" style="min-width: 100px">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
-                            </div>
-
                         </div>
                     </div>
                 </div>
             </div>
+
+
 
         </div>
 
@@ -306,92 +373,9 @@
         <script src="js/libs/popper.js/1.14.0/umd/popper.min.js" ></script>
         <!-- Bootstrap JS -->
         <script src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="js/dataTables.select.min.js"></script>
-        <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
         <script src="js/utility.js"></script>
-
-        <script>
-            $(document).ready( function () {
-                var table = $('#quiz').DataTable({
-                    initComplete: function () {
-                        this.api().columns('.select-filter').every( function () {
-                            var column = this;
-                            var colTitle = this.header().innerHTML
-                            var select = $('<select class="custom-select custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
-                                .prependTo( $('#filters-area') )
-                                .on( 'change', function () {
-                                    var val = $.fn.dataTable.util.escapeRegex(
-                                        $(this).val()
-                                    );
-             
-                                    column
-                                        .search( val ? '^'+val+'$' : '', true, false )
-                                        .draw();
-                                } );
-             
-                            column.data().unique().sort().each( function ( d, j ) {
-                                select.append( '<option>'+d+'</option>' )
-                            } );
-                        } );
-                    },
-                    // processing: true,
-                    // serverSide: true,
-                    ajax: 'https://reqres.in/api/users',
-                    columns: [
-                        { data: 'id' },
-                        { data: 'first_name' },
-                        { data: 'id', render: function (dataField) { return '1'+dataField; } },
-                        { data: 'first_name' },
-                        { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
-                        {
-                          "data": null,
-                          "defaultContent": `
-                                            <a href="view_quiz.html" class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline">Edit Detail</a>
-                                            <a class="dropdown-togge" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <img src="img/table_option.svg" alt="options" />
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item font-12 d-lg-none" href="view_quiz.html">Edit</a>
-                                                <a class="dropdown-item font-12" href="#">Delete</a>
-                                            </div>
-                                            `
-                        }
-                    ]
-                }); 
-                $('#searchbox').on( 'keyup', function () {
-                   table.search( this.value ).draw();
-                } );
-
-
-
-                $.fn.dataTable.ext.search.push(
-                function (settings, data, dataIndex) {
-                    var min = $('#min').datepicker("getDate");
-                    var max = $('#max').datepicker("getDate");
-                    var startDate = new Date(data[data.length - 2]);
-                    if (min == null && max == null) { return true; }
-                    if (min == null && startDate <= max) { return true;}
-                    if(max == null && startDate >= min) {return true;}
-                    if (startDate <= max && startDate >= min) { return true; }
-                    return false;
-                }
-                );
-
-           
-                $("#min").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
-                $("#max").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
-
-                // Event listener to the two range filtering inputs to redraw on input
-                $('#min, #max').change(function () {
-                    table.draw();
-                });
-
-
-
-            });
-        </script>
+        <script src="https://vjs.zencdn.net/7.5.5/video.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/2.6.0/Youtube.min.js"></script>
 
     </body>
 

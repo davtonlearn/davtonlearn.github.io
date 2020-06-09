@@ -71,18 +71,17 @@
             <!-- Sidebar  -->
             <nav id="sidebar" class="">
                 <div class="sidebar-header">
-                    <button   id="sidebarCollapse-1" class="btn bg-trans d-none">
+                    <button type="button" id="sidebarCollapse-1" class="btn bg-trans d-none">
                         <img src="img/hamburger.svg" />
                     </button>
                 </div>
-
 
 
                 <ul class="list-unstyled components">
                     <p class="text-dark text-left ml-4 mb-2 font-35">Hi Adeyemi Inc. </p>
                     <p class="text-dull text-left ml-4 my-2 font-14 font-weight-light">Hr247@asanta.com</p>
 
-                    <li class="">
+                    <li>
                         <a href="index.html">
                             <img src="img/dashboard.svg" alt="Dashboard" class="mb-1 mr-3 img-fluid" width="15" /> Dashboard
                         </a>
@@ -91,7 +90,7 @@
 
                     <p class="text-dull text-left ml-4 my-2 font-12">Company Management</p>
 
-                    <li class="">
+                    <li>
                         <a href="companies.html">
                             <img src="img/company.svg" alt="company" class="mb-1 mr-3 img-fluid" width="15" /> Company
                         </a>
@@ -127,6 +126,12 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="transaction.html">
+                            <img src="img/money-transfer.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Transaction
+                        </a>
+                    </li>
+
                     <p class="text-dull text-left ml-4 my-2 font-12">Communications</p>
 
                     <li>
@@ -141,11 +146,23 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="webinar.html">
+                            <img src="img/webinar.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Webinar
+                        </a>
+                    </li>
+
                     <p class="text-dull text-left ml-4 my-2 font-12">Account Management</p>
 
                     <li>
                         <a href="admin.html">
                             <img src="img/admins.png" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Admins
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="audit.html">
+                            <img src="img/activity.svg" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Audit Trails
                         </a>
                     </li>
 
@@ -167,7 +184,7 @@
                         </a>
                     </li>
 
-                    <button   class="btn btn-green px-4 position-relative support_button"><img src="img/question.png" class="img-fluid"> Support</button>
+                    <button type="button" class="btn btn-green px-4 position-relative support_button"><img src="img/question.png" class="img-fluid"> Support</button>
 
                     <div class="support-links pt-4 none">
 
@@ -190,7 +207,6 @@
                         </li>
                     </div>
                 </ul>
-
             </nav>
 
 
@@ -234,7 +250,7 @@
                                                         <input type="text" id="searchbox" placeholder="Search Course" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                                     </div>
 
-                                                    <div class="col-lg-7 my-2 d-md-flex d-block align-items-center ml-auto w-100">
+                                                    <div class="col-lg-9 my-2 d-md-flex d-block align-items-center ml-auto w-100 px-0">
                                                         <span class="mr-1">Sort: </span>
                                                         <span id="filters-area" class="d-flex">
                                                             <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
@@ -242,16 +258,11 @@
                                                             
                                                         </span>
                                                     </div>
-
-                                                    <div class="col-lg-2 my-4 text-right dropleft ml-auto">
-                                                        <button class="text-white btn btn-green btn-sm font-13 dropdown-toggle dropleft btn-block"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Add New Course </button>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                            <button onclick="location.href='create_course.html'" class="btn dropdown-item font-12" data-toggle="modal" data-target="#multiple-modal">Add Customized Course</button>
-                                                            <hr class="p-0 m-0">
-                                                            <button onclick="location.href='course_library.html'" class="btn dropdown-item font-12" data-toggle="modal" data-target="#single-modal">Add Course From Library</button>
-                                                        </div>
-                                                    </div>
                                                 </div>   
+                                            </div>
+
+                                            <div class="col-lg-2 my-4 text-right ml-auto">
+                                                <a href="course_library.html" class="text-white btn btn-green btn-sm font-13 btn-block"> Add New Course </a>
                                             </div>
                                             
                                         </div>
@@ -266,20 +277,20 @@
                                         </div>
 
 
-                                        <table id="courses" class="table-responsive-lg leaders dataTables_wrapper table table-striped" style="width:100%">
+                                        <table id="courses" class="table-responsive-lg leaders table-responsive-lg dataTables_wrapper table table-striped" style="width:100%">
                                             <thead class="border-top--0">
                                                 <tr>
                                                     <th class="text-dark text-center">#</th>
                                                     <th class="text-dark">Title</th>
                                                     <th class="text-dark select-filter">Catergory</th>
-                                                    <th class="text-dark select-filter">Owner</th>
+                                                    <th class="text-dark select-filter">Company</th>
+                                                    <th class="text-dark select-filter">Type</th>
                                                     <th class="text-dark select-filter">Ratings</th>
                                                     <th class="text-dark">Created On</th>
                                                     <th class="text-dark" style="min-width:100px;">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-
                                             </tbody>
                                         </table>
 
@@ -289,22 +300,22 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
-                                                    <div class="col-lg-2 my-2">
+                                                    <div class="col-lg-3 my-2">
                                                         <input type="text" id="searchbox-group" placeholder="Search Learning Path" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                                     </div>
 
-                                                    <div class="col-lg-7 my-2 d-md-flex d-block align-items-center ml-auto w-100">
+                                                    <div class="col-lg-7 my-2 d-md-flex d-block align-items-center ml-auto w-100 px-0">
                                                         <span class="mr-1">Sort: </span>
                                                         <span id="filters-group" class="d-flex">
                                                             <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min-group" type="text" placeholder="From Date:">
                                                             <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max-group" type="text" placeholder="To Date:">
                                                         </span>
                                                     </div>
-
-                                                    <div class="col-lg-3 my-4 text-right dropleft ml-auto">
-                                                        <button   class="btn btn-outline--green my-4 font-12" data-toggle="modal" data-target="#path-Modal">+ Create Learning Path</button>
-                                                    </div>
                                                 </div>   
+                                            </div>
+
+                                            <div class="col-lg-3 my-2 text-right dropleft ml-auto">
+                                                <button   class="btn btn-outline--green my-4 font-12" data-toggle="modal" data-target="#path-Modal">+ Create Learning Path</button>
                                             </div>
                                             
                                         </div>
@@ -319,13 +330,13 @@
 
 
 
-                                        <table id="learning_path" class="leaders dataTables_wrapper table table-striped" style="width:100%">
+                                        <table id="learning_path" class="leaders table-responsive-lg dataTables_wrapper table table-striped" style="width:100%">
                                             <thead class="border-top--0">
                                                 <tr>
                                                     <th class="text-dark text-center">#</th>
                                                     <th class="text-dark">Path Title</th>
-                                                    <th class="text-dark group-filter">Level</th>
-                                                    <th class="text-dark group-filter">Stage</th>
+                                                    <th class="text-dark group-filter">Levels</th>
+                                                    <th class="text-dark group-filter">Stages</th>
                                                     <th class="text-dark">Created On</th>
                                                     <th class="text-dark" style="min-width:100px;">ACTION</th>
                                                 </tr>
@@ -344,18 +355,18 @@
                                                         <input type="text" id="searchbox-cat" placeholder="Search Catergory" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                                     </div>
 
-                                                    <div class="col-lg-5 my-2 d-md-flex d-block align-items-center ml-auto w-100">
+                                                    <div class="col-lg-5 my-2 d-md-flex d-block align-items-center ml-auto w-100 px-0">
                                                         <span class="mr-1">Sort: </span>
                                                         <span id="filters-cat" class="d-flex">
                                                             <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min-cat" type="text" placeholder="From Date:">
                                                             <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max-cat" type="text" placeholder="To Date:">
                                                         </span>
                                                     </div>
-
-                                                    <div class="col-lg-3 my-4 text-right dropleft ml-auto">
-                                                        <a class="page-top btn px-3 btn-success dropown-toggle font-13 text-white" href="#" data-toggle="modal" data-target="#category-Modal">Create New Category </a>
-                                                    </div>
                                                 </div>   
+                                            </div>
+
+                                            <div class="col-lg-3 my-4 text-right dropleft ml-auto">
+                                                <a class="page-top btn px-3 btn-success dropown-toggle font-13 text-white" href="#" data-toggle="modal" data-target="#category-Modal">Create New Category </a>
                                             </div>
                                             
                                         </div>
@@ -370,7 +381,7 @@
 
 
 
-                                        <table id="categories" class="leaders dataTables_wrapper table table-striped" style="width:100%">
+                                        <table id="categories" class="leaders table-responsive-lg dataTables_wrapper table table-striped" style="width:100%">
                                             <thead class="border-top--0">
                                                 <tr>
                                                     <th class="text-dark text-center">#</th>
@@ -513,10 +524,13 @@
                         <div class="modal-body">
                             <form>
                                 <div class="form-row">
-                                    <div class="form-group col-lg-9">
-                                        <input id="departmentModalInput" type="text" placeholder="Enter a Catergory name" class="form-control"> </div>
-                                    <div class="form-group col-lg-3">
-                                        <button id="departmentSubmit" class="btn btn-success btn-modal btn-block" type="button">Add</button>
+                                    <div class="form-group col-lg-12">
+                                        <input id="departmentModalInput" type="text" placeholder="Enter a Catergory name" class="form-control"> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3 ml-auto mx-0">
+                                        <button type="button" class="btn font-13 btn-success btn-block">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -531,7 +545,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Create New Catergory(s)</h6>
+                            <h6 class="modal-title text-center mx-auto">Edit Catergory</h6>
                             <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
                         </div>
                         <div class="modal-body">
@@ -542,8 +556,8 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-3 ml-auto mx-0 mt-4">
-                                        <button type="button" class="btn btn-success btn-block">Submit</button>
+                                    <div class="col-lg-3 ml-auto mx-0">
+                                        <button type="button" class="btn font-13 btn-success btn-block">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -640,11 +654,12 @@
                         { data: 'last_name' },
                         { data: 'email' },
                         { data: 'first_name' },
+                        { data: 'id'},
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
                           "defaultContent": `
-                                            <a href="c_edit_course.html" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Edit Detail</a>
+                                            <a href="edit_course.html" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Edit Detail</a>
                                             <a class="dropdown-togge"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <img src="img/table_option.svg" alt="options" />
                                             </a>
@@ -653,7 +668,7 @@
                                                 <a class="dropdown-item font-12" href="topics.html">View Topics</a>
                                                 <a class="dropdown-item font-12" href="quizes.html">View Quizzes</a>
                                                 <a class="dropdown-item font-12" href="assign_staff.html">Assign Staff</a>
-                                                <a class="dropdown-item font-12 d-lg-none" href="edit.html">Edit</a>
+                                                <a class="dropdown-item font-12 d-lg-none" href="edit_course.html">Edit</a>
                                                 <a class="dropdown-item font-12" href="#">Disable </a>
                                                 <a class="dropdown-item font-12" href="#">Delete </a>
                                             </div>
@@ -724,8 +739,8 @@
                     columns: [
                         { data: 'id' },
                         { data: 'first_name' },
-                        { data: 'last_name' },
-                        { data: 'email' },
+                        { data: 'id', render: function (dataField) { return '1'+dataField; } },
+                        { data: 'id', render: function (dataField) { return '2'+dataField; } },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
@@ -735,9 +750,7 @@
                                                 <img src="img/table_option.svg" alt="options" />
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item font-12" href="topic.html">View details</a>
-                                                <a class="dropdown-item font-12" href="categories.html">View Stages</a>
-                                                <a class="dropdown-item font-12" href="#">View Staff</a>
+                                                <a class="dropdown-item font-12" href="topics.html">View details</a>
                                                 <a class="dropdown-item font-12" href="assign_staff.html">Assign Staff</a>
                                                 <a class="dropdown-item font-12 d-lg-none" href="#" data-target="#edit-path-Modal" data-toggle="modal">Edit</a>
                                                 <a class="dropdown-item font-12" href="#">Delete </a>
