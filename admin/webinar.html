@@ -83,7 +83,7 @@
                     <p class="text-dark text-left ml-4 mb-2 font-35">Hi Adeyemi Inc. </p>
                     <p class="text-dull text-left ml-4 my-2 font-14 font-weight-light">Hr247@asanta.com</p>
 
-                    <li class="">
+                    <li>
                         <a href="index.html">
                             <img src="img/dashboard.svg" alt="Dashboard" class="mb-1 mr-3 img-fluid" width="15" /> Dashboard
                         </a>
@@ -92,7 +92,7 @@
 
                     <p class="text-dull text-left ml-4 my-2 font-12">Company Management</p>
 
-                    <li class="active">
+                    <li>
                         <a href="companies.html">
                             <img src="img/company.svg" alt="company" class="mb-1 mr-3 img-fluid" width="15" /> Company
                         </a>
@@ -128,6 +128,12 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="transaction.html">
+                            <img src="img/money-transfer.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Transaction
+                        </a>
+                    </li>
+
                     <p class="text-dull text-left ml-4 my-2 font-12">Communications</p>
 
                     <li>
@@ -142,11 +148,23 @@
                         </a>
                     </li>
 
+                    <li class="active">
+                        <a href="webinar.html">
+                            <img src="img/webinar.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Webinar
+                        </a>
+                    </li>
+
                     <p class="text-dull text-left ml-4 my-2 font-12">Account Management</p>
 
                     <li>
                         <a href="admin.html">
                             <img src="img/admins.png" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Admins
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="audit.html">
+                            <img src="img/activity.svg" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Audit Trails
                         </a>
                     </li>
 
@@ -191,9 +209,6 @@
                         </li>
                     </div>
                 </ul>
-
-
-
             </nav>
 
             <div class="dasboard-top-wrapper">
@@ -216,7 +231,7 @@
                     <div class="row mx-md-2 my-5">
                         <div class="col-md-12">
                             <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
-                                <div class="col-lg-1 px-0">
+                                <div class="col-lg-2 px-0">
                                     <span class="text-green text-uppercase">Webinar</span>
                                 </div>
 
@@ -224,7 +239,7 @@
                                     <input type="text" id="searchbox" placeholder="Search Webinar" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                 </div>
 
-                                <div class="col-lg-7 px-lg-0 my-2 d-md-flex d-block align-items-center">
+                                <div class="col-lg-8 px-lg-0 my-2 d-md-flex d-block align-items-center">
                                     <span class="mr-1">Sort: </span>
                                     <span id="filters-area" class="d-block d-md-flex">
                                         <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
@@ -232,10 +247,10 @@
                                     </span>
                                     </tr>
                                 </div>
+                            </div>
 
-                                <div class="col-lg-2 text-md-right my-2 text-center px-0">
-                                    <button class="btn btn-green py-1 font-13" type="button" data-toggle="modal" data-target="#webinar-modal">Create Webinar</button>
-                                </div>
+                            <div class="text-right my-3">
+                                <button class="btn btn-green py-1 font-13" type="button" data-toggle="modal" data-target="#webinar-modal">Create Webinar</button>
                             </div>
 
                             <div class="card--dashboard">
@@ -249,18 +264,18 @@
                             </div>
 
 
-                            <div class="card--dashboard mt-5 p-3">
+                            <div class="card--dashboard mt-4 p-3">
                                 <table id="leaders" class="table-responsive-lg leaders dataTables_wrapper table table-striped" style="width:100%">
                                     <thead class="border-top--0">
                                         <tr>
                                             <th class="text-dark text-center">#</th>
-                                            <th class="text-dark">Title</th>
-                                            <th class="text-dark select-filter">Comapny</th>
+                                            <th class="text-dark">Webinar</th>
+                                            <th class="text-dark select-filter">Company</th>
                                             <th class="text-dark">Date</th>
                                             <th class="text-dark">Time</th>
                                             <th class="text-dark select-filter">Status</th>
-                                            <th class="text-dark select-filter">Location</th>
-                                            <th class="text-dark select-filter">Particpant</th>
+                                            <th class="text-dark">Link</th>
+                                            <th class="text-dark select-filter">Participant</th>
                                             <th class="text-dark">Date Created</th>
                                             <th class="text-dark" style="min-width: 100px">Action</th>
                                         </tr>
@@ -306,7 +321,7 @@
                                         <input id="departmentModalInput" type="text" placeholder="Webinar Title" class="form-control"> 
                                     </div>
                                     <div class="form-group col-lg-6">
-                                        <input id="departmentModalInput" type="text" placeholder="Webinar Location" class="form-control"> 
+                                        <input id="departmentModalInput" type="text" placeholder="Webinar Link" class="form-control"> 
                                     </div>
                                     <div class="form-group col-lg-6">
                                         <input id="departmentModalInput" type="text" placeholder="Webinar Date" class="form-control"> 
@@ -349,33 +364,39 @@
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Edit Webinar</h6>
+                            <h6 class="modal-title text-center mx-auto">Webinar Detail</h6>
                             <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal"/></span> </button>
                         </div>
                         <div class="modal-body">
                             <form>
                                 <div class="form-row">
                                     <div class="form-group col-lg-6">
-                                        <input id="departmentModalInput" type="text" placeholder="Webinar Title" class="form-control"> 
+                                        <label>Webinar Title</label>
+                                        <input id="departmentModalInput" type="text" placeholder="Webinar Title" class="form-control view"> 
                                     </div>
                                     <div class="form-group col-lg-6">
-                                        <input id="departmentModalInput" type="text" placeholder="Webinar Location" class="form-control"> 
+                                        <label>Webinar Link</label>
+                                        <input id="departmentModalInput" type="text" placeholder="Webinar Link" class="form-control view"> 
                                     </div>
                                     <div class="form-group col-lg-6">
-                                        <input id="departmentModalInput" type="text" placeholder="Webinar Date" class="form-control"> 
+                                        <label>Webinar Date</label>
+                                        <input id="departmentModalInput" type="text" placeholder="Webinar Date" class="form-control view"> 
                                     </div>
                                     <div class="form-group col-lg-6">
-                                        <input id="departmentModalInput" type="text" placeholder="Webinar Time" class="form-control"> 
+                                        <label>Webinar Time</label>
+                                        <input id="departmentModalInput" type="text" placeholder="Webinar Time" class="form-control view"> 
                                     </div>
                                     <div class="form-group col-lg-6">
-                                        <textarea id="departmentModalInput" type="text" placeholder="Description about webinar" class="form-control" rows="8"></textarea>
+                                        <label>Webinar Description</label>
+                                        <textarea id="departmentModalInput" type="text" placeholder="Description about webinar" class="form-control view" rows="8"></textarea>
                                     </div>
                                     <div class="form-group col-lg-6">
+                                        <label>Cover Image</label>
                                         <div class="custom-file-container" data-upload-id="myUploaderUpdate">
 
                                             <label class="custom-file-container__custom-file" >
                                                 <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
-                                                <input type="file" class="custom-file-container__custom-file__custom-file-input" accept="*">
+                                                <input type="file" class="view custom-file-container__custom-file__custom-file-input" accept="*">
                                                 <span class="custom-file-container__custom-file__custom-file-control"></span>
                                             </label>
 
@@ -386,8 +407,11 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-3 ml-auto mx-0">
-                                        <button type="button" class="btn btn-success btn-block">Update Webinar</button>
+                                    <div class="col-lg-3 ml-auto mx-0" id="edit">
+                                        <button type="button" class="btn btn-success btn-block">Edit</button>
+                                    </div>
+                                    <div class="col-lg-3 ml-auto mx-0" id="submit" style="display: none;">
+                                        <button type="button" class="btn btn-success btn-block">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -452,6 +476,23 @@
         <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
         <script src="js/utility.js"></script>
         <script src="js/file-upload-with-preview.min.js"></script>
+
+        <script>
+            $(document).ready( function () {
+                $(".view").attr('disabled','disabled');
+                $('#edit').on('click', function () {
+                   $(".view").removeAttr('disabled');
+                   $('#edit').hide();
+                   $('#submit').show();
+                } );
+                $('#edit-webinar').on('hidden.bs.modal', function (event) {
+                   $(".view").attr('disabled','disabled');
+                   $('#edit').show();
+                   $('#submit').hide();
+                });
+            });
+        </script>
+
         <script>
             var myUpload = new FileUploadWithPreview('myUploader',{
                 text: {
@@ -532,7 +573,7 @@
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         { data: 'id', render: function (dataField) { return dataField+':00 PM'; } },
                         { data: 'last_name' },
-                        { data: 'last_name' },
+                        { data: 'email', render: function (dataField) { return `<a href="#">`+dataField+`</a>`; } },
                         { data: 'id' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {

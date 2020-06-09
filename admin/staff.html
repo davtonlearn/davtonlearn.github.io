@@ -11,7 +11,6 @@
         <link rel="shortcut icon" href="img/favicon.png">
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/select2.min.css">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="css/style.css">
 
@@ -72,16 +71,17 @@
             <!-- Sidebar  -->
             <nav id="sidebar" class="">
                 <div class="sidebar-header">
-                    <button   id="sidebarCollapse-1" class="btn bg-trans d-none"> <img src="img/hamburger.svg" /> </button>
+                    <button type="button" id="sidebarCollapse-1" class="btn bg-trans d-none">
+                        <img src="img/hamburger.svg" />
+                    </button>
                 </div>
-
 
 
                 <ul class="list-unstyled components">
                     <p class="text-dark text-left ml-4 mb-2 font-35">Hi Adeyemi Inc. </p>
                     <p class="text-dull text-left ml-4 my-2 font-14 font-weight-light">Hr247@asanta.com</p>
 
-                    <li class="">
+                    <li>
                         <a href="index.html">
                             <img src="img/dashboard.svg" alt="Dashboard" class="mb-1 mr-3 img-fluid" width="15" /> Dashboard
                         </a>
@@ -126,6 +126,12 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="transaction.html">
+                            <img src="img/money-transfer.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Transaction
+                        </a>
+                    </li>
+
                     <p class="text-dull text-left ml-4 my-2 font-12">Communications</p>
 
                     <li>
@@ -140,11 +146,23 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="webinar.html">
+                            <img src="img/webinar.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Webinar
+                        </a>
+                    </li>
+
                     <p class="text-dull text-left ml-4 my-2 font-12">Account Management</p>
 
                     <li>
                         <a href="admin.html">
                             <img src="img/admins.png" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Admins
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="audit.html">
+                            <img src="img/activity.svg" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Audit Trails
                         </a>
                     </li>
 
@@ -166,7 +184,7 @@
                         </a>
                     </li>
 
-                    <button   class="btn btn-green px-4 position-relative support_button"><img src="img/question.png" class="img-fluid"> Support</button>
+                    <button type="button" class="btn btn-green px-4 position-relative support_button"><img src="img/question.png" class="img-fluid"> Support</button>
 
                     <div class="support-links pt-4 none">
 
@@ -190,6 +208,7 @@
                     </div>
                 </ul>
             </nav>
+
             <!-- Page Content  -->
             <div class="dasboard-top-wrapper"> </div>
             <div id="content">
@@ -217,8 +236,8 @@
                                     <nav>
                                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist"> <a class="nav-dash nav-item nav-link active text-uppercase weight-semi-bold py-3" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Staff</a> <a class="nav-item nav-link text-uppercase weight-semi-bold py-3" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Staff Group</a> </div>
                                     </nav>
-                                    <div class="tab-content my-3 px-4" id="nav-tabContent">
-                                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                    <div class="tab-content my-3" id="nav-tabContent">
+                                        <div class="tab-pane fade px-4 show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                    <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
@@ -226,7 +245,7 @@
                                                             <input type="text" id="searchbox" placeholder="Search Staff" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                                         </div>
 
-                                                        <div class="col-lg-7 my-2 d-md-flex d-block align-items-center ml-auto w-100">
+                                                        <div class="col-lg-8 my-2 d-md-flex d-block align-items-center ml-auto w-100">
                                                             <span class="mr-1">Sort: </span>
                                                             <span id="filters-area" class="d-flex">
                                                                 <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
@@ -234,19 +253,21 @@
                                                                 
                                                             </span>
                                                         </div>
-
-                                                        <div class="col-lg-2 my-4 text-right dropleft ml-auto">
-                                                            <button class="text-white btn btn-green btn-sm font-13 dropdown-toggle dropleft btn-block"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Upload Staff </button>
-                                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                                <button class="btn dropdown-item font-12" data-toggle="modal" data-target="#multiple-modal">Multiple Upload</button>
-                                                                <hr class="p-0 m-0">
-                                                                <button class="btn dropdown-item font-12" data-toggle="modal" data-target="#single-modal">Single Upload</button>
-                                                            </div>
-                                                        </div>
                                                     </div>   
                                                 </div>
-                                                
                                             </div>
+
+                                            <div class="text-right">
+                                                <div class="col-lg-2 my-4 text-right dropleft ml-auto">
+                                                    <button class="text-white btn btn-green btn-sm font-13 dropdown-toggle dropleft btn-block"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Upload Staff </button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <button class="btn dropdown-item font-12" data-toggle="modal" data-target="#multiple-modal">Multiple Upload</button>
+                                                        <hr class="p-0 m-0">
+                                                        <button class="btn dropdown-item font-12" data-toggle="modal" data-target="#single-modal">Single Upload</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                             <div class="px-4 py-5 mt-5 text-center position-relative d-none"> <img src="img/sad.png" class="img-fluid mt-5" />
                                                 <p class="mb-0 mt-3 font-weight-light font-13">You currently have no member of staff at the moment.</p>
                                                 <p class="mb-0 font-weight-light font-13">Click Upload Staff to add new members.</p> <img src="img/Arrow.png" alt="pointer to add staff button" class="position-absolute arrow_position d-none d-lg-block" /> 
@@ -261,7 +282,7 @@
                                                         <th class="text-dark">Last Name</th>
                                                         <th class="text-dark">Email</th>
                                                         <th class="text-dark select-filter">Gender</th>
-                                                        <th class="text-dark select-filter">Company</th>
+                                                        <th class="text-dark select-filter">Comapny</th>
                                                         <th class="text-dark select-filter">Department</th>
                                                         <th class="text-dark">Registered On</th>
                                                         <th class="text-dark" style="min-width: 100px">ACTION</th>
@@ -281,7 +302,7 @@
                                                             <input type="text" id="searchbox-group" placeholder="Search Group" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                                         </div>
 
-                                                        <div class="col-lg-6 my-2 d-md-flex d-block align-items-center ml-auto w-100">
+                                                        <div class="col-lg-7 my-2 d-md-flex d-block align-items-center ml-auto w-100">
                                                             <span class="mr-1">Sort: </span>
                                                             <span id="filters-group" class="d-flex">
                                                                 <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min-group" type="text" placeholder="From Date:">
@@ -289,23 +310,27 @@
                                                             </span>
                                                             </tr>
                                                         </div>
-
-                                                        <div class="col-lg-2 my-4 text-center ml-auto">
-                                                            <button   class="btn btn-outline--green font-13 btn-sm bg-trans btn-block" data-toggle="modal" data-target="#staff_group-modal">+ New Group</button>
-                                                        </div>
                                                     </div>   
                                                 </div>
                                             </div>
+
+                                            <div class="text-right">
+                                                <div class="col-lg-2 my-4 text-center ml-auto">
+                                                    <button   class="btn btn-outline--green font-13 btn-sm bg-trans btn-block" data-toggle="modal" data-target="#staff_group-modal">+ New Group</button>
+                                                </div>
+                                            </div>
+
                                             <div class="px-4 py-5 mt-5 text-center position-relative d-none"> <img src="img/sad.png" class="img-fluid mt-5" />
                                                 <p class="mb-0 mt-3 font-weight-light font-13">You currently have no member of Staff Group at the</p>
                                                 <p class="mb-0 font-weight-light font-13">Click “+ New Group” to create new Group.</p> <img src="img/Arrow.png" alt="pointer to add staff button" class="position-absolute arrow_position d-none d-lg-block" /> 
                                             </div>
+
                                             <table id="staff_group" class="table-responsive-lg text-center leaders dataTables_wrapper table table-striped" style="width:100%">
                                                 <thead class="border-top--0">
                                                     <tr>
                                                         <th class="text-dark">#</th>
                                                         <th class="text-dark">Group Name</th>
-                                                        <th class="text-dark group-filter">Staff</th>
+                                                        <th class="text-dark group-filter">No. of Staff</th>
                                                         <th class="text-dark group-filter">Company</th>
                                                         <th class="text-dark">Date Created</th>
                                                         <th class="text-dark" style="min-width: 100px">ACTION</th>
@@ -350,17 +375,13 @@
                         <div class="modal-body">
                             <form>
                                 <div class="form-row">
-                                    <div class="form-group col-lg-9">
-                                        <input id="departmentModalInput" type="text" placeholder="Enter a group name" class="form-control"> </div>
-                                    <div class="form-group col-lg-3">
-                                        <button id="departmentSubmit" class="btn btn-success btn-block"  >Add</button>
+                                    <div class="form-group col-lg-12">
+                                        <input id="departmentModalInput" type="text" placeholder="Enter a group name" class="form-control"> 
                                     </div>
                                 </div>
-                                <div class="form-row" id="departmentModalItems"></div>
-                                <p class="modal-paragraph font-10 text-muted">You can create a  minimum of  10 Group at a time by entering a name and adding it.</p>
                                 <div class="row mt-5">
                                     <div class="col-lg-3 ml-auto mx-0">
-                                        <button   class="btn btn-success btn-block">Submit</button>
+                                        <button class="btn btn-success font-14 btn-block">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -371,7 +392,7 @@
             <!-- Staff group Modal End -->
 
             <!--Edit Staff group Modal -->
-            <div class="modal fade" id="staff_group-modal" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
+            <div class="modal fade" id="edit-staff-group" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -381,17 +402,13 @@
                         <div class="modal-body">
                             <form>
                                 <div class="form-row">
-                                    <div class="form-group col-lg-9">
-                                        <input id="departmentModalInput" type="text" placeholder="Enter a group name" class="form-control"> </div>
-                                    <div class="form-group col-lg-3">
-                                        <button id="departmentSubmit" class="btn btn-success btn-block">Add</button>
+                                    <div class="form-group col-lg-12">
+                                        <input id="departmentModalInput" type="text" placeholder="Enter a group name" class="form-control" value="Group 1"> 
                                     </div>
                                 </div>
-                                <div class="form-row" id="departmentModalItems"></div>
-                                <p class="modal-paragraph font-10 text-muted">You can create a  minimum of  10 Group at a time by entering a name and adding it.</p>
                                 <div class="row mt-5">
                                     <div class="col-lg-3 ml-auto mx-0">
-                                        <button   class="btn btn-success btn-block">Submit</button>
+                                        <button class="btn btn-success font-14 btn-block">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -456,10 +473,10 @@
                             <form>
                                 <div class="form-row">
                                     <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="Surname" >
+                                        <input type="text" class="form-control rounded-0" placeholder="First Name" >
                                     </div>
                                     <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="First Name" >
+                                        <input type="text" class="form-control rounded-0" placeholder="Last Name" >
                                     </div>
                                     <div class="form-group col-lg-4">
                                         <input type="text" class="form-control rounded-0" placeholder="Email" >
@@ -482,27 +499,33 @@
                                     <div class="form-group col-lg-6">
                                         <select type="text" class="custom-select dim">
                                             <option>Staff Level</option>
+                                            <option>Level 1</option>
+                                            <option>Level 2</option>
+                                            <option>Level 3</option>
+                                            <option>Level 4</option>
                                         </select>
                                     </div>
 
                                     <div class="form-group col-lg-6">
                                         <select type="text" class="custom-select dim">
                                             <option>Select Gender</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
                                         </select>
                                     </div>
                                 </div>
 
-                                <div class="custom-file">
+                                <!-- <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="customFile">
                                     <div class="dummy-label">
 
                                     </div>
                                     <label class="custom-file-label" for="customFile">Choose Profile Photo</label>
-                                </div>
+                                </div> -->
 
                                 <div class="row mt-5">
                                     <div class="col-lg-4 ml-auto mx-0">
-                                        <button   class="btn btn-success btn-block">Upload User</button>
+                                        <button class="btn btn-success font-14 btn-block">Upload User</button>
                                     </div>
                                 </div>
                             </form>
@@ -513,64 +536,73 @@
             <!-- single staff upload Modal End -->
 
             <!-- Edit single staff Modal -->
-            <div class="modal fade" id="edit-single-modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+            <div class="modal fade" id="edit-single-staff" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Edit Staff Name</h6>
+                            <h6 class="modal-title text-center mx-auto">Staff Detail</h6>
                             <button   class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal"/></span> </button>
                         </div>
                         <div class="modal-body">
                             <form>
                                 <div class="form-row">
                                     <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="Surname" >
+                                        <input type="text" class="form-control rounded-0 view" placeholder="First Name" >
                                     </div>
                                     <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="First Name" >
+                                        <input type="text" class="form-control rounded-0 view" placeholder="Last Name" >
                                     </div>
                                     <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="Email" >
+                                        <input type="text" class="form-control rounded-0 view" placeholder="Email" >
                                     </div>
                                 </div>
 
                                 <div class="form-row">
                                     <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="Staff ID" >
+                                        <input type="text" class="form-control rounded-0 view" placeholder="Staff ID" >
                                     </div>
                                     <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="Staff Tel No." >
+                                        <input type="text" class="form-control rounded-0 view" placeholder="Staff Tel No." >
                                     </div>
                                     <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="Department" >
+                                        <input type="text" class="form-control rounded-0 view" placeholder="Department" >
                                     </div>
                                 </div>
 
                                 <div class="form-row">
                                     <div class="form-group col-lg-6">
-                                        <select type="text" class="custom-select dim">
+                                        <select type="text" class="custom-select dim view">
                                             <option>Staff Level</option>
+                                            <option>Level 1</option>
+                                            <option>Level 2</option>
+                                            <option>Level 3</option>
+                                            <option>Level 4</option>
                                         </select>
                                     </div>
 
                                     <div class="form-group col-lg-6">
-                                        <select type="text" class="custom-select dim">
+                                        <select type="text" class="custom-select dim view">
                                             <option>Select Gender</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
                                         </select>
                                     </div>
                                 </div>
 
-                                <div class="custom-file">
+                                <!-- <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="customFile">
                                     <div class="dummy-label">
 
                                     </div>
                                     <label class="custom-file-label" for="customFile">Choose Profile Photo</label>
-                                </div>
+                                </div> -->
 
                                 <div class="row mt-5">
-                                    <div class="col-lg-4 ml-auto mx-0">
-                                        <button   class="btn btn-success btn-block">Upload User</button>
+                                    <div class="col-lg-3 ml-auto mx-0" id="edit">
+                                        <button type="button" class="btn btn-success font-14 btn-block">Edit</button>
+                                    </div>
+                                    <div class="col-lg-4 ml-auto mx-0" id="submit" style="display: none;">
+                                        <button class="btn btn-success font-14 btn-block">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -640,6 +672,7 @@
             </div>
             <!-- Assign Course to Staff Modal End -->
 
+
             <!--Notification Modal-->
             <div  aria-hidden="true" class="onboarding-modal modal fade animated" id="notifications" role="dialog" tabindex="-1">
                 <div class="modal-dialog modal-right" role="document">
@@ -690,8 +723,24 @@
         <script type="text/javascript" src="js/dataTables.select.min.js"></script>
         <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
         <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
-        <script src="js/select2.min.js"></script>
         <script src="js/utility.js"></script>
+
+        <script>
+            $(document).ready( function () {
+                $(".view").attr('disabled','disabled');
+                $('#edit').on('click', function () {
+                   $("input").removeAttr('disabled');
+                   $('#edit').hide();
+                   $('#submit').show();
+                } );
+                $('#edit-single-staff').on('hidden.bs.modal', function (event) {
+                   $(".view").attr('disabled','disabled');
+                   $('#edit').show();
+                   $('#submit').hide();
+                });
+            });
+        </script>
+
         <script>
             $(document).ready( function () {
                 var table = $('#staff').DataTable({
@@ -726,19 +775,19 @@
                         { data: 'email' },
                         { data: 'first_name' },
                         { data: 'last_name' },
-                        { data: 'email' },
+                        { data: 'last_name' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
                           "defaultContent": `
-                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline" data-toggle="modal" data-target="#edit-staff-group">Edit Detail</a>
+                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline" data-toggle="modal" data-target="#edit-staff-group">View Detail</a>
                                             <a class="dropdown-togge"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="img/table_option.svg" alt="options" /> </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item font-12" href="report_detail_staff.html">View report</a>
+                                                <a class="dropdown-item font-12" href="staff_report.html">View report</a>
                                                 <a class="dropdown-item font-12" href="staff_course.html">View Courses</a>
                                                 <a class="dropdown-item font-12" href="#" data-toggle="modal" data-target="#add_staff_to_company">Add to Company</a>
                                                 <a class="dropdown-item font-12" href="#" data-toggle="modal" data-target="#assign_course_to_staff">Assign Course</a>
-                                                <a class="dropdown-item font-12 d-lg-none" href="#" data-toggle="modal" data-target="#edit-staff-group">Edit Detail</a>
+                                                <a class="dropdown-item font-12 d-lg-none" href="#" data-toggle="modal" data-target="#edit-staff-group">View Detail</a>
                                                 <a class="dropdown-item font-12" href="#">Disable </a>
                                                 <a class="dropdown-item font-12" href="#">Delete </a>
                                             </div>
@@ -807,9 +856,9 @@
                     ajax: 'https://reqres.in/api/users',
                     columns: [
                         { data: 'id' },
-                        { data: 'first_name' },
                         { data: 'last_name' },
-                        { data: 'email' },
+                        { data: 'id', render: function (dataField) { return '1'+dataField; } },
+                        { data: 'last_name' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
@@ -817,7 +866,7 @@
                                             <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline" data-toggle="modal" data-target="#edit-staff-group">Edit Detail</a>
                                             <a class="dropdown-togge"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="img/table_option.svg" alt="options" /> </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item font-12" href="report_detail_staff.html">View report</a>
+                                                <a class="dropdown-item font-12" href="repert_detail.html">View report</a>
                                                 <a class="dropdown-item font-12 d-lg-none" href="#" data-toggle="modal" data-target="#edit-staff-group">Edit Detail</a>
                                                 <a class="dropdown-item font-12" href="#">Disable </a>
                                                 <a class="dropdown-item font-12" href="#">Delete </a>

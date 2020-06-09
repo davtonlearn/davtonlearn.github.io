@@ -9,19 +9,17 @@
         <meta name="author" content="">
         <title>Welcome to DavtonLearn</title>
         <link rel="shortcut icon" href="img/favicon.png">
+
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="css/style.css">
 
-        <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
-
         <!-- Font Awesome JS -->
         <script defer src="js/solid.js"></script>
         <script defer src="js/fontawesome.js"></script>
-        <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="css/select2.min.css">
         <link rel="stylesheet" href="css/custom.css">
-
     </head>
 
     <body class="dashboard-body">
@@ -31,14 +29,14 @@
             <div class="container-fluid dashboard_nav py-0">
                 <nav class="navbar navbar-expand-lg navbar-dark">
                     <a class="navbar-brand py-0" href="#"><img src="img/logo.svg" class="mt-2" alt="Davton logo" width="" /></a>
-                    <button class="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="nav navbar-nav ml-auto">
 
                             <li class="nav-item px-md-1">
-                                <a class="nav-link text-dark" href="message.html" data-target="#acc_details">
+                                <a class="nav-link text-dark" href="message.html">
                                     <img src="img/mail.svg" alt="Messages" class="mt-1">
                                 </a>
                             </li>
@@ -127,7 +125,7 @@
                         </a>
                     </li>
 
-                    <li class="active">
+                    <li>
                         <a href="transaction.html">
                             <img src="img/money-transfer.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Transaction
                         </a>
@@ -155,7 +153,7 @@
 
                     <p class="text-dull text-left ml-4 my-2 font-12">Account Management</p>
 
-                    <li>
+                    <li class="active">
                         <a href="admin.html">
                             <img src="img/admins.png" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Admins
                         </a>
@@ -163,7 +161,7 @@
 
                     <li>
                         <a href="audit.html">
-                            <img src="img/admins.png" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Audit Trails
+                            <img src="img/activity.svg" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Audit Trails
                         </a>
                     </li>
 
@@ -209,95 +207,144 @@
                     </div>
                 </ul>
             </nav>
-            <!-- Page Content  -->
-            <div class="dasboard-top-wrapper"> </div>
-            <div id="content">
 
-                <div class="position-relative">
+            <div class="dasboard-top-wrapper">
 
-
-                    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light d-none display border">
-                        <div class="container-fluid">
-                            <button id="sidebarCollapse" class="btn bg-trans d-inline-block d-lg-none ml-auto"  > <i alt="menu" class="fas fa-align-justify text-consolidated"></i> </button>
-                        </div>
-                    </nav>
-                    <div class="row mx-md-2 my-5">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-lg-3 my-2">
-                                    <span class="text-green text-uppercase mb-0">Transactions</span>
-                                </div>
-
-                                <div class="col-lg-2 my-2">
-                                    <input type="text" id="searchbox" placeholder="Search user" class="form-control form-control-sm font-13 form-border-default bg-trans" />
-                                </div>
-
-                                <div class="col-lg-7 my-2 d-md-flex d-block align-items-center">
-                                    <span class="mr-1">Sort: </span>
-                                    <span id="filters-area" class="d-flex">
-                                        <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From">
-                                        <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To:">                                        
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="card--dashboard">
-                                <section id="tabs" class="project-tab">
-                                    <div class="tab-content my-3" id="nav-tabContent">
-                                        <div class="tab-pane fade show active px-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-
-                                            <div class="px-4 py-5 mt-5 text-center position-relative d-none"> <img src="img/sad.png" class="img-fluid mt-5" />
-                                                <p class="mb-0 mt-3 font-weight-light font-13">You currently have no member of staff at the moment.</p>
-                                                <p class="mb-0 font-weight-light font-13">Click Upload Trainer to add new members.</p> <img src="img/Arrow.png" alt="pointer to add staff button" class="position-absolute arrow_position d-none d-lg-block" /> 
-                                            </div>
-
-                                            <table id="table_id" class="table-responsive-sm leaders dataTables_wrapper table table-striped" style="width:100%">
-                                                <thead class="border-top--0">
-                                                    <tr>
-                                                        <th class="text-dark text-center">#</th>
-                                                        <th class="text-dark select-filter">User</th>
-                                                        <th class="text-dark">Amount Paid</th>
-                                                        <th class="text-dark">Start Date</th>
-                                                        <th class="text-dark">End Date</th>
-                                                        <th class="text-dark select-filter">Payment Plan</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                </tbody>
-                                            </table>
-
-                                            <!-- <nav aria-label="..." class="px-5">
-                                                <ul class="pagination">
-                                                    <li class="page-item disabled">
-                                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item active">
-                                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">Next</a>
-                                                    </li>
-                                                </ul>
-                                            </nav> -->
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
 
-            <div aria-hidden="true" class="onboarding-modal modal fade animated" id="acc_details" role="dialog" tabindex="-1">
-                <div class="modal-dialog modal-right" role="document">
-                    <div class="modal-content text-center">
-                        <button aria-label="Close" class="close text-right pr-2" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                        <div class="onboarding-content with-radient px-3">
-                            <ul class="list-unstyled">
-                                <li class="font-weight-bold text-left text-green my-2"><a href="#">Sign Out</a></li>
-                            </ul>
+            <!-- Page Content  -->
+            <div id="content">
+
+                <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light d-none display border">
+                    <div class="container-fluid">
+                        <button id="sidebarCollapse" class="btn bg-trans d-inline-block d-lg-none ml-auto" type="button">
+                            <i alt="menu" class="fas fa-align-justify text-consolidated"></i>
+                        </button>
+                    </div>
+                </nav>
+
+
+                <div class="row mx-md-2 my-5">
+                    <div class="col-md-12">
+                        <div class="d-flex">
+                            <div class="col px-0">
+                                <p class="text-grey text-uppercase"><a href="admin.html" class="font-13"><img src="img/back_button.svg" alt="back button" class="img-fluid" /> Back</a></p>
+                            </div> 
+                        </div>
+
+                        <div class="card--dashboard">
+                            <div class="d-flex border-bottom">
+                                <div class="col px-4">
+                                    <h5 class="text-grey my-2 weight-semi-bold">Admin Profile</h5>                                
+                                </div>
+                            </div>
+
+                            <div class="row mt-3 px-4">
+                                <div class="col-lg-10 mt-3 mb-5">
+                                    <form class="">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-5 mr-md-4">
+                                                <label for="company_name" class="text-grey small">Admin Name</label>
+
+                                                <input type="text" class="form-control mb-2" disabled id="company_name" name="company_name" placeholder="Company Name">
+                                                <label for="company_name" class="text-dim small weight-semi-bold text-italics">For your security, you cannot change your first name until you contact us on contact@davtonlms.com or 0700 113 911 966</label>
+                                            </div>
+
+                                            <div class="form-group col-md-5">
+                                                <label for="email" class="text-grey small">Email</label>
+                                                <input type="text" class="form-control mb-2" disabled id="email" name="email" placeholder="Email">
+
+                                                <label for="email" class="text-dim small weight-semi-bold text-italics">For your security, you cannot change your first name until you contact us on contact@davtonlms.com or 0700 113 911 966</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-5 mr-md-4">
+                                                <label for="mobile_no" class="text-grey small">Phone Number</label>
+                                                <input type="text" class="form-control mb-2" id="mobile_no" name="mobile_no" placeholder="Mobile Number">
+                                            </div>
+
+                                            <div class="form-group col-md-5">
+                                                <label class="control-label small">State</label>
+                                                <select
+                                                  onchange="toggleLGA(this);"
+                                                  name="state"
+                                                  id="state"
+                                                  class="form-control custom-select font-12"
+                                                  style="height: 39px"
+                                                >
+                                                  <option value="" selected="selected">- Select -</option>
+                                                  <option value="Abia">Abia</option>
+                                                  <option value="Adamawa">Adamawa</option>
+                                                  <option value="AkwaIbom">AkwaIbom</option>
+                                                  <option value="Anambra">Anambra</option>
+                                                  <option value="Bauchi">Bauchi</option>
+                                                  <option value="Bayelsa">Bayelsa</option>
+                                                  <option value="Benue">Benue</option>
+                                                  <option value="Borno">Borno</option>
+                                                  <option value="Cross River">Cross River</option>
+                                                  <option value="Delta">Delta</option>
+                                                  <option value="Ebonyi">Ebonyi</option>
+                                                  <option value="Edo">Edo</option>
+                                                  <option value="Ekiti">Ekiti</option>
+                                                  <option value="Enugu">Enugu</option>
+                                                  <option value="FCT">FCT</option>
+                                                  <option value="Gombe">Gombe</option>
+                                                  <option value="Imo">Imo</option>
+                                                  <option value="Jigawa">Jigawa</option>
+                                                  <option value="Kaduna">Kaduna</option>
+                                                  <option value="Kano">Kano</option>
+                                                  <option value="Katsina">Katsina</option>
+                                                  <option value="Kebbi">Kebbi</option>
+                                                  <option value="Kogi">Kogi</option>
+                                                  <option value="Kwara">Kwara</option>
+                                                  <option value="Lagos">Lagos</option>
+                                                  <option value="Nasarawa">Nasarawa</option>
+                                                  <option value="Niger">Niger</option>
+                                                  <option value="Ogun">Ogun</option>
+                                                  <option value="Ondo">Ondo</option>
+                                                  <option value="Osun">Osun</option>
+                                                  <option value="Oyo">Oyo</option>
+                                                  <option value="Plateau">Plateau</option>
+                                                  <option value="Rivers">Rivers</option>
+                                                  <option value="Sokoto">Sokoto</option>
+                                                  <option value="Taraba">Taraba</option>
+                                                  <option value="Yobe">Yobe</option>
+                                                  <option value="Zamfara">Zamafara</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-5 mr-md-4">
+                                                <label class="control-label small">LGA</label>
+                                                <select
+                                                  name="lga"
+                                                  id="lga"
+                                                  class="form-control custom-select select-lga font-12"
+                                                  required
+                                                  style="height: 39px"
+                                                >
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group col-md-5">
+                                                <label for="address" class="text-grey small">Address</label>
+                                                <input type="text" class="form-control mb-2" id="address" name="address" placeholder="Address">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row mt-3">
+                                            <div class="col-md-7 text-center text-md-left">
+                                                <button class="btn btn-green py-1 px-4 my-2 md-btn-block">Update Profile</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -344,86 +391,17 @@
             </div>
 
         </div>
+
+
         <!-- jQuery CDN - Slim version (=without AJAX) -->
-        <script src="js/jquery.min.js"></script>
-        <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+        <script src="js/jquery.slim.js"></script>
         <!-- Popper.JS -->
         <script src="js/libs/popper.js/1.14.0/umd/popper.min.js"></script>
         <!-- Bootstrap JS -->
         <script src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="js/dataTables.select.min.js"></script>
-        <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+        <script src="js/select2.min.js"></script>
+        <script src="js/lga.js"></script>
         <script src="js/utility.js"></script>
-        <script>
-            $(document).ready( function () {
-                var table = $('#table_id').DataTable({
-                    initComplete: function () {
-                        this.api().columns('.select-filter').every( function () {
-                            var column = this;
-                            var colTitle = this.header().innerHTML
-                            var select = $('<select class="custom-select custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
-                                .prependTo( $('#filters-area') )
-                                .on( 'change', function () {
-                                    var val = $.fn.dataTable.util.escapeRegex(
-                                        $(this).val()
-                                    );
-             
-                                    column
-                                        .search( val ? '^'+val+'$' : '', true, false )
-                                        .draw();
-                                } );
-             
-                            column.data().unique().sort().each( function ( d, j ) {
-                                select.append( '<option>'+d+'</option>' )
-                            } );
-                        } );
-                    },
-                    // processing: true,
-                    // serverSide: true,
-                    ajax: 'https://reqres.in/api/users',
-                    columns: [
-                        { data: 'id' },
-                        { data: 'first_name' },
-                        { data: 'last_name' },
-                        { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
-                        { data: 'email' },
-                        { data: 'email' }
-                    ]
-                }); 
-                $('#searchbox').on( 'keyup', function () {
-                   table.search( this.value ).draw();
-                } );
-
-
-
-            $.fn.dataTable.ext.search.push(
-            function (settings, data, dataIndex) {
-                var min = $('#min').datepicker("getDate");
-                var max = $('#max').datepicker("getDate");
-                var startDate = new Date(data[3]);
-                if (min == null && max == null) { return true; }
-                if (min == null && startDate <= max) { return true;}
-                if(max == null && startDate >= min) {return true;}
-                if (startDate <= max && startDate >= min) { return true; }
-                return false;
-            }
-            );
-
-       
-            $("#min").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
-            $("#max").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
-
-            // Event listener to the two range filtering inputs to redraw on input
-            $('#min, #max').change(function () {
-                table.draw();
-            });
-
-
-
-            });
-        </script>
 
     </body>
 

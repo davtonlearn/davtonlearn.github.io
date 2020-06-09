@@ -71,18 +71,17 @@
             <!-- Sidebar  -->
             <nav id="sidebar" class="">
                 <div class="sidebar-header">
-                    <button   id="sidebarCollapse-1" class="btn bg-trans d-none">
+                    <button type="button" id="sidebarCollapse-1" class="btn bg-trans d-none">
                         <img src="img/hamburger.svg" />
                     </button>
                 </div>
-
 
 
                 <ul class="list-unstyled components">
                     <p class="text-dark text-left ml-4 mb-2 font-35">Hi Adeyemi Inc. </p>
                     <p class="text-dull text-left ml-4 my-2 font-14 font-weight-light">Hr247@asanta.com</p>
 
-                    <li class="">
+                    <li>
                         <a href="index.html">
                             <img src="img/dashboard.svg" alt="Dashboard" class="mb-1 mr-3 img-fluid" width="15" /> Dashboard
                         </a>
@@ -127,6 +126,12 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="transaction.html">
+                            <img src="img/money-transfer.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Transaction
+                        </a>
+                    </li>
+
                     <p class="text-dull text-left ml-4 my-2 font-12">Communications</p>
 
                     <li>
@@ -141,11 +146,23 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="webinar.html">
+                            <img src="img/webinar.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Webinar
+                        </a>
+                    </li>
+
                     <p class="text-dull text-left ml-4 my-2 font-12">Account Management</p>
 
                     <li>
                         <a href="admin.html">
                             <img src="img/admins.png" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Admins
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="audit.html">
+                            <img src="img/activity.svg" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Audit Trails
                         </a>
                     </li>
 
@@ -167,7 +184,7 @@
                         </a>
                     </li>
 
-                    <button   class="btn btn-green px-4 position-relative support_button"><img src="img/question.png" class="img-fluid"> Support</button>
+                    <button type="button" class="btn btn-green px-4 position-relative support_button"><img src="img/question.png" class="img-fluid"> Support</button>
 
                     <div class="support-links pt-4 none">
 
@@ -190,9 +207,7 @@
                         </li>
                     </div>
                 </ul>
-
             </nav>
-
 
             <div class="dasboard-top-wrapper">
 
@@ -247,18 +262,15 @@
                                                             
                                                         </span>
                                                     </div>
-
-                                                    <div class="col-lg-2 my-4 text-right dropleft ml-auto">
-                                                        <button class="text-white btn btn-green btn-sm font-13 dropdown-toggle dropleft btn-block"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Add New Course </button>
-                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                            <button onclick="location.href='create_course.html'" class="btn dropdown-item font-12" data-toggle="modal" data-target="#multiple-modal">Add Customized Course</button>
-                                                            <hr class="p-0 m-0">
-                                                            <button onclick="location.href='course_library.html'" class="btn dropdown-item font-12" data-toggle="modal" data-target="#single-modal">Add Course From Library</button>
-                                                        </div>
-                                                    </div>
                                                 </div>   
+                                            </div>                                            
+                                        </div>
+
+
+                                        <div class="row text-right my-4">
+                                            <div class="col-lg-2 ml-auto">
+                                                <a href="course_library.html" class="text-left text-white btn btn-green btn-sm font-13btn-block"> Add New Course </a>
                                             </div>
-                                            
                                         </div>
 
                                         <div class="px-4 py-5 mt-5 text-center d-none">
@@ -275,9 +287,9 @@
                                             <thead class="border-top--0">
                                                 <tr>
                                                     <th class="text-dark text-center">#</th>
-                                                    <th class="text-dark">Title</th>
+                                                    <th class="text-dark">Course</th>
                                                     <th class="text-dark select-filter">Catergory</th>
-                                                    <th class="text-dark select-filter">Owner</th>
+                                                    <th class="text-dark select-filter">Type</th>
                                                     <th class="text-dark">Created On</th>
                                                     <th class="text-dark" style="min-width: 100px">ACTION</th>
                                                 </tr>

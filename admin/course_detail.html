@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+    
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,19 +10,19 @@
         <meta name="author" content="">
         <title>Welcome to DavtonLearn</title>
         <link rel="shortcut icon" href="img/favicon.png">
+
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="css/style.css">
-
-        <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet"  href="css/dataTables.bootstrap4.min.css" >
+        <link rel="stylesheet"  href="css/select.dataTables.min.css" >
 
         <!-- Font Awesome JS -->
         <script defer src="js/solid.js"></script>
         <script defer src="js/fontawesome.js"></script>
-        <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="css/select2.min.css">
         <link rel="stylesheet" href="css/custom.css">
-
     </head>
 
     <body class="dashboard-body">
@@ -31,14 +32,14 @@
             <div class="container-fluid dashboard_nav py-0">
                 <nav class="navbar navbar-expand-lg navbar-dark">
                     <a class="navbar-brand py-0" href="#"><img src="img/logo.svg" class="mt-2" alt="Davton logo" width="" /></a>
-                    <button class="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="nav navbar-nav ml-auto">
 
                             <li class="nav-item px-md-1">
-                                <a class="nav-link text-dark" href="message.html" data-target="#acc_details">
+                                <a class="nav-link text-dark" href="message.html">
                                     <img src="img/mail.svg" alt="Messages" class="mt-1">
                                 </a>
                             </li>
@@ -109,7 +110,7 @@
                         </a>
                     </li>
 
-                    <li>
+                    <li class="active">
                         <a href="courses.html">
                             <img src="img/courses.svg" alt="courses" class="mb-1 mr-3 img-fluid" width="15" /> Courses
                         </a>
@@ -127,7 +128,7 @@
                         </a>
                     </li>
 
-                    <li class="active">
+                    <li>
                         <a href="transaction.html">
                             <img src="img/money-transfer.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Transaction
                         </a>
@@ -163,7 +164,7 @@
 
                     <li>
                         <a href="audit.html">
-                            <img src="img/admins.png" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Audit Trails
+                            <img src="img/activity.svg" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Audit Trails
                         </a>
                     </li>
 
@@ -209,99 +210,97 @@
                     </div>
                 </ul>
             </nav>
+
+            <div class="dasboard-top-wrapper">
+
+            </div>
+
             <!-- Page Content  -->
-            <div class="dasboard-top-wrapper"> </div>
             <div id="content">
 
-                <div class="position-relative">
+                <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light d-none display border">
+                    <div class="container-fluid">
+                        <button id="sidebarCollapse" class="btn bg-trans d-inline-block d-lg-none ml-auto" type="button">
+                            <i alt="menu" class="fas fa-align-justify text-consolidated"></i>
+                        </button>
+                    </div>
+                </nav>
 
-
-                    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light d-none display border">
-                        <div class="container-fluid">
-                            <button id="sidebarCollapse" class="btn bg-trans d-inline-block d-lg-none ml-auto"  > <i alt="menu" class="fas fa-align-justify text-consolidated"></i> </button>
+                <div class="row mx-md-2 my-5">
+                    <div class="col-md-12">
+                        <div class="d-flex">
+                            <div class="col px-0 my-3">
+                                <a href="course_library.html" class="text-grey" class="font-13"><img src="img/back_button.svg" alt="go back" class="img-fluid" /> Back</a>     </div>
                         </div>
-                    </nav>
-                    <div class="row mx-md-2 my-5">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-lg-3 my-2">
-                                    <span class="text-green text-uppercase mb-0">Transactions</span>
-                                </div>
 
-                                <div class="col-lg-2 my-2">
-                                    <input type="text" id="searchbox" placeholder="Search user" class="form-control form-control-sm font-13 form-border-default bg-trans" />
-                                </div>
-
-                                <div class="col-lg-7 my-2 d-md-flex d-block align-items-center">
-                                    <span class="mr-1">Sort: </span>
-                                    <span id="filters-area" class="d-flex">
-                                        <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From">
-                                        <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To:">                                        
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="card--dashboard">
-                                <section id="tabs" class="project-tab">
-                                    <div class="tab-content my-3" id="nav-tabContent">
-                                        <div class="tab-pane fade show active px-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-
-                                            <div class="px-4 py-5 mt-5 text-center position-relative d-none"> <img src="img/sad.png" class="img-fluid mt-5" />
-                                                <p class="mb-0 mt-3 font-weight-light font-13">You currently have no member of staff at the moment.</p>
-                                                <p class="mb-0 font-weight-light font-13">Click Upload Trainer to add new members.</p> <img src="img/Arrow.png" alt="pointer to add staff button" class="position-absolute arrow_position d-none d-lg-block" /> 
+                        <div class="card--dashboard">
+                            <div>
+                                <div style="background: rgba(196, 196, 196, 0.14);">
+                                    <div class="row">
+                                        <div class="col-lg-9">
+                                            <div class="p-4">
+                                                <h5>Project Management Professional (PMP) </h5>
+                                                <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                <div class="mb-2">
+                                                    <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                    <img src="img/star.png"  alt="rating" class="img-fluid mx-2"/>
+                                                    <span class="text-muted small">(12048 views)</span>
+                                                </div>
+                                                <p class="font-12">Understand your audience, envision a creative solution, and test your prototype by Cooper Professional Education | By Cooper Professional Education</p>
                                             </div>
-
-                                            <table id="table_id" class="table-responsive-sm leaders dataTables_wrapper table table-striped" style="width:100%">
-                                                <thead class="border-top--0">
-                                                    <tr>
-                                                        <th class="text-dark text-center">#</th>
-                                                        <th class="text-dark select-filter">User</th>
-                                                        <th class="text-dark">Amount Paid</th>
-                                                        <th class="text-dark">Start Date</th>
-                                                        <th class="text-dark">End Date</th>
-                                                        <th class="text-dark select-filter">Payment Plan</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                </tbody>
-                                            </table>
-
-                                            <!-- <nav aria-label="..." class="px-5">
-                                                <ul class="pagination">
-                                                    <li class="page-item disabled">
-                                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item active">
-                                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">Next</a>
-                                                    </li>
-                                                </ul>
-                                            </nav> -->
                                         </div>
                                     </div>
-                                </section>
+                                </div>
+
+                                <div class="px-4">
+
+                                    <div class="row">
+                                        <div class="col-lg-3 position-absolute d-none d-md-block" style="right: 30px; top: 15vh">
+
+                                            <div class="course_detail_right">
+
+                                                <div class="course_detail_img" style="background-image: url(img/course_placeholder.jpg);">
+                                                </div>
+
+                                                <div class="px-4 my-4">
+                                                    <div class="mb-3">
+                                                        <button class="btn btn-green font-12 px-4 btn-block" type="button">Add This Course</button>
+                                                    </div>
+                                                    <div class="mb-2">
+                                                        <button class="btn btn-outline--green font-12 px-3 btn-block" type="button">Watch Preview</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-lg-9">
+                                            <h6 class="mt-3">Description </h6>
+
+                                            <p class="font-14">Project management is an exciting place to be. Project managers help shape the success of organizations, implement new technology, change the business landscape, and have influence over all areas of a business. Project managers also earn a nice income and often move up the organizational chain into full-time management positions.</p>
+
+                                            <p class="font-14">In this course we’ll examine the absolute basics of project management. Everyone has to start somewhere, right? In this fundamental course we will explore the big picture of project management and the project management life cycle. You’ll finish this course with a great grasp of what project management is, what your roles and responsibilities as a project manager will be, and how to move forward in your career as a project manager.</p>
+
+                                            <p class="font-14">In this course we’ll examine the absolute basics of project management. Everyone has to start somewhere, right? In this fundamental course we will explore the big picture of project management and the project management life cycle. You’ll finish this course with a great grasp of what project management is, what your roles and responsibilities as a project manager will be, and how to move forward in your career as a project manager.</p>
+
+                                            <div class="mb-3 d-lg-none">
+                                                <button class="btn btn-green font-12 px-4 btn-block" type="button">Request This Course</button>
+                                            </div>
+                                            <div class="mb-2 d-lg-none">
+                                                <button class="btn btn-outline--green font-12 px-3 btn-block" type="button">Watch Preview</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
 
-
-            <div aria-hidden="true" class="onboarding-modal modal fade animated" id="acc_details" role="dialog" tabindex="-1">
-                <div class="modal-dialog modal-right" role="document">
-                    <div class="modal-content text-center">
-                        <button aria-label="Close" class="close text-right pr-2" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
-                        <div class="onboarding-content with-radient px-3">
-                            <ul class="list-unstyled">
-                                <li class="font-weight-bold text-left text-green my-2"><a href="#">Sign Out</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
             <!--Notification Modal-->
@@ -344,87 +343,19 @@
             </div>
 
         </div>
+
+
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script src="js/jquery.min.js"></script>
-        <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
         <!-- Popper.JS -->
-        <script src="js/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script src="js/libs/popper.js/1.14.0/umd/popper.min.js" ></script>
         <!-- Bootstrap JS -->
         <script src="js/bootstrap.min.js"></script>
+
         <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="js/dataTables.select.min.js"></script>
         <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
         <script src="js/utility.js"></script>
-        <script>
-            $(document).ready( function () {
-                var table = $('#table_id').DataTable({
-                    initComplete: function () {
-                        this.api().columns('.select-filter').every( function () {
-                            var column = this;
-                            var colTitle = this.header().innerHTML
-                            var select = $('<select class="custom-select custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
-                                .prependTo( $('#filters-area') )
-                                .on( 'change', function () {
-                                    var val = $.fn.dataTable.util.escapeRegex(
-                                        $(this).val()
-                                    );
-             
-                                    column
-                                        .search( val ? '^'+val+'$' : '', true, false )
-                                        .draw();
-                                } );
-             
-                            column.data().unique().sort().each( function ( d, j ) {
-                                select.append( '<option>'+d+'</option>' )
-                            } );
-                        } );
-                    },
-                    // processing: true,
-                    // serverSide: true,
-                    ajax: 'https://reqres.in/api/users',
-                    columns: [
-                        { data: 'id' },
-                        { data: 'first_name' },
-                        { data: 'last_name' },
-                        { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
-                        { data: 'email' },
-                        { data: 'email' }
-                    ]
-                }); 
-                $('#searchbox').on( 'keyup', function () {
-                   table.search( this.value ).draw();
-                } );
-
-
-
-            $.fn.dataTable.ext.search.push(
-            function (settings, data, dataIndex) {
-                var min = $('#min').datepicker("getDate");
-                var max = $('#max').datepicker("getDate");
-                var startDate = new Date(data[3]);
-                if (min == null && max == null) { return true; }
-                if (min == null && startDate <= max) { return true;}
-                if(max == null && startDate >= min) {return true;}
-                if (startDate <= max && startDate >= min) { return true; }
-                return false;
-            }
-            );
-
-       
-            $("#min").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
-            $("#max").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
-
-            // Event listener to the two range filtering inputs to redraw on input
-            $('#min, #max').change(function () {
-                table.draw();
-            });
-
-
-
-            });
-        </script>
-
     </body>
 
 </html>

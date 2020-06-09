@@ -19,7 +19,6 @@
         <link rel="stylesheet" href="css/style.css">
         <link href="css/fontawesome.css" rel="stylesheet">
         <link href="css/concept.css" rel="stylesheet">
-        <link href="css/admin2.css" rel="stylesheet">
         <link rel="stylesheet" href="css/mailbox.css">
         <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
 
@@ -85,19 +84,24 @@
                 </div>
 
 
-
                 <ul class="list-unstyled components">
                     <p class="text-dark text-left ml-4 mb-2 font-35">Hi Adeyemi Inc. </p>
                     <p class="text-dull text-left ml-4 my-2 font-14 font-weight-light">Hr247@asanta.com</p>
 
-                    <li class="">
+                    <li>
                         <a href="index.html">
                             <img src="img/dashboard.svg" alt="Dashboard" class="mb-1 mr-3 img-fluid" width="15" /> Dashboard
                         </a>
 
                     </li>
 
-                    <p class="text-dull text-left ml-4 my-2 font-12">Staff Management</p>
+                    <p class="text-dull text-left ml-4 my-2 font-12">Company Management</p>
+
+                    <li>
+                        <a href="companies.html">
+                            <img src="img/company.svg" alt="company" class="mb-1 mr-3 img-fluid" width="15" /> Company
+                        </a>
+                    </li>
 
                     <li>
                         <a href="staff.html">
@@ -129,17 +133,29 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="transaction.html">
+                            <img src="img/money-transfer.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Transaction
+                        </a>
+                    </li>
+
                     <p class="text-dull text-left ml-4 my-2 font-12">Communications</p>
 
-                    <li>
+                    <li class="active">
                         <a href="message.html">
                             <img src="img/communication.svg" alt="Message" class="mb-1 mr-3 img-fluid" width="15" /> Message
                         </a>
                     </li>
 
-                    <li class="active">
+                    <li>
                         <a href="blog.html">
                             <img src="img/blog.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Blog
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="webinar.html">
+                            <img src="img/webinar.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Webinar
                         </a>
                     </li>
 
@@ -148,6 +164,12 @@
                     <li>
                         <a href="admin.html">
                             <img src="img/admins.png" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Admins
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="audit.html">
+                            <img src="img/activity.svg" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Audit Trails
                         </a>
                     </li>
 
@@ -192,9 +214,6 @@
                         </li>
                     </div>
                 </ul>
-
-
-
             </nav>
 
             <!-- Page Content  -->
@@ -217,7 +236,7 @@
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="mailbox-options d-flex align-items-center">
-                                    <button class="btn btn-primary m-r-xxs" data-toggle="modal" data-target="#compose">Compose</button>
+                                    <button class="btn btn-green m-r-xxs" data-toggle="modal" data-target="#compose">Compose</button>
                                     <button class="btn btn-secondary m-r-xxs">Refresh</button>
                                     <button class="btn btn-secondary m-r-xxs">Mark all as read</button>
                                     <p class="mail-count ml-auto">1-50 of 1,957</p>
@@ -232,7 +251,7 @@
                                         <div class="input-group">
                                             <input type="text" class="form-control" placeholder="Search mailbox" aria-label="Example text with button addon" aria-describedby="button-addon1">
                                             <div class="input-group-append">
-                                                <button class="btn btn-primary" type="button" id="button-addon1">Search</button>
+                                                <button class="btn btn-green" type="button" id="button-addon1">Search</button>
                                             </div>
                                         </div>
                                     </form>
@@ -384,7 +403,7 @@
                                     <div class="mail-container border-bottom-2 mb-5">
                                         <div class="mail-info">
                                             <div class="mail-author">
-                                                <img src="images/avatars/avatar3.png" alt="">
+                                                <img src="images/tobi.jpg" alt="">
                                                 <div class="mail-author-info">
                                                     <span class="mail-author-name">Kenny Highland</span>
                                                     <span class="mail-author-address">kenny.high@gmail.com</span>
@@ -403,7 +422,7 @@
                                         
                                         <div class="mail-info">
                                             <div class="mail-author">
-                                                <img src="images/avatars/avatar3.png" alt="">
+                                                <img src="images/tobi.jpg" alt="">
                                                 <div class="mail-author-info">
                                                     <span class="mail-author-name">Kenny Highland</span>
                                                     <span class="mail-author-address">kenny.high@gmail.com</span>
@@ -422,7 +441,7 @@
                                         
                                         <div class="mail-info">
                                             <div class="mail-author">
-                                                <img src="images/avatars/avatar3.png" alt="">
+                                                <img src="images/tobi.jpg" alt="">
                                                 <div class="mail-author-info">
                                                     <span class="mail-author-name">Kenny Highland</span>
                                                     <span class="mail-author-address">kenny.high@gmail.com</span>
@@ -456,7 +475,7 @@
                                     <span class="chat-title">Recent</span>
                                     <a href="javascript:void(0);" class="right-sidebar-toggle chat-item unread" data-sidebar-id="chat-right-sidebar">
                                         <div class="user-avatar">
-                                            <img src="images/avatars/avatar1.png" alt="">
+                                            <img src="images/tobi.jpg" alt="">
                                         </div>
                                         <div class="chat-info">
                                             <span class="chat-author">David</span>
@@ -466,7 +485,7 @@
                                     </a>
                                     <a href="javascript:void(0);" class="right-sidebar-toggle chat-item unread active-user" data-sidebar-id="chat-right-sidebar">
                                         <div class="user-avatar">
-                                            <img src="images/avatars/avatar2.png" alt="">
+                                            <img src="images/tobi.jpg" alt="">
                                         </div>
                                         <div class="chat-info">
                                             <span class="chat-author">Bob</span>
@@ -479,7 +498,7 @@
                                     <span class="chat-title">Older</span>
                                     <a href="javascript:void(0);" class="right-sidebar-toggle chat-item" data-sidebar-id="chat-right-sidebar">
                                         <div class="user-avatar">
-                                            <img src="images/avatars/avatar3.png" alt="">
+                                            <img src="images/tobi.jpg" alt="">
                                         </div>
                                         <div class="chat-info">
                                             <span class="chat-author">Tom</span>
@@ -489,7 +508,7 @@
                                     </a>
                                     <a href="javascript:void(0);" class="right-sidebar-toggle chat-item active-user" data-sidebar-id="chat-right-sidebar">
                                         <div class="user-avatar">
-                                            <img src="images/avatars/avatar4.png" alt="">
+                                            <img src="images/tobi.jpg" alt="">
                                         </div>
                                         <div class="chat-info">
                                             <span class="chat-author">Anna</span>
@@ -499,7 +518,7 @@
                                     </a>
                                     <a href="javascript:void(0);" class="right-sidebar-toggle chat-item active-user" data-sidebar-id="chat-right-sidebar">
                                         <div class="user-avatar">
-                                            <img src="images/avatars/avatar5.png" alt="">
+                                            <img src="images/tobi.jpg" alt="">
                                         </div>
                                         <div class="chat-info">
                                             <span class="chat-author">Noah</span>
@@ -527,7 +546,7 @@
                                 <div class="chat-start-date">02/06/2017 5:58PM</div>
                                     <div class="chat-bubble them">
                                         <div class="chat-bubble-img-container">
-                                            <img src="images/avatars/avatar1.png" alt="">
+                                            <img src="images/tobi.jpg" alt="">
                                         </div>
                                         <div class="chat-bubble-text-container">
                                             <span class="chat-bubble-text">Hello</span>
@@ -546,7 +565,7 @@
                                     </div>
                                     <div class="chat-bubble them">
                                         <div class="chat-bubble-img-container">
-                                            <img src="images/avatars/avatar1.png" alt="">
+                                            <img src="images/tobi.jpg" alt="">
                                         </div>
                                         <div class="chat-bubble-text-container">
                                             <span class="chat-bubble-text">ipsum dolor sit amet</span>
@@ -590,7 +609,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Send</button>
+                            <button type="submit" class="btn btn-green">Send</button>
                         </div>
                     </form>
                 </div>
@@ -613,7 +632,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Send</button>
+                            <button type="submit" class="btn btn-green">Send</button>
                         </div>
                     </form>
                 </div>
