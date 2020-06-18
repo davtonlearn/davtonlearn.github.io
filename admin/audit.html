@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="css/style.css">
 
         <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
-
+        <link rel="stylesheet" href="css/select2.min.css">
         <!-- Font Awesome JS -->
         <script defer src="js/solid.js"></script>
         <script defer src="js/fontawesome.js"></script>
@@ -233,7 +233,7 @@
                                     <input type="text" id="searchbox" placeholder="Search user" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                 </div>
 
-                                <div class="col-lg-7 my-2 d-md-flex d-block align-items-center">
+                                <div class="col-lg-8 my-2 d-md-flex d-block align-items-center">
                                     <span class="mr-1">Sort: </span>
                                     <span id="filters-area" class="d-flex">
                                         <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
@@ -241,7 +241,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="card--dashboard">
+                            <div class="card--dashboard mt-2">
                                 <section id="tabs" class="project-tab">
                                     <div class="tab-content my-3" id="nav-tabContent">
                                         <div class="tab-pane fade show active px-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
@@ -403,8 +403,16 @@
         <script src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="js/dataTables.select.min.js"></script>
+        <script type="text/javascript" src="js/select2.min.js"></script>
         <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
         <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
         <script src="js/utility.js"></script>
         <script>
             $(document).ready( function () {
@@ -414,7 +422,7 @@
                         this.api().columns('.select-filter').every( function () {
                             var column = this;
                             var colTitle = this.header().innerHTML
-                            var select = $('<select class="custom-select custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
+                            var select = $('<select class="custom-select f custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
                                 .prependTo( $('#filters-area') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
@@ -429,8 +437,38 @@
                             column.data().unique().sort().each( function ( d, j ) {
                                 select.append( '<option>'+d+'</option>' )
                             } );
+                            $('.f').select2();
                         } );
                     },
+                    dom: 'Bfrtip',
+                    buttons: [
+                        {
+                            extend: 'print',
+                            className: 'btn btn-primary btn-sm mr-2',
+                            text: 'Print',
+                            autoPrint: false,
+                            title: 'DavtonLearn Companies',
+                        },
+                        {
+                            extend: 'pdf',
+                            className: 'btn btn-danger btn-sm mr-2',
+                            text: 'PDF',
+                            title: 'DavtonLearn Companies',
+                        },
+                        {
+                            extend: 'excel',
+                            className: 'btn btn-success btn-sm mr-2',
+                            text: 'Excel',
+                            title: 'DavtonLearn Companies',
+                        }, 
+                        {
+                            extend: 'csv',
+                            className: 'btn btn-info btn-sm mr-2',
+                            text: 'CSV',
+                            title: 'DavtonLearn Companies',
+                        },
+                    ],
+
                     // processing: true,
                     // serverSide: true,
                     ajax: 'https://reqres.in/api/users',
