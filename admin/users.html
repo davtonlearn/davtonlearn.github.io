@@ -20,6 +20,7 @@
         <script defer src="js/solid.js"></script>
         <script defer src="js/fontawesome.js"></script>
         <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="css/select2.min.css">
         <link rel="stylesheet" href="css/custom.css">
 
     </head>
@@ -240,25 +241,24 @@
                                     </select>
                                 </div> -->
 
-                                <div class="col-lg-6 my-2 d-md-flex d-block align-items-center">
+                                <div class="col-lg-8 my-2 d-md-flex d-block align-items-center">
                                     <span class="mr-1">Sort: </span>
                                     <span id="filters-area" class="d-flex">
                                         <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
                                         <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To Date:">
                                     </span>
                                 </div>
+                            </div>                                
 
-                                
-
-                                <div class="col-lg-2 my-2 text-right dropleft">
-                                    <button class="text-white btn btn-green btn-sm font-13 dropdown-toggle dropleft btn-block"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Upload User </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <button class="btn dropdown-item font-12" data-toggle="modal" data-target="#multiple-modal">Multiple Upload</button>
-                                        <hr class="p-0 m-0">
-                                        <button class="btn dropdown-item font-12" data-toggle="modal" data-target="#single-modal">Single Upload</button>
-                                    </div>
+                            <div class="col-lg-2 my-2 text-right dropleft ml-auto my-2">
+                                <button class="text-white btn btn-green btn-sm font-13 dropdown-toggle dropleft btn-block"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Upload User </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <button class="btn dropdown-item font-12" data-toggle="modal" data-target="#multiple-modal">Multiple Upload</button>
+                                    <hr class="p-0 m-0">
+                                    <button class="btn dropdown-item font-12" data-toggle="modal" data-target="#single-modal">Single Upload</button>
                                 </div>
                             </div>
+
                             <div class="card--dashboard">
                                 <section id="tabs" class="project-tab">
                                     <div class="tab-content my-3" id="nav-tabContent">
@@ -605,6 +605,7 @@
         <script type="text/javascript" src="js/dataTables.select.min.js"></script>
         <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
         <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+        <script src="js/select2.min.js"></script>
         <script src="js/utility.js"></script>
         <script>
             $(document).ready( function () {
@@ -614,7 +615,7 @@
                         this.api().columns('.select-filter').every( function () {
                             var column = this;
                             var colTitle = this.header().innerHTML
-                            var select = $('<select class="custom-select custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
+                            var select = $('<select class="custom-select f custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
                                 .prependTo( $('#filters-area') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
@@ -629,6 +630,7 @@
                             column.data().unique().sort().each( function ( d, j ) {
                                 select.append( '<option>'+d+'</option>' )
                             } );
+                            $(".f").select2();
                         } );
                     },
                     // processing: true,
