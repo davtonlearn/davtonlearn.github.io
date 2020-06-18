@@ -21,6 +21,7 @@
         <script defer src="js/solid.js"></script>
         <script defer src="js/fontawesome.js"></script>
         <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="css/select2.min.css">
         <link rel="stylesheet" href="css/custom.css">
     </head>
 
@@ -412,6 +413,7 @@
         <script type="text/javascript" src="js/dataTables.select.min.js"></script>
         <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
         <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+        <script src="js/select2.min.js"></script>
         <script src="js/utility.js"></script>
         <script>
             $(document).ready( function () {
@@ -421,7 +423,7 @@
                         this.api().columns('.select-filter').every( function () {
                             var column = this;
                             var colTitle = this.header().innerHTML
-                            var select = $('<select class="custom-select custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
+                            var select = $('<select class="custom-select f custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
                                 .prependTo( $('#filters-area') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
@@ -436,6 +438,7 @@
                             column.data().unique().sort().each( function ( d, j ) {
                                 select.append( '<option>'+d+'</option>' )
                             } );
+                            $(".f").select2();
                         } );
                     },
                     // processing: true,

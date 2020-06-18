@@ -20,6 +20,7 @@
         <script defer src="js/solid.js"></script>
         <script defer src="js/fontawesome.js"></script>
         <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="css/select2.min.css">
         <link rel="stylesheet" href="css/custom.css">
     </head>
 
@@ -282,7 +283,7 @@
                                                         <th class="text-dark">Last Name</th>
                                                         <th class="text-dark">Email</th>
                                                         <th class="text-dark select-filter">Gender</th>
-                                                        <th class="text-dark select-filter">Comapny</th>
+                                                        <th class="text-dark select-filter">Company</th>
                                                         <th class="text-dark select-filter">Department</th>
                                                         <th class="text-dark">Registered On</th>
                                                         <th class="text-dark" style="min-width: 100px">ACTION</th>
@@ -723,6 +724,7 @@
         <script type="text/javascript" src="js/dataTables.select.min.js"></script>
         <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
         <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+        <script src="js/select2.min.js"></script>
         <script src="js/utility.js"></script>
 
         <script>
@@ -748,7 +750,7 @@
                         this.api().columns('.select-filter').every( function () {
                             var column = this;
                             var colTitle = this.header().innerHTML
-                            var select = $('<select class="custom-select custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
+                            var select = $('<select class="custom-select f custom-select-sm font-13 form-border-default" id="'+colTitle+'"><option value="">'+colTitle+'</option></select>')
                                 .prependTo( $('#filters-area') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
@@ -763,8 +765,13 @@
                             column.data().unique().sort().each( function ( d, j ) {
                                 select.append( '<option>'+d+'</option>' )
                             } );
+                            $(".f").select2();
                         } );
                     },
+                    // drawCallback: function(dt) {
+                    //   console.log("draw() callback; initializing Select2's.");
+                    //   $('.f').select2({tags: true, width: "6em"});
+                    // },
                     // processing: true,
                     // serverSide: true,
                     ajax: 'https://reqres.in/api/users',
@@ -834,7 +841,7 @@
                         this.api().columns('.group-filter').every( function () {
                             var column = this;
                             var colTitle = this.header().innerHTML
-                            var select = $('<select class="custom-select custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
+                            var select = $('<select class="custom-select f custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
                                 .prependTo( $('#filters-group') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
@@ -849,6 +856,7 @@
                             column.data().unique().sort().each( function ( d, j ) {
                                 select.append( '<option>'+d+'</option>' )
                             } );
+                            $(".f").select2();
                         } );
                     },
                     // processing: true,

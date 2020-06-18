@@ -40,6 +40,23 @@
 .mil select{
 	min-width: 135px!important;
 }
+#filters-area span span span, #filters-group span span span{
+	height: 30px!important;
+	line-height: 20px;
+    font-size: 13px;
+}
+#filters-area span span span:focus, #filters-group span span span:focus{
+	outline: none;
+}
+#filters-area span span , #filters-group span span {
+	min-width: 80px;
+}
+#filters-area span span b, #filters-group span span b{
+	left: 87%
+}
+.select2-container--open .select2-dropdown--below{
+	min-width: 240px!important;
+}
 .select2-container--default .select2-selection--single .select2-selection__arrow b{
 	/*margin-top: 3px!important;*/
 }
