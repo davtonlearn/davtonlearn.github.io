@@ -241,14 +241,14 @@
                                         <div class="tab-pane fade px-4 show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                   <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
+                                                   <div class="row">
                                                         <div class="col-lg-2 my-2">
                                                             <input type="text" id="searchbox" placeholder="Search Staff" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                                         </div>
 
-                                                        <div class="col-lg-8 my-2 d-md-flex d-block align-items-center ml-auto w-100">
-                                                            <span class="mr-1">Sort: </span>
-                                                            <span id="filters-area" class="d-flex">
+                                                        <div class="col-lg-10 my-2 d-md-flex d-block align-items-center ml-auto">
+                                                            <span class="mr-1 d-none">Sort: </span>
+                                                            <span id="filters-area" class="d-block ml-auto">
                                                                 <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
                                                                 <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To Date:">
                                                                 
@@ -303,9 +303,9 @@
                                                             <input type="text" id="searchbox-group" placeholder="Search Group" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                                         </div>
 
-                                                        <div class="col-lg-7 my-2 d-md-flex d-block align-items-center ml-auto w-100">
-                                                            <span class="mr-1">Sort: </span>
-                                                            <span id="filters-group" class="d-flex">
+                                                        <div class="col-lg-10 my-2 d-md-flex d-block align-items-center ml-auto">
+                                                            <span class="mr-1 d-none">Sort: </span>
+                                                            <span id="filters-group" class="d-block ml-auto">
                                                                 <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min-group" type="text" placeholder="From Date:">
                                                                 <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max-group" type="text" placeholder="To Date:">
                                                             </span>
@@ -738,7 +738,7 @@
             $(document).ready( function () {
                 $(".view").attr('disabled','disabled');
                 $('#edit').on('click', function () {
-                   $("input").removeAttr('disabled');
+                   $(".view").removeAttr('disabled');
                    $('#edit').hide();
                    $('#submit').show();
                 } );
@@ -822,14 +822,14 @@
                         {
                           "data": null,
                           "defaultContent": `
-                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline" data-toggle="modal" data-target="#edit-staff-group">View Detail</a>
+                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline" data-toggle="modal" data-target="#edit-single-staff">View Detail</a>
                                             <a class="dropdown-togge"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="img/table_option.svg" alt="options" /> </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 <a class="dropdown-item font-12" href="staff_report.html">View report</a>
                                                 <a class="dropdown-item font-12" href="staff_course.html">View Courses</a>
                                                 <a class="dropdown-item font-12" href="#" data-toggle="modal" data-target="#add_staff_to_company">Add to Company</a>
                                                 <a class="dropdown-item font-12" href="#" data-toggle="modal" data-target="#assign_course_to_staff">Assign Course</a>
-                                                <a class="dropdown-item font-12 d-lg-none" href="#" data-toggle="modal" data-target="#edit-staff-group">View Detail</a>
+                                                <a class="dropdown-item font-12 d-lg-none" href="#" data-toggle="modal" data-target="#edit-single-staff">View Detail</a>
                                                 <a class="dropdown-item font-12" href="#">Disable </a>
                                                 <a class="dropdown-item font-12" href="#">Delete </a>
                                             </div>

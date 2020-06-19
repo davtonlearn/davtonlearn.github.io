@@ -21,6 +21,7 @@
         <script defer src="js/solid.js"></script>
         <script defer src="js/fontawesome.js"></script>
         <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="css/select2.min.css">
         <link rel="stylesheet" href="css/custom.css">
     </head>
 
@@ -245,14 +246,14 @@
                                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                               <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
+                                               <div class="row">
                                                     <div class="col-lg-2 my-2">
                                                         <input type="text" id="searchbox" placeholder="Search Course" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                                     </div>
 
-                                                    <div class="col-lg-9 my-2 d-md-flex d-block align-items-center ml-auto w-100 px-0">
-                                                        <span class="mr-1">Sort: </span>
-                                                        <span id="filters-area" class="d-flex">
+                                                    <div class="col-lg-10 my-2 d-md-flex d-block align-items-center ml-auto w-100">
+                                                        <span class="mr-2 mt-1 align-self-baseline d-none">Sort: </span>
+                                                        <span id="filters-area" class=" d-block">
                                                             <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
                                                             <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To Date:">
                                                             
@@ -299,16 +300,17 @@
                                     <div class="tab-pane fade" id="nav-path" role="tabpanel" aria-labelledby="nav-path-tab">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                               <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
+                                               <div class="row">
                                                     <div class="col-lg-3 my-2">
                                                         <input type="text" id="searchbox-group" placeholder="Search Learning Path" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                                     </div>
 
-                                                    <div class="col-lg-7 my-2 d-md-flex d-block align-items-center ml-auto w-100 px-0">
-                                                        <span class="mr-1">Sort: </span>
-                                                        <span id="filters-group" class="d-flex">
+                                                    <div class="col-lg-9 my-2 d-md-flex d-block align-items-center ml-auto w-100">
+                                                        <span class="mr-2 mt-1 align-self-baseline d-none">Sort: </span>
+                                                        <span id="filters-group" class="ml-auto d-block">
                                                             <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min-group" type="text" placeholder="From Date:">
                                                             <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max-group" type="text" placeholder="To Date:">
+                                                            
                                                         </span>
                                                     </div>
                                                 </div>   
@@ -356,8 +358,8 @@
                                                     </div>
 
                                                     <div class="col-lg-5 my-2 d-md-flex d-block align-items-center ml-auto w-100 px-0">
-                                                        <span class="mr-1">Sort: </span>
-                                                        <span id="filters-cat" class="d-flex">
+                                                        <span class="mr-1 d-none">Sort: </span>
+                                                        <span id="filters-cat" class="d-flex ml-auto">
                                                             <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min-cat" type="text" placeholder="From Date:">
                                                             <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max-cat" type="text" placeholder="To Date:">
                                                         </span>
@@ -627,6 +629,7 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
+        <script src="js/select2.min.js"></script>
         <script src="js/utility.js"></script>
         <script>
             $(document).ready( function () {
@@ -635,7 +638,7 @@
                         this.api().columns('.select-filter').every( function () {
                             var column = this;
                             var colTitle = this.header().innerHTML
-                            var select = $('<select class="custom-select custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
+                            var select = $('<select class="custom-select f custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
                                 .prependTo( $('#filters-area') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
@@ -650,6 +653,7 @@
                             column.data().unique().sort().each( function ( d, j ) {
                                 select.append( '<option>'+d+'</option>' )
                             } );
+                            $(".f").select2();
                         } );
                     },
                     dom: 'Bfrtip',
@@ -752,7 +756,7 @@
                         this.api().columns('.group-filter').every( function () {
                             var column = this;
                             var colTitle = this.header().innerHTML
-                            var select = $('<select class="custom-select custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
+                            var select = $('<select class="custom-select f custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
                                 .prependTo( $('#filters-group') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
@@ -767,6 +771,7 @@
                             column.data().unique().sort().each( function ( d, j ) {
                                 select.append( '<option>'+d+'</option>' )
                             } );
+                            $(".f").select2();
                         } );
                     },
                     dom: 'Bfrtip',
@@ -863,7 +868,7 @@
                         this.api().columns('.cat-filter').every( function () {
                             var column = this;
                             var colTitle = this.header().innerHTML
-                            var select = $('<select class="custom-select custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
+                            var select = $('<select class="custom-select f custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
                                 .prependTo( $('#filters-cat') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
@@ -878,6 +883,7 @@
                             column.data().unique().sort().each( function ( d, j ) {
                                 select.append( '<option>'+d+'</option>' )
                             } );
+                            $(".f").select2();
                         } );
                     },
                     dom: 'Bfrtip',
