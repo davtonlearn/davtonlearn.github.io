@@ -255,9 +255,9 @@
                                                         <input type="text" id="searchbox" placeholder="Search Course" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                                     </div>
 
-                                                    <div class="col-lg-7 my-2 d-md-flex d-block align-items-center ml-auto w-100">
-                                                        <span class="mr-1">Sort: </span>
-                                                        <span id="filters-area" class="d-flex">
+                                                    <div class="col-lg-8 my-2 d-md-flex d-block align-items-center ml-auto w-100">
+                                                        <span class="mr-2 mt-1 align-self-baseline d-none">Sort: </span>
+                                                        <span id="filters-area" class=" d-block">
                                                             <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
                                                             <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To Date:">
                                                             
@@ -268,8 +268,8 @@
                                         </div>
 
 
-                                        <div class="row text-right my-4">
-                                            <div class="col-lg-2 ml-auto">
+                                        <div class="row text-right my-2">
+                                            <div class="col-lg-3 ml-auto">
                                                 <a href="course_library.html" class="text-left text-white btn btn-green btn-sm font-13btn-block"> Add New Course </a>
                                             </div>
                                         </div>
@@ -289,7 +289,7 @@
                                                 <tr>
                                                     <th class="text-dark text-center">#</th>
                                                     <th class="text-dark">Course</th>
-                                                    <th class="text-dark select-filter">Catergory</th>
+                                                    <th class="text-dark select-filter">Category</th>
                                                     <th class="text-dark select-filter">Type</th>
                                                     <th class="text-dark">Created On</th>
                                                     <th class="text-dark" style="min-width: 100px">ACTION</th>
@@ -305,20 +305,21 @@
                                     <div class="tab-pane fade" id="nav-path" role="tabpanel" aria-labelledby="nav-path-tab">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                               <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
+                                               <div class="row">
                                                     <div class="col-lg-2 my-2">
                                                         <input type="text" id="searchbox-group" placeholder="Search Learning Path" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                                     </div>
 
-                                                    <div class="col-lg-7 my-2 d-md-flex d-block align-items-center ml-auto w-100">
-                                                        <span class="mr-1">Sort: </span>
-                                                        <span id="filters-group" class="d-flex">
+                                                    <div class="col-lg-8 my-2 d-md-flex d-block align-items-center ml-auto w-100">
+                                                        <span class="mr-2 mt-1 align-self-baseline d-none">Sort: </span>
+                                                        <span id="filters-group" class=" d-block">
                                                             <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min-group" type="text" placeholder="From Date:">
                                                             <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max-group" type="text" placeholder="To Date:">
+                                                            
                                                         </span>
                                                     </div>
 
-                                                    <div class="col-lg-3 my-4 text-right dropleft ml-auto">
+                                                    <div class="col-lg-12 text-right dropleft ml-auto">
                                                         <button   class="btn btn-outline--green my-4 font-12" data-toggle="modal" data-target="#path-Modal">+ Create Learning Path</button>
                                                     </div>
                                                 </div>   
@@ -331,7 +332,7 @@
                                             <p class="mb-0 mt-3 font-weight-light font-13">You currently have no Learning Path added at the moment.</p>
                                             <p class="mb-0 font-weight-light font-13">Click “Add New Course” to create new course.</p>
 
-                                            <button   class="btn btn-outline--green my-4 font-12" data-toggle="modal" data-target="#path-Modal">+ Create Learning Path</button>
+                                            <button   class="btn btn-outline--green my-2 font-12" data-toggle="modal" data-target="#path-Modal">+ Create Learning Path</button>
                                         </div>
 
 
@@ -356,20 +357,21 @@
                                     <div class="tab-pane fade" id="nav-cat" role="tabpanel" aria-labelledby="nav-cat-tab">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                               <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
+                                               <div class="row">
                                                     <div class="col-lg-2 my-2">
-                                                        <input type="text" id="searchbox-cat" placeholder="Search Catergory" class="form-control form-control-sm font-13 form-border-default bg-trans" />
+                                                        <input type="text" id="searchbox-cat" placeholder="Search Category" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                                     </div>
 
-                                                    <div class="col-lg-5 my-2 d-md-flex d-block align-items-center ml-auto w-100">
-                                                        <span class="mr-1">Sort: </span>
-                                                        <span id="filters-cat" class="d-flex">
+                                                    <div class="col-lg-6 my-2 d-md-flex d-block align-items-center ml-auto w-100">
+                                                        <span class="mr-2 mt-0 align-self-baseline d-none">Sort: </span>
+                                                        <span id="filters-cat" class=" d-block">
                                                             <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min-cat" type="text" placeholder="From Date:">
                                                             <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max-cat" type="text" placeholder="To Date:">
+                                                            
                                                         </span>
                                                     </div>
 
-                                                    <div class="col-lg-3 my-4 text-right dropleft ml-auto">
+                                                    <div class="col-lg-12 my-2 text-right dropleft ml-auto">
                                                         <a class="page-top btn px-3 btn-success dropown-toggle font-13 text-white" href="#" data-toggle="modal" data-target="#category-Modal">Create New Category </a>
                                                     </div>
                                                 </div>   
@@ -524,14 +526,14 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Create New Catergory(s)</h6>
+                            <h6 class="modal-title text-center mx-auto">Create New Category(s)</h6>
                             <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
                         </div>
                         <div class="modal-body">
                             <form>
                                 <div class="form-row">
                                     <div class="form-group col-lg-9">
-                                        <input id="departmentModalInput" type="text" placeholder="Enter a Catergory name" class="form-control"> </div>
+                                        <input id="departmentModalInput" type="text" placeholder="Enter a Category name" class="form-control"> </div>
                                     <div class="form-group col-lg-3">
                                         <button id="departmentSubmit" class="btn btn-success btn-modal btn-block" type="button">Add</button>
                                     </div>
@@ -548,14 +550,14 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Create New Catergory(s)</h6>
+                            <h6 class="modal-title text-center mx-auto">Create New Category(s)</h6>
                             <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
                         </div>
                         <div class="modal-body">
                             <form>
                                 <div class="form-row">
                                     <div class="form-group col-lg-12">
-                                        <input id="" type="text" placeholder="Enter a Catergory name" class="form-control">
+                                        <input id="" type="text" placeholder="Enter a Category name" class="form-control">
                                     </div>
                                 </div>
                                 <div class="row">
