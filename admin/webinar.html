@@ -16,12 +16,15 @@
         <link rel="stylesheet" href="css/style.css">
 
         <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" href="css/mailbox.css">
 
         <!-- Font Awesome JS -->
         <script defer src="js/solid.js"></script>
         <script defer src="js/fontawesome.js"></script>
         <link rel="stylesheet" href="css/bootstrap-datepicker.css">
         <link rel="stylesheet" href="css/file-upload-with-preview.min.css">
+        <!-- <link rel="stylesheet" href="css/select2.min.css"> -->
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="css/custom.css">
     </head>
     </head>
@@ -230,8 +233,8 @@
 
                     <div class="row mx-md-2 my-5">
                         <div class="col-md-12">
-                            <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
-                                <div class="col-lg-2 px-0">
+                            <div class="row">
+                                <div class="col-lg-12 px-3 mb-3">
                                     <span class="text-green text-uppercase">Webinar</span>
                                 </div>
 
@@ -239,9 +242,9 @@
                                     <input type="text" id="searchbox" placeholder="Search Webinar" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                 </div>
 
-                                <div class="col-lg-8 px-lg-0 my-2 d-md-flex d-block align-items-center">
-                                    <span class="mr-1">Sort: </span>
-                                    <span id="filters-area" class="d-block d-md-flex">
+                                <div class="col-lg-10 my-2 d-md-flex d-block align-items-center ml-auto">
+                                    <span class="mr-1 d-none">Sort: </span>
+                                    <span id="filters-area" class="d-block ml-auto">
                                         <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
                                         <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To Date:">
                                     </span>
@@ -250,7 +253,7 @@
                             </div>
 
                             <div class="text-right my-3">
-                                <button class="btn btn-green py-1 font-13" type="button" data-toggle="modal" data-target="#webinar-modal">Create Webinar</button>
+                                <button class="btn btn-green py-1 font-13" type="button" data-toggle="modal" data-target="#compose">Create Webinar</button>
                             </div>
 
                             <div class="card--dashboard">
@@ -265,7 +268,7 @@
 
 
                             <div class="card--dashboard mt-4 p-3">
-                                <table id="leaders" class="table-responsive-lg leaders dataTables_wrapper table table-striped" style="width:100%">
+                                <table id="leaders" class="table-responsive-xl leaders dataTables_wrapper table table-striped" style="width:100%">
                                     <thead class="border-top--0">
                                         <tr>
                                             <th class="text-dark text-center">#</th>
@@ -273,8 +276,8 @@
                                             <th class="text-dark select-filter">Company</th>
                                             <th class="text-dark">Date</th>
                                             <th class="text-dark">Time</th>
-                                            <th class="text-dark select-filter">Status</th>
-                                            <th class="text-dark">Link</th>
+                                            <th class="text-dark d-none">Status</th>
+                                            <th class="text-dark w-50">Link</th>
                                             <th class="text-dark select-filter">Participant</th>
                                             <th class="text-dark">Date Created</th>
                                             <th class="text-dark" style="min-width: 100px">Action</th>
@@ -306,61 +309,120 @@
                 </div>
             </div>
 
-            <!-- Webinar Modal -->
-            <div class="modal fade" id="webinar-modal" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
+            <div class="modal fade" id="compose" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                    <div class="modal-content">
+                    <form action="jhkjhkj" class="modal-content">
                         <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Create Webinar</h6>
-                            <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal"/></span> </button>
+                            <h5 class="modal-title" id="exampleModalLabel">Create Webinar</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
                         <div class="modal-body">
-                            <form>
-                                <div class="form-row">
-                                    <div class="form-group col-lg-6">
-                                        <input id="departmentModalInput" type="text" placeholder="Webinar Title" class="form-control"> 
-                                    </div>
-                                    <div class="form-group col-lg-6">
-                                        <input id="departmentModalInput" type="text" placeholder="Webinar Link" class="form-control"> 
-                                    </div>
-                                    <div class="form-group col-lg-6">
-                                        <input id="departmentModalInput" type="text" placeholder="Webinar Date" class="form-control"> 
-                                    </div>
-                                    <div class="form-group col-lg-6">
-                                        <input id="departmentModalInput" type="text" placeholder="Webinar Time" class="form-control"> 
-                                    </div>
-                                    <div class="form-group col-lg-6">
-                                        <textarea id="departmentModalInput" type="text" placeholder="Description about webinar" class="form-control" rows="8"></textarea>
-                                    </div>
-                                    <div class="form-group col-lg-6">
-                                        <div class="custom-file-container" data-upload-id="myUploader">
+                            <div class="form-row">
+                                <div class="form-group col-lg-12">
+                                    <select class="js-example-basic-single w-100" name="state" id="select-contact">
+                                        <option></option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <input id="departmentModalInput" type="text" placeholder="Webinar Title" class="form-control"> 
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <input id="departmentModalInput" type="text" placeholder="Webinar Link" class="form-control"> 
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <input id="departmentModalInput" type="text" placeholder="Webinar Date" class="form-control"> 
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <input id="departmentModalInput" type="text" placeholder="Webinar Time" class="form-control"> 
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <textarea id="departmentModalInput" type="text" placeholder="Description about webinar" class="form-control" rows="8"></textarea>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <div class="custom-file-container" data-upload-id="myUploader">
 
-                                            <label class="custom-file-container__custom-file" >
-                                                <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
-                                                <input type="file" class="custom-file-container__custom-file__custom-file-input" accept="*">
-                                                <span class="custom-file-container__custom-file__custom-file-control"></span>
-                                            </label>
+                                        <label class="custom-file-container__custom-file" >
+                                            <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                            <input type="file" class="custom-file-container__custom-file__custom-file-input" accept="*">
+                                            <span class="custom-file-container__custom-file__custom-file-control"></span>
+                                        </label>
 
-                                            <div class="col--5 custom-file-container__image-preview">
-                                                <label><a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"><img src="img/close-button.svg" class="img-fluid" style="width: 22px;" /></a></label>
-                                            </div>
+                                        <div class="col--5 custom-file-container__image-preview">
+                                            <label><a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"><img src="img/close-button.svg" class="img-fluid" style="width: 22px;" /></a></label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-lg-3 ml-auto mx-0">
-                                        <button type="button" class="btn btn-success btn-block">Create Webinar</button>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3 ml-auto mx-0">
+                                    <button type="button" class="btn btn-success btn-block">Create Webinar</button>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-            <!-- Webinar Modal End -->
+
+            <div class="modal fade" id="composes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <form action="jhkjhkj" class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Create Webinar</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div class="form-group col-lg-12">
+                                    <!-- <select class="js-example-basic-single w-100" name="state" id="select-contact">
+                                        <option></option>
+                                    </select> -->
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <input id="departmentModalInput" type="text" placeholder="Webinar Title" class="form-control"> 
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <input id="departmentModalInput" type="text" placeholder="Webinar Link" class="form-control"> 
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <input id="departmentModalInput" type="text" placeholder="Webinar Date" class="form-control"> 
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <input id="departmentModalInput" type="text" placeholder="Webinar Time" class="form-control"> 
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <textarea id="departmentModalInput" type="text" placeholder="Description about webinar" class="form-control" rows="8"></textarea>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <div class="custom-file-container" data-upload-id="myUploader">
+
+                                        <label class="custom-file-container__custom-file" >
+                                            <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                            <input type="file" class="custom-file-container__custom-file__custom-file-input" accept="*">
+                                            <span class="custom-file-container__custom-file__custom-file-control"></span>
+                                        </label>
+
+                                        <div class="col--5 custom-file-container__image-preview">
+                                            <label><a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"><img src="img/close-button.svg" class="img-fluid" style="width: 22px;" /></a></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3 ml-auto mx-0">
+                                    <button type="button" class="btn btn-success btn-block">Create Webinar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
             <!-- Edit Webinar Modal -->
-            <div class="modal fade" id="edit-webinar" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
+            <div class="modal fade" id="webinar" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -370,6 +432,12 @@
                         <div class="modal-body">
                             <form>
                                 <div class="form-row">
+                                    <div class="form-group col-lg-12">
+                                        <label>Invite List</label>
+                                        <select class="webinar w-100 view" name="state" id="select-contact">
+                                            <option></option>
+                                        </select>
+                                    </div>
                                     <div class="form-group col-lg-6">
                                         <label>Webinar Title</label>
                                         <input id="departmentModalInput" type="text" placeholder="Webinar Title" class="form-control view"> 
@@ -474,6 +542,7 @@
         <script type="text/javascript" src="js/dataTables.select.min.js"></script>
         <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
         <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+        <script src="js/select2.min.js"></script>
         <script src="js/utility.js"></script>
         <script src="js/file-upload-with-preview.min.js"></script>
 
@@ -485,13 +554,23 @@
                    $('#edit').hide();
                    $('#submit').show();
                 } );
-                $('#edit-webinar').on('hidden.bs.modal', function (event) {
+                $('#webinar').on('hidden.bs.modal', function (event) {
                    $(".view").attr('disabled','disabled');
                    $('#edit').show();
                    $('#submit').hide();
                 });
             });
+
+            $('.js-data-example-ajax').select2({
+              ajax: {
+                url: 'https://reqres.in/api/users',
+                dataType: 'json'
+                // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
+              }
+            });
         </script>
+
+
 
         <script>
             var myUpload = new FileUploadWithPreview('myUploader',{
@@ -546,7 +625,7 @@
                         this.api().columns('.select-filter').every( function () {
                             var column = this;
                             var colTitle = this.header().innerHTML
-                            var select = $('<select class="custom-select custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
+                            var select = $('<select class="custom-select f custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
                                 .prependTo( $('#filters-area') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
@@ -561,6 +640,7 @@
                             column.data().unique().sort().each( function ( d, j ) {
                                 select.append( '<option>'+d+'</option>' )
                             } );
+                            $(".f").select2();
                         } );
                     },
                     // processing: true,
@@ -572,19 +652,19 @@
                         { data: 'last_name' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         { data: 'id', render: function (dataField) { return dataField+':00 PM'; } },
-                        { data: 'last_name' },
+                        // { data: 'last_name' },
                         { data: 'email', render: function (dataField) { return `<a href="#">`+dataField+`</a>`; } },
                         { data: 'id' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
                           "defaultContent": `
-                                            <button class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline" data-toggle="modal" data-target="#edit-webinar">Edit Detail</button>
+                                            <button class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline" data-toggle="modal" data-target="#webinar">Edit Detail</button>
                                             <a class="dropdown-togge" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <img src="img/table_option.svg" alt="options" />
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item font-12 d-lg-none" href="#" data-toggle="modal" data-target="#edit-webinar">Edit</a>
+                                                <a class="dropdown-item font-12 d-lg-none" href="#" data-toggle="modal" data-target="#webinar">Edit</a>
                                                 <a class="dropdown-item font-12" href="#">Disable</a>
                                                 <a class="dropdown-item font-12" href="#">Delete</a>
                                             </div>

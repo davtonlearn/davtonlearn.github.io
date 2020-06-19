@@ -741,7 +741,7 @@
             $(document).ready( function () {
                 $(".view").attr('disabled','disabled');
                 $('#edit').on('click', function () {
-                   $("input").removeAttr('disabled');
+                   $(".view").removeAttr('disabled');
                    $('#edit').hide();
                    $('#submit').show();
                 } );
@@ -820,14 +820,14 @@
                         {
                           "data": null,
                           "defaultContent": `
-                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline" data-toggle="modal" data-target="#edit-staff-group">View Detail</a>
+                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline" data-toggle="modal" data-target="#edit-single-staff">View Detail</a>
                                             <a class="dropdown-togge"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="img/table_option.svg" alt="options" /> </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 <a class="dropdown-item font-12" href="c_staff_report.html">View report</a>
                                                 <a class="dropdown-item font-12" href="c_staff_course.html">View Courses</a>
                                                 <a class="dropdown-item font-12" href="#" data-toggle="modal" data-target="#add_staff_to_company">Add to Company</a>
                                                 <a class="dropdown-item font-12" href="#" data-toggle="modal" data-target="#assign_course_to_staff">Assign Course</a>
-                                                <a class="dropdown-item font-12 d-lg-none" href="#" data-toggle="modal" data-target="#edit-staff-group">View Detail</a>
+                                                <a class="dropdown-item font-12 d-lg-none" href="#" data-toggle="modal" data-target="#edit-single-staff">View Detail</a>
                                                 <a class="dropdown-item font-12" href="#">Disable </a>
                                                 <a class="dropdown-item font-12" href="#">Delete </a>
                                             </div>
