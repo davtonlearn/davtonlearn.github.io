@@ -225,7 +225,7 @@
                     <div class="row mx-md-2 my-5">
                         <div class="col-md-12">
                             <div class="row">
-                                <div class="col-lg-2 my-2">
+                                <div class="col-lg-12 my-2">
                                     <p class="text-green text-uppercase mb-0">Audit Trails</p>
                                 </div>
 
@@ -233,8 +233,8 @@
                                     <input type="text" id="searchbox" placeholder="Search user" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                 </div>
 
-                                <div class="col-lg-8 my-2 d-md-flex d-block align-items-center">
-                                    <span class="mr-1">Sort: </span>
+                                <div class="col-lg-9 my-2 d-md-flex d-block align-items-center ml-auto">
+                                    <span class="mr-1 mt-1 align-self-baseline d-none">Sort: </span>
                                     <span id="filters-area" class="d-flex">
                                         <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
                                         <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To Date:">
@@ -255,7 +255,6 @@
                                                         <th class="text-dark select-filter">Description</th>
                                                         <th class="text-dark select-filter">IP Address</th>
                                                         <th class="text-dark">Date & Time</th>
-                                                        <th class="text-dark" style="min-width: 100px">ACTION</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -475,16 +474,11 @@
                     columns: [
                         { data: 'id' },
                         { data: 'first_name' },
-                        { data: 'last_name' },
                         { data: 'email' },
+                        { data: 'last_name' },
                         { data: 'first_name' },
                         { data: 'last_name' },
-                        { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
-                        {
-                          "data": null,
-                          "defaultContent": `<a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline" data-toggle="modal" data-target="#edit-single-modal">Delete</a>
-                          `
-                        }
+                        { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } }
                     ]
                 }); 
                 $('#searchbox').on( 'keyup', function () {
