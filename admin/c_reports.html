@@ -240,16 +240,23 @@
 
                         <div class="card--dashboard">
                             <div class="d-flex border-bottom px-2">
-                                <div class="col">
+                                <div class="col-lg-3">
                                     <h6 class="text-green my-3 weight-semi-bold text-uppercase">Company Report</h6>                            
                                 </div>
 
-                                <div class="col-lg-3">
-                                    <select class="ml-auto custom-select my-2" style="border: 0px solid #4F4F4F; background-color: #fff0;">
-                                        <option disabled selected>Daily</option>
-                                        <option value="Filter">Monthly</option>
-                                        <option value="WY">Anually</option>
-                                    </select>                        
+                                <div class="col-lg-9 mt-2">
+                                    <span class="mr-1 mt-1 align-self-baseline d-none">Sort: </span>
+                                    <form id="filters-area" class="row justify-content-end">
+                                        <div class="col-md-4 col-sm-6 mb-3">
+                                            <input name="min" class="w-100 form-control font-13 form-border-default" id="min" type="text" placeholder="From Date:">
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 mb-3">
+                                            <input name="max" class="w-100 form-control font-13 form-border-default" id="max" type="text" placeholder="To Date:">
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 mb-3">
+                                            <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Search</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
 
@@ -336,7 +343,6 @@
                             </div>
 
                         </div>
-
 
                         <div>
                             <div class="row mt-3">
@@ -439,6 +445,7 @@
         <script src="js/chart.js/dist/Chart.min.js"></script>
         <script src="js/select2.min.js"></script>
         <script src="js/typeahead.js"></script>
+        <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
         <script src="js/utility.js"></script>
 
         <script>
@@ -504,6 +511,20 @@
             });
 
 
+        </script>
+
+        <script>
+            $(document).ready( function () {
+           
+                $("#min").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+                $("#max").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+
+                // Event listener to the two range filtering inputs to redraw on input
+                $('#min, #max').change(function () {
+                    table.draw();
+                });
+
+            });
         </script>
 
     </body>

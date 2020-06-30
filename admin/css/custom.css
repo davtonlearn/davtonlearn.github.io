@@ -16,10 +16,16 @@
 .dataTables_filter {
    display: none;
 }
+.dataTables_wrapper .row:nth-child(2){
+	clear: both;
+}
 #min,#max,#min-group,#max-group,#min-cat,#max-cat{
 	width: 120px;
-   	margin-right: 15px;
-   	margin-top: -19px;
+   	/*margin-right: 15px;*/
+   	/*margin-top: -19px;*/
+}
+#searchbox, #searchbox-cat, #searchbox-group{
+	display: none;
 }
 .font-60{
 	font-size: 30px

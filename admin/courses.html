@@ -252,13 +252,19 @@
                                                         <input type="text" id="searchbox" placeholder="Search Course" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                                     </div>
 
-                                                    <div class="col-lg-10 my-2 d-md-flex d-block align-items-center ml-auto w-100">
-                                                        <span class="mr-2 mt-1 align-self-baseline d-none">Sort: </span>
-                                                        <span id="filters-area" class=" d-block">
-                                                            <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min" type="text" placeholder="From Date:">
-                                                            <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max" type="text" placeholder="To Date:">
-                                                            
-                                                        </span>
+                                                    <div class="col-lg-12">
+                                                        <span class="mr-1 mt-1 align-self-baseline d-none">Sort: </span>
+                                                        <form id="filters-area" class="row justify-content-end">
+                                                            <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                                                                <input name="min" class="w-100 form-control font-13 form-border-default" id="min" type="text" placeholder="From Date:">
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                                                                <input name="max" class="w-100 form-control font-13 form-border-default" id="max" type="text" placeholder="To Date:">
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                                                                <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Search</button>
+                                                            </div>
+                                                        </form>
                                                     </div>
                                                 </div>   
                                             </div>
@@ -278,23 +284,26 @@
                                             <a href="course_library.html" class="btn btn-outline--green my-4 font-12 md-btn-block">Add Course From Library</a>
                                         </div>
 
+                                        <div class="card--dashboard mt-4 p-3">
+                                            <table id="courses" class="table-responsive-lg leaders table-responsive-lg dataTables_wrapper table table-striped" style="width:100%">
 
-                                        <table id="courses" class="table-responsive-lg leaders table-responsive-lg dataTables_wrapper table table-striped" style="width:100%">
-                                            <thead class="border-top--0">
-                                                <tr>
-                                                    <th class="text-dark text-center">#</th>
-                                                    <th class="text-dark">Title</th>
-                                                    <th class="text-dark select-filter">Category</th>
-                                                    <th class="text-dark select-filter">Company</th>
-                                                    <th class="text-dark select-filter">Type</th>
-                                                    <th class="text-dark select-filter">Ratings</th>
-                                                    <th class="text-dark">Created On</th>
-                                                    <th class="text-dark" style="min-width:100px;">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                        </table>
+                                                <button class="btn btn-primary float-right font-14 mb-3 export-table" ><i class="fa fa-file-code mr-1"></i> Export Table</button>
+                                                <thead class="border-top--0">
+                                                    <tr>
+                                                        <th class="text-dark text-center">#</th>
+                                                        <th class="text-dark">Title</th>
+                                                        <th class="text-dark select-filter">Category</th>
+                                                        <th class="text-dark select-filter">Company</th>
+                                                        <th class="text-dark select-filter">Type</th>
+                                                        <th class="text-dark select-filter">Ratings</th>
+                                                        <th class="text-dark">Created On</th>
+                                                        <th class="text-dark" style="min-width:100px;">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
 
                                     </div>
 
@@ -306,13 +315,19 @@
                                                         <input type="text" id="searchbox-group" placeholder="Search Learning Path" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                                     </div>
 
-                                                    <div class="col-lg-9 my-2 d-md-flex d-block align-items-center ml-auto w-100">
-                                                        <span class="mr-2 mt-1 align-self-baseline d-none">Sort: </span>
-                                                        <span id="filters-group" class="ml-auto d-block">
-                                                            <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min-group" type="text" placeholder="From Date:">
-                                                            <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max-group" type="text" placeholder="To Date:">
-                                                            
-                                                        </span>
+                                                    <div class="col-lg-12">
+                                                        <span class="mr-1 mt-1 align-self-baseline d-none">Sort: </span>
+                                                        <form id="filters-group" class="row justify-content-end">
+                                                            <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                                                                <input name="min" class="w-100 form-control font-13 form-border-default" id="min-group" type="text" placeholder="From Date:">
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                                                                <input name="max" class="w-100 form-control font-13 form-border-default" id="max-group" type="text" placeholder="To Date:">
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                                                                <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Search</button>
+                                                            </div>
+                                                        </form>
                                                     </div>
                                                 </div>   
                                             </div>
@@ -332,38 +347,48 @@
                                         </div>
 
 
+                                        <div class="card--dashboard mt-4 p-3">
+                                            <table id="learning_path" class="leaders table-responsive-lg dataTables_wrapper table table-striped" style="width:100%">
 
-                                        <table id="learning_path" class="leaders table-responsive-lg dataTables_wrapper table table-striped" style="width:100%">
-                                            <thead class="border-top--0">
-                                                <tr>
-                                                    <th class="text-dark text-center">#</th>
-                                                    <th class="text-dark">Path Title</th>
-                                                    <th class="text-dark group-filter">Levels</th>
-                                                    <th class="text-dark group-filter">Stages</th>
-                                                    <th class="text-dark">Created On</th>
-                                                    <th class="text-dark" style="min-width:100px;">ACTION</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
+                                                <button class="btn btn-primary float-right font-14 mb-3 export-table" ><i class="fa fa-file-code mr-1"></i> Export Table</button>
+                                                <thead class="border-top--0">
+                                                    <tr>
+                                                        <th class="text-dark text-center">#</th>
+                                                        <th class="text-dark">Path Title</th>
+                                                        <th class="text-dark group-filter">Levels</th>
+                                                        <th class="text-dark group-filter">Stages</th>
+                                                        <th class="text-dark">Created On</th>
+                                                        <th class="text-dark" style="min-width:100px;">ACTION</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
 
-                                            </tbody>
-                                        </table>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
 
                                     <div class="tab-pane fade" id="nav-cat" role="tabpanel" aria-labelledby="nav-cat-tab">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                               <div class="d-flex flex-column flex-lg-row my-2 align-items-center">
+                                               <div class="">
                                                     <div class="col-lg-2 my-2">
                                                         <input type="text" id="searchbox-cat" placeholder="Search Category" class="form-control form-control-sm font-13 form-border-default bg-trans" />
                                                     </div>
 
-                                                    <div class="col-lg-5 my-2 d-md-flex d-block align-items-center ml-auto w-100 px-0">
-                                                        <span class="mr-1 d-none">Sort: </span>
-                                                        <span id="filters-cat" class="d-flex ml-auto">
-                                                            <input name="min" class="custom-select custom-select-sm font-13 form-border-default" id="min-cat" type="text" placeholder="From Date:">
-                                                            <input name="max" class="custom-select custom-select-sm font-13 form-border-default" id="max-cat" type="text" placeholder="To Date:">
-                                                        </span>
+                                                    <div class="col-lg-12">
+                                                        <span class="mr-1 mt-1 align-self-baseline d-none">Sort: </span>
+                                                        <form id="filters-cat" class="row justify-content-end">
+                                                            <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                                                                <input name="min" class="w-100 form-control font-13 form-border-default" id="min-cat" type="text" placeholder="From Date:">
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                                                                <input name="max" class="w-100 form-control font-13 form-border-default" id="max-cat" type="text" placeholder="To Date:">
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                                                                <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Search</button>
+                                                            </div>
+                                                        </form>
                                                     </div>
                                                 </div>   
                                             </div>
@@ -383,20 +408,23 @@
                                         </div>
 
 
+                                        <div class="card--dashboard mt-4 p-3">
+                                            <table id="categories" class="leaders table-responsive-lg dataTables_wrapper table table-striped" style="width:100%">
 
-                                        <table id="categories" class="leaders table-responsive-lg dataTables_wrapper table table-striped" style="width:100%">
-                                            <thead class="border-top--0">
-                                                <tr>
-                                                    <th class="text-dark text-center">#</th>
-                                                    <th class="text-dark">Category Title</th>
-                                                    <th class="text-dark">Created On</th>
-                                                    <th class="text-dark" style="min-width:100px;">ACTION</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
+                                                <button class="btn btn-primary float-right font-14 mb-3 export-table" ><i class="fa fa-file-code mr-1"></i> Export Table</button>
+                                                <thead class="border-top--0">
+                                                    <tr>
+                                                        <th class="text-dark text-center">#</th>
+                                                        <th class="text-dark">Category Title</th>
+                                                        <th class="text-dark">Created On</th>
+                                                        <th class="text-dark" style="min-width:100px;">ACTION</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
 
-                                            </tbody>
-                                        </table>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -406,8 +434,6 @@
                     </div>
                 </div>
             </div>
-
-
 
             <!-- Learning path Modal -->
             <div class="modal fade" id="path-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -421,21 +447,23 @@
                             <form method="get" action="course_stage.html">
                                 <div class="form-row">
                                     <div class="form-group col-lg-12">
-                                        <input id="" type="text" placeholder="Enter Path Title i.e PMP  Learning path" class="form-control">
+                                        <input id="" type="text" placeholder="Enter Path Title i.e PMP  Learning path" class="form-control" required>
                                     </div>
                                 </div>
 
                                 <div class="form-row mb-5">
                                     <div class="form-group col-lg-12">
-                                        <select id="" class="custom-select dim">
+                                        <!-- <select id="" class="custom-select select2 dim">
                                             <option>Select the No. of levels you need in your learning Path</option>
-                                        </select>
+                                            <option></option>
+                                        </select> -->
+                                        <input class="form-control w-100" type="number" name="" placeholder="Enter the No. of levels" min="1" max="5" required>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-lg-3 ml-auto mx-0 mt-5">
-                                        <button   class="btn btn-success btn-sm btn-block mt-5">Submit</button>
+                                        <button   class="btn btn-success btn-sm btn-block mt-5">Proceed</button>
                                     </div>
                                 </div>
                             </form>
@@ -495,17 +523,20 @@
                                     </div>
                                 </div>
 
-                                <div class="form-row mb-5">
+                                <!-- <div class="form-row mb-5">
                                     <div class="form-group col-lg-12">
                                         <select id="" class="custom-select dim">
                                             <option>Select the No. of levels you need in your learning Path</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> -->
+
+
+                                <input class="form-control w-100" type="number" name="" placeholder="Enter the No. of levels" min="1" max="5" required>
 
                                 <div class="row">
                                     <div class="col-lg-3 ml-auto mx-0 mt-5">
-                                        <button   class="btn btn-success btn-sm btn-block mt-5">Submit</button>
+                                        <button   class="btn btn-success btn-sm btn-block mt-5">Proceed</button>
                                     </div>
                                 </div>
                             </form>
@@ -639,7 +670,7 @@
                         this.api().columns('.select-filter').every( function () {
                             var column = this;
                             var colTitle = this.header().innerHTML
-                            var select = $('<select class="custom-select f custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
+                            var select = $('<div class="col-lg-2 col-md-4 col-sm-6 mb-3"><input type="text" class="form-control  font-13 form-border-default w-100" name="'+colTitle+'" placeholder="'+colTitle+'"/></div>')
                                 .prependTo( $('#filters-area') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
@@ -652,39 +683,10 @@
                                 } );
              
                             column.data().unique().sort().each( function ( d, j ) {
-                                select.append( '<option>'+d+'</option>' )
+                                // select.append( '<option>'+d+'</option>' )
                             } );
-                            $(".f").select2();
                         } );
                     },
-                    dom: 'Bfrtip',
-                    buttons: [
-                        {
-                            extend: 'print',
-                            className: 'btn btn-primary btn-sm mr-2',
-                            text: 'Print',
-                            autoPrint: false,
-                            title: 'DavtonLearn Companies',
-                        },
-                        {
-                            extend: 'pdf',
-                            className: 'btn btn-danger btn-sm mr-2',
-                            text: 'PDF',
-                            title: 'DavtonLearn Companies',
-                        },
-                        {
-                            extend: 'excel',
-                            className: 'btn btn-success btn-sm mr-2',
-                            text: 'Excel',
-                            title: 'DavtonLearn Companies',
-                        }, 
-                        {
-                            extend: 'csv',
-                            className: 'btn btn-info btn-sm mr-2',
-                            text: 'CSV',
-                            title: 'DavtonLearn Companies',
-                        },
-                    ],
                     // processing: true,
                     // serverSide: true,
                     ajax: 'https://reqres.in/api/users',
@@ -721,21 +723,6 @@
                    table.search( this.value ).draw();
                 } );
 
-
-
-                $.fn.dataTable.ext.search.push(
-                function (settings, data, dataIndex) {
-                    var min = $('#min').datepicker("getDate");
-                    var max = $('#max').datepicker("getDate");
-                    var startDate = new Date(data[data.length - 2]);
-                    if (min == null && max == null) { return true; }
-                    if (min == null && startDate <= max) { return true;}
-                    if(max == null && startDate >= min) {return true;}
-                    if (startDate <= max && startDate >= min) { return true; }
-                    return false;
-                }
-                );
-
            
                 $("#min").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
                 $("#max").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
@@ -757,8 +744,8 @@
                         this.api().columns('.group-filter').every( function () {
                             var column = this;
                             var colTitle = this.header().innerHTML
-                            var select = $('<select class="custom-select f custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
-                                .prependTo( $('#filters-group') )
+                            var select = $('<div class="col-lg-2 col-md-4 col-sm-6 mb-3"><input type="text" class="form-control  font-13 form-border-default w-100" name="'+colTitle+'" placeholder="'+colTitle+'"/></div>')
+                                .prependTo( $('#filters-area') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
                                         $(this).val()
@@ -770,39 +757,10 @@
                                 } );
              
                             column.data().unique().sort().each( function ( d, j ) {
-                                select.append( '<option>'+d+'</option>' )
+                                // select.append( '<option>'+d+'</option>' )
                             } );
-                            $(".f").select2();
                         } );
                     },
-                    dom: 'Bfrtip',
-                    buttons: [
-                        {
-                            extend: 'print',
-                            className: 'btn btn-primary btn-sm mr-2',
-                            text: 'Print',
-                            autoPrint: false,
-                            title: 'DavtonLearn Companies',
-                        },
-                        {
-                            extend: 'pdf',
-                            className: 'btn btn-danger btn-sm mr-2',
-                            text: 'PDF',
-                            title: 'DavtonLearn Companies',
-                        },
-                        {
-                            extend: 'excel',
-                            className: 'btn btn-success btn-sm mr-2',
-                            text: 'Excel',
-                            title: 'DavtonLearn Companies',
-                        }, 
-                        {
-                            extend: 'csv',
-                            className: 'btn btn-info btn-sm mr-2',
-                            text: 'CSV',
-                            title: 'DavtonLearn Companies',
-                        },
-                    ],
                     // processing: true,
                     // serverSide: true,
                     ajax: 'https://reqres.in/api/users',
@@ -833,21 +791,6 @@
                    table.search( this.value ).draw();
                 } );
 
-
-
-                $.fn.dataTable.ext.search.push(
-                function (settings, data, dataIndex) {
-                    var min = $('#min-group').datepicker("getDate");
-                    var max = $('#max-group').datepicker("getDate");
-                    var startDate = new Date(data[data.length - 2]);
-                    if (min == null && max == null) { return true; }
-                    if (min == null && startDate <= max) { return true;}
-                    if(max == null && startDate >= min) {return true;}
-                    if (startDate <= max && startDate >= min) { return true; }
-                    return false;
-                }
-                );
-
            
                 $("#min-group").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
                 $("#max-group").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
@@ -869,8 +812,8 @@
                         this.api().columns('.cat-filter').every( function () {
                             var column = this;
                             var colTitle = this.header().innerHTML
-                            var select = $('<select class="custom-select f custom-select-sm font-13 form-border-default"><option value="">'+colTitle+'</option></select>')
-                                .prependTo( $('#filters-cat') )
+                            var select = $('<div class="col-lg-2 col-md-4 col-sm-6 mb-3"><input type="text" class="form-control  font-13 form-border-default w-100" name="'+colTitle+'" placeholder="'+colTitle+'"/></div>')
+                                .prependTo( $('#filters-area') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
                                         $(this).val()
@@ -882,39 +825,10 @@
                                 } );
              
                             column.data().unique().sort().each( function ( d, j ) {
-                                select.append( '<option>'+d+'</option>' )
+                                // select.append( '<option>'+d+'</option>' )
                             } );
-                            $(".f").select2();
                         } );
                     },
-                    dom: 'Bfrtip',
-                    buttons: [
-                        {
-                            extend: 'print',
-                            className: 'btn btn-primary btn-sm mr-2',
-                            text: 'Print',
-                            autoPrint: false,
-                            title: 'DavtonLearn Companies',
-                        },
-                        {
-                            extend: 'pdf',
-                            className: 'btn btn-danger btn-sm mr-2',
-                            text: 'PDF',
-                            title: 'DavtonLearn Companies',
-                        },
-                        {
-                            extend: 'excel',
-                            className: 'btn btn-success btn-sm mr-2',
-                            text: 'Excel',
-                            title: 'DavtonLearn Companies',
-                        }, 
-                        {
-                            extend: 'csv',
-                            className: 'btn btn-info btn-sm mr-2',
-                            text: 'CSV',
-                            title: 'DavtonLearn Companies',
-                        },
-                    ],
                     // processing: true,
                     // serverSide: true,
                     ajax: 'https://reqres.in/api/users',
@@ -939,21 +853,6 @@
                 $('#searchbox-cat').on( 'keyup', function () {
                    table.search( this.value ).draw();
                 } );
-
-
-
-                $.fn.dataTable.ext.search.push(
-                function (settings, data, dataIndex) {
-                    var min = $('#min-cat').datepicker("getDate");
-                    var max = $('#max-cat').datepicker("getDate");
-                    var startDate = new Date(data[data.length - 2]);
-                    if (min == null && max == null) { return true; }
-                    if (min == null && startDate <= max) { return true;}
-                    if(max == null && startDate >= min) {return true;}
-                    if (startDate <= max && startDate >= min) { return true; }
-                    return false;
-                }
-                );
 
            
                 $("#min-cat").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });

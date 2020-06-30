@@ -406,6 +406,7 @@
                                                                 <option>Select content type</option>
                                                                 <option value="text">Text</option>
                                                                 <option value="video">Video</option>
+                                                                <option value="scorm">SCORM</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -422,6 +423,22 @@
                                                         <div class="form-group row mt-4">
                                                             <div class="col-sm-4 mx-auto text-center">
                                                                 <button type="button" class="btn btn-green py-1">Add Text</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="d-scorm" style="display: none;">
+
+                                                        <div class="form-group row mt-4">
+                                                            <div class="col-lg-4 mx-auto col-4 my-2 upload-btn-wrapper">
+                                                                <button type="button" class="btn btn-green btn-upload btn-block font-13">Browse File</button>
+                                                                <input type="file" name="company_profile">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group row mt-4">
+                                                            <div class="col-sm-6 mx-auto text-center">
+                                                                <button type="button" class="btn btn-green py-1 font-14">Add Scorm Content</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -446,6 +463,14 @@
                                         </div>                          
 
                                     </form>
+                                </div>
+                            </div>
+
+                            <div class="form-row mt-1 text-center">
+                                <div class="form-group col-lg-6 mx-auto">
+                                    <div class="px-3 py-2">
+                                        <a href="add_course_content.html" class="font-14 w-100 text-white btn btn-green px-5 md-btn-block my-2">Save</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -543,8 +568,11 @@
                     if(c == "text"){
                         $(".d-text").show();
                     }
-                    else if('.c-video'){
+                    else if(c == "video"){
                         $(".d-video").show()
+                    }
+                    else if(c == "scorm"){
+                        $(".d-scorm").show()
                     }
                 })
             })
