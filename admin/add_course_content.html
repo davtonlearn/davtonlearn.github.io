@@ -406,15 +406,16 @@
 
                                                     <div class="form-group row mt-4">
                                                         <div class="col-sm-7 text-center mx-auto">
-                                                            <select class="custom-select select2" id="content-type">
+                                                            <select class="custom-select select2 custom-select-sm c-type">
                                                                 <option>Select content type</option>
                                                                 <option value="text">Text</option>
                                                                 <option value="video">Video</option>
+                                                                <option value="scorm">SCORM</option>
                                                             </select>
                                                         </div>
                                                     </div>
 
-                                                    <div id="d-text" style="display: none;">
+                                                    <div class="d-text" style="display: none;">
 
                                                         <div class="form-group row mt-4">
                                                             <div class="col-lg-4 mx-auto col-4 my-2 upload-btn-wrapper">
@@ -430,9 +431,26 @@
                                                         </div>
                                                     </div>
 
-                                                    <div id="d-video" style="display: none;">
+                                                    <div class="d-scorm" style="display: none;">
+
                                                         <div class="form-group row mt-4">
-                                                            <div class="col-sm-12 mx-auto">
+                                                            <div class="col-lg-4 mx-auto col-4 my-2 upload-btn-wrapper">
+                                                                <button type="button" class="btn btn-green btn-upload btn-block font-13">Browse File</button>
+                                                                <input type="file" name="company_profile">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group row mt-4">
+                                                            <div class="col-sm-6 mx-auto text-center">
+                                                                <button type="button" class="btn btn-green py-1 font-14">Add SCORM Content</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="d-video" style="display: none;">
+
+                                                        <div class="form-group row mt-4">
+                                                            <div class="col-sm-10 mx-auto">
                                                                 <input type="url" class="form-control" placeholder="i.e https://www.youtube.com/watch?v=tKoeT4fbJc4e" />
                                                             </div>
                                                         </div>
@@ -449,6 +467,14 @@
                                         </div>                          
 
                                     </form>
+                                </div>
+                            </div>
+
+                            <div class="form-row mt-1 text-center">
+                                <div class="form-group col-lg-6 mx-auto">
+                                    <div class="px-3 py-2">
+                                        <a href="#" class="font-14 w-100 text-white btn btn-green px-5 md-btn-block my-2">Save</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -539,54 +565,26 @@
         <!-- Bootstrap JS -->
         <script src="js/bootstrap.min.js"></script>
         <script src="js/utility.js"></script>
-        <script src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
-        <script>
-            function renderPDF(url, canvasContainer, options) {
-                var options = options || { scale: 1 };
-
-                function renderPage(page) {
-                    var viewport = page.getViewport(options.scale);
-                    var canvas = document.createElement('canvas');
-                    var ctx = canvas.getContext('2d');
-                    var renderContext = {
-                      canvasContext: ctx,
-                      viewport: viewport
-                    };
-
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
-                    canvasContainer.appendChild(canvas);
-
-                    page.render(renderContext);
-                }
-
-                function renderPages(pdfDoc) {
-                    for(var num = 1; num <= pdfDoc.numPages; num++)
-                        pdfDoc.getPage(num).then(renderPage);
-                }
-                PDFJS.disableWorker = true;
-                PDFJS.getDocument(url).then(renderPages);
-            }   
-        </script> 
-
-        <script type="text/javascript">
-        renderPDF('sample.pdf', document.getElementById('holder'));
-        </script>  
+   
 
         <script>
-            $(document).ready( function () {
-                $('#content-type').on('change', function () {
-                    $('#d-text').hide();
-                    $('#d-video').hide();
-                    var c = $(this).val()
-                    if(c == 'text'){
-                        $('#d-text').show();
+            $(document).ready(function(){
+                $('.c-type').on('change', function() {
+                    var c = $(this).val();
+                    $(".d-text").hide();
+                    $(".d-video").hide();
+                    $(".d-scorm").hide();
+                    if(c == "text"){
+                        $(".d-text").show();
                     }
-                    else if(c == 'video'){
-                        $('#d-video').show();                        
+                    else if(c == "video"){
+                        $(".d-video").show()
                     }
-                } );
-            });
+                    else if(c == "scorm"){
+                        $(".d-scorm").show()
+                    }
+                })
+            })
         </script>
 
     </body>
