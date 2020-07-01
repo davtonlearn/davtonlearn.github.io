@@ -269,7 +269,7 @@
                                                                 <option>Stage 5</option>
                                                             </select>-->
 
-                                                            <input class="form-control w-100 input-stage" type="number" name="" placeholder="Enter the No. of Stages for this levels" min="1" max="5" required>
+                                                            <input class="form-control w-100 input-stage" type="number" name="" placeholder="Enter the No. of Stages for this levels" min="1" max="5" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onKeyDown="if(this.value.length==1 && event.keyCode!=8){ console.log(this.value); return false;}" title="Maximum number of stages allowed is 5" data-toggle="tooltip" data-placement="right" title="Tooltip on right" required>
                                                         </div>
                                                     </div>
 
@@ -309,7 +309,7 @@
                                                                         <input type="text" placeholder="" class="form-control form-control-sm w-100 input-stage-name" />
                                                                         <div class="d-flex">
                                                                             <button class="btn btn-green font-12 py-1 px-3 mt-3 mr-4" id="save-stage-name">Save</button>
-                                                                            <button class="btn btn-outline--green font-12 py-1 px-3 mt-3" id="close-stage-name">Discard</button>
+                                                                            <button class="btn btn-outline--green font-12 py-1 px-3 mt-3" id="close-stage-name">Close</button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -404,6 +404,8 @@
         <script src="js/utility.js"></script>
         <script>
             $(document).ready( function () {
+                $('[data-toggle="tooltip"]').tooltip()
+
                 $('.d-level').on('change', function(){
                     level = $('.d-level select').val()
                     $('.level-val').text(level)
@@ -411,22 +413,32 @@
                 })
                 $('.input-stage').on('input', function(){
                     $('.d-stage-list').empty();
-                    val = $(this).val();
-                    for(i=1; i <= val; i++){
-                        $('.d-stage-list').append(`
-                                <div class="border-bottom">
-                                    <div class="px-3 position-relative">
-                                        <a href="#" class="py-2 mb-0 font-13 font-weight-light stage-title" id="`+ i +`">Stages `+ i +`</a>
-                                    </div>
-                                    <div class="d-nne float-right">
-                                        <img src="img/delete.svg" class="position-relative cursor" style="right: 25px;top: -33px;width: 18px;" />
-                                        <img src="img/edit.svg" class="position-relative edit_course cursor d-edit-stage-name" id="`+ i +`" style="right: 10px;top: -34px;width: 18px;" />
-                                    </div>
-                                </div>
-
-                            `)
+                    var val = $(this).val();
+                    if(val == ''){
+                        $('.d-stage-level').hide();
                     }
-                    $('.d-stage-level').show();
+                    else{
+                        if(val >= 5){
+                            val = 5;
+                        }
+                        for(i=1; i <= val; i++){
+                            $('.d-stage-list').append(`
+                                    <div class="border-bottom">
+                                        <div class="px-3 position-relative">
+                                            <p class="py-2 mb-0 font-13 font-weight-light"><a href="#" class="stage-title" id="`+ i +`">Stages `+ i +`</a></p>
+                                        </div>
+                                        <div class="d-nne float-right">
+                                            <img src="img/delete.svg" class="position-relative cursor" style="right: 25px;top: -33px;width: 18px;" />
+                                            <img src="img/edit.svg" class="position-relative edit_course cursor d-edit-stage-name" id="`+ i +`" style="right: 10px;top: -34px;width: 18px;" />
+                                        </div>
+                                    </div>
+
+
+
+                                `)
+                        }
+                        $('.d-stage-level').show();
+                    }
                 })
                 // $('.d-edit-stage-name').on('click', function(){
                 $("body").delegate(".d-edit-stage-name", "click", function(e){
