@@ -340,7 +340,7 @@
 
                                         <div class="px-4 py-5 mt-5 text-center d-none">
                                             <img src="img/sad.png" class="img-fluid mt-5" />
-                                            <p class="mb-0 mt-3 font-weight-light font-13">You currently have no Learning Path added at the moment.</p>
+                                            <p class="mb-0 mt-3 font-weight-light font-13">You currently have no Learning Path added at the moment. </p>
                                             <p class="mb-0 font-weight-light font-13">Click “Add New Course” to create new course.</p>
 
                                             <button   class="btn btn-outline--green my-4 font-12" data-toggle="modal" data-target="#path-Modal">+ Create Learning Path</button>
@@ -747,7 +747,7 @@
                             var column = this;
                             var colTitle = this.header().innerHTML
                             var select = $('<div class="col-lg-2 col-md-4 col-sm-6 mb-3"><input type="text" class="form-control  font-13 form-border-default w-100" name="'+colTitle+'" placeholder="'+colTitle+'"/></div>')
-                                .prependTo( $('#filters-area') )
+                                .prependTo( $('#filters-group') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
                                         $(this).val()
@@ -815,7 +815,7 @@
                             var column = this;
                             var colTitle = this.header().innerHTML
                             var select = $('<div class="col-lg-2 col-md-4 col-sm-6 mb-3"><input type="text" class="form-control  font-13 form-border-default w-100" name="'+colTitle+'" placeholder="'+colTitle+'"/></div>')
-                                .prependTo( $('#filters-area') )
+                                .prependTo( $('#filters-cat') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
                                         $(this).val()
