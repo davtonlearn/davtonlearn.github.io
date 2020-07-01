@@ -855,7 +855,7 @@
                             var column = this;
                             var colTitle = this.header().innerHTML
                             var select = $('<div class="col-lg-2 col-md-4 col-sm-6 mb-3"><input type="text" class="form-control  font-13 form-border-default w-100" name="'+colTitle+'" placeholder="'+colTitle+'"/></div>')
-                                .prependTo( $('#filters-area') )
+                                .prependTo( $('#filters-group') )
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
                                         $(this).val()
