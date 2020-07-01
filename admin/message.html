@@ -12,7 +12,6 @@
 
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/select2.min.css">
         <link href="css/materialdesignicons.min.css" rel="stylesheet">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="css/dropzone.min.css">
@@ -21,6 +20,7 @@
         <link href="css/concept.css" rel="stylesheet">
         <link rel="stylesheet" href="css/mailbox.css">
         <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/select2.min.css">
 
         <!-- Font Awesome JS -->
         <script src="js/solid.js"></script>
@@ -601,10 +601,19 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                                <div class="form-group">
-                                    <select class="js-example-basic-single w-100" name="state" id="select-contact">
+                            <div class="form-row">
+                                <div class="form-group col-lg-8">
+                                    <select class="js-example-basic-single w-100 contact" name="state" id="select-contact">
                                         <option></option>
                                     </select>
+                                </div>
+                                <div class="form-group col-lg-4">
+                                    <div class="form-check mt-2">
+                                      <input class="form-check-input view" type="checkbox" value="" id="sendall">
+                                      <label class="form-check-label" for="sendall">
+                                        Send to Everyone
+                                      </label>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="subject" placeholder="Subject">
@@ -612,6 +621,7 @@
                                 <div class="form-group">
                                     <textarea class="form-control" placeholder="Message" id="mail-message" rows="3" maxlength="200"></textarea>
                                 </div>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -701,7 +711,16 @@
         <script src="js/jquery.redirect.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
-
+        <script>
+            $("#sendall").change(function() {
+                if(this.checked) {
+                    $('.contact').prop('disabled','true')
+                }
+                else{
+                    $('.contact').removeAttr('disabled')
+                }
+            });
+        </script>
 
     </body>
 
