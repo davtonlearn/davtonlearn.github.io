@@ -260,47 +260,21 @@
                                                     </div>
                                                     <div class="form-row d-stage" style="display: none;">
                                                         <div class="form-group col-lg-12">
-                                                            <!-- <select class="custom-select select2">
-                                                                <option value="">Select No. of Stages for this level</option>
-                                                                <option>Stage 1</option>
-                                                                <option>Stage 2</option>
-                                                                <option>Stage 3</option>
-                                                                <option>Stage 4</option>
-                                                                <option>Stage 5</option>
-                                                            </select>-->
 
-                                                            <input class="form-control w-100 input-stage" type="number" name="" placeholder="Enter the No. of Stages for this levels" min="1" max="5" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onKeyDown="if(this.value.length==1 && event.keyCode!=8){ console.log(this.value); return false;}" title="Maximum number of stages allowed is 5" data-toggle="tooltip" data-placement="right" title="Tooltip on right" required>
+                                                            <input class="form-control w-100 input-stage" type="number" name="" placeholder="Enter the no. of courses for this level" min="1" max="5" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onKeyDown="if(this.value.length==1 && event.keyCode!=8){ console.log(this.value); return false;}" title="Maximum number of courses allowed is 5" data-toggle="tooltip" data-placement="right" required>
                                                         </div>
                                                     </div>
 
                                                     <div class="d-stage-level" style="border: 1px solid #E2E2E2; border-radius: 10px;display: none;">
                                                         <div class="border-bottom backgrond-muted">
                                                             <div class="px-3 position-relative">
-                                                                <p class="py-2 mb-0 font-13 font-weight-light">Add stages to <span class="level-val"></span></p>
+                                                                <p class="py-2 mb-0 font-13 font-weight-light">Add Courses to <span class="level-val"></span></p>
                                                             </div>
                                                         </div>  
 
                                                         <div class="d-stage-list">
                                                             
                                                         </div>
-
-                                                        <!-- <div class="border-bottom stage_active">
-                                                            <div class="px-3 position-relative">
-                                                                <p class="py-2 mb-0 font-13 font-weight-light">Stages 1</p>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="border-bottom backgrond-muted">
-                                                            <div class="px-3 position-relative">
-                                                                <p class="py-2 mb-0 font-13 font-weight-light">Stages 2</p>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="border-bottom backgrond-muted">
-                                                            <div class="px-3 position-relative">
-                                                                <p class="py-2 mb-0 font-13 font-weight-light">Stages 3</p>
-                                                            </div>
-                                                        </div> -->
 
                                                         <div class="add_stage--bg d-stage-name" style="display: none;">
                                                             <div class="form-row  px-3 mt-0 w-100">
@@ -321,7 +295,7 @@
 
                                             <div class="col-lg-8 my-2">
                                                 <div class="px-3 py-2">
-                                                    <p class="weight-semi-bold">Stage 1 Courses</p>
+                                                    <p class="weight-semi-bold">Course 1</p>
                                                     <div class="text-center">
 
                                                         <img src="img/sad.png" class="img-fluid mb-4" alt="currently have no course(s)" />
@@ -425,7 +399,7 @@
                             $('.d-stage-list').append(`
                                     <div class="border-bottom">
                                         <div class="px-3 position-relative">
-                                            <p class="py-2 mb-0 font-13 font-weight-light"><a href="#" class="stage-title" id="`+ i +`">Stages `+ i +`</a></p>
+                                            <p class="py-2 mb-0 font-13 font-weight-light"><a href="#" class="stage-title" id="`+ i +`">Course `+ i +`</a></p>
                                         </div>
                                         <div class="d-nne float-right">
                                             <img src="img/delete.svg" class="position-relative cursor" style="right: 25px;top: -33px;width: 18px;" />
