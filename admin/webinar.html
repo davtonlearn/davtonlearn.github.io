@@ -287,7 +287,6 @@
                                             <th class="text-dark">Date</th>
                                             <th class="text-dark">Time</th>
                                             <th class="text-dark d-none">Status</th>
-                                            <!-- <th class="text-dark">Link</th> -->
                                             <th class="text-dark select-filter">Participant</th>
                                             <th class="text-dark">Date Created</th>
                                             <th class="text-dark" style="min-width: 100px">Action</th>
@@ -356,7 +355,16 @@
                                     <input id="departmentModalInput" type="text" placeholder="Webinar Time" class="form-control"> 
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <textarea id="departmentModalInput" type="text" placeholder="Description about webinar" class="form-control" rows="8"></textarea>
+                                    <div class="input-group mb-3 col-sm-12 px-0">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">&#x20A6;</span>
+                                        </div>
+                                        <input type="text" class="form-control cost" placeholder="Price per user" aria-label="Amount (to the nearest naira)">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">.00</span>
+                                        </div>
+                                    </div>
+                                    <textarea id="departmentModalInput" type="text" placeholder="Description about webinar" class="form-control" rows="6"></textarea>
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <div class="custom-file-container" data-upload-id="myUploader">
@@ -425,8 +433,18 @@
                                         <input id="departmentModalInput" type="text" placeholder="Webinar Time" class="form-control view"> 
                                     </div>
                                     <div class="form-group col-lg-6">
+                                        <label>Price per User</label>
+                                        <div class="input-group mb-3 col-sm-12 px-0">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">&#x20A6;</span>
+                                            </div>
+                                            <input type="text" class="form-control cost view" placeholder="Price per user" aria-label="Amount (to the nearest naira)">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">.00</span>
+                                            </div>
+                                        </div>
                                         <label>Webinar Description</label>
-                                        <textarea id="departmentModalInput" type="text" placeholder="Description about webinar" class="form-control view" rows="8"></textarea>
+                                        <textarea id="departmentModalInput" type="text" placeholder="Description about webinar" class="form-control view" rows="6"></textarea>
                                     </div>
                                     <div class="form-group col-lg-6">
                                         <label>Cover Image</label>
@@ -639,10 +657,13 @@
                         { data: 'last_name' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         { data: 'id', render: function (dataField) { return dataField+':00 PM'; } },
-                        // { data: 'last_name' },
-                        // { data: 'email', render: function (dataField) { return `<a href="#">`+dataField+`</a>`; } },
-                        { data: 'id' },
-                        { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
+                        {
+                          "data": 'id',
+                           render: function (dataField) { return `
+                                            <a href="view_participant.html" class="py-1 text-green font-13 bg-transparent">View Participant (`+dataField+`) </a>
+                                            
+                                            `}
+                        },                        { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
                           "defaultContent": `
