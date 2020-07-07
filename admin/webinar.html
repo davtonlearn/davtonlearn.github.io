@@ -658,18 +658,20 @@
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         { data: 'id', render: function (dataField) { return dataField+':00 PM'; } },
                         {
-                          "data": 'id',
+                          data: 'id',
+                          "width": "5%",
                            render: function (dataField) { return `
                                             <a href="view_participant.html" class="py-1 text-green font-13 bg-transparent">View Participant (`+dataField+`) </a>
                                             
                                             `}
-                        },                        { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
+                        },                        
+                        { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
                           "defaultContent": `
                                             <button class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline" data-toggle="modal" data-target="#webinar">Edit Detail</button>
-                                            <a class="dropdown-togge" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <img src="img/table_option.svg" alt="options" />
+                                            <a href="#" class="dropdown-togge btn btn-outline--green py-1 font-11 py-1 px-2 bg-transparent" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-caret-down"></i>
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 <a class="dropdown-item font-12 d-lg-none" href="#" data-toggle="modal" data-target="#webinar">Edit</a>
