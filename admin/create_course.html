@@ -247,14 +247,14 @@
                                                     <p class="weight-semi-bold">Add Course Details</p>
 
                                                     <div class="form-row">
-                                                        <div class="form-group col-lg-7">
-                                                            <select class="custom-select select2 font-14">
+                                                        <div class="form-group col-sm-7">
+                                                            <select class="custom-select select2 font-14 w-100">
                                                                 <option>Project Management</option>
                                                                 <option>Project Management 1</option>
                                                                 <option>Project Management 2</option>
                                                             </select>
                                                         </div>
-                                                        <div class="form-group col-lg-5">
+                                                        <div class="form-group col-sm-5">
                                                             <button id="" class="btn btn-success btn-block font-13" type="button" data-toggle="modal" data-target="#category-modal" style="height: 40px">+ Add New Category</button>
                                                         </div>
                                                     </div>
@@ -314,49 +314,33 @@
 
 
                                                     <div class="form-group row">
-                                                        <div class="col-sm-9">
-                                                            <!-- <select class="custom-select">
-                                                                <option>Set Passmark (50 - 100)</option>
-                                                            </select> -->
-                                                            <input type="number" class="form-control" placeholder="Set Passmark (50 - 100)" name="" min="50" max="100">
+                                                        <div class="col-sm-12">
+                                                            <input type="number" class="form-control" placeholder="Set Passmark e.g 70" name="" min="50" max="100">
                                                         </div>
                                                     </div>
 
                                                     <div class="form-group row">
-                                                        <div class="col-sm-9">
-                                                            <!-- <select class="custom-select">
-                                                                <option>Set Course Retake (1 - 3)</option>
-                                                            </select> -->
-                                                            <input type="number" class="form-control" placeholder="Set Course Retake (1 - 3)" name="" min="1" max="3">
+                                                        <div class="col-sm-12">
+                                                            <input type="number" class="form-control" placeholder="Set Course Retake e.g 3" name="" min="1" max="3">
                                                         </div>
                                                     </div>
 
                                                     <div class="form-group row">
-                                                        <div class="col-sm-9">
-                                                            <!-- <select class="custom-select">
-                                                                <option>Set Quiz Attempt (1 - 3)</option>
-                                                            </select> -->
-                                                            <input type="number" class="form-control" placeholder="Set Course Retake (1 - 3)" name="" min="1" max="3">
+                                                        <div class="col-sm-12">
+                                                            <input type="number" class="form-control" placeholder="Set Quiz Attempt e.g 3" name="" min="1" max="3">
                                                         </div>
                                                     </div>
 
-                                                    <!-- <div class="form-group row">
-                                                        <div class="col-sm-9">
-                                                            <select class="custom-select">
-                                                                <option>Set Course Reminder</option>
-                                                            </select>
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <p class="weight-semi-bold mt-4">Set Course Price Per User</p>
+                                                        <div class="form-check mt-1">
+                                                          <input class="form-check-input view" type="checkbox" value="" id="free">
+                                                          <label class="form-check-label" for="sendall">
+                                                            Free
+                                                          </label>
                                                         </div>
                                                     </div>
-
-                                                    <p class="weight-semi-bold mt-4">Set Course Parameters</p>
-                                                    <div class="form-group row">
-                                                        <div class="col-sm-9">
-                                                            <input type="url" class="form-control" placeholder="Copy and Paste link here" />
-                                                        </div>
-                                                    </div> -->
-
-                                                    <p class="weight-semi-bold mt-4">Set Course Price</p>
-                                                    <div class="input-group mb-3 col-sm-9 px-0">
+                                                    <div class="input-group mb-3 col-sm-12 px-0">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text">&#x20A6;</span>
                                                         </div>
@@ -366,7 +350,13 @@
                                                         </div>
                                                     </div>
 
-                                                    
+                                                    <p class="weight-semi-bold mt-4">Set Minimum Order</p>
+
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-12">
+                                                            <input type="number" class="form-control" placeholder="Set Minimum Order" name="" min="5">
+                                                        </div>
+                                                    </div>
 
                                                 </div>
                                             </div>
@@ -495,6 +485,16 @@
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                 ;
               });
+            });
+        </script>
+        <script>
+            $("#free").change(function() {
+                if(this.checked) {
+                    $('.cost').prop('disabled','true')
+                }
+                else{
+                    $('.cost').removeAttr('disabled')
+                }
             });
         </script>
 

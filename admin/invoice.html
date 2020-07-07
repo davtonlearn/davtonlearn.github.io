@@ -138,12 +138,6 @@
                         </a>
                     </li>
 
-                    <li class="active">
-                        <a href="invoice.html">
-                            <img src="img/money-transfer.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Invoice
-                        </a>
-                    </li>
-
                     <p class="text-dull text-left ml-4 my-2 font-12">Communications</p>
 
                     <li>
@@ -279,6 +273,7 @@
                                                         <th class="text-dark">Invoice Total</th>
                                                         <th class="text-dark">Due Date</th>
                                                         <th class="text-dark">Status</th>
+                                                        <th class="text-dark" style="min-width:100px;">Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -401,7 +396,13 @@
                         { data: 'last_name' },
                         { data: 'email' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
-                        { data: 'email' }
+                        { data: 'email' },
+                        {
+                          "data": null,
+                          "defaultContent": `
+                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Paid</a>
+                                            `
+                        }
                     ]
                 }); 
                 $('#searchbox').on( 'keyup', function () {
