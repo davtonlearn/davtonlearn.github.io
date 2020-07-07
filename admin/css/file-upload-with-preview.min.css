@@ -50,7 +50,7 @@
         padding: .5rem .75rem;
         line-height: 1.25;
         color: #333;
-        background-color: #EDEDE8;
+        background-color: #20A354;
         border-left: 1px solid #c0c0af;
         box-sizing: border-box; }
   .custom-file-container__image-preview {
@@ -81,7 +81,7 @@
     box-shadow: 0 4px 10px 0 rgba(51, 51, 51, 0.25); }
     .custom-file-container__image-multi-preview__single-image-clear {
       left: -6px;
-      background: #EDEDE8;
+      background: #20A354;
       position: absolute;
       width: 20px;
       height: 20px;

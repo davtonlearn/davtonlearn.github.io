@@ -2,6 +2,12 @@
 $(document).ready(function () {
     var color = "20A354"
     document.documentElement.style.setProperty('--theme-color', `#${color}`);
+    document.documentElement.style.setProperty('--primary-color', `#${color}`);
+    $(".btn-success").css("background", `#${color}`);
+    $(".btn--outline-success").css({"border": `#${color}`, "color": `#${color}`});
+    $("#sidebar ul li a:hover").css("color", `#${color}`);
+    $(".custom-file-container__custom-file__custom-file-control__button").css("background-color", `#${color}`);
+
     console.log('set')
     $('.navbar-toggler').on('click', function () {
         $('#sidebar').toggleClass('active');
@@ -300,7 +306,7 @@ $(document).ready(function () {
             , datasets: [{
                 label: "Average Procrastination"
                 , data: [20, 5, 50, 17, 28]
-                , borderColor: "#20A354"
+                , borderColor: `#${color}`
                 , backgroundColor: "rgba(0, 0, 0, 0)",
                 borderWidth: 2
             }]
@@ -375,8 +381,8 @@ $(document).ready(function () {
             labels: ["Correct Answers", "Wrong Answers"],
             datasets: [{
                 data: [300, 70],
-                backgroundColor: ["#20A354","#E5E5E5"],
-                hoverBackgroundColor: ["#4ecc48", "#EFEFEF"],
+                backgroundColor: [`#${color}`,"#E5E5E5"],
+                hoverBackgroundColor: [`#${color}`, "#EFEFEF"],
                 borderWidth: 0
             }]
         };

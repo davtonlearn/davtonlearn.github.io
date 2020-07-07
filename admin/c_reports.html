@@ -319,7 +319,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="mx-auto" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(32, 163, 84, 0.02) 22.07%, #20A354 100%);
+                                        <div class="mx-auto device" style="
                                                                     border: 1px solid rgba(51, 204, 153, 0.1);
                                                                     border-radius: 11px;
                                                                     width: 30%;
@@ -449,6 +449,7 @@
         <script src="js/utility.js"></script>
 
         <script>
+            var color = "20A354"
 
             var MONTHS = ['Apr 22', 'Apr 23', 'Apr 24', 'Apr 25', 'Apr 26'];
 
@@ -456,8 +457,8 @@
                 labels: ['Apr 22', 'Apr 23', 'Apr 24', 'Apr 25', 'Apr 26'],
                 datasets: [{
                     label: 'Course Completion',
-                    backgroundColor: "#20A354",
-                    borderColor: "#20A354",
+                    backgroundColor: `#${color}`,
+                    borderColor: `#${color}`,
                     borderWidth: 1,
                     data: [20, 19, 13, 50, 95]
                 }, {
