@@ -42,30 +42,31 @@
             .pick-a-color-markup {
                 margin:20px 0px;
             }
+            .tooltip-inner {
+              background-color: #eee !important;
+              color: #333;
+            }
+
+            .bs-tooltip-top .arrow::before {
+              border-top-color: #eee!important;
+            }
+
+            .bs-tooltip-right .arrow::before {
+              border-right-color: #eee!important;
+            }
+
+            .bs-tooltip-bottom .arrow::before {
+              border-bottom-color: #eee!important;
+            }
+
+            .bs-tooltip-left .arrow::before {
+              border-left-color: #eee!important;
+            }
             
         </style>
     </head>
 
     <body class="dashboard-body">
-        <div class="container-fluid py-0">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <a class="navbar-brand py-0" href="#"></a>
-                <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item dropdown pr-md-4 pl-2">
-                            <a class="nav-link text-dark dropdown-toggle" href="#" data-target="#acc_details" data-toggle="modal">
-                                <span class="py-1 px-2 user_initial--green">M</span>&nbsp; &nbsp; Hr247@asanta.com &nbsp;
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-            </nav>
-        </div>
 
 
         <div class="row justify-content-center">
@@ -276,7 +277,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-lg-8">
                                             <label for="upload_employees" class="small">Upload your xlsx file here to onboard multiple employees</label>
-                                            <input type="file" class="form-control form-control-sm" id="upload_employees" placeholder="Start your free 14-day trial and access all davtonlms.." />
+                                            <input type="file" class="form-control form-control-sm font-14" id="upload_employees" placeholder="Start your free 14-day trial and access all davtonlms.." style="padding-bottom: 32px;" />
                                         </div>
                                     </div>
                                 </div>
@@ -297,9 +298,9 @@
                     <div class="px-3">
                         <div class="row my-4">
                             <div class="ml-auto px-3">
-                                <a href="#" class="">Skip</a>
+                                <a href="#" class="">Continue Later</a>
 
-                                <button class="btn btn-green font-13 ml-5" type="button" id="choose_template">Continue</button>
+                                <button class="btn btn-green font-13 ml-5" type="button" id="choose_template">Next</button>
                             </div>
                         </div>
                     </div>
@@ -424,7 +425,7 @@
                       // post an error
                       fileInput.value = ""
                       $('#logo_placeholder').attr('src','img/placeholder-logo.png')
-                      alert("Logo dimensions must be exceed 250px x 40px")
+                      alert("Logo dimensions must not exceed 250px x 40px")
                     }
                   };
 

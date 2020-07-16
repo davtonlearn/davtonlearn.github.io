@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />-->
+        <meta name="description" content="DavtonLearn">
+        <meta name="author" content="">
+        <title>Welcome to DavtonLearn</title>
+        <link rel="shortcut icon" href="img/favicon.png">
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Font Awesome JS -->
+        <script defer src="js/solid.js"></script>
+        <script defer src="js/fontawesome.js"></script>
+        <link rel="stylesheet" href="css/Custom.css">
+    </head>
+
+    <body class="dashboard-body">
+
+        <div class="top_nav">
+            <img src="img/top_strip.jpg" class="img-fluid position-absolute" />
+            <div class="container-fluid dashboard_nav py-0">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <a class="navbar-brand py-0" href="#"><img src="img/logo.svg" class="mt-2" alt="Davton logo" width="" /></a>
+                    <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="nav navbar-nav ml-auto">
+
+                            <li class="nav-item px-md-1">
+                                <a class="nav-link text-dark" href="message.html" data-target="#">
+                                    <img src="img/mail.svg" alt="Messages" class="mt-1">
+                                </a>
+                            </li>
+
+                            <li class="nav-item px-md-1">
+                                <a class="nav-link text-dark" href="#" data-target="#notifications" data-toggle="modal">
+                                    <img src="img/notification.svg" alt="user name" class="">
+                                </a>
+                            </li>
+
+                            <li class="nav-item dropdown pr-md-4 pl-2">
+                                <a class="nav-link text-white dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="py-1 px-2" style="border-radius: 3px; background-color: white; color: #14AD51">M</span>&nbsp; &nbsp; Hr247@asanta.com &nbsp;
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                                    <a class="dropdown-item font-12" href="#">Log Out</a>
+                                    <a class="dropdown-item font-12" href="settings.html">Setting</a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="" style="margin-top: 65px;z-index: 99999;width: 100%;">
+                <div class="alert alert-danger alert-dismissible fade show py-2 text-white font-14" role="alert" style="background: #F44336;border: 0;border-radius: 0;">
+                <i class="fa fa-exclamation-triangle mr-2"></i>
+                  Your subscription expires in 14 days 
+                  <!-- <a href="billing.html" class="alert-link text-white ml-3">Learn More</a> -->
+                    <button type="button" class="close py-1" data-dismiss="alert" aria-label="Close">
+                        <span class="font-14 mt-3" aria-hidden="true"><i class="fa fa-times"></i></span>
+                    </button>
+                </div>
+            </div>
+            <!-- Sidebar  -->
+            <nav id="sidebar" class="">
+                <div class="sidebar-header">
+                    <button type="button" id="sidebarCollapse-1" class="btn bg-trans d-none">
+                        <img src="img/hamburger.svg" />
+                    </button>
+                </div>
+
+
+                <ul class="list-unstyled components">
+                    <p class="text-dark text-left ml-4 mb-2 font-35">Hi Adeyemi Inc. </p>
+                    <p class="text-dull text-left ml-4 my-2 font-14 font-weight-light">Hr247@asanta.com</p>
+
+                    <li class="active">
+                        <a href="index.html">
+                            <img src="img/dashboard.svg" alt="Dashboard" class="mb-1 mr-3 img-fluid" width="15" /> Dashboard
+                        </a>
+                    </li>
+
+                    <p class="text-dull text-left ml-4 my-2 font-12">Company Management</p>
+
+                    <li>
+                        <a href="c_staff.html">
+                            <img src="img/staff.svg" alt="STAFF" class="mb-1 mr-3 img-fluid" width="15" /> Staff
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="c_department.html">
+                            <img src="img/department_sidebar.svg" alt="department" class="mb-1 mr-3 img-fluid" width="15" /> Department
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="c_courses.html">
+                            <img src="img/courses.svg" alt="courses" class="mb-1 mr-3 img-fluid" width="15" /> Courses
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="certificate.html">
+                            <img src="img/activity.svg" alt="courses" class="mb-1 mr-3 img-fluid" width="15" /> Certificates
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="c_reports.html">
+                            <img src="img/reports.svg" alt="reports" class="mb-1 mr-3 img-fluid" width="15" /> Reports
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="c_quizes.html">
+                            <img src="img/department_sidebar.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Quizzes
+                        </a>
+                    </li>
+
+                    <p class="text-dull text-left ml-4 my-2 font-12">Communications</p>
+
+                    <li>
+                        <a href="message.html">
+                            <img src="img/communication.svg" alt="Message" class="mb-1 mr-3 img-fluid" width="15" /> Message
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="blog.html">
+                            <img src="img/blog.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Blog
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="webinar.html">
+                            <img src="img/webinar.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Webinar
+                        </a>
+                    </li>
+
+                    <p class="text-dull text-left ml-4 my-2 font-12">Account Management</p>
+
+                    <li>
+                        <a href="admin.html">
+                            <img src="img/admins.png" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Admins
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="billing.html">
+                            <img src="img/billing.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Billing & Subcription
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="settings.html">
+                            <img src="img/Settings.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Settings
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="img/logout.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Log Out
+                        </a>
+                    </li>
+
+                    <button type="button" class="btn btn-green px-4 position-relative support_button"><img src="img/question.png" class="img-fluid"> Support</button>
+
+                    <div class="support-links pt-4 none">
+
+                        <li class="font-weight-light">
+                            <a href="#">
+                                Help Desk
+                            </a>
+                        </li>
+
+                        <li class="font-weight-light">
+                            <a href="#">
+                                API Documentation
+                            </a>
+                        </li>
+
+                        <li class="font-weight-light">
+                            <a href="development.html">
+                                Course Development
+                            </a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+
+            <!-- Page Content  -->
+            <div id="content">
+                <div class="dasboard-top-wrapper">
+
+                </div>
+                <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light d-none display border">
+                    <div class="container-fluid">
+                        <button id="sidebarCollapse" class="btn bg-trans d-inline-block d-lg-none ml-auto" type="button">
+                            <i alt="menu" class="fas fa-align-justify text-consolidated"></i>
+                        </button>
+                    </div>
+                </nav>
+
+                <div class="row mx-md-1 mt-4">
+                    <div class="col-md-12">
+
+                        <div class="row">
+
+                            <div class="col-md-4 px-md-2 my-3">
+                                <a href="c_staff.html">
+                                    <div class="step-cards step-card--black">
+                                        <div class="px-3 pt-4 pb-2 position-relative">
+                                            <p class="weight-semi-bold font-35 text-white mb-0 mt-4">Staff</p>
+                                            <p class="mb-0 text-white--dim">You have 20 Staff.</p>
+                                            <img src="img/department_card.png" class="img-fluid position-absolute card-image" />
+                                            <button class="btn btn-white mt-1 font-12 py-1">Manage Staff</button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-4 px-md-2 my-3">
+                                <a href="c_courses.html">
+                                    <div class="step-cards step-card--blue">
+                                        <div class="px-3 pt-4 pb-2 position-relative">
+                                            <p class="weight-semi-bold font-35 text-white mb-0 mt-4">Courses</p>
+                                            <p class="mb-0 text-white--dim">You have 300 courses.</p>
+                                            <img src="img/courses_card.png" class="img-fluid position-absolute card-image" />
+                                            <button class="btn btn-white mt-1 font-12 py-1">Manage Courses</button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-4 px-md-2 my-3">
+                                <a href="c_department.html">
+                                    <div class="step-cards step-card--brown">
+                                        <div class="px-3 pt-4 pb-2 position-relative">
+                                            <p class="weight-semi-bold font-35 text-white mb-0 mt-4">Department</p>
+                                            <p class="mb-0 text-white--dim">You have 10 Department.</p>
+                                            <img src="img/staff_card.png" class="img-fluid position-absolute card-image" />
+                                            <button class="btn btn-white mt-1 font-12 py-1">Manage Department</button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 px-md-2 my-3">
+                        <a href="c_reports.html">
+                            <div class="step-cards step-card--purple">
+                                <div class="px-3 pt-4 pb-2 position-relative">
+                                    <p class="weight-semi-bold font-35 text-white mb-0 mt-4">Reports</p>
+                                    <p class="mb-0 text-white--dim">View your company reports</p>
+                                    <img src="img/reports_card.png" class="img-fluid position-absolute card-image" />
+                                    <button class="btn btn-white mt-1 font-12 py-1">View Reports</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 px-md-2 my-3">
+                        <a href="c_leaderboard.html">
+                            <div class="step-cards step-card--green">
+                                <div class="px-3 pt-4 pb-2 position-relative">
+                                    <p class="weight-semi-bold font-35 text-white mb-0 mt-4">Leaderborad</p>
+                                    <p class="mb-0 text-white--dim">View your Staff Leaderborad</p>
+                                    <img src="img/reports_card.png" class="img-fluid position-absolute card-image" />
+                                    <button class="btn btn-white mt-1 font-12 py-1">View Leaderborad</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 px-md-2 my-3">
+                        <a href="settings.html">
+                            <div class="step-card step-cards step-card--white">
+                                <div class="px-3 pt-4 pb-2 position-relative">
+                                    <p class="weight-semi-bold font-35 text-dark mb-0 mt-1">Manage Account</p>
+                                    <p class="mb-3 text-dark small line-height--14">Use the button below to manage<br> everthing regarding your account.</p>
+                                    <img src="img/manage_account_card.png" width="120" class="img-fluid position-absolute card-image" />
+                                    <button class="btn btn-card--white mt-1 font-12 py-1 px-4">Start Now</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!--Notification Modal-->
+                <div  aria-hidden="true" class="onboarding-modal modal fade animated" id="notifications" role="dialog" tabindex="-1">
+                    <div class="modal-dialog modal-right" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title text-left text-green">Notifications</h6>
+                                <button   class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
+                            </div>
+
+                            <div class="onboarding-content with-radient px-3 pt-3">
+
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <img src="img/notify.png" alt="notify" />
+                                    </div>
+
+                                    <div class="col-lg-9">
+                                        <p class="font-weight-500 mb-1">Dui nulla id massa turpis.</p>
+                                        <p class="font-13 mb-2">Gravida odio id commodo libero, aliquam. Tempus bibendum vestibulum aliquet morbi amet.</p>
+                                        <p class="font-12"><img class="img-fluid mr-2" src="img/notification_time.png" alt="Time received 20 mins ago"/>20 mins ago</p>
+                                    </div>
+                                </div>
+                                <hr class="mb-3 mt-0" />
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <img src="img/notify.png" alt="notify" />
+                                    </div>
+
+                                    <div class="col-lg-9">
+                                        <p class="font-weight-500 mb-1">Dui nulla id massa turpis.</p>
+                                        <p class="font-13 mb-2">Gravida odio id commodo libero, aliquam. Tempus bibendum vestibulum aliquet morbi amet.</p>
+                                        <p class="font-12"><img class="img-fluid mr-2" src="img/notification_time.png" alt="Time received 20 mins ago"/>20 mins ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer style="position: fixed;top: 94vh;right: 5%">
+            <div class="btn-group dropup help">
+              <button type="button" class="btn btn-green" data-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-question-circle mr-3"></i>Get Help
+              </button>
+              <div class="dropdown-menu p-0 border-0" style="">
+                <div class="card text-white" style="width: 300px; right: 174px; max-width: 20rem;">
+                  <!-- <div class="card-header bg-success">Header</div> -->
+                  <div class="card-body p-0">
+                    <section id="tabs" class="project-tab bg-success">
+                        <nav>
+                            <div class="nav nav-tabs nav-fill border-0 p-3" id="nav-tab" role="tablist"> 
+                                <a 
+                                    class="nav-dash nav-item nav-link active text-uppercase weight-semi-bold p-0 font-14 border-0 text-white" 
+                                    id="nav-answer-tab" 
+                                    data-toggle="tab" 
+                                    href="#nav-home" 
+                                    role="tab" 
+                                    aria-controls="nav-home" 
+                                    aria-selected="true" 
+                                    style="height: 20px">Answers</a> 
+                                <a 
+                                    class="nav-item nav-link text-uppercase weight-semi-bold p-0 font-14 border-0 text-white" 
+                                    id="nav-ask-tab" 
+                                    data-toggle="tab" 
+                                    href="#nav-other" 
+                                    role="tab" 
+                                    aria-controls="nav-other" 
+                                    aria-selected="false" 
+                                    style="height: 20px">Ask</a> </div>
+                        </nav>
+                        <div class="tab-content my-3" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                <div class="text-center pb-4 font-14">Instant Answers</div>
+                                <div>
+                                    <div class="bg-white" style="height: 300px; overflow-y: scroll;">
+                                        <div class="card m-3">
+                                          <div class="card-body">
+                                            <h6 class="card-subtitle mb-2 text-muted font-14 text-green">Card subtitle</h6>
+                                            <p class="font-13 card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            <a href="#" class="card-link">Card link</a>
+                                            <a href="#" class="card-link">Another link</a>
+                                          </div>
+                                        </div>
+
+                                        <div class="card m-3">
+                                          <div class="card-body">
+                                            <h6 class="card-subtitle mb-2 text-muted font-14 text-green">Card subtitle</h6>
+                                            <p class="font-13 card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            <a href="#" class="card-link">Card link</a>
+                                            <a href="#" class="card-link">Another link</a>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab">
+                                
+                                <div class="text-center pb-4 font-14">Start a Conversation</div>
+                                <div class="bg-white px-3" style="height: 300px; overflow-y: scroll;">
+                                    <form>
+                                      <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input type="email" class="form-control" placeholder="Subject">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <textarea class="form-control" rows="3" placeholder="How can i help you?"></textarea>
+                                      </div>
+                                      <div class="text-center">
+                                          <button type="submit" class="btn btn-green font-14 w-100">Send a message</button>
+                                      </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </footer>
+
+
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Popper.JS -->
+        <script src="js/libs/popper.js/1.14.0/umd/popper.min.js" ></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+        <!-- Bootstrap JS -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/chart.js/dist/Chart.min.js"></script>
+        <script src="js/utility.js"></script>
+        <script type="text/javascript">
+            $(document).on('click', '.help .dropdown-menu', function (e) {
+              e.stopPropagation();
+            });
+        </script>
+
+    </body>
+
+</html>

@@ -603,16 +603,14 @@
                         <div class="modal-body">
                             <div class="form-row">
                                 <div class="form-group col-lg-8">
-                                    <select class="js-example-basic-single w-100 contact" name="state" id="select-contact">
+                                    <select class="js-example-basic-single w-100 contact check1" name="state" id="select-contact" multiple="">
                                         <option></option>
                                     </select>
                                 </div>
                                 <div class="form-group col-lg-4">
-                                    <div class="form-check mt-2 pt-1">
-                                      <input class="form-check-input view" type="checkbox" value="" id="sendall">
-                                      <label class="form-check-label" for="sendall">
-                                        Send to Everyone
-                                      </label>
+                                    <div class="custom-control custom-checkbox mt-2">
+                                        <input type="checkbox" class="custom-control-input view" id="check1">
+                                        <label class="custom-control-label" for="check1">Send to all HRs</label><br >
                                     </div>
                                 </div>
                                 <div class="form-group col-lg-12">
@@ -712,12 +710,12 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
         <script>
-            $("#sendall").change(function() {
+            $("#check1").change(function() {
                 if(this.checked) {
-                    $('.contact').prop('disabled','true')
+                    $('.check1').prop('disabled','true')
                 }
                 else{
-                    $('.contact').removeAttr('disabled')
+                    $('.check1').removeAttr('disabled')
                 }
             });
         </script>
