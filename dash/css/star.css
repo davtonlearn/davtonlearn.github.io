@@ -1,0 +1,59 @@
+
+.cont{
+    width: 93%;
+    max-width: 350px;
+    text-align: center;
+    margin: 4% auto;
+    padding: 30px 0;
+    background: #111;
+    color: #EEE;
+    border-radius: 5px;
+    border: thin solid #444;
+    overflow: hidden;
+}
+
+
+div.stars{
+    width: 300px;
+    display: inline-block;
+    height: 50px;
+}
+
+input.star{
+    display: none;
+}
+
+label.star {
+    float: right;
+    padding: 5px;
+    color: #D5D5D5;
+    transition: all .2s;
+}
+
+input.star:checked ~ label.star:before {
+    content:url(../img/colored_star.png);
+    transition: all .25s;
+}
+
+
+input.star:checked ~ label.star {
+    padding: 2px;
+}
+
+input.star-5:checked ~ label.star:before {
+    color:#FE7;
+    text-shadow: 0 0 20px #952;
+}
+
+input.star-1:checked ~ label.star:before {
+    color: #F62;
+}
+
+label.star:hover{
+    transform: rotate(-15deg) scale(1.2);
+}
+
+label.star:before{
+    content:'\f005';
+    content:url(../img/silver_star.png);
+}

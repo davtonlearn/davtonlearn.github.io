@@ -329,17 +329,15 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-row">
-                                <div class="form-group col-lg-9">
-                                    <select class="js-example-basic-single w-100 contact" name="state" id="select-contact">
+                                <div class="form-group col-lg-9 select2-webinar">
+                                    <select class="js-example-basic-single w-100 contact check1" name="state" id="select-contact"  multiple="multiple">
                                         <option></option>
                                     </select>
                                 </div>
                                 <div class="form-group col-lg-3">
-                                    <div class="form-check mt-2">
-                                      <input class="form-check-input" type="checkbox" value="" id="sendall">
-                                      <label class="form-check-label" for="sendall">
-                                        Send to Everyone
-                                      </label>
+                                    <div class="custom-control custom-checkbox mt-2">
+                                        <input type="checkbox" class="custom-control-input" id="check1">
+                                        <label class="custom-control-label" for="check1">Send to all HRs</label><br >
                                     </div>
                                 </div>
                                 <div class="form-group col-lg-6">
@@ -356,12 +354,19 @@
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <div class="input-group mb-3 col-sm-12 px-0">
+                                        <input id="departmentModalInput" type="text" placeholder="Maximum Number of Participant" class="form-control w-100 mb-3"> 
+
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">&#x20A6;</span>
                                         </div>
-                                        <input type="text" class="form-control cost" placeholder="Price per user" aria-label="Amount (to the nearest naira)">
+                                        <input type="text" class="form-control cost check2" placeholder="Price per user" aria-label="Amount (to the nearest naira)">
                                         <div class="input-group-append">
                                             <span class="input-group-text">.00</span>
+                                        </div>
+                                        
+                                        <div class="custom-control custom-checkbox mt-2 ml-2">
+                                            <input type="checkbox" class="custom-control-input" id="check2">
+                                            <label class="custom-control-label" for="check2">Free Webinar</label><br >
                                         </div>
                                     </div>
                                     <textarea id="departmentModalInput" type="text" placeholder="Description about webinar" class="form-control" rows="6"></textarea>
@@ -402,18 +407,16 @@
                         <div class="modal-body">
                             <form>
                                 <div class="form-row">
-                                    <div class="form-group col-lg-9">
+                                    <div class="form-group col-lg-9 select2-webinar">
                                         <label>Invite List</label>
-                                        <select class="webinar w-100 view contact2" name="state" id="select-contact">
+                                        <select class="webinar w-100 view contact2 check3" name="state" id="select-contact" multiple="multiple" style="height: 100px">
                                             <option></option>
                                         </select>
                                     </div>
                                     <div class="form-group col-lg-3">
-                                        <div class="form-check mt-4 pt-3">
-                                          <input class="form-check-input view" type="checkbox" value="" id="sendall2">
-                                          <label class="form-check-label" for="sendall2">
-                                            Send to Everyone
-                                          </label>
+                                        <div class="custom-control custom-checkbox mt-4 pt-3">
+                                            <input type="checkbox" class="custom-control-input view" id="check3">
+                                            <label class="custom-control-label" for="check3">Send to all HRs</label><br >
                                         </div>
                                     </div>
                                     <div class="form-group col-lg-6">
@@ -433,16 +436,26 @@
                                         <input id="departmentModalInput" type="text" placeholder="Webinar Time" class="form-control view"> 
                                     </div>
                                     <div class="form-group col-lg-6">
+
+                                        <label>Maximum Number of Participant</label>
+                                        <input id="departmentModalInput" type="text" placeholder="Maximum Number of Participant" class="form-control w-100 mb-3 view"> 
+
                                         <label>Price per User</label>
                                         <div class="input-group mb-3 col-sm-12 px-0">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">&#x20A6;</span>
                                             </div>
-                                            <input type="text" class="form-control cost view" placeholder="Price per user" aria-label="Amount (to the nearest naira)">
+                                            <input type="text" class="form-control cost2 view check4" placeholder="Price per user" aria-label="Amount (to the nearest naira)">
                                             <div class="input-group-append">
                                                 <span class="input-group-text">.00</span>
                                             </div>
+
+                                            <div class="custom-control custom-checkbox  mt-2 ml-2">
+                                                <input type="checkbox" class="custom-control-input view" id="check4">
+                                                <label class="custom-control-label" for="check4">Free Webinar</label><br >
+                                            </div>
                                         </div>
+                                        
                                         <label>Webinar Description</label>
                                         <textarea id="departmentModalInput" type="text" placeholder="Description about webinar" class="form-control view" rows="6"></textarea>
                                     </div>
@@ -557,21 +570,39 @@
               }
             });
 
-            $("#sendall").change(function() {
+            $("#check1").change(function() {
                 if(this.checked) {
-                    $('.contact').prop('disabled','true')
+                    $('.check1').prop('disabled','true')
                 }
                 else{
-                    $('.contact').removeAttr('disabled')
+                    $('.check1').removeAttr('disabled')
                 }
             });
 
-            $("#sendall2").change(function() {
+            $("#check2").change(function() {
                 if(this.checked) {
-                    $('.contact2').prop('disabled','true')
+                    $('.check2').prop('disabled','true')
                 }
                 else{
-                    $('.contact2').removeAttr('disabled')
+                    $('.check2').removeAttr('disabled')
+                }
+            });
+
+            $("#check3").change(function() {
+                if(this.checked) {
+                    $('.check3').prop('disabled','true')
+                }
+                else{
+                    $('.check3').removeAttr('disabled')
+                }
+            });
+
+            $("#check4").change(function() {
+                if(this.checked) {
+                    $('.check4').prop('disabled','true')
+                }
+                else{
+                    $('.check4').removeAttr('disabled')
                 }
             });
         </script>
@@ -658,12 +689,7 @@
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         { data: 'id', render: function (dataField) { return dataField+':00 PM'; } },
                         {
-                          data: 'id',
-                          "width": "5%",
-                           render: function (dataField) { return `
-                                            <a href="view_participant.html" class="py-1 text-green font-13 bg-transparent">View Participant (`+dataField+`) </a>
-                                            
-                                            `}
+                          data: 'id'
                         },                        
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
@@ -675,6 +701,8 @@
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 <a class="dropdown-item font-12 d-lg-none" href="#" data-toggle="modal" data-target="#webinar">Edit</a>
+                                                <a class="dropdown-item font-12" href="view_registrant.html">View Registrants</a>
+                                                <a class="dropdown-item font-12" href="view_attendee.html">View Attendees</a>
                                                 <a class="dropdown-item font-12" href="#">Disable</a>
                                                 <a class="dropdown-item font-12" href="#">Delete</a>
                                             </div>

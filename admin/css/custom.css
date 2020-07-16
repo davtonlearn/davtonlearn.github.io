@@ -74,6 +74,10 @@
 .select2-container--default .select2-selection--single .select2-selection__arrow b{
 	margin-top: 3px!important;
 }
+.select2-webinar .select2-selection__rendered{
+	    height: 30px!important;
+    padding-top: 4px!important;
+}
 @media (max-width: 768px) {
 	 #filters-area span, #filters-group span, #filters-area span input, #filters-group span input{
 		margin-right: 15px;

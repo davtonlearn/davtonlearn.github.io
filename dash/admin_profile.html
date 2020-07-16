@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />-->
+        <meta name="description" content="DavtonLearn">
+        <meta name="author" content="">
+        <title>Welcome to DavtonLearn</title>
+        <link rel="shortcut icon" href="img/favicon.png">
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/countrySelect.css">
+
+        <!-- Font Awesome JS -->
+        <script defer src="js/solid.js"></script>
+        <script defer src="js/fontawesome.js"></script>
+        <link rel="stylesheet" href="css/select2.min.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="css/intlTelInput.css">
+    </head>
+
+    <body class="dashboard-body">
+
+        <div class="top_nav">
+            <img src="img/top_strip.jpg" class="img-fluid position-absolute" />
+            <div class="container-fluid dashboard_nav py-0">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <a class="navbar-brand py-0" href="#"><img src="img/logo.svg" class="mt-2" alt="Davton logo" width="" /></a>
+                    <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="nav navbar-nav ml-auto">
+
+                            <li class="nav-item px-md-1">
+                                <a class="nav-link text-dark" href="message.html">
+                                    <img src="img/mail.svg" alt="Messages" class="mt-1">
+                                </a>
+                            </li>
+
+                            <li class="nav-item px-md-1">
+                                <a class="nav-link text-dark" href="#" data-target="#notifications" data-toggle="modal">
+                                    <img src="img/notification.svg" alt="user name" class="">
+                                </a>
+                            </li>
+
+                            <li class="nav-item dropdown pr-md-4 pl-2">
+                                <a class="nav-link text-white dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="py-1 px-2" style="border-radius: 3px; background-color: white; color: #14AD51">M</span>&nbsp; &nbsp; Hr247@asanta.com &nbsp;
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                                    <a class="dropdown-item font-12" href="#">Log Out</a>
+                                    <a class="dropdown-item font-12" href="settings.html">Setting</a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+
+        <div class="wrapper">
+            <!-- Sidebar  -->
+            <nav id="sidebar" class="">
+                <div class="sidebar-header">
+                    <button type="button" id="sidebarCollapse-1" class="btn bg-trans d-none">
+                        <img src="img/hamburger.svg" />
+                    </button>
+                </div>
+
+
+                <ul class="list-unstyled components">
+                    <p class="text-dark text-left ml-4 mb-2 font-35">Hi Adeyemi Inc. </p>
+                    <p class="text-dull text-left ml-4 my-2 font-14 font-weight-light">Hr247@asanta.com</p>
+
+                    <li>
+                        <a href="index.html">
+                            <img src="img/dashboard.svg" alt="Dashboard" class="mb-1 mr-3 img-fluid" width="15" /> Dashboard
+                        </a>
+                    </li>
+
+                    <p class="text-dull text-left ml-4 my-2 font-12">Company Management</p>
+
+                    <li>
+                        <a href="c_staff.html">
+                            <img src="img/staff.svg" alt="STAFF" class="mb-1 mr-3 img-fluid" width="15" /> Staff
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="c_department.html">
+                            <img src="img/department_sidebar.svg" alt="department" class="mb-1 mr-3 img-fluid" width="15" /> Department
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="c_courses.html">
+                            <img src="img/courses.svg" alt="courses" class="mb-1 mr-3 img-fluid" width="15" /> Courses
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="certificate.html">
+                            <img src="img/activity.svg" alt="courses" class="mb-1 mr-3 img-fluid" width="15" /> Certificates
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="c_reports.html">
+                            <img src="img/reports.svg" alt="reports" class="mb-1 mr-3 img-fluid" width="15" /> Reports
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="c_quizes.html">
+                            <img src="img/department_sidebar.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Quizzes
+                        </a>
+                    </li>
+
+                    <p class="text-dull text-left ml-4 my-2 font-12">Communications</p>
+
+                    <li>
+                        <a href="message.html">
+                            <img src="img/communication.svg" alt="Message" class="mb-1 mr-3 img-fluid" width="15" /> Message
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="blog.html">
+                            <img src="img/blog.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Blog
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="webinar.html">
+                            <img src="img/webinar.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Webinar
+                        </a>
+                    </li>
+
+                    <p class="text-dull text-left ml-4 my-2 font-12">Account Management</p>
+
+                    <li class="active">
+                        <a href="admin.html">
+                            <img src="img/admins.png" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Admins
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="billing.html">
+                            <img src="img/billing.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Billing & Subcription
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="settings.html">
+                            <img src="img/Settings.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Settings
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="img/logout.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Log Out
+                        </a>
+                    </li>
+
+                    <button type="button" class="btn btn-green px-4 position-relative support_button"><img src="img/question.png" class="img-fluid"> Support</button>
+
+                    <div class="support-links pt-4 none">
+
+                        <li class="font-weight-light">
+                            <a href="#">
+                                Help Desk
+                            </a>
+                        </li>
+
+                        <li class="font-weight-light">
+                            <a href="#">
+                                API Documentation
+                            </a>
+                        </li>
+
+                        <li class="font-weight-light">
+                            <a href="development.html">
+                                Course Development
+                            </a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+
+            <div class="dasboard-top-wrapper">
+
+            </div>
+
+
+            <!-- Page Content  -->
+            <div id="content">
+
+                <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light d-none display border">
+                    <div class="container-fluid">
+                        <button id="sidebarCollapse" class="btn bg-trans d-inline-block d-lg-none ml-auto" type="button">
+                            <i alt="menu" class="fas fa-align-justify text-consolidated"></i>
+                        </button>
+                    </div>
+                </nav>
+
+
+                <div class="row mx-md-2 my-5">
+                    <div class="col-md-12">
+                        <div class="d-flex">
+                            <div class="col px-0">
+                                <p class="text-grey text-uppercase"><a href="admin.html" class="font-13"><img src="img/back_button.svg" alt="back button" class="img-fluid" /> Back</a></p>
+                            </div> 
+                        </div>
+
+                        <div class="card--dashboard">
+                            <div class="d-flex border-bottom">
+                                <div class="col px-4">
+                                    <h5 class="text-grey my-2 weight-semi-bold">Admin Profile</h5>                                
+                                </div>
+                            </div>
+
+                            <div class="row mt-3 px-4">
+                                <div class="col-lg-10 mt-3 mb-5">
+                                    <form class="">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="company_name" class="text-grey small">Admin Name</label>
+
+                                                <input type="text" class="form-control mb-2" disabled id="company_name" name="company_name" placeholder="Company Name">
+                                                <label for="company_name" class="text-dim small weight-semi-bold text-italics">For your security, you cannot change your first name until you contact us on contact@davtonlms.com or 0700 113 911 966</label>
+                                            </div>
+
+                                            <div class="form-group col-md-6">
+                                                <label for="email" class="text-grey small">Email</label>
+                                                <input type="text" class="form-control mb-2" disabled id="email" name="email" placeholder="Email">
+
+                                                <label for="email" class="text-dim small weight-semi-bold text-italics">For your security, you cannot change your first name until you contact us on contact@davtonlms.com or 0700 113 911 966</label>
+                                            </div>
+
+                                            <div class="form-group col-md-6">
+                                                <label for="mobile_no" class="text-grey small">Phone Number</label>
+                                                <input name="phone" type="tel" class="phone form-control element-block pl-5"  required>
+                                            </div>
+
+                                            <div class="form-group col-md-6">
+                                                <label for="country_selector" class="text-grey small w-100">Location</label>
+                                                <input class="form-control font-13" id="country_selector" type="text">
+                                            </div>
+
+                                            <div class="form-group col-md-6" id="show-state">
+                                                <label class="control-label small w-100">State</label>
+                                                <select
+                                                  onchange="toggleLGA(this);"
+                                                  name="state"
+                                                  id="state"
+                                                  class="form-control custom-select select2 font-12"
+                                                  style="height: 39px"
+                                                >
+                                                  <option value="" selected="selected">- Select -</option>
+                                                  <option value="Abia">Abia</option>
+                                                  <option value="Adamawa">Adamawa</option>
+                                                  <option value="AkwaIbom">AkwaIbom</option>
+                                                  <option value="Anambra">Anambra</option>
+                                                  <option value="Bauchi">Bauchi</option>
+                                                  <option value="Bayelsa">Bayelsa</option>
+                                                  <option value="Benue">Benue</option>
+                                                  <option value="Borno">Borno</option>
+                                                  <option value="Cross River">Cross River</option>
+                                                  <option value="Delta">Delta</option>
+                                                  <option value="Ebonyi">Ebonyi</option>
+                                                  <option value="Edo">Edo</option>
+                                                  <option value="Ekiti">Ekiti</option>
+                                                  <option value="Enugu">Enugu</option>
+                                                  <option value="FCT">FCT</option>
+                                                  <option value="Gombe">Gombe</option>
+                                                  <option value="Imo">Imo</option>
+                                                  <option value="Jigawa">Jigawa</option>
+                                                  <option value="Kaduna">Kaduna</option>
+                                                  <option value="Kano">Kano</option>
+                                                  <option value="Katsina">Katsina</option>
+                                                  <option value="Kebbi">Kebbi</option>
+                                                  <option value="Kogi">Kogi</option>
+                                                  <option value="Kwara">Kwara</option>
+                                                  <option value="Lagos">Lagos</option>
+                                                  <option value="Nasarawa">Nasarawa</option>
+                                                  <option value="Niger">Niger</option>
+                                                  <option value="Ogun">Ogun</option>
+                                                  <option value="Ondo">Ondo</option>
+                                                  <option value="Osun">Osun</option>
+                                                  <option value="Oyo">Oyo</option>
+                                                  <option value="Plateau">Plateau</option>
+                                                  <option value="Rivers">Rivers</option>
+                                                  <option value="Sokoto">Sokoto</option>
+                                                  <option value="Taraba">Taraba</option>
+                                                  <option value="Yobe">Yobe</option>
+                                                  <option value="Zamfara">Zamafara</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group col-md-6" id="show-lga">
+                                                <label class="control-label small w-100">LGA</label>
+                                                <select
+                                                  name="lga"
+                                                  id="lga"
+                                                  class="form-control select2 custom-select select-lga font-12"
+                                                  style="height: 39px"
+                                                >
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group col-md-12">
+                                                <label for="address" class="text-grey small">Address</label>
+                                                <input type="text" class="form-control mb-2" id="address" name="address" placeholder="Address">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row mt-3">
+                                            <div class="col-md-7 text-center text-md-left">
+                                                <button class="btn btn-green py-1 px-4 my-2 md-btn-block">Update Profile</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Notification Modal-->
+            <div  aria-hidden="true" class="onboarding-modal modal fade animated" id="notifications" role="dialog" tabindex="-1">
+                <div class="modal-dialog modal-right" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title text-left text-green">Notifications</h6>
+                            <button   class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
+                        </div>
+
+                        <div class="onboarding-content with-radient px-3 pt-3">
+
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <img src="img/notify.png" alt="notify" />
+                                </div>
+
+                                <div class="col-lg-9">
+                                    <p class="font-weight-500 mb-1">Dui nulla id massa turpis.</p>
+                                    <p class="font-13 mb-2">Gravida odio id commodo libero, aliquam. Tempus bibendum vestibulum aliquet morbi amet.</p>
+                                    <p class="font-12"><img class="img-fluid mr-2" src="img/notification_time.png" alt="Time received 20 mins ago"/>20 mins ago</p>
+                                </div>
+                            </div>
+                            <hr class="mb-3 mt-0" />
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <img src="img/notify.png" alt="notify" />
+                                </div>
+
+                                <div class="col-lg-9">
+                                    <p class="font-weight-500 mb-1">Dui nulla id massa turpis.</p>
+                                    <p class="font-13 mb-2">Gravida odio id commodo libero, aliquam. Tempus bibendum vestibulum aliquet morbi amet.</p>
+                                    <p class="font-12"><img class="img-fluid mr-2" src="img/notification_time.png" alt="Time received 20 mins ago"/>20 mins ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script src="js/jquery.slim.js"></script>
+        <!-- Popper.JS -->
+        <script src="js/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/select2.min.js"></script>
+        <script src="js/lga.js"></script>
+        <script src="js/utility.js"></script>
+        <script src="js/countrySelect.js"></script>
+        <script src="js/intlTelInput.js"></script>
+        <script>
+            $("#country_selector").countrySelect({
+                preferredCountries: ['ng']
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+
+                var input = document.querySelector(".phone");
+                window.intlTelInput(input, {
+                  preferredCountries: ['ng'],
+                  utilsScript: "js/utils.js",
+                });
+
+                $('#country_selector').on('change input', function(){
+                    $('#show-state, #show-lga').show()
+                    val= $(this).val()
+                    if (val !== "Nigeria"){
+                        $('#show-state, #show-lga').hide()
+                    }
+                })
+            })
+        </script>
+
+    </body>
+
+</html>

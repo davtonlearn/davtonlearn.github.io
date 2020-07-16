@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />-->
+        <meta name="description" content="DavtonLearn">
+        <meta name="author" content="">
+        <title>Welcome to DavtonLearn</title>
+        <link rel="shortcut icon" href="img/favicon.png">
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/jquery.minicolors.css">  
+
+        <!-- Font Awesome JS -->
+        <script defer src="js/solid.js"></script>
+        <script defer src="js/fontawesome.js"></script>
+        <style>
+            .form-control {
+                font-size: 1rem;
+                color: #B7B7B7;
+            }
+            .custom-select {
+                color: #4F4F4F;
+            }
+        </style>
+        <style type="text/css">
+            .pick-a-color-markup .color-menu.color-menu--inline{
+                left: 0;
+            }
+            .btn-color{
+                border: 1px solid #ccc;
+                padding: 6px 12px 5px 5px!important;
+            }
+            button.dropdown-toggle::after{
+                right: 3px!important;
+            }
+            .pick-a-color-markup {
+                margin:20px 0px;
+            }
+            .tooltip-inner {
+              background-color: #eee !important;
+              color: #333;
+            }
+
+            .bs-tooltip-top .arrow::before {
+              border-top-color: #eee!important;
+            }
+
+            .bs-tooltip-right .arrow::before {
+              border-right-color: #eee!important;
+            }
+
+            .bs-tooltip-bottom .arrow::before {
+              border-bottom-color: #eee!important;
+            }
+
+            .bs-tooltip-left .arrow::before {
+              border-left-color: #eee!important;
+            }
+            
+        </style>
+    </head>
+
+    <body class="dashboard-body">
+
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-4">
+                <div class="px-4 pt-5 pb-2 position-relative text-center">
+                    <img src="img/davton_learn.png" class="img-fluid" alt="davton learn" />
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container mt-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="init_setup_card">
+                        <div class="" id="card_one">
+
+                            <div class="px-3 pt-3 border-bottom" style="background: rgba(20, 90, 155, 0.05);">
+                                <div class="row position-relative">
+                                    <div class="col-7">
+                                        <h3 class="mb-3">Welcome to Davtonlms!</h3>
+                                        <p class="font-weight-light mb-4">We take the work out of developing people for business growth.</p>
+                                    </div>
+                                    <img src="img/Welcome_Illustration.png" class="img-fluid position-absolute welcome_illustration" />
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col-lg-5 my-2">
+                                    <div class="px-3 py-2 text-center">
+                                        <p class="font-14 mb-2 font-weight-bold text-left">Select company color</p>
+                                        <div class="form-group">
+                                          <input type="text" id="hue-demo" class="form-control demo font-13" data-control="hue" value="#ff6161">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-6 my-2">
+                                    <div class="px-3 py-2 text-center">
+                                        <div class="row">
+                                            <div class="col-5 pl-0">
+                                                <img src="img/placeholder-logo.png" id="logo_placeholder" alt="Logo Placeholder" class="img-fluid" style="width: auto;height: auto;border-radius: 4px;border: 1px solid #ccc;padding: 2px;" />
+                                            </div>
+
+                                            <div class="col-7">
+                                                <p class="font-13 mb-0 weight-semi-bold text-left">Upload company logo</p>
+                                                <p class="font-11 mb-2 text-dim text-left">Maximum size of 250px x 40px pixel</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="upload-btn-wrapper">
+                                            <button class="btn btn-green font-11 py-1 px-3 mb-2">Upload Logo</button>
+                                            <input id="logo_image" type="file" accept="images/*"  />
+                                        </div>
+
+
+
+                                        <p class="font-14 mb-2 font-weight-bold text-left mt-3">Customise Domain Url</p>
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-9">
+                                                <input type="url" class="form-control" id="domain_url" placeholder="Adeyemi Inc">
+                                            </div>
+                                            <label for="domain_url" class="col-sm-2 col-form-label">.davtonlms.com</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!--second card starts here-->
+                        <div class="none" id="card_two">
+
+                            <div class="p-3 border-bottom" style="background: rgba(20, 90, 155, 0.05);">
+                                <div class="row position-relative">
+                                    <div class="col-lg-7">
+                                        <h5 class="mb-3 font-weight-light">Start developing your employees.</h5>
+                                        <p class="font-weight-light mb-4">We take the work out of developing people for business growth.</p>
+                                    </div>
+                                    <img src="img/Welcome_Illustration_2.png" class="img-fluid position-absolute welcome_illustration" />
+                                </div>
+                            </div>
+
+                            <div class="px-3 mt-3">
+                                <p class="font-14 mb-2 weight-semi-bold text-left">Select Home Page Design</p>
+                            </div>
+
+                            <div class="form-row mt-3">
+
+                                <div class="form-group col-lg-12">
+                                    <div class="d-flex">
+                                        <div class="col">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="home_default" name="page_design" class="custom-control-input">
+                                                <label class="custom-control-label small" for="home_default">Default</label>
+                                            </div>
+                                            <img src="img/login1.png" class="img-fluid mt-2" width="180" alt="Default" />
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="home_style_a" name="page_design" class="custom-control-input">
+                                                <label class="custom-control-label small" for="home_style_a">Style A</label>
+                                            </div>
+                                            <img src="img/login2.png" class="img-fluid mt-2" width="180" alt="Style A" />
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="home_style_b" name="page_design" class="custom-control-input">
+                                                <label class="custom-control-label small" for="home_style_b">Style B</label>
+                                            </div>
+                                            <img src="img/login3.png" class="img-fluid mt-2" width="180" alt="Style B" />
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="px-3 mt-3">
+                                <p class="font-14 mb-2 weight-semi-bold text-left">Customize Login</p>
+
+                                <div class="form-row mt-3">
+                                    <div class="form-group col-lg-8">
+                                        <label for="headline" class="small">HeadLine</label>
+                                        <input type="text" maxlength="50" class="form-control font-13" id="headline" placeholder="Enter HeadLine" value="Learn. Onboard. Promote" title="Maximum number of characters allowed is 20" data-toggle="tooltip" data-placement="right" />
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-lg-8">
+                                        <label for="body_text" class="small">Body Text</label>
+                                        <textarea type="text" rows="4" maxlength="200" class="form-control  font-13" id="body_text" placeholder="Enter Body Text"  title="Maximum number of characters allowed is 200" data-toggle="tooltip" data-placement="right" >Launch your digital training portal in just few minutes with davtonlms.  Onboard, promote employee growth, and orchestrate learning across all departments.</textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="px-3 mt-3">
+                                <p class="font-14 mb-2 weight-semi-bold text-left">Choose a certificate for your company</p>
+                            </div>
+
+                            <div class="form-row mt-3">
+
+                                <div class="form-group col-lg-12">
+                                    <div class="d-flex">
+                                        <div class="col">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="default" name="certificate_type" class="custom-control-input">
+                                                <label class="custom-control-label small" for="default">Default</label>
+                                            </div>
+                                            <img src="img/default.png" class="img-fluid mt-2" width="180" alt="Default" />
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="style_a" name="certificate_type" class="custom-control-input">
+                                                <label class="custom-control-label small" for="style_a">Style A</label>
+                                            </div>
+                                            <img src="img/style_a.png" class="img-fluid mt-2" width="180" alt="Style A" />
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="style_b" name="certificate_type" class="custom-control-input">
+                                                <label class="custom-control-label small" for="style_b">Style B</label>
+                                            </div>
+                                            <img src="img/style_b.png" class="img-fluid mt-2" width="180" alt="Style B" />
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!--third card starts here-->
+                        <div id="card_three" class="none">
+
+                            <div class="p-3 border-bottom" style="background: rgba(20, 90, 155, 0.05);">
+                                <div class="row position-relative">
+                                    <div class="col-lg-7">
+                                        <h5 class="mb-3 font-weight-light">Start developing your employees.</h5>
+                                        <p class="font-weight-light mb-4">We take the work out of developing people for business growth.</p>
+                                    </div>
+                                    <img src="img/Welcome_Illustration_2.png" class="img-fluid position-absolute welcome_illustration" />
+                                </div>
+                            </div>
+
+                            <div class="row p-4">
+                                <div class="col-lg-7">
+                                    <p class="font-14 mb-2 weight-semi-bold text-left">Customize Login</p>
+
+                                    <div class="form-row mt-3">
+                                        <div class="form-group col-lg-8">
+                                            <label class="small">How many employees would you love to manage?</label>
+                                            <input value="1" type="number" class="form-control form-control-sm input-staff" name="">
+                                        </div>
+                                    </div>
+
+                                    <p class="font-13">Dowload this xlsx document to upload your employees. <a href="#" class="text-primary">Download</a></p>
+
+                                    <div class="form-row">
+                                        <div class="form-group col-lg-8">
+                                            <label for="upload_employees" class="small">Upload your xlsx file here to onboard multiple employees</label>
+                                            <input type="file" class="form-control form-control-sm font-14" id="upload_employees" placeholder="Start your free 14-day trial and access all davtonlms.." style="padding-bottom: 32px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <div class="card bg-success">
+                                      <div class="card-body">
+                                        <p class="font-14 text-white">Based on your staff size of <span class="staff-val">1</span>, your minimum subscription will be &#8358; <span class="sub-val">25,000</span>/month.</p>
+
+                                        <p class="font-13 text-white">However, you will recieve 14-day trial period.</p>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="px-3">
+                        <div class="row my-4">
+                            <div class="ml-auto px-3">
+                                <a href="#" class="">Continue Later</a>
+
+                                <button class="btn btn-green font-13 ml-5" type="button" id="choose_template">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Popper.JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" ></script>
+        <!-- Bootstrap JS -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/material-picker.min.js"></script>
+        <script src="js/utility.js"></script>
+        <script src="js/pick-a-color-1.2.3.min.js"></script>  
+        <script src="js/tinycolor-0.9.15.min.js"></script>  
+        <script src="js/jquery.minicolors.js"></script>
+
+        <script>
+            function addCommas(nStr) {
+                nStr += '';
+                var x = nStr.split('.');
+                var x1 = x[0];
+                var x2 = x.length > 1 ? '.' + x[1] : '';
+                var rgx = /(\d+)(\d{3})/;
+                while (rgx.test(x1)) {
+                    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                }
+                return x1 + x2;
+            }
+        </script>
+
+        <script>
+            $(document).ready( function() {
+
+              $('.demo').each( function() {
+                $(this).minicolors({
+                  control: $(this).attr('data-control') || 'hue',
+                  defaultValue: $(this).attr('data-defaultValue') || '',
+                  format: $(this).attr('data-format') || 'hex',
+                  keywords: $(this).attr('data-keywords') || '',
+                  inline: $(this).attr('data-inline') === 'true',
+                  letterCase: $(this).attr('data-letterCase') || 'lowercase',
+                  opacity: $(this).attr('data-opacity'),
+                  position: $(this).attr('data-position') || 'bottom',
+                  swatches: $(this).attr('data-swatches') ? $(this).attr('data-swatches').split('|') : [],
+                  change: function(value, opacity) {
+                    if( !value ) return;
+                    if( opacity ) value += ', ' + opacity;
+                    if( typeof console === 'object' ) {
+                      // console.log(value);
+                    }
+                  },
+                  theme: 'bootstrap'
+                });
+
+              });
+
+            });
+        </script>
+        
+        <script type="text/javascript">
+        
+            $(document).ready(function () {
+
+                $('[data-toggle="tooltip"]').tooltip()
+            });
+
+            $('.input-staff').on('input', function(){
+                val = $(this).val();
+                if(val >= 1 && val <= 100 ){
+                    price = 25000;
+                }
+                else if(val >= 101 && val <= 1000 ){
+                    price = 250000;
+                }
+                else if(val >= 1000){
+                    price = 2500000;
+                }
+                $('.sub-val').text(addCommas(price))
+                $('.staff-val').text(addCommas(val))
+            })
+
+            var fileInput = document.getElementById("logo_image");
+                // listening on when someone selects a file
+                fileInput .onchange = function(e) {
+                  e.preventDefault();
+
+                  // get the file someone selected
+                  var file = fileInput.files && fileInput.files[0];
+
+                  // create an image element with that selected file
+                  var img = new Image();
+                  img.src = window.URL.createObjectURL(file);
+
+                  // as soon as the image has been loaded
+                  img.onload = function() {
+                    var width = img.naturalWidth,
+                      height = img.naturalHeight;
+
+                    // unload it
+                    window.URL.revokeObjectURL(img.src);
+
+                    // check its dimensions
+                    if (width <= 250 && height <= 40) {
+                      // it fits 
+                    } else {
+                      // it doesn't fit, unset the value 
+                      // post an error
+                      fileInput.value = ""
+                      $('#logo_placeholder').attr('src','img/placeholder-logo.png')
+                      alert("Logo dimensions must not exceed 250px x 40px")
+                    }
+                  };
+
+                };
+        </script>
+
+    </body>
+
+</html>

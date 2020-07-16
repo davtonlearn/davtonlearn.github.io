@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-    
-<!-- Mirrored from davtonlearn.herokuapp.com/dashboard/billing.html by HTTrack Website Copier/3.x [XR&CO'2017], Mon, 25 May 2020 21:45:58 GMT -->
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,8 +16,8 @@
         <link rel="stylesheet" href="css/style.css">
 
         <!-- Font Awesome JS -->
-        <script defer src="../../use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-        <script defer src="../../use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+        <script defer src="js/solid.js"></script>
+        <script defer src="js/fontawesome.js"></script>
     </head>
 
     <body class="dashboard-body">
@@ -36,7 +34,7 @@
                         <ul class="nav navbar-nav ml-auto">
 
                             <li class="nav-item px-md-1">
-                                <a class="nav-link text-dark" href="message.html" data-target="#acc_details">
+                                <a class="nav-link text-dark" href="message.html">
                                     <img src="img/mail.svg" alt="Messages" class="mt-1">
                                 </a>
                             </li>
@@ -65,7 +63,6 @@
         </div>
 
 
-
         <div class="wrapper">
             <!-- Sidebar  -->
             <nav id="sidebar" class="">
@@ -80,41 +77,46 @@
                     <p class="text-dark text-left ml-4 mb-2 font-35">Hi Adeyemi Inc. </p>
                     <p class="text-dull text-left ml-4 my-2 font-14 font-weight-light">Hr247@asanta.com</p>
 
-                    <li class="">
+                    <li>
                         <a href="index.html">
                             <img src="img/dashboard.svg" alt="Dashboard" class="mb-1 mr-3 img-fluid" width="15" /> Dashboard
                         </a>
-
                     </li>
 
-                    <p class="text-dull text-left ml-4 my-2 font-12">Staff Management</p>
+                    <p class="text-dull text-left ml-4 my-2 font-12">Company Management</p>
 
                     <li>
-                        <a href="staff.html">
+                        <a href="c_staff.html">
                             <img src="img/staff.svg" alt="STAFF" class="mb-1 mr-3 img-fluid" width="15" /> Staff
                         </a>
                     </li>
 
                     <li>
-                        <a href="department.html">
+                        <a href="c_department.html">
                             <img src="img/department_sidebar.svg" alt="department" class="mb-1 mr-3 img-fluid" width="15" /> Department
                         </a>
                     </li>
 
                     <li>
-                        <a href="courses.html">
+                        <a href="c_courses.html">
                             <img src="img/courses.svg" alt="courses" class="mb-1 mr-3 img-fluid" width="15" /> Courses
                         </a>
                     </li>
 
                     <li>
-                        <a href="reports.html">
+                        <a href="certificate.html">
+                            <img src="img/activity.svg" alt="courses" class="mb-1 mr-3 img-fluid" width="15" /> Certificates
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="c_reports.html">
                             <img src="img/reports.svg" alt="reports" class="mb-1 mr-3 img-fluid" width="15" /> Reports
                         </a>
                     </li>
 
                     <li>
-                        <a href="quizes.html">
+                        <a href="c_quizes.html">
                             <img src="img/department_sidebar.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Quizzes
                         </a>
                     </li>
@@ -133,6 +135,12 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="webinar.html">
+                            <img src="img/webinar.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Webinar
+                        </a>
+                    </li>
+
                     <p class="text-dull text-left ml-4 my-2 font-12">Account Management</p>
 
                     <li>
@@ -141,13 +149,13 @@
                         </a>
                     </li>
 
-                    <li class="active">
+                    <li>
                         <a href="billing.html">
                             <img src="img/billing.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Billing & Subcription
                         </a>
                     </li>
 
-                    <li>
+                    <li class="active">
                         <a href="settings.html">
                             <img src="img/Settings.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Settings
                         </a>
@@ -176,7 +184,7 @@
                         </li>
 
                         <li class="font-weight-light">
-                            <a href="#">
+                            <a href="development.html">
                                 Course Development
                             </a>
                         </li>
@@ -185,13 +193,14 @@
 
             </nav>
 
-
             <div class="dasboard-top-wrapper">
 
             </div>
 
             <!-- Page Content  -->
             <div id="content">
+
+
                 <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light d-none display border">
                     <div class="container-fluid">
                         <button id="sidebarCollapse" class="btn bg-trans d-inline-block d-lg-none ml-auto" type="button">
@@ -201,158 +210,96 @@
                 </nav>
 
 
-                <div class="row mx-md-2 mt-5">
-                    <div class="col-md-8">
+                <div class="row mx-md-2 my-5">
+                    <div class="col-md-12">
                         <div class="d-flex">
                             <div class="col px-0">
-                                <p class="text-green text-uppercase">Subcription & Billing</p>
-                            </div>
+                                <p class="text-green text-uppercase">SETTINGS</p>                                
+                            </div> 
                         </div>
-                    </div>
-                </div>
-
-                <div class="row mx-md-2 mb-5">
-                    <div class="col-md-9">
 
                         <div class="card--dashboard">
-
+                            <div class="d-flex border-bottom">
+                                <div class="col px-4">
+                                    <h4 class="text-grey my-2 weight-semi-bold">Account Settings</h4>                                
+                                </div>
+                            </div>
                             <div class="row mt-3 px-4">
-                                <div class="col-lg-12">
-                                    <p class="text-center">Choose the right plan for you</p>
-                                    <p class="text-center font-11 mb-0">Have you exsauted your free  20 days trial?  All plans could are very flexible and are monthly.</p>
-                                    <p class="text-center font-11">You can upgrade at anytime.</p>
-                                </div>
-                            </div>
-
-                            <div class="row justify-content-center px-4 mb-4">
-                                <div class="col-md-4 my-2">
-                                    <div class="payment_card text-center rounded-5">
-                                        <div class="text-center">
-                                            <img src="img/pricing-05.png" alt="pricing - free plan">
+                                <div class="col-lg-4 my-3">
+                                    <a href="company_profile.html">
+                                        <div class="settings-card px-3 py-2 d-flex">
+                                            <div class="col-2 px-0">
+                                                <img src="img/company_profile.svg" alt="company profile" class="img-fluid mt-4" />
+                                            </div>
+                                            <div class="col-10 px-0">
+                                                <p class="font-14 mb-1 weight-semi-bold">Company’s  Profile</p>
+                                                <p class="font-13">Fermentum, et amet lectus non ultrices fringilla justo, volutpat. </p>
+                                            </div>
                                         </div>
-
-                                        <h6 class="text-dark mt-2">Free plan</h6>
-                                        <h2 class="text-center text-green"><span class="price_text">₦</span>0</h2>
-                                        <p class="text-center small px-1 mb-4">Get to know process and features. Essential tools.</p>
-
-                                        <button class="btn btn-outline--green btn-sm px-4 py-2 mt-4 mb-3">FREE TRIAL</button>
-
-                                    </div>
+                                    </a>
                                 </div>
 
-                                <div class="col-md-4 my-2">
-                                    <div class="payment_card   text-center rounded-5">
-                                        <div class="text-center">
-                                            <img src="img/pricing-06.png" alt="pricing - 1200 plan">
+                                <div class="col-lg-4 my-3">
+                                    <a href="manage_password.html">
+                                        <div class="settings-card px-3 py-2 d-flex">
+                                            <div class="col-2 px-0">
+                                                <img src="img/manage_password.svg" alt="Manage Password" class="img-fluid mt-4" />
+                                            </div>
+                                            <div class="col-10 px-0">
+                                                <p class="font-14 mb-1 weight-semi-bold">Manage Password</p>
+                                                <p class="font-13">Fermentum, et amet lectus non ultrices fringilla justo, volutpat. </p>
+                                            </div>
                                         </div>
-
-                                        <h6 class="text-dark">Professional plan</h6>
-                                        <h2 class="text-center text-green"><span class="price_text">₦</span>1,200</h2>
-                                        <p class="text-center small px-1">Offers more power and Unlimited invoices, Unlimited users and get notifications.</p>
-
-                                        <button class="btn btn-green btn-sm my-3 px-4 py-2">BUY PLAN</button>
-
-                                    </div>
+                                    </a>
                                 </div>
 
-                                <div class="col-md-4 my-2">
-                                    <div class="payment_card   text-center rounded-5">
-                                        <div class="text-center">
-                                            <img src="img/pricing-07.png" alt="pricing - 4000 plan">
+                                <div class="col-lg-4 my-3">
+                                    <a href="customize_dashboard.html">
+                                        <div class="settings-card px-3 py-2 d-flex">
+                                            <div class="col-2 px-0">
+                                                <img src="img/customize_dashboard.svg" alt="Customize Dashboard" class="img-fluid mt-4" />
+                                            </div>
+                                            <div class="col-10 px-0">
+                                                <p class="font-14 mb-1 weight-semi-bold">Customize Dashboard</p>
+                                                <p class="font-13">Fermentum, et amet lectus non ultrices fringilla justo, volutpat. </p>
+                                            </div>
                                         </div>
-
-                                        <h6 class="text-dark">Enterprise plan</h6>
-                                        <h2 class="text-center text-green"><span class="price_text">₦</span>4,000</h2>
-                                        <p class="text-center small px-1">Offers more power and Unlimited invoices, Unlimited users and get notifications.</p>
-
-                                        <button class="btn btn-outline--green btn-sm my-3 px-4 py-2">BUY PLAN</button>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="card--dashboard my-4">
-                            <div class="d-flex">
-                                <div class="col">
-                                    <p class="text-grey mt-3 mb-1 font-13">Recent Transaction: <span class="text-green font-weight-bold">Subcription, Courses & Payments</span></p>
-                                    <img src="img/medium_line.png" alt="short_line" class="img-fluid" />
-                                </div>
-                            </div>
-
-                            <div class="row justify-content-center px-4 mb-4">
-                                <div class="col-md-12 my-2">
-                                    <div class="d-flex rounded-5 mt-3 height-100p">
-                                        <div class="col-8">
-                                            <p class="font-12 px-1 mb-4">Suspendisse posuere diam risus euismod vitae nas</p>
-                                        </div>
-
-                                        <div class="col-3 offset-1 text-md-right">
-                                            <p class="font-12 px-1 mb-4">20/07/19</p>
-                                        </div>
-                                        <img src="img/transaction_bar.png" class="position-absolute" style="left: 0" />
-                                    </div>
-
-                                    <div class="d-flex rounded-5 height-100p">
-                                        <div class="col-8 ">
-                                            <p class="font-12 px-1 mb-4">Suspendisse posuere diam risus</p>
-                                        </div>
-
-                                        <div class="col-3 offset-1 text-md-right">
-                                            <p class="font-12 px-1 mb-4">20/07/19</p>
-                                        </div>
-                                        <img src="img/transaction_bar.png" class="position-absolute" style="left: 0" />
-                                    </div>
-
-                                    <div class="d-flex rounded-5 height-100p">
-                                        <div class="col-8">
-                                            <p class="font-12 px-1 mb-4">Susp</p>
-                                        </div>
-
-                                        <div class="col-3 offset-1 text-md-right">
-                                            <p class="font-12 px-1 mb-4">20/07/19</p>
-                                        </div>
-                                        <img src="img/transaction_bar.png" class="position-absolute" style="left: 0" />
-                                    </div>
+                                    </a>
                                 </div>
 
-
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-3">
-                        <div class="card--dashboard">
-                            <div class="d-flex">
-                                <div class="col">
-                                    <p class="text-grey mt-3 mb-1 font-13">Current Plan: <span class="text-green font-weight-bold">Free Plan</span></p>
+                                <div class="col-lg-4 my-3">
+                                    <a href="email_preferences.html">
+                                        <div class="settings-card px-3 py-2 d-flex">
+                                            <div class="col-2 px-0">
+                                                <img src="img/settings_notifications.svg" alt="Notifications" class="img-fluid mt-4" />
+                                            </div>
+                                            <div class="col-10 px-0">
+                                                <p class="font-14 mb-1 weight-semi-bold">Notifications</p>
+                                                <p class="font-13">Fermentum, et amet lectus non ultrices fringilla justo, volutpat. </p>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
 
-                            <div class="row px-4">
-                                <img src="img/short_line.png" alt="short_line" class="img-fluid" />
-                                <p class="text-green font-13 text-uppercase mt-2">Benefits:</p>
-                            </div>
-                        </div>
-
-
-                        <div class="card--dashboard mt-3 text-center">
-                            <p class="text-grey mt-3 mb-0 font-13 text-center">20 Days Left</p>
-
-                            <div class="px-4 text-center">
-                                <img src="img/short_line.png" alt="short_line" class="img-fluid" />
-                                <p class="text-green font-12 mt-1 mb-2">Billing & Subcription</p>
-
-                                <p class="small">You have 20 days left of free trial. Let's help  keep track of your expenses by creating you first purchase. </p>
+                                <div class="col-lg-4 my-3">
+                                    <a href="email_preferences.html">
+                                        <div class="settings-card px-3 py-2 d-flex">
+                                            <div class="col-2 px-0">
+                                                <img src="img/settings_notifications.svg" alt="Notifications" class="img-fluid mt-4" />
+                                            </div>
+                                            <div class="col-10 px-0">
+                                                <p class="font-14 mb-1 weight-semi-bold">Office 365 Integration</p>
+                                                <p class="font-13">Fermentum, et amet lectus non ultrices fringilla justo, volutpat. </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
 
             <!--Notification Modal-->
             <div  aria-hidden="true" class="onboarding-modal modal fade animated" id="notifications" role="dialog" tabindex="-1">
@@ -392,22 +339,16 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
 
 
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script src="js/jquery.min.js"></script>
         <!-- Popper.JS -->
-        <script src="../../cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" ></script>
+        <script src="js/libs/popper.js/1.14.0/umd/popper.min.js" ></script>
         <!-- Bootstrap JS -->
         <script src="js/bootstrap.min.js"></script>
-
         <script src="js/utility.js"></script>
 
     </body>
-
-
-<!-- Mirrored from davtonlearn.herokuapp.com/dashboard/billing.html by HTTrack Website Copier/3.x [XR&CO'2017], Mon, 25 May 2020 21:46:03 GMT -->
 </html>

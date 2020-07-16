@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />-->
+        <meta name="description" content="DavtonLearn">
+        <meta name="author" content="">
+        <title>Welcome to DavtonLearn</title>
+        <link rel="shortcut icon" href="img/favicon.png">
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/select2.min.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="css/file-upload-with-preview.min.css">
+
+    </head>
+
+    <body class="dashboard-body">
+
+        <div class="top_nav">
+            <img src="img/top_strip.jpg" class="img-fluid position-absolute" />
+            <div class="container-fluid dashboard_nav py-0">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <a class="navbar-brand py-0" href="#"><img src="img/logo.svg" class="mt-2" alt="Davton logo" width="" /></a>
+                    <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="nav navbar-nav ml-auto">
+
+                            <li class="nav-item px-md-1">
+                                <a class="nav-link text-dark" href="message.html">
+                                    <img src="img/mail.svg" alt="Messages" class="mt-1">
+                                </a>
+                            </li>
+
+                            <li class="nav-item px-md-1">
+                                <a class="nav-link text-dark" href="#" data-target="#notifications" data-toggle="modal">
+                                    <img src="img/notification.svg" alt="user name" class="">
+                                </a>
+                            </li>
+
+                            <li class="nav-item dropdown pr-md-4 pl-2">
+                                <a class="nav-link text-white dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="py-1 px-2" style="border-radius: 3px; background-color: white; color: #14AD51">M</span>&nbsp; &nbsp; Hr247@asanta.com &nbsp;
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                                    <a class="dropdown-item font-12" href="#">Log Out</a>
+                                    <a class="dropdown-item font-12" href="settings.html">Setting</a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+
+        <div class="wrapper">
+            <!-- Sidebar  -->
+            <nav id="sidebar" class="">
+                <div class="sidebar-header">
+                    <button type="button" id="sidebarCollapse-1" class="btn bg-trans d-none">
+                        <img src="img/hamburger.svg" />
+                    </button>
+                </div>
+
+
+                <ul class="list-unstyled components">
+                    <p class="text-dark text-left ml-4 mb-2 font-35">Hi Adeyemi Inc. </p>
+                    <p class="text-dull text-left ml-4 my-2 font-14 font-weight-light">Hr247@asanta.com</p>
+
+                    <li class="active">
+                        <a href="index.html">
+                            <img src="img/dashboard.svg" alt="Dashboard" class="mb-1 mr-3 img-fluid" width="15" /> Dashboard
+                        </a>
+                    </li>
+
+                    <p class="text-dull text-left ml-4 my-2 font-12">Company Management</p>
+
+                    <li>
+                        <a href="c_staff.html">
+                            <img src="img/staff.svg" alt="STAFF" class="mb-1 mr-3 img-fluid" width="15" /> Staff
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="c_department.html">
+                            <img src="img/department_sidebar.svg" alt="department" class="mb-1 mr-3 img-fluid" width="15" /> Department
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="c_courses.html">
+                            <img src="img/courses.svg" alt="courses" class="mb-1 mr-3 img-fluid" width="15" /> Courses
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="certificate.html">
+                            <img src="img/activity.svg" alt="courses" class="mb-1 mr-3 img-fluid" width="15" /> Certificates
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="c_reports.html">
+                            <img src="img/reports.svg" alt="reports" class="mb-1 mr-3 img-fluid" width="15" /> Reports
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="c_quizes.html">
+                            <img src="img/department_sidebar.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Quizzes
+                        </a>
+                    </li>
+
+                    <p class="text-dull text-left ml-4 my-2 font-12">Communications</p>
+
+                    <li>
+                        <a href="message.html">
+                            <img src="img/communication.svg" alt="Message" class="mb-1 mr-3 img-fluid" width="15" /> Message
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="blog.html">
+                            <img src="img/blog.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Blog
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="webinar.html">
+                            <img src="img/webinar.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Webinar
+                        </a>
+                    </li>
+
+                    <p class="text-dull text-left ml-4 my-2 font-12">Account Management</p>
+
+                    <li>
+                        <a href="admin.html">
+                            <img src="img/admins.png" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Admins
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="billing.html">
+                            <img src="img/billing.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Billing & Subcription
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="settings.html">
+                            <img src="img/Settings.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Settings
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="img/logout.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Log Out
+                        </a>
+                    </li>
+
+                    <button type="button" class="btn btn-green px-4 position-relative support_button"><img src="img/question.png" class="img-fluid"> Support</button>
+
+                    <div class="support-links pt-4 none">
+
+                        <li class="font-weight-light">
+                            <a href="#">
+                                Help Desk
+                            </a>
+                        </li>
+
+                        <li class="font-weight-light">
+                            <a href="#">
+                                API Documentation
+                            </a>
+                        </li>
+
+                        <li class="font-weight-light">
+                            <a href="development.html">
+                                Course Development
+                            </a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+
+            <div class="dasboard-top-wrapper">
+
+            </div>
+
+            <!-- Page Content  -->
+            <div id="content">
+                <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light d-none display border">
+                    <div class="container-fluid">
+                        <button id="sidebarCollapse" class="btn bg-trans d-inline-block d-lg-none ml-auto" type="button">
+                            <i alt="menu" class="fas fa-align-justify text-consolidated"></i>
+                        </button>
+                    </div>
+                </nav>
+
+
+                <div class="row mx-md-2 my-5">
+                    <div class="col-md-12">
+                        <div class="d-flex">
+                            <div class="col px-0">
+                                <p class="text-grey text-uppercase">
+                                    <a href="c_courses.html" class="font-13"><img src="img/back_button.svg" alt="go back to create course" /> Back</a></p>
+                            </div> 
+                        </div>
+
+                        <div class="card--dashboard">
+                            <div class="d-flex border-bottom px-lg-4 px-1">
+                                <div class="col">
+                                    <p class="my-2 text-uppercase text-green">Create Course</p>                                
+                                </div>
+                            </div>
+
+                            <div class="row mt-3 px-lg-4 px-1">
+                                <div class="col-lg-12 mb-5">
+                                    <form class="">
+                                        <div class="form-row">
+                                            <div class="col-lg-6 my-2 border-right">
+                                                <div class="px-3 py-2">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-sm-7">
+                                                            <select class="custom-select select2 font-14 w-100">
+                                                                <option>Project Management</option>
+                                                                <option>Project Management 1</option>
+                                                                <option>Project Management 2</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-sm-5">
+                                                            <button id="" class="btn btn-success btn-block font-13" type="button" data-toggle="modal" data-target="#category-modal" style="height: 40px">+ Add New Category</button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <div class="form-group col-lg-11">
+                                                            <input type="text" placeholder="Enter Course Title" class="form-control" value="PMP" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <div class="form-group col-lg-11">
+                                                            <div class="custom-file-container" data-upload-id="myUploader">
+
+                                                                <label class="custom-file-container__custom-file" >
+                                                                    <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                                                    <input type="file" class="custom-file-container__custom-file__custom-file-input" accept="*">
+                                                                    <span class="custom-file-container__custom-file__custom-file-control"></span>
+
+                                                                    <p class="font-13 text-green" style="position: absolute;top: 220px;">Change Photo </p>
+                                                                </label>
+
+                                                                <div class="col--5 custom-file-container__image-preview">
+                                                                    <label><a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"><img src="img/close-button.svg" class="img-fluid" style="width: 22px;" /></a></label>
+                                                                </div>
+
+
+                                                            </div>
+                                                            <p class="text-blue font-10 mb-0">Maximum size of 1083 x 1083 pixel.</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row px-1" id="departmentModalItems"></div>
+
+                                                    <div class="form-row mt-3">
+                                                        <div class="form-group col-lg-10">
+                                                            <textarea class="form-control" placeholder="Add a course description (Max 500 characters)" rows="3"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-5 my-2">
+                                                <div class="px-3 py-2">
+                                                    <p class="weight-semi-bold">Set Course Parameters</p>
+
+
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-12">
+                                                            <input type="number" class="form-control" placeholder="Set Passmark e.g 70" name="" min="50" max="100">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-12">
+                                                            <input type="number" class="form-control" placeholder="Set Course Retake e.g 3" name="" min="1" max="3">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-12">
+                                                            <input type="number" class="form-control" placeholder="Set Quiz Attempt e.g 3" name="" min="1" max="3">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <p class="weight-semi-bold mt-4">Set Course Price Per User</p>
+                                                        <div class="form-check mt-1">
+                                                          <input class="form-check-input view" type="checkbox" value="" id="free">
+                                                          <label class="form-check-label" for="sendall">
+                                                            Free
+                                                          </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-group mb-3 col-sm-12 px-0">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">&#x20A6;</span>
+                                                        </div>
+                                                        <input type="text" class="form-control cost" aria-label="Amount (to the nearest naira)">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">.00</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <p class="weight-semi-bold mt-4">Set Minimum Order</p>
+
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-12">
+                                                            <input type="number" class="form-control" placeholder="Set Minimum Order" name="" min="5">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-check mt-1">
+                                                          <input class="form-check-input view" type="checkbox" value="" id="free">
+                                                          <label class="form-check-label weight-semi-bold font-16" for="sendall">
+                                                            Enable Staff Self Enrollment
+                                                          </label>
+                                                        </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row mt-1 text-center">
+                                            <div class="form-group col-lg-8 mx-auto">
+                                                <div class="px-3 py-2">
+                                                    <a href="c_add_course_content.html" class="font-13 w-100 text-white btn btn-green px-5 md-btn-block my-2">Create Course</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Category Modal -->
+            <div class="modal fade" id="category-modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title text-center mx-auto">Create New Category(s)</h6>
+                            <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-row justify-content-center">
+                                    <div class="form-group col-lg-10">
+                                        <input id="" type="text" placeholder="Enter a Category name" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3 ml-auto mx-0 mt-4">
+                                        <button type="button" class="btn btn-success btn-block">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Category Modal End -->
+
+
+
+            <!--Notification Modal-->
+            <div  aria-hidden="true" class="onboarding-modal modal fade animated" id="notifications" role="dialog" tabindex="-1">
+                <div class="modal-dialog modal-right" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title text-left text-green">Notifications</h6>
+                            <button   class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
+                        </div>
+
+                        <div class="onboarding-content with-radient px-3 pt-3">
+
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <img src="img/notify.png" alt="notify" />
+                                </div>
+
+                                <div class="col-lg-9">
+                                    <p class="font-weight-500 mb-1">Dui nulla id massa turpis.</p>
+                                    <p class="font-13 mb-2">Gravida odio id commodo libero, aliquam. Tempus bibendum vestibulum aliquet morbi amet.</p>
+                                    <p class="font-12"><img class="img-fluid mr-2" src="img/notification_time.png" alt="Time received 20 mins ago"/>20 mins ago</p>
+                                </div>
+                            </div>
+                            <hr class="mb-3 mt-0" />
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <img src="img/notify.png" alt="notify" />
+                                </div>
+
+                                <div class="col-lg-9">
+                                    <p class="font-weight-500 mb-1">Dui nulla id massa turpis.</p>
+                                    <p class="font-13 mb-2">Gravida odio id commodo libero, aliquam. Tempus bibendum vestibulum aliquet morbi amet.</p>
+                                    <p class="font-12"><img class="img-fluid mr-2" src="img/notification_time.png" alt="Time received 20 mins ago"/>20 mins ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Popper.JS -->
+        <script src="js/libs/popper.js/1.14.0/umd/popper.min.js" ></script>
+        <!-- Bootstrap JS -->
+        <script src="js/select2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/utility.js"></script>
+        <script src="js/file-upload-with-preview.min.js"></script>
+        <script>
+            var myUpload = new FileUploadWithPreview('myUploader',{
+                text: {
+                    chooseFile: 'Upload Course Photo..',
+                    browse: 'Upload',
+                    selectedCount: 'files selected'
+                }
+            })
+
+            $('input.cost').keyup(function(event) {
+
+              // skip for arrow keys
+              if(event.which >= 37 && event.which <= 40) return;
+
+              // format number
+              $(this).val(function(index, value) {
+                return value
+                .replace(/\D/g, "")
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                ;
+              });
+            });
+        </script>
+        <script>
+            $("#free").change(function() {
+                if(this.checked) {
+                    $('.cost').prop('disabled','true')
+                }
+                else{
+                    $('.cost').removeAttr('disabled')
+                }
+            });
+        </script>
+
+    </body>
+</html>
