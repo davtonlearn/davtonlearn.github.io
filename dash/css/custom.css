@@ -103,4 +103,7 @@
 		width: 100%;
 		margin-top: 0;
 	}
+	footer .card.text-white{
+		right: 15px!important;
+	} 
 }
