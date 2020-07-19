@@ -400,6 +400,7 @@
         <script src="js/chart.js/dist/Chart.min.js"></script>
         <script src="js/select2.min.js"></script>
         <script src="js/typeahead.js"></script>
+        <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
         <script src="js/utility.js"></script>
 
         <script>
@@ -466,6 +467,20 @@
             });
 
 
+        </script>
+
+        <script>
+            $(document).ready( function () {
+           
+                $("#min").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+                $("#max").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+
+                // Event listener to the two range filtering inputs to redraw on input
+                $('#min, #max').change(function () {
+                    table.draw();
+                });
+
+            });
         </script>
 
     </body>

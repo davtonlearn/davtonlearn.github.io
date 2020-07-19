@@ -14,10 +14,13 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
 
         <!-- Font Awesome JS -->
-        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+        <script defer src="js/solid.js"></script>
+        <script defer src="js/fontawesome.js"></script>
+        <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="css/custom.css">
         <style>
             .form-control {
                 font-size: 1rem;
@@ -254,94 +257,35 @@
                     <div class="row mx-md-1 py-5">
                         <div class="col-md-12">
                             <div class="" style="box-shadow: -5.04622px 5.04622px 10.8133px rgba(0, 0, 0, 0.13);">
-                                <div class="table-top px-2 py-3 d-flex flex-column flex-lg-row">
-                                    <div class="col">
+                                
+                                <div class="table-top row mx-0 align-items-center">
+                                    <div class="col-7">
                                         <p class="mt-1 mb-0">Score Board Overview</p>
                                     </div>
 
-                                    <div class="col-lg-4 text-right">
-                                        <select class="custom-select custom-select-sm mt-4 mt-lg-0" style="border: 1px solid #A1A1A1;background-color: #fff0; color: #A1A1A1">
-                                            <option disabled selected>FILTER</option>
-                                            <option>Filter</option>
-                                        </select>
+                                    <div class="col-5 mt-3">
+                                        <span class="mr-1 mt-1 align-self-baseline d-none">Sort: </span>
+                                        <form id="filters-area" class="row justify-content-end">
+                                            <div class="col-sm-4 mb-3">
+                                                <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Search</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-                                <div class="height-260 bg-white">
-                                    <table id="leaders" class="table-responsive-sm text-center leaders dataTables_wrapper table border" style="width:100%">
-                                        <thead>
+                                <div class="card--dashboard mt-5 p-3">
+                                    <table id="leaders" class="table-responsive-lg leaders dataTables_wrapper table table-striped" style="width:100%">
+                                        <thead class="border-top--0">
                                             <tr>
-                                                <th>#</th>
-                                                <th>Name</th>
-                                                <th>Course</th>
-                                                <th>Result (%)</th>
-                                                <th>Trophy (Points)</th>
+                                                <th class="text-dark">#</th>
+                                                <th class="text-dark select-filter">Course</th>
+                                                <th class="text-dark">Result (%)</th>
+                                                <th class="text-dark">Trophy (Points)</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="history_link">
-                                                <td><a href="#" class="text-dim">1</a></td>
-                                                <td><a href="#"  class="link">Angel Simmmons</a></td>
-                                                <td><a href="#" class="link">Code of Conduct</a></td>
-                                                <td class="text-center">
-                                                    <span class="px-3 py-1 text-white result--green">89</span> 
-                                                </td>
-
-                                                <td class="text-center">
-                                                    <div class="py-1 px-1 text-white trophy--blue">
-                                                        <img src="img/cup.png" class="img-fluid" />
-                                                        <span class="ml-2">89</span>
-                                                    </div> 
-                                                </td>
-                                            </tr>
-
-                                            <tr class="history_link">
-                                                <td><a href="#" class="text-dim">1</a></td>
-                                                <td><a href="#"  class="link">Angel Simmmons</a></td>
-                                                <td><a href="#" class="link">Code of Conduct</a></td>
-                                                <td class="text-center">
-                                                    <span class="px-3 py-1 text-white result--green">89</span> 
-                                                </td>
-
-                                                <td class="text-center">
-                                                    <div class="py-1 px-1 text-white trophy--blue">
-                                                        <img src="img/cup.png" class="img-fluid" />
-                                                        <span class="ml-2">89</span>
-                                                    </div> 
-                                                </td>
-                                            </tr>
-                                            <tr class="history_link">
-                                                <td><a href="#" class="text-dim">1</a></td>
-                                                <td><a href="#"  class="link">Angel Simmmons</a></td>
-                                                <td><a href="#" class="link">Code of Conduct</a></td>
-                                                <td class="text-center">
-                                                    <span class="px-3 py-1 text-white result--green">89</span> 
-                                                </td>
-
-                                                <td class="text-center">
-                                                    <div class="py-1 px-1 text-white trophy--blue">
-                                                        <img src="img/cup.png" class="img-fluid" />
-                                                        <span class="ml-2">89</span>
-                                                    </div> 
-                                                </td>
-                                            </tr>
-
-                                            <tr class="history_link">
-                                                <td><a href="#" class="text-dim">1</a></td>
-                                                <td><a href="#"  class="link">Angel Simmmons</a></td>
-                                                <td><a href="#" class="link">Code of Conduct</a></td>
-                                                <td class="text-center">
-                                                    <span class="px-3 py-1 text-white result--green">89</span> 
-                                                </td>
-
-                                                <td class="text-center">
-                                                    <div class="py-1 px-1 text-white trophy--blue">
-                                                        <img src="img/cup.png" class="img-fluid" />
-                                                        <span class="ml-2">89</span>
-                                                    </div> 
-                                                </td>
-                                            </tr>
                                         </tbody>
                                     </table>
+
                                 </div>
                             </div>
                         </div>
@@ -503,6 +447,79 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/chart.js/dist/Chart.min.js"></script>
         <script src="js/utility.js"></script>
+        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.select.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
+        <script src="js/utility.js"></script>
+        <script>
+            $(document).ready( function () {
+                $(".view").attr('disabled','disabled');
+                $('#edit').on('click', function () {
+                   $("input").removeAttr('disabled');
+                   $('#edit').hide();
+                   $('#submit').show();
+                } );
+                $('#edit-company').on('hidden.bs.modal', function (event) {
+                   $(".view").attr('disabled','disabled');
+                   $('#edit').show();
+                   $('#submit').hide();
+                });
+            });
+        </script>
+        <script>
+            $(document).ready( function () {
+                var table = $('#leaders').DataTable({
+                    initComplete: function () {
+                        this.api().columns('.select-filter').every( function () {
+                            var column = this;
+                            var colTitle = this.header().innerHTML
+                            var select = $('<div class="col-sm-6 mb-3"><input type="text" class="form-control  font-13 form-border-default w-100" name="'+colTitle+'" placeholder="'+colTitle+'"/></div>')
+                                .prependTo( $('#filters-area') )
+                                .on( 'change', function () {
+                                    var val = $.fn.dataTable.util.escapeRegex(
+                                        $(this).val()
+                                    );
+             
+                                    column
+                                        .search( val ? '^'+val+'$' : '', true, false )
+                                        .draw();
+                                } );
+             
+                            column.data().unique().sort().each( function ( d, j ) {
+                                // select.append( '<option>'+d+'</option>' )
+                            } );
+                        } );
+                    },
+                    // processing: true,
+                    // serverSide: true,
+                    ajax: 'https://reqres.in/api/users',
+                    columns: [
+                        { data: 'id' },
+                        { data: 'last_name' },
+                        { data: 'id', render: function (dataField) { return `<span class="px-3 py-1 text-white result--green">`+dataField+`0</span> `; } },
+                        { data: 'id', render: function (dataField) { return  `
+                                                        <div class="py-1 px-1 text-white trophy--blue m-0">
+                                                            <img src="img/cup.png" class="img-fluid" />
+                                                            <span class="ml-2">`+dataField+`9</span>
+                                                        </div> `; } }
+                    ]
+                }); 
+                $('#searchbox').on( 'keyup', function () {
+                   table.search( this.value ).draw();
+                } );
+
+
+
+            });
+        </script>
         <script>
             $(document).ready(function () {
                 // $('#refresher_quiz').modal("show")
