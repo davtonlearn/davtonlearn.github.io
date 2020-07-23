@@ -375,6 +375,79 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/select2.min.js"></script>
         <script src="js/utility.js"></script>
+        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.select.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
+        <script src="js/utility.js"></script>
+        <script>
+            $(document).ready( function () {
+                var table = $('#staff').DataTable({
+                    initComplete: function () {
+                        this.api().columns('.select-filter').every( function () {
+                            var column = this;
+                            var colTitle = this.header().innerHTML
+                            var select = $('<div class="col-lg-2 col-md-4 col-sm-6 mb-3"><input type="text" class="form-control  font-13 form-border-default w-100" name="'+colTitle+'" placeholder="'+colTitle+'"/></div>')
+                                .prependTo( $('#filters-area') )
+                                .on( 'change', function () {
+                                    var val = $.fn.dataTable.util.escapeRegex(
+                                        $(this).val()
+                                    );
+             
+                                    column
+                                        .search( val ? '^'+val+'$' : '', true, false )
+                                        .draw();
+                                } );
+             
+                            column.data().unique().sort().each( function ( d, j ) {
+                                // select.append( '<option>'+d+'</option>' )
+                            } );
+                        } );
+                    },
+                    // drawCallback: function(dt) {
+                    //   console.log("draw() callback; initializing Select2's.");
+                    //   $('.f').select2({tags: true, width: "6em"});
+                    // },
+                    // processing: true,
+                    // serverSide: true,
+                    ajax: 'https://reqres.in/api/users',
+                    columns: [
+                        { data: 'id' },
+                        { data: 'first_name' },
+                        { data: 'last_name' },
+                        { data: 'email' },
+                        {
+                          "data": null,
+                          "defaultContent": `
+                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Delete</a>
+                                            `
+                        }
+                    ]
+                }); 
+                $('#searchbox').on( 'keyup', function () {
+                   table.search( this.value ).draw();
+                } );
+
+       
+            $("#min").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+            $("#max").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+
+            // Event listener to the two range filtering inputs to redraw on input
+            $('#min, #max').change(function () {
+                table.draw();
+            });
+
+
+
+            });
+        </script>
     </body>
 
 </html>

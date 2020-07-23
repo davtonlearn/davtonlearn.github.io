@@ -534,72 +534,72 @@
                 })
 
 
-                $('.d-stage').show();
+                // $('.d-stage').show();
 
-                var val = $('.input-stage').val();
-                if(val == ''){
-                    $('.d-stage-level').hide();
-                }
-                else{
-                    if(val >= 5){
-                        val = 5;
-                    }
-                    for(i=1; i <= val; i++){
-                        $('.d-stage-list').append(`
-                                <div class="border-bottom">
-                                    <div class="px-3 position-relative">
-                                        <p class="py-2 mb-0 font-13 font-weight-light"><a href="#" class="stage-title" id="`+ i +`">Course `+ i +`</a></p>
-                                    </div>
-                                    <div class="d-nne float-right">
-                                        <img src="img/delete.svg" class="position-relative cursor" style="right: 25px;top: -33px;width: 18px;" />
-                                        <img src="img/edit.svg" class="position-relative edit_course cursor d-edit-stage-name" id="`+ i +`" style="right: 10px;top: -34px;width: 18px;" />
-                                    </div>
-                                </div>
-                            `)
-                    }
-                    $('.d-stage-level').show();
-                }
+                // var val = $('.input-stage').val();
+                // if(val == ''){
+                //     $('.d-stage-level').hide();
+                // }
+                // else{
+                //     if(val >= 5){
+                //         val = 5;
+                //     }
+                //     for(i=1; i <= val; i++){
+                //         $('.d-stage-list').append(`
+                //                 <div class="border-bottom">
+                //                     <div class="px-3 position-relative">
+                //                         <p class="py-2 mb-0 font-13 font-weight-light"><a href="#" class="stage-title" id="`+ i +`">Course `+ i +`</a></p>
+                //                     </div>
+                //                     <div class="d-nne float-right">
+                //                         <img src="img/delete.svg" class="position-relative cursor" style="right: 25px;top: -33px;width: 18px;" />
+                //                         <img src="img/edit.svg" class="position-relative edit_course cursor d-edit-stage-name" id="`+ i +`" style="right: 10px;top: -34px;width: 18px;" />
+                //                     </div>
+                //                 </div>
+                //             `)
+                //     }
+                //     $('.d-stage-level').show();
+                // }
 
-                $('.input-stage').on('input', function(){
-                    $('.d-stage-list').empty();
-                    var val = $(this).val();
-                    if(val == ''){
-                        $('.d-stage-level').hide();
-                    }
-                    else{
-                        if(val >= 5){
-                            val = 5;
-                        }
-                        for(i=1; i <= val; i++){
-                            $('.d-stage-list').append(`
-                                    <div class="border-bottom">
-                                        <div class="px-3 position-relative">
-                                            <p class="py-2 mb-0 font-13 font-weight-light"><a href="#" class="stage-title" id="`+ i +`">Course `+ i +`</a></p>
-                                        </div>
-                                        <div class="d-nne float-right">
-                                            <img src="img/delete.svg" class="position-relative cursor" style="right: 25px;top: -33px;width: 18px;" />
-                                            <img src="img/edit.svg" class="position-relative edit_course cursor d-edit-stage-name" id="`+ i +`" style="right: 10px;top: -34px;width: 18px;" />
-                                        </div>
-                                    </div>
-                                `)
-                        }
-                        $('.d-stage-level').show();
-                    }
-                })
-                // $('.d-edit-stage-name').on('click', function(){
-                $("body").delegate(".d-edit-stage-name", "click", function(e){
-                    id = $(this).attr('id')
-                    $('.input-stage-name').attr("placeholder", $('.stage-title#'+id).text())
-                    $('.d-stage-name').show();
+                // $('.input-stage').on('input', function(){
+                //     $('.d-stage-list').empty();
+                //     var val = $(this).val();
+                //     if(val == ''){
+                //         $('.d-stage-level').hide();
+                //     }
+                //     else{
+                //         if(val >= 5){
+                //             val = 5;
+                //         }
+                //         for(i=1; i <= val; i++){
+                //             $('.d-stage-list').append(`
+                //                     <div class="border-bottom">
+                //                         <div class="px-3 position-relative">
+                //                             <p class="py-2 mb-0 font-13 font-weight-light"><a href="#" class="stage-title" id="`+ i +`">Course `+ i +`</a></p>
+                //                         </div>
+                //                         <div class="d-nne float-right">
+                //                             <img src="img/delete.svg" class="position-relative cursor" style="right: 25px;top: -33px;width: 18px;" />
+                //                             <img src="img/edit.svg" class="position-relative edit_course cursor d-edit-stage-name" id="`+ i +`" style="right: 10px;top: -34px;width: 18px;" />
+                //                         </div>
+                //                     </div>
+                //                 `)
+                //         }
+                //         $('.d-stage-level').show();
+                //     }
+                // })
+                // // $('.d-edit-stage-name').on('click', function(){
+                // $("body").delegate(".d-edit-stage-name", "click", function(e){
+                //     id = $(this).attr('id')
+                //     $('.input-stage-name').attr("placeholder", $('.stage-title#'+id).text())
+                //     $('.d-stage-name').show();
 
-                    $('#save-stage-name').on('click', function(){
-                        $('.stage-title#'+id).text($('.input-stage-name').val())
-                    })
+                //     $('#save-stage-name').on('click', function(){
+                //         $('.stage-title#'+id).text($('.input-stage-name').val())
+                //     })
 
-                    $('#close-stage-name').on('click', function(){
-                        $('.d-stage-name').hide();
-                    })
-                })
+                //     $('#close-stage-name').on('click', function(){
+                //         $('.d-stage-name').hide();
+                //     })
+                // })
             });
         </script>
 

@@ -445,9 +445,9 @@ $(document).ready(function () {
         });
     }
 
-    if ($('#assign_staff').length) {
-        $('#assign_staff').modal('show');
-    }
+    // if ($('#assign_staff').length) {
+    //     $('#assign_staff').modal('show');
+    // }
 
 
     if ($('.select2').length) {
@@ -1345,31 +1345,15 @@ $("body").delegate(".info", "click", function(){
         success: function( data, textStatus, jQxhr ){
             firstname = "tobi"
             lastname = "obasa"
-            business_title = "CEO"
-            business_name = "Davtonlearn"
-            organisation_title = "system engineer"
-            organisation_name = "godaddy"
-            interest = "photography, business advisory"
-            about="DavtonLearn is an online video learning platform for professional certification. When you think of a Lynda.com for professional management certification training in Nigeria, then comes DavtonLearn.com"
-            industry = "science"
+            email = "tobi@Davtonlearn"
+            staffid = "1122"
+            department = "Customer Service"
             avatar = 'images/tobi.jpg'
             isBusiness = true;
             $('#info').find('#fullname').text(firstname + ' ' + lastname);
-            if (isBusiness == true){
-                $('#info').find('#business').text(business_title + ' at ' + business_name);
-                $('#about-business').attr('data-original-title','About Business')   
-                $('#about-business').attr('data-html',"true" )   
-                $('#about-business').attr('data-content',about)  
-                $('#about-business').attr('data-placement','bottom')  
-                $('#about-business').attr('data-trigger','focus') 
-                $('#about-business').show();
-            }
-            else{
-                $('#info').find('#occupation').text(organisation_title + ' at ' + organisation_name);
-                $('#about-business').show();
-            }
-            $('#info').find('#interest').text('Interest: ' + interest);
-            $('#info').find('#industry').text('Industry: ' + industry);
+            $('#info').find('#email').text('Email: ' + email);
+            $('#info').find('#staffid').text('Satff ID: ' + staffid);
+            $('#info').find('#department').text('Department: ' + staffid);
             $('#info').find('#avatar').attr('src',avatar);
         },
         error: function( jqXhr, textStatus, errorThrown ){

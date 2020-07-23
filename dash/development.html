@@ -87,55 +87,42 @@
                         <a href="index.html">
                             <img src="img/dashboard.svg" alt="Dashboard" class="mb-1 mr-3 img-fluid" width="15" /> Dashboard
                         </a>
-
-                    </li>
-
-                    <li>
-                        <a href="transaction.html">
-                            <img src="img/money-transfer.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Transaction
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="invoice.html">
-                            <img src="img/invoices.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Invoice
-                        </a>
                     </li>
 
                     <p class="text-dull text-left ml-4 my-2 font-12">Company Management</p>
 
                     <li>
-                        <a href="companies.html">
-                            <img src="img/company.svg" alt="company" class="mb-1 mr-3 img-fluid" width="15" /> Company
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="staff.html">
+                        <a href="c_staff.html">
                             <img src="img/staff.svg" alt="STAFF" class="mb-1 mr-3 img-fluid" width="15" /> Staff
                         </a>
                     </li>
 
                     <li>
-                        <a href="department.html">
+                        <a href="c_department.html">
                             <img src="img/department_sidebar.svg" alt="department" class="mb-1 mr-3 img-fluid" width="15" /> Department
                         </a>
                     </li>
 
                     <li>
-                        <a href="courses.html">
+                        <a href="c_courses.html">
                             <img src="img/courses.svg" alt="courses" class="mb-1 mr-3 img-fluid" width="15" /> Courses
                         </a>
                     </li>
 
                     <li>
-                        <a href="reports.html">
+                        <a href="certificate.html">
+                            <img src="img/activity.svg" alt="courses" class="mb-1 mr-3 img-fluid" width="15" /> Certificates
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="c_reports.html">
                             <img src="img/reports.svg" alt="reports" class="mb-1 mr-3 img-fluid" width="15" /> Reports
                         </a>
                     </li>
 
                     <li>
-                        <a href="quizes.html">
+                        <a href="c_quizes.html">
                             <img src="img/department_sidebar.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Quizzes
                         </a>
                     </li>
@@ -165,12 +152,6 @@
                     <li>
                         <a href="admin.html">
                             <img src="img/admins.png" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Admins
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="audit.html">
-                            <img src="img/activity.svg" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Audit Trails
                         </a>
                     </li>
 
@@ -208,8 +189,8 @@
                             </a>
                         </li>
 
-                        <li class="font-weight-light active">
-                            <a href="#">
+                        <li class="font-weight-light">
+                            <a href="development.html">
                                 Course Development
                             </a>
                         </li>
@@ -256,6 +237,10 @@
                                 </div>
                             </div> 
 
+                            <div class="text-right my-4">
+                                <button class="btn btn-green py-1 font-13" type="button" data-toggle="modal" data-target="#request-modal">Request Course Development</button>
+                            </div>
+
                             <div class="card--dashboard">
                                 <section id="tabs" class="project-tab">
                                     <div class="tab-content my-3" id="nav-tabContent">
@@ -271,7 +256,6 @@
                                                 <thead class="border-top--0">
                                                     <tr>
                                                         <th class="text-dark text-center">#</th>
-                                                        <th class="text-dark select-filter">User</th>
                                                         <th class="text-dark select-filter">Request Type</th>
                                                         <th class="text-dark">Description</th>
                                                         <th class="text-dark">Date</th>
@@ -305,25 +289,29 @@
 
 
 
-            <!-- Staff group Modal -->
-            <div class="modal fade" id="staff_group-modal" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
+            <!-- Request Modal -->
+            <div class="modal fade" id="request-modal" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Create New Group</h6>
+                            <h6 class="modal-title text-center mx-auto">Create Request</h6>
                             <button   class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal"/></span> </button>
                         </div>
                         <div class="modal-body">
                             <form>
                                 <div class="form-row">
-                                    <div class="form-group col-lg-9">
-                                        <input id="departmentModalInput" type="text" placeholder="Enter a group name" class="form-control"> </div>
-                                    <div class="form-group col-lg-3">
-                                        <button id="departmentSubmit" class="btn btn-success btn-block"  >Add</button>
+                                    <div class="form-group col-lg-12">
+                                        <select class="custom-select select2 custom-select-sm c-type w-100">
+                                            <option>Select request type</option>
+                                            <option value="text">Text</option>
+                                            <option value="video">Video</option>
+                                            <option value="scorm">SCORM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-lg-12">
+                                        <textarea id="departmentModalInput" type="text" placeholder="Description of request" class="form-control" rows="6"></textarea>
                                     </div>
                                 </div>
-                                <div class="form-row" id="departmentModalItems"></div>
-                                <p class="modal-paragraph font-10 text-muted">You can create a  minimum of  10 Group at a time by entering a name and adding it.</p>
                                 <div class="row mt-5">
                                     <div class="col-lg-3 ml-auto mx-0">
                                         <button   class="btn btn-success btn-block">Submit</button>
@@ -334,219 +322,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Staff group Modal End -->
-
-
-
-            <!--Edit Staff group Modal -->
-            <div class="modal fade" id="staff_group-modal" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Edit User Group</h6>
-                            <button   class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal"/></span> </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-row">
-                                    <div class="form-group col-lg-9">
-                                        <input id="departmentModalInput" type="text" placeholder="Enter a group name" class="form-control"> </div>
-                                    <div class="form-group col-lg-3">
-                                        <button id="departmentSubmit" class="btn btn-success btn-block">Add</button>
-                                    </div>
-                                </div>
-                                <div class="form-row" id="departmentModalItems"></div>
-                                <p class="modal-paragraph font-10 text-muted">You can create a  minimum of  10 Group at a time by entering a name and adding it.</p>
-                                <div class="row mt-5">
-                                    <div class="col-lg-3 ml-auto mx-0">
-                                        <button   class="btn btn-success btn-block">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Staff group Modal End -->
-
-
-            <!-- Multiple staff upload Modal -->
-            <div class="modal fade" id="multiple-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Add Multiple Users</h6>
-                            <button   class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal"/></span> </button>
-                        </div>
-                        <div class="modal-body">
-                            <form> 
-                                <div class="text-center mt-3">
-                                    <img src="img/xls.svg" alt="multiple staff upload" class="img-fluid" >
-                                    <p class="font-13 text-dark mt-3"><a href="#" class="text-green">Download</a> and Upload edited our xlsx file here to add multiple users</p>
-                                </div>
-
-                                <div class="custom-file my-2">
-                                    <input type="file" class="custom-file-input" id="customFile">
-                                    <div class="dummy-label">
-
-                                    </div>
-                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                </div>
-
-
-
-                                <div class="row mt-5">
-                                    <div class="col-lg-9 ml-auto mx-0">
-                                        <p class="font-13 mt-2">Dowload our xlsx document. <a class="text-blue ml-3" href="#">Download</a></p>
-                                    </div>
-
-                                    <div class="col-lg-3 ml-auto mx-0">
-                                        <button   class="btn btn-success btn-block">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Multiple staff upload Modal End -->
-
-
-            <!-- single staff upload Modal -->
-            <div class="modal fade" id="single-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Add a Single User</h6>
-                            <button   class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal"/></span> </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-row">
-                                    <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="Surname" >
-                                    </div>
-                                    <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="First Name" >
-                                    </div>
-                                    <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="Email" >
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="Staff ID" >
-                                    </div>
-                                    <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="Staff Tel No." >
-                                    </div>
-                                    <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="Department" >
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="form-group col-lg-6">
-                                        <select type="text" class="custom-select dim">
-                                            <option>Staff Level</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group col-lg-6">
-                                        <select type="text" class="custom-select dim">
-                                            <option>Select Gender</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
-                                    <div class="dummy-label">
-
-                                    </div>
-                                    <label class="custom-file-label" for="customFile">Choose Profile Photo</label>
-                                </div>
-
-                                <div class="row mt-5">
-                                    <div class="col-lg-4 ml-auto mx-0">
-                                        <button   class="btn btn-success btn-block">Upload User</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- single staff upload Modal End -->
-
-            <!-- Edit single staff Modal -->
-            <div class="modal fade" id="edit-single-modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Edit User</h6>
-                            <button   class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal"/></span> </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-row">
-                                    <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="Surname" >
-                                    </div>
-                                    <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="First Name" >
-                                    </div>
-                                    <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="Email" >
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="Staff ID" >
-                                    </div>
-                                    <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="Staff Tel No." >
-                                    </div>
-                                    <div class="form-group col-lg-4">
-                                        <input type="text" class="form-control rounded-0" placeholder="Department" >
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="form-group col-lg-6">
-                                        <select type="text" class="custom-select dim">
-                                            <option>Staff Level</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group col-lg-6">
-                                        <select type="text" class="custom-select dim">
-                                            <option>Select Gender</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
-                                    <div class="dummy-label">
-
-                                    </div>
-                                    <label class="custom-file-label" for="customFile">Choose Profile Photo</label>
-                                </div>
-
-                                <div class="row mt-5">
-                                    <div class="col-lg-4 ml-auto mx-0">
-                                        <button   class="btn btn-success btn-block">Upload User</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- single staff upload Modal End -->
+            <!-- Request Modal End -->
 
 
 
@@ -638,7 +414,6 @@
                     ajax: 'https://reqres.in/api/users',
                     columns: [
                         { data: 'id' },
-                        { data: 'first_name' },
                         { data: 'first_name' },
                         { data: 'last_name', 'width' : '40%' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
