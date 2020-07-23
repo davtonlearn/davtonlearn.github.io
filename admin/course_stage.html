@@ -295,13 +295,13 @@
 
                                             <div class="col-lg-8 my-2">
                                                 <div class="px-3 py-2">
-                                                    <p class="weight-semi-bold">Course 1</p>
+                                                    <p class="weight-semi-bold">Level 1</p>
                                                     <div class="text-center">
 
                                                         <img src="img/sad.png" class="img-fluid mb-4" alt="currently have no course(s)" />
-                                                        <p class="text-muted mb-1">You currently have no course(s) added at to Stage 1 at the moments.</p>
+                                                        <p class="text-muted mb-1">You currently have no course(s) added at to this level at the moments.</p>
 
-                                                        <p class="text-muted">Click “Add New Course” to create new course(s).</p>
+                                                        <p class="text-muted">Click “Add New Course” to add new course(s).</p>
 
                                                         <a href="course_stage_list.html" class="btn btn-outline--green font-12 py-1 px-5 mt-3">+ Add New Course</a>
                                                     </div>
@@ -385,49 +385,49 @@
                     $('.level-val').text(level)
                     $('.d-stage').show();
                 })
-                $('.input-stage').on('input', function(){
-                    $('.d-stage-list').empty();
-                    var val = $(this).val();
-                    if(val == ''){
-                        $('.d-stage-level').hide();
-                    }
-                    else{
-                        if(val >= 5){
-                            val = 5;
-                        }
-                        for(i=1; i <= val; i++){
-                            $('.d-stage-list').append(`
-                                    <div class="border-bottom">
-                                        <div class="px-3 position-relative">
-                                            <p class="py-2 mb-0 font-13 font-weight-light"><a href="course_stage_selected.html" class="stage-title" id="`+ i +`">Course `+ i +`</a></p>
-                                        </div>
-                                        <div class="d-nne float-right">
-                                            <img src="img/delete.svg" class="position-relative cursor" style="right: 25px;top: -33px;width: 18px;" />
-                                            <img src="img/edit.svg" class="position-relative edit_course cursor d-edit-stage-name" id="`+ i +`" style="right: 10px;top: -34px;width: 18px;" />
-                                        </div>
-                                    </div>
+                // $('.input-stage').on('input', function(){
+                //     $('.d-stage-list').empty();
+                //     var val = $(this).val();
+                //     if(val == ''){
+                //         $('.d-stage-level').hide();
+                //     }
+                //     else{
+                //         if(val >= 5){
+                //             val = 5;
+                //         }
+                //         for(i=1; i <= val; i++){
+                //             $('.d-stage-list').append(`
+                //                     <div class="border-bottom">
+                //                         <div class="px-3 position-relative">
+                //                             <p class="py-2 mb-0 font-13 font-weight-light"><a href="course_stage_selected.html" class="stage-title" id="`+ i +`">Course `+ i +`</a></p>
+                //                         </div>
+                //                         <div class="d-nne float-right">
+                //                             <img src="img/delete.svg" class="position-relative cursor" style="right: 25px;top: -33px;width: 18px;" />
+                //                             <img src="img/edit.svg" class="position-relative edit_course cursor d-edit-stage-name" id="`+ i +`" style="right: 10px;top: -34px;width: 18px;" />
+                //                         </div>
+                //                     </div>
 
 
 
-                                `)
-                        }
-                        $('.d-stage-level').show();
-                    }
-                })
-                // $('.d-edit-stage-name').on('click', function(){
-                $("body").delegate(".d-edit-stage-name", "click", function(e){
-                    id = $(this).attr('id')
-                    $('.input-stage-name').attr("placeholder", $('.stage-title#'+id).text())
-                    $('.d-stage-name').show();
+                //                 `)
+                //         }
+                //         $('.d-stage-level').show();
+                //     }
+                // })
+                // // $('.d-edit-stage-name').on('click', function(){
+                // $("body").delegate(".d-edit-stage-name", "click", function(e){
+                //     id = $(this).attr('id')
+                //     $('.input-stage-name').attr("placeholder", $('.stage-title#'+id).text())
+                //     $('.d-stage-name').show();
 
-                    $('#save-stage-name').on('click', function(){
-                        $('.stage-title#'+id).text($('.input-stage-name').val())
-                    })
+                //     $('#save-stage-name').on('click', function(){
+                //         $('.stage-title#'+id).text($('.input-stage-name').val())
+                //     })
 
-                    $('#close-stage-name').on('click', function(){
-                        $('.d-stage-name').hide();
-                    })
-                })
+                //     $('#close-stage-name').on('click', function(){
+                //         $('.d-stage-name').hide();
+                //     })
+                // })
             });
         </script>
 

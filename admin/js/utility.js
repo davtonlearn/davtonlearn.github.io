@@ -92,7 +92,7 @@ $(document).ready(function () {
             $('#choose_template').text('Finish');
         }
         else if ($('#card_three').is(":visible")) {
-            window.location.href = `/dashboard/index.html`;
+            window.location.href = `../dash/index.html`;
         }
     })
     if ($(".support_button").length) {
@@ -445,9 +445,9 @@ $(document).ready(function () {
         });
     }
 
-    if ($('#assign_staff').length) {
-        $('#assign_staff').modal('show');
-    }
+    // if ($('#assign_staff').length) {
+    //     $('#assign_staff').modal('show');
+    // }
 
 
     if ($('.select2').length) {

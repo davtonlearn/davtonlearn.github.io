@@ -78,6 +78,40 @@
 	    height: 30px!important;
     padding-top: 4px!important;
 }
+
+.pick-a-color-markup .color-menu.color-menu--inline{
+    left: 0;
+}
+.btn-color{
+    border: 1px solid #ccc;
+    padding: 6px 12px 5px 5px!important;
+}
+button.dropdown-toggle::after{
+    right: 3px!important;
+}
+.pick-a-color-markup {
+    margin:20px 0px;
+}
+.tooltip-inner {
+  background-color: #eee !important;
+  color: #333;
+}
+
+.bs-tooltip-top .arrow::before {
+  border-top-color: #eee!important;
+}
+
+.bs-tooltip-right .arrow::before {
+  border-right-color: #eee!important;
+}
+
+.bs-tooltip-bottom .arrow::before {
+  border-bottom-color: #eee!important;
+}
+
+.bs-tooltip-left .arrow::before {
+  border-left-color: #eee!important;
+}
 @media (max-width: 768px) {
 	 #filters-area span, #filters-group span, #filters-area span input, #filters-group span input{
 		margin-right: 15px;

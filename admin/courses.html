@@ -587,6 +587,39 @@
             </div>
             <!-- Category Modal End -->
 
+            <!-- Assign Staff Modal -->
+            <div class="modal fade" id="assign_staff" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title text-center mx-auto">Assign Course to Staff</h6>
+                            <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-lg-12">
+                                        <select class="custom-select select2" name="course_name" style="width: 100%; height: 50px !important">
+                                            <option  disabled>Select Staff</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row" id="departmentModalItems"></div>
+                                <div class="row mt-5">
+                                    <div class="col-lg-3 ml-auto mx-0">
+                                        <button type="button" class="btn btn-success btn-block mt-5">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Assign Staff Modal End -->
+
             <!--Notification Modal-->
             <div  aria-hidden="true" class="onboarding-modal modal fade animated" id="notifications" role="dialog" tabindex="-1">
                 <div class="modal-dialog modal-right" role="document">
@@ -698,7 +731,8 @@
                                                 <a class="dropdown-item font-12" href="course_report.html">View Report</a>
                                                 <a class="dropdown-item font-12" href="topics.html">View Topics</a>
                                                 <a class="dropdown-item font-12" href="quizes.html">View Quizzes</a>
-                                                <a class="dropdown-item font-12" href="assign_staff.html">Assign Staff</a>
+                                                <a class="dropdown-item font-12" href="view_staff.html">View Staff</a>
+                                                <a class="dropdown-item font-12" data-toggle="modal" data-target="#assign_staff">Assign Staff</a>
                                                 <a class="dropdown-item font-12 d-lg-none" href="edit_course.html">Edit</a>
                                                 <a class="dropdown-item font-12" href="#">Disable </a>
                                                 <a class="dropdown-item font-12" href="#">Delete </a>

@@ -91,13 +91,13 @@
 
                     <p class="text-dull text-left ml-4 my-2 font-12">Company Management</p>
 
-                    <li class="active">
+                    <li>
                         <a href="c_staff.html">
                             <img src="img/staff.svg" alt="STAFF" class="mb-1 mr-3 img-fluid" width="15" /> Staff
                         </a>
                     </li>
 
-                    <li>
+                    <li class="active">
                         <a href="c_department.html">
                             <img src="img/department_sidebar.svg" alt="department" class="mb-1 mr-3 img-fluid" width="15" /> Department
                         </a>
@@ -211,7 +211,7 @@
                     <div class="col-md-12">
                         <div class="d-flex">
                             <div class="col-8">
-                                <p class="text-grey text-uppercase font-13"><a href="c_staff.html"><img src="img/back_button.svg" alt="go back to courses"  class="img-fluid" /> Back</a></p>
+                                <p class="text-grey text-uppercase font-13"><a href="c_department.html"><img src="img/back_button.svg" alt="go back to courses"  class="img-fluid" /> Back</a></p>
                             </div>
                         </div>
 
@@ -243,13 +243,13 @@
 
                             <div class="text-right">
                                 <div class="col-lg-3 my-4 text-right ml-auto">
-                                    <button class="text-white btn btn-green btn-sm font-13 btn-block"  data-toggle="modal" data-target="#assign_staff_to_group"> Add Staff to Group</button>
+                                    <button class="text-white btn btn-green btn-sm font-13 btn-block"  data-toggle="modal" data-target="#assign_staff_to_group"> Add Staff to Department</button>
                                 </div>
                             </div>
 
                             <div class="px-4 py-5 mt-5 text-center position-relative d-none"> <img src="img/sad.png" class="img-fluid mt-5" />
                                 <p class="mb-0 mt-3 font-weight-light font-13">You currently have no member of staff at the moment.</p>
-                                <p class="mb-0 font-weight-light font-13">Click Upload Staff to add new members.</p> <img src="img/Arrow.png" alt="pointer to add staff button" class="position-absolute arrow_position d-none d-lg-block" /> 
+                                <p class="mb-0 font-weight-light font-13">Click Add Staff to Department to add new members.</p> <img src="img/Arrow.png" alt="pointer to add staff button" class="position-absolute arrow_position d-none d-lg-block" /> 
                             </div>
 
                             <div class="card--dashboard mt-4 p-3">
@@ -260,7 +260,6 @@
                                         <tr>
                                             <th class="text-dark text-center">#</th>
                                             <th class="text-dark">Full Name</th>
-                                            <th class="text-dark select-filter">Department</th>
                                             <th class="text-dark">Email</th>
                                             <th class="text-dark" style="min-width: 100px">ACTION</th>
                                         </tr>
@@ -281,7 +280,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Add Staff to Group</h6>
+                            <h6 class="modal-title text-center mx-auto">Add Staff to Department</h6>
                             <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
                         </div>
                         <div class="modal-body">
@@ -289,7 +288,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-lg-9">
                                         <select class="form-control custom-select select2 font-12" name="course_name" style="width: 100%; height: 50px !important">
-                                            <option  disabled>Select Staff</option>
+                                            <option  disabled>Select Department</option>
                                             <option value="1">One</option>
                                             <option value="2">Two</option>
                                             <option value="3">Three</option>
@@ -399,7 +398,6 @@
                     ajax: 'https://reqres.in/api/users',
                     columns: [
                         { data: 'id' },
-                        { data: 'first_name' },
                         { data: 'last_name' },
                         { data: 'email' },
                         {
