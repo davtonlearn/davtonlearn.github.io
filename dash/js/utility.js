@@ -1352,7 +1352,7 @@ $("body").delegate(".info", "click", function(){
             isBusiness = true;
             $('#info').find('#fullname').text(firstname + ' ' + lastname);
             $('#info').find('#email').text('Email: ' + email);
-            $('#info').find('#staffid').text('Satff ID: ' + staffid);
+            $('#info').find('#staffid').text('Staff ID: ' + staffid);
             $('#info').find('#department').text('Department: ' + staffid);
             $('#info').find('#avatar').attr('src',avatar);
         },
