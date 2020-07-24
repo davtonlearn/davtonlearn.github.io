@@ -222,7 +222,7 @@
                                     <nav>
                                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist"> 
                                             <a class="nav-dash nav-item nav-link active text-uppercase weight-semi-bold py-3" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Staff</a> 
-                                            <a class="nav-item nav-link text-uppercase weight-semi-bold py-3" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Staff Group</a> </div>
+                                            <a class="nav-item nav-link text-uppercase weight-semi-bold py-3" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Learning Group</a> </div>
                                     </nav>
                                     <div class="tab-content my-3" id="nav-tabContent">
                                         <div class="tab-pane fade px-4 show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
@@ -322,7 +322,7 @@
                                             </div>
 
                                             <div class="px-4 py-5 mt-5 text-center position-relative d-none"> <img src="img/sad.png" class="img-fluid mt-5" />
-                                                <p class="mb-0 mt-3 font-weight-light font-13">You currently have no member of Staff Group at the</p>
+                                                <p class="mb-0 mt-3 font-weight-light font-13">You currently have no member of Learning Group at the</p>
                                                 <p class="mb-0 font-weight-light font-13">Click “+ New Group” to create new Group.</p> <img src="img/Arrow.png" alt="pointer to add staff button" class="position-absolute arrow_position d-none d-lg-block" /> 
                                             </div>
 
@@ -368,7 +368,7 @@
 
 
 
-            <!-- Staff group Modal -->
+            <!-- Learning Group Modal -->
             <div class="modal fade" id="staff_group-modal" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -393,14 +393,14 @@
                     </div>
                 </div>
             </div>
-            <!-- Staff group Modal End -->
+            <!-- Learning Group Modal End -->
 
-            <!--Edit Staff group Modal -->
+            <!--Edit Learning Group Modal -->
             <div class="modal fade" id="edit-staff-group" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Edit Staff Group</h6>
+                            <h6 class="modal-title text-center mx-auto">Edit Learning Group</h6>
                             <button   class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal"/></span> </button>
                         </div>
                         <div class="modal-body">
@@ -420,7 +420,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Staff group Modal End -->
+            <!-- Learning Group Modal End -->
 
 
             <!-- Multiple staff upload Modal -->
@@ -507,13 +507,7 @@
 
                                 <div class="form-row">
                                     <div class="form-group col-lg-6">
-                                        <select type="text" class="custom-select dim">
-                                            <option>Staff Level</option>
-                                            <option>Level 1</option>
-                                            <option>Level 2</option>
-                                            <option>Level 3</option>
-                                            <option>Level 4</option>
-                                        </select>
+                                        <input type="text" class="form-control rounded-0" placeholder="Staff Level/Grade e.g. Supervisor, Analyst e.t.c" >
                                     </div>
 
                                     <div class="form-group col-lg-6">
@@ -587,13 +581,7 @@
 
                                 <div class="form-row">
                                     <div class="form-group col-lg-6">
-                                        <select type="text" class="custom-select dim view">
-                                            <option>Staff Level</option>
-                                            <option>Level 1</option>
-                                            <option>Level 2</option>
-                                            <option>Level 3</option>
-                                            <option>Level 4</option>
-                                        </select>
+                                        <input type="text" class="form-control rounded-0 view" placeholder="Staff Level/Grade e.g. Supervisor, Analyst e.t.c" >
                                     </div>
 
                                     <div class="form-group col-lg-6">
@@ -688,12 +676,12 @@
             </div>
             <!-- Assign Course to Staff Modal End -->
 
-            <!-- Assign Course to Staff Group Modal -->
+            <!-- Assign Course to Learning Group Modal -->
             <div class="modal fade" id="assign_course_to_staff_group" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Assign Course to Staff Group</h6>
+                            <h6 class="modal-title text-center mx-auto">Assign Course to Learning Group</h6>
                             <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
                         </div>
                         <div class="modal-body">
@@ -716,7 +704,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Assign Course to Staff Group Modal End -->
+            <!-- Assign Course to Learning Group Modal End -->
 
             <!-- Assign Staff to Group Modal -->
             <div class="modal fade" id="assign_staff_to_group" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -731,7 +719,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-lg-9">
                                         <select class="custom-select select2" name="course_name" style="width: 100%; height: 40px !important">
-                                            <option  disabled>Select Staff Group</option>
+                                            <option  disabled>Select Learning Group</option>
                                             <option value="1">One</option>
                                             <option value="2">Two</option>
                                             <option value="3">Three</option>
