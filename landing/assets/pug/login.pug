@@ -1,0 +1,30 @@
+extends layouts/_auth
+
+block content
+	.text-center
+		.section-title.font-weight-normal.mb-3 Account Login
+		.row
+			.col-md-8.col-lg-5.col-xl-5.mx-auto
+				p 
+					| Please enter your login details:
+
+				form
+					
+					.form-group
+						.input-group
+							span.input-group-prepend
+								span.input-group-text
+									span.icon.ion-md-at
+							input.form-control(type="text", placeholder="Enter your email")
+					
+					.form-group.mb-5
+						.input-group
+							span.input-group-prepend
+								span.input-group-text
+									span.icon.ion-md-lock
+							input.form-control(type="password", placeholder="Password")
+
+					.form-group.pt-4
+						button.btn.btn-primary.btn-block(type="submit") Sign Up
+
+					include includes/_login_options

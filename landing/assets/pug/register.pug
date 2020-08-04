@@ -1,0 +1,71 @@
+extends layouts/_auth
+
+block content
+	.text-center
+		.section-title.font-weight-normal.mb-3 Get started for free today
+		.row
+			.col-md-8.col-lg-5.col-xl-5.mx-auto
+				p 
+					| Start your free 14-day trial and access all davtonlms 
+					| features without spending a cent.
+
+				form
+					.form-group
+						.input-group
+							span.input-group-prepend
+								span.input-group-text
+									span.icon.ion-md &nbsp;&nbsp;&nbsp;
+							select#account-type.custom-select(name="")
+								option(value="") Select an account type
+								option(value="partner") Partner
+								option(value="company") Company
+								option(value="individual") Individual
+
+					.form-group
+						.input-group
+							span.input-group-prepend
+								span.input-group-text
+									span.icon.ion-md-business
+							input.form-control(type="text", placeholder="Company Name")
+					.form-group
+						.input-group
+							span.input-group-prepend
+								span.input-group-text
+									span.icon.ion-md-at
+							input.form-control(type="text", placeholder="Company email")
+					.form-group
+						.input-group
+							span.input-group-prepend
+								span.input-group-text
+									span.icon.ion-md-call
+							input.form-control(type="text", placeholder="Contact no.")
+					.form-group
+						.input-group
+							span.input-group-prepend
+								span.input-group-text
+									span.icon.ion-md-lock
+							input.form-control(type="password", placeholder="Password")
+
+					.form-group.text-left
+						label I have a Partner/ Promo code
+						.row
+							.col-auto
+								.custom-control.custom-radio
+									input.custom-control-input#yes(type="radio", name="have_promo_code", value="yes")
+									label.custom-control-label(for="yes") Yes, I have
+							.col-auto
+								.custom-control.custom-radio
+									input.custom-control-input#no(type="radio", name="have_promo_code", value="no")
+									label.custom-control-label(for="no") No, I don’t
+
+					.form-group
+						.input-group
+							span.input-group-prepend
+								span.input-group-text
+									span.icon.ion-md &nbsp;&nbsp;&nbsp;
+							input.form-control(type="text", placeholder="Enter Code")
+
+					.form-group.pt-4
+						button.btn.btn-primary.btn-block(type="submit") Sign Up
+
+					include includes/_login_options

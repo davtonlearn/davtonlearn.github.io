@@ -1,0 +1,109 @@
+extend layouts/_landing
+
+block vars
+	-
+		setPage({
+			name: 'pricing',
+			title: 'Pricing'
+		});
+
+block content
+
+	.banner.banner-gradient-white
+		.container
+			.row.justify-content-between
+				.col-md-5.order-md-3.text-center.flex-bottom
+					.flex-content
+						img.img-fluid.mx-auto.d-block.banner-img-full.mb-md-5(src="/assets/img/pricing.png", alt=page.title, style="width:100%;")
+
+				.col-auto.order-md-2
+					.banner-split
+				.col-md.flex-bottom.order-md-1
+					.flex-content
+						small.text-primary Explore Davton LMS today
+						h4.mb-3
+							| We have the right plans that suit your budget
+						p.mb-5
+							| Launch your digital training portal in just few minutes with davtonlms.
+							| Onboard, promote employee growth, and orchestrate learning across all departments.
+
+						.form-group
+							.input-group.active
+								input.form-control#email(type="email", name="", placeholder="Enter your email", required)
+								span.input-group-append
+									button.btn.btn-primary(type="submit") Sign Up
+
+						p.text-secondary: small Get started for free. No credit card required.
+
+	
+	.section
+		.container
+
+			.row
+				.col-md-3
+					.heading Davton Pricing
+
+					.pricing-features
+						.pricing-feature.mb-5
+							p.text-primary.font-weight-normal.text-uppercase.mb-3 Basic Features
+
+							p Launch your digital training
+							p Launch your digital training
+							p Launch your digital training
+							p Launch your digital training
+
+						.pricing-feature.mb-5
+							p.text-primary.font-weight-normal.text-uppercase.mb-3 Product HighLight
+
+							p Launch your digital training
+							p Launch your digital training
+							p Launch your digital training
+
+						.pricing-feature.mb-5
+							p.text-primary.font-weight-normal.text-uppercase.mb-3 Purchase Now
+
+							p Receive free newsletter
+							p Regular free update
+							p For learning purpose
+
+				.col-md-9
+					.pricing
+						.pricing-table
+							.pricing-table-tag Latest
+							.pricing-table-title Basic
+							img.pricing-table-img(src="/assets/img/pricing/basic.png", alt="Basic")
+							.pricing-table-price
+								.pricing-table-price-amount ₦59,000
+								.pricing-table-price-duration / month
+							.pricing-table-frequency Up to 1 Session(s) Weekly
+							.pricing-table-description With Davtonlearn, when new people are coming on board, we assign them the training.
+							a.pricing-table-button.btn.btn-white(href="javascript:") Buy Plan
+
+						.pricing-table.pricing-table-special
+							.pricing-table-tag Latest
+							.pricing-table-title Gold
+							img.pricing-table-img(src="/assets/img/pricing/gold.png", alt="Gold")
+							.pricing-table-price
+								.pricing-table-price-amount ₦59,000
+								.pricing-table-price-duration / month
+							.pricing-table-frequency Up to 1 Session(s) Weekly
+							.pricing-table-description With Davtonlearn, when new people are coming on board, we assign them the training.
+							a.pricing-table-button.btn.btn-danger(href="javascript:") Buy Plan
+
+						.pricing-table
+							.pricing-table-tag Latest
+							.pricing-table-title Silver
+							img.pricing-table-img(src="/assets/img/pricing/silver.png", alt="Silver")
+							.pricing-table-price
+								.pricing-table-price-amount ₦59,000
+								.pricing-table-price-duration / month
+							.pricing-table-frequency Up to 1 Session(s) Weekly
+							.pricing-table-description With Davtonlearn, when new people are coming on board, we assign them the training.
+							a.pricing-table-button.btn.btn-white(href="javascript:") Buy Plan
+
+			
+
+
+	include includes/_testimonies
+
+	include includes/_get_started

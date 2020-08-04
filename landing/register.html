@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Davton Learn</title>
+    <link rel="stylesheet" href="css/davton.css"/>
+    <link rel="stylesheet" href="/vendors/ionicons/dist/css/ionicons.min.css"/>
+  </head>
+  <body>
+    <div class="auth-container">
+      <div class="container">
+        <nav class="navbar"><a class="navbar-brand mx-auto" href="/dist/index.html"><img src="/assets/svg/logo.svg" alt="" height="25"/></a></nav>
+        <div class="text-center">
+          <div class="section-title font-weight-normal mb-3">Get started for free today</div>
+          <div class="row">
+            <div class="col-md-8 col-lg-5 col-xl-5 mx-auto">
+              <p>
+                Start your free 14-day trial and access all davtonlms
+                features without spending a cent.
+              </p>
+              <form action="/dashboard/login.html" method="get">
+                <div class="form-group">
+                  <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md">&nbsp;&nbsp;&nbsp;</span></span></span>
+                    <select class="custom-select" id="account-type" name="">
+                      <option value="">Select an account type</option>
+                      <option value="partner">Partner</option>
+                      <option value="company">Company</option>
+                      <option value="individual">Individual</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-business"></span></span></span>
+                    <input class="form-control" type="text" placeholder="Company Name"/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-at"></span></span></span>
+                    <input class="form-control" type="text" placeholder="Company email"/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-call"></span></span></span>
+                    <input class="form-control" type="text" placeholder="Contact no."/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-lock"></span></span></span>
+                    <input class="form-control" type="password" placeholder="Password"/>
+                  </div>
+                </div>
+                <div class="form-group text-left">
+                  <label>I have a Partner/ Promo code</label>
+                  <div class="row">
+                    <div class="col-auto">
+                      <div class="custom-control custom-radio">
+                        <input class="custom-control-input" id="yes" type="radio" name="have_promo_code" value="yes"/>
+                        <label class="custom-control-label" for="yes">Yes, I have</label>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <div class="custom-control custom-radio">
+                        <input class="custom-control-input" id="no" type="radio" name="have_promo_code" value="no"/>
+                        <label class="custom-control-label" for="no">No, I don’t</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md">&nbsp;&nbsp;&nbsp;</span></span></span>
+                    <input class="form-control" type="text" placeholder="Enter Code"/>
+                  </div>
+                </div>
+                <div class="form-group pt-4">
+                  <button class="btn btn-primary btn-block" type="submit">Sign Up</button>
+                </div>
+                <div class="form-group text-center">
+                  <p>or use the below options</p>
+                  <div class="row login-options">
+                    <div class="col-auto"><a class="login-option" href="javascript:"><img src="/assets/svg/vendors/google.svg" alt="Login with Google"/></a></div>
+                    <div class="col-auto row-divider"></div>
+                    <div class="col-auto"><a class="login-option" href="javascript:"><img src="/assets/svg/vendors/linkedin.svg" alt="Login with Linkedin"/></a></div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="py-0" >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 mx-auto">
+            <div class="nav flex-row text-center text-uppercase justify-content-center">
+              <li class="nav-item"><a class="nav-link" href="javascript:">Terms Of Use</a></li>
+              <li class="nav-item"><a class="nav-link" href="javascript:">Privacy Policy</a></li>
+              <li class="nav-item"><a class="nav-link" href="javascript:">© 2019 Davtonlearn ALL RIGHTS RESERVED</a></li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <script src="/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendors/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="js/davton.js"></script>
+  </body>
+</html>
