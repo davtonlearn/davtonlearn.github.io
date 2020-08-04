@@ -1,0 +1,97 @@
+extends layouts/_landing
+
+block content
+
+	.banner
+		.container
+			.row
+				.col-md-6.order-md-2
+					img.img-fluid.mx-auto.d-block.banner-img(src="/assets/img/teaching-outline.png", alt=page.title)
+
+				.col-md-6.order-md-1
+					small.text-primary Explore Davton LMS today
+					h4.mb-3
+						| Davtonlms helps develop people for business growth 
+					p.mb-5
+						| Launch your digital training portal in just few minutes with davtonlms. 
+						| Onboard, promote employee growth, and orchestrate learning across all departments.
+
+					.form-group
+						.input-group.active
+							input.form-control#email(type="email", name="", placeholder="Enter your email", required)
+							span.input-group-append
+								button.btn.btn-primary(type="submit") Sign Up
+
+					p.text-secondary: small Get started for free. No credit card required.
+
+
+			p.trusted-clients-heading Our Trusted Clients/Media
+			.trusted-clients
+				for client in clients
+					-;
+					.client
+						img(src=client.img, alt=client.name, height=client.height)
+
+	.section.section-gradient-white
+		.container
+			.section-title
+				| Why people choose Davtonlearn
+
+			.row.reasons
+				for reason in reasons
+					-;
+					.col-md-4
+						.reason
+							.reason-img: img(src=reason.img, alt=reason.title)
+							.reason-title #{reason.title}
+							.reason-text #{reason.text}
+
+			.sub-section
+				.row
+					.col-md-5
+						.reason-block
+							.reason-block-content
+								.heading.text-danger
+									| Super Easy InApp Communication
+								p.mb-5
+									| In Davtonlms, you can upload an unlimited number of training materials,
+									| and manage them intuitively. No technical background is required.
+
+								a.text-primary(href="") Explore davtonlms now
+
+					.col-md-7
+						img.img-fluid(src="/assets/img/screens/reason-screen-1.png", alt="Super Easy InApp Communication")
+
+			.sub-section
+				.row
+					for reason in extra_reasons
+						-;
+						.col-md-4
+							.reason-extra(class="reason-extra-"+reason.color)
+								.reason-extra-title #{reason.title}
+								.reason-extra-text #{reason.text}
+
+	.section-md.bg-light
+		.container
+			.row
+				.col-md-5.text-center.text-md-left
+					.flex-center
+						.flex-content
+							.heading.text-primary.mb-5
+								| Leverage training to drive your business
+							.sub-heading
+								| Reports that make sense
+							p
+								| With 23 easy-to-read reports, you can quickly overview training results across all departments, or get in-depth data about each employee or content item. 
+
+							p.mb-4
+								| With 23 easy-to-read reports, you can quickly overview training results across all departments.
+
+							a.text-primary(href="") Explore davtonlms now
+
+				.col-md-7
+					img.img-fluid(src="/assets/img/screens/leverage-training-to-drive-your-business.png", alt="Leverage training to drive your business")
+
+	include includes/_testimonies
+
+	include includes/_get_started

@@ -1,0 +1,62 @@
+extend layouts/_landing
+
+block vars
+	-
+		setPage({
+			name: 'partner',
+			title: 'Become a Partner'
+		});
+
+block content
+
+	.banner.banner-gradient-white
+		.container
+			.row.justify-content-between
+				.col-md.order-md-3.text-center
+					img.img-fluid.mx-auto.d-block.banner-img-full(src="/assets/img/partners.png", alt=page.title, width="344")
+
+				.col-auto.order-md-2
+					.banner-split
+				.col-md.flex-bottom.order-md-1
+					.flex-content
+						small.text-primary Explore Davton LMS today
+						h4.mb-3
+							| Become a partner and start earning for referal
+						p.mb-5
+							| Launch your digital training portal in just few minutes with davtonlms.
+							| Onboard, promote employee growth, and orchestrate learning across all departments.
+
+						.form-group
+							.input-group.active
+								input.form-control#email(type="email", name="", placeholder="Enter your email", required)
+								span.input-group-append
+									button.btn.btn-primary(type="submit") Sign Up
+
+						p.text-secondary: small Get started for free. No credit card required.
+
+	
+	.section(style="background-color: #F0F3F6")
+		.container
+			.section-title How to become a partner on davtonlms
+
+			.row.justify-content-around
+				.col-md-3
+					.text-center
+						h6.mb-5 Sign Up
+						img.img-fluid.mb-4(src="/assets/svg/smartphone.svg", alt="Sign Up", style="max-height: 120px")
+						p Promote our course links on your website or app, Promote our course links on your website or app
+				.col-md-3
+					.text-center
+						h6.mb-5 Refer a company
+						img.img-fluid.mb-4(src="/assets/svg/refer.svg", alt="Refer a company", style="max-height: 120px")
+						p Promote our course links on your website or app, Promote our course links on your website or app
+				.col-md-3
+					.text-center
+						h6.mb-5 Get Paid
+						img.img-fluid.mb-4(src="/assets/svg/get-paid.svg", alt="Get Paid", style="max-height: 120px")
+						p Promote our course links on your website or app, Promote our course links on your website or app
+
+
+	include includes/_testimonies
+
+	include includes/_get_started

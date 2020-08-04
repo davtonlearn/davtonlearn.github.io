@@ -1,0 +1,173 @@
+-
+	var 
+		page = {
+			// Page Title
+			title: "Davton Learn",
+
+			// Page Name
+			name: "home",
+
+			// Display Navbar
+			navbar: true,
+
+			// Transparent Navbar
+			transparentNavbar: true,
+
+			// Fixed Navigation
+			fixedNavbar: true,
+
+			// Display Footer
+			footer: true,
+
+			// Style Links
+			links: [
+				{url: "css/davton.css"},
+				{url: "/vendors/ionicons/dist/css/ionicons.min.css"}
+			],
+
+			// Script Tags
+			scripts: [
+				{url: "/vendors/jquery/dist/jquery.min.js"},
+				{url: "/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"},
+				{url: "/vendors/owl.carousel/dist/owl.carousel.min.js"},
+				{url: "js/davton.js"}
+			],
+			
+			// Footer Links
+			socialLinks: [
+				{url: "", icon: "", name: "facebook"},
+				{url: "", icon: "", name: "instagram"},
+				{url: "", icon: "", name: "twitter"},
+				{url: "", icon: "", name: "linkedin"},
+			],
+
+			scrollable: true
+		}
+
+		function setPage (data) {
+			for (key in data) {
+				value = data[key];
+				page[key] = value;
+			}
+		}
+
+		clients = [
+			{
+				name: 'Disrupt',
+				img: '/assets/img/clients/disrupt.png',
+				url: '',
+				height: 33
+			},
+			{
+				name: 'Techabal',
+				img: '/assets/img/clients/techabal.png',
+				url: '',
+				height: 37
+			},
+			{
+				name: 'Techpoint',
+				img: '/assets/img/clients/techpoint.png',
+				url: '',
+				height: 36
+			},
+			{
+				name: 'Fcmb',
+				img: '/assets/img/clients/fcmb.png',
+				url: '',
+				height: 25
+			},
+			{
+				name: 'Access',
+				img: '/assets/img/clients/access.png',
+				url: '',
+				height: 20
+			},
+			{
+				name: 'E-Transact',
+				img: '/assets/img/clients/e-transact.png',
+				url: '',
+				height: 12
+			},
+			{
+				name: 'General Electric',
+				img: '/assets/img/clients/general-electric.png',
+				url: '',
+				height: 27
+			},
+		]
+
+		reasons = [
+			{
+				img: '/assets/svg/reasons/snap.svg',
+				title: 'Launch in a snap',
+				text: 'Upload content, invite users, and start tracking results just in one day. Seriously.'
+			},
+			{
+				img: '/assets/svg/reasons/headphones.svg',
+				title: 'Dedicated tech support',
+				text: 'Support experts are ready to help you over the phone, email, or live chat. 83% of cases get resolved in 2 hours.'
+			},
+			{
+				img: '/assets/svg/reasons/mobile.svg',
+				title: 'Mobile learning',
+				text: 'Learners can study when and where they want to, even offline, with native applications for iOS and Android.'
+			}
+		]
+
+		extra_reasons = [
+			{
+				color: 'blue',
+				title: 'Create learning paths and enroll employees',
+				text: 'Arrange courses into learning paths to systematize training. Employees master topics step by step, gradually building skills and performance.'
+			},
+			{
+				color: 'green',
+				title: 'Work with content you already have',
+				text: 'Start by adding your existing learning materials: presentations, guidelines, instructions, videos, etc. in just a few clicks.'
+			},
+			{
+				color: 'red',
+				title: 'Create learning paths and enroll employees',
+				text: 'Arrange courses into learning paths to systematize training. Employees master topics step by step, gradually building skills and performance.'
+			},
+			{
+				color: 'yellow',
+				title: 'Create learning paths and enroll employees',
+				text: 'Arrange courses into learning paths to systematize training. Employees master topics step by step, gradually building skills and performance.'
+			},
+			{
+				color: 'cyan',
+				title: 'Work with content you already have',
+				text: 'Start by adding your existing learning materials: presentations, guidelines, instructions, videos, etc. in just a few clicks.'
+			},
+			{
+				color: 'purple',
+				title: 'Create learning paths and enroll employees',
+				text: 'Arrange courses into learning paths to systematize training. Employees master topics step by step, gradually building skills and performance.'
+			},
+		]
+
+		testimonies = []
+
+		for (var i = 0; i < 6; i++) {
+			testimonies.push({
+				text: `With Davtonlearn, when new people are coming on board, we assign them the training, they take it on their own time, and it's very convenient for everyone. Plus we have records of what people have taken and if they've completed the courses`,
+				user: {
+					img: '/assets/img/testimonies/user.png',
+					name: 'Leslie Cutter',
+					title: 'Media communications specialist at Anonymous Ltd.'
+				}
+			});
+		}
+
+		courses = []
+
+		for (var i = 0; i < 6; i++) {
+			courses.push({
+				img: '/assets/img/screens/course.png',
+				title: 'Project Management Professional (PMP) ',
+				teacher: 'Kirill Eremenko',
+				views: '12048',
+				rating: 9
+			});
+		}
