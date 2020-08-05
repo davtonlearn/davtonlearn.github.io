@@ -240,7 +240,7 @@ a, a:hover {
 
 .menu>ul>li a {
     text-decoration: none;
-    padding: 1.5em;
+    padding: 1em;
     display: block;
     color: #000;
     font-weight: 500;
@@ -720,10 +720,12 @@ Mobile style's
     }
     .d-menu{
         background: #fff;
-        position: relative!important;
+        position: absolute!important;
+        z-index: -9;
+        top: 57px;
     }
     .banner-home {
-        padding: 5rem 0 5rem 0;
+        padding: 3rem 0 5rem 0;
     }
 }
 
