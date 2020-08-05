@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Davton Learn</title>
     <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" />
     <link rel="stylesheet" href="css/slick.css" />
     <link rel="stylesheet" href="css/intlTelInput.css" />
     <link rel="stylesheet" href="css/davton.css" />
@@ -122,64 +123,117 @@
             </div>
         </div>
     </div>
-    <div class="section">
+    <div class="section bg-grey">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
-                    <div class="heading">Davton Pricing</div>
-                    <div class="pricing-features">
-                        <div class="pricing-feature mb-5">
-                            <p class="text-primary font-weight-normal text-uppercase mb-3">Basic Features</p>
-                            <p>Launch your digital training</p>
-                            <p>Launch your digital training</p>
-                            <p>Launch your digital training</p>
-                            <p>Launch your digital training</p>
+                <div class="col-sm-6 col-md-7">
+                    <div class="heading">Features</div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 mb-2">
+                            <div class="row flex-nowrap">
+                                <div class="col-auto px-1">
+                                    <div class="feat-icon">
+                                        <div class="ion-ios-videocam font-25"></div>
+                                    </div>
+                                </div>
+                                <div class="col text-left px-3">
+                                    <p class="text-pink mb-2 font-18">Blended learning</p>
+                                    <p class="font-weight-100 line-height-20"> Mix eLearning with instructor-led training. Deliver instructor-led training events either in a classroom or via videoconferencing. <a href="#-lms" class="read-more-link" title="Blended Learning Software | TalentLMS"
+                                            target="_self">Read more ›</a></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="pricing-feature mb-5">
-                            <p class="text-primary font-weight-normal text-uppercase mb-3">Product HighLight</p>
-                            <p>Launch your digital training</p>
-                            <p>Launch your digital training</p>
-                            <p>Launch your digital training</p>
+                        <div class="col-12 col-md-6 mb-2">
+                            <div class="row flex-nowrap">
+                                <div class="col-auto px-1">
+                                    <div class="feat-icon">
+                                        <div class="ion-ios-videocam font-25"></div>
+                                    </div>
+                                </div>
+                                <div class="col text-left px-3">
+                                    <p class="text-pink mb-2 font-18">Gamification</p>
+                                    <p class="font-weight-100 line-height-20"> Bring your courses to life with Badges, Points, Levels, Rewards and Leaderboards. Customize your gamification experience to the maximum through the Gamification Engine.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="pricing-feature mb-5">
-                            <p class="text-primary font-weight-normal text-uppercase mb-3">Purchase Now</p>
-                            <p>Receive free newsletter</p>
-                            <p>Regular free update</p>
-                            <p>For learning purpose</p>
+                        <div class="col-12 col-md-6 mb-2">
+                            <div class="row flex-nowrap">
+                                <div class="col-auto px-1">
+                                    <div class="feat-icon">
+                                        <div class="ion-ios-videocam font-25"></div>
+                                    </div>
+                                </div>
+                                <div class="col text-left px-3">
+                                    <p class="text-pink mb-2 font-18"> Certifications </p>
+                                    <p class="font-weight-100 line-height-20"> Easily design your own certifications that are valid for predefined periods of time. Support a variety of compliancy scenarios that might require a re-certification. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 mb-2">
+                            <div class="row flex-nowrap">
+                                <div class="col-auto px-1">
+                                    <div class="feat-icon">
+                                        <div class="ion-ios-videocam font-25"></div>
+                                    </div>
+                                </div>
+                                <div class="col text-left px-3">
+                                    <p class="text-pink mb-2 font-18"> Rich communication tools </p>
+                                    <p class="font-weight-100 line-height-20"> Support for Personal messages, Calendar and Discussion forums. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 mb-2">
+                            <div class="row flex-nowrap">
+                                <div class="col-auto px-1">
+                                    <div class="feat-icon">
+                                        <div class="ion-ios-videocam font-25"></div>
+                                    </div>
+                                </div>
+                                <div class="col text-left px-3">
+                                    <p class="text-pink mb-2 font-18"> Videoconference support </p>
+                                    <p class="font-weight-100 line-height-20"> Meet with the integrated videoconference. Additional support for various videoconference solutions. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 mb-2">
+                            <div class="row flex-nowrap">
+                                <div class="col-auto px-1">
+                                    <div class="feat-icon">
+                                        <div class="ion-ios-videocam font-25"></div>
+                                    </div>
+                                </div>
+                                <div class="col text-left px-3">
+                                    <p class="text-pink mb-2 font-18"> Ecommerce </p>
+                                    <p class="font-weight-100 line-height-20"> Sell your courses via PayPal or Stripe. Offer global discounts or coupons. Sell individual courses or offer them via a subscription payment. </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-9">
-                    <div class="pricing">
-                        <div class="pricing-table">
-                            <div class="pricing-table-tag">Latest</div>
-                            <div class="pricing-table-title">Basic</div><img class="pricing-table-img" src="assets/img/pricing/basic.png" alt="Basic" />
-                            <div class="pricing-table-price">
-                                <div class="pricing-table-price-amount">₦59,000</div>
-                                <div class="pricing-table-price-duration">/ month</div>
+                <div class="col-sm-6 col-md-5">
+                    <div class="card">
+                        <img class="card-img-top" width="100" src="assets/img/calculate.jpg" alt="Card image cap">
+
+                        <div class="card-body">
+                            <div class="input-group pricing-calculator"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-people mt-2"></span></span>
+                                </span>
+                                <input id="staff-size" class="form-control font-18 font-weight-bold" type="text" placeholder="Enter no of staff" value="5000" title="Enter Your Staff Size" data-toggle="tooltip" data-placement="top" required/>
+                                <select class="form-control pricing-select border-left font-18 font-weight-bold" id="payment-plan">
+                                    <option value="1">Quarterly</option>
+                                    <option value="2">Biannally</option>
+                                    <option selected value="3">Annually</option>
+                                </select>
                             </div>
-                            <div class="pricing-table-frequency">Up to 1 Session(s) Weekly</div>
-                            <div class="pricing-table-description">With Davtonlearn, when new people are coming on board, we assign them the training.</div><a class="pricing-table-button btn btn-white" href="javascript:">Buy Plan</a>
+                            <h4 class="mt-4" id="total-cost"></h4>
                         </div>
-                        <div class="pricing-table pricing-table-special">
-                            <div class="pricing-table-tag">Latest</div>
-                            <div class="pricing-table-title">Gold</div><img class="pricing-table-img" src="assets/img/pricing/gold.png" alt="Gold" />
-                            <div class="pricing-table-price">
-                                <div class="pricing-table-price-amount">₦59,000</div>
-                                <div class="pricing-table-price-duration">/ month</div>
-                            </div>
-                            <div class="pricing-table-frequency">Up to 1 Session(s) Weekly</div>
-                            <div class="pricing-table-description">With Davtonlearn, when new people are coming on board, we assign them the training.</div><a class="pricing-table-button btn btn-danger" href="javascript:">Buy Plan</a>
-                        </div>
-                        <div class="pricing-table">
-                            <div class="pricing-table-tag">Latest</div>
-                            <div class="pricing-table-title">Silver</div><img class="pricing-table-img" src="assets/img/pricing/silver.png" alt="Silver" />
-                            <div class="pricing-table-price">
-                                <div class="pricing-table-price-amount">₦59,000</div>
-                                <div class="pricing-table-price-duration">/ month</div>
-                            </div>
-                            <div class="pricing-table-frequency">Up to 1 Session(s) Weekly</div>
-                            <div class="pricing-table-description">With Davtonlearn, when new people are coming on board, we assign them the training.</div><a class="pricing-table-button btn btn-white" href="javascript:">Buy Plan</a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
                         </div>
                     </div>
                 </div>
@@ -398,6 +452,63 @@
     <script src="js/intlTelInput.js"></script>
     <script src="js/slick.js"></script>
     <script src="js/nav.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+    <script>
+        $('.pricing-select').niceSelect();
+    </script>
+    <script>
+        $(document).ready(function() {
+            cal_price();
+            function addCommas(nStr) {
+                nStr += '';
+                var x = nStr.split('.');
+                var x1 = x[0];
+                var x2 = x.length > 1 ? '.' + x[1] : '';
+                var rgx = /(\d+)(\d{3})/;
+                while (rgx.test(x1)) {
+                    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                }
+                return x1 + x2;
+            }
+            function cal_price(){
+                size = $('#staff-size').val();
+                plan = $('#payment-plan').val();
+                cost = 0;
+                if (plan == 1) {
+                    term = 'quarterly'
+                    rate = 0.25
+                }
+                if (plan == 2){
+                    term = 'half-yearly'
+                    rate = 0.5
+                }
+                if (plan == 3){
+                    term = 'annually'
+                    rate = 1
+                }
+
+                if(size > 0 && size <= 5000){
+                    price = 5000;
+                }
+                else if(size > 5000 && size <= 10000){
+                    price = 3000;
+                }
+                else if(size > 10000){
+                    price = 2000;
+                }
+                cost = size * price * rate
+                $('#total-cost').html('Your licence cost &#x20A6;'+ addCommas(cost) + ' ' + term)
+            }
+            $('#staff-size').on('input', function(){
+                cal_price();
+
+            })
+            $('#payment-plan').on('change', function(){
+                cal_price();
+
+            })
+        })
+    </script>
 </body>
 
 </html>

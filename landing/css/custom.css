@@ -127,7 +127,7 @@
 }
 
 .font-35 {
-    font-size: 150% !important;
+    font-size: 35px !important;
 }
 
 .font-45{
@@ -616,11 +616,56 @@ header.request{
     display: block;
 }
 
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+    color: #495057;
+    background-color: #b7d7f9 !important;
+    border-color: transparent !important;
+    font-weight: 600;
+}
+
+.nav-pills{
+    float: none;
+    display: block;
+    border-bottom: 0;
+    border-right: 3px solid #ccc;
+    padding: 0;
+}
+
+.nav-pills .nav-link{
+    border: 1px solid transparent;
+    border-top-left-radius: 0rem!important;
+    border-top-right-radius: 0rem!important;
+    background: #fff;
+    color: #999;
+    font-weight: 600;
+    padding: 10px;
+}
+.nice-select.open .list{
+    width: 100%;
+}
+.pricing-calculator{
+    border: 1px solid #ced4da;
+    box-shadow: none;
+}
+.pricing-calculator:focus{
+    outline: none;
+    border: 0
+}
+.feat-icon{
+    border: 2px solid #dd346b;
+    border-radius: 50%;
+    padding: 7px 12px 3px;
+}
+
 /* ––––––––––––––––––––––––––––––––––––––––––––––––––
 Mobile style's
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 @media only screen and (max-width: 959px) {
+    .navbar{
+        height: 88px;
+        position: relative!important;
+    }
     .menu-container {
         width: 100%;
     }
@@ -672,5 +717,21 @@ Mobile style's
     }
     .menu .show-on-mobile {
         display: block;
+    }
+    .d-menu{
+        background: #fff;
+        position: relative!important;
+    }
+    .banner-home {
+        padding: 5rem 0 5rem 0;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .nav-pills {
+        display: flex;
+    }
+    .flex-column{
+        flex-direction: inherit!important;
     }
 }

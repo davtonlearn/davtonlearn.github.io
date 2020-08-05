@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	$('[data-toggle="tooltip"]').tooltip();
     "use strict";
     $('.menu > ul > li:has( > ul)').addClass('menu-dropdown-icon');
     $('.menu > ul > li > ul:not(:has(ul))').addClass('normal-sub');
@@ -71,6 +72,7 @@ $('.slick-center').slick({
         }
     ]
 });
+
 
 $(document).on('click', '.callback', function(e) {
     e.stopPropagation();
