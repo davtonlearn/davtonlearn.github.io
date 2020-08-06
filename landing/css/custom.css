@@ -656,12 +656,22 @@ header.request{
     border-radius: 50%;
     padding: 7px 12px 3px;
 }
+.navbar{
+    background: #fff;
+}
+.menu{
+    display: flex;
+    align-items: center;
+}
 
 /* ––––––––––––––––––––––––––––––––––––––––––––––––––
 Mobile style's
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 @media only screen and (max-width: 959px) {
+    .menu{
+        display: block;
+    }
     .navbar{
         height: 88px;
         position: relative!important;
