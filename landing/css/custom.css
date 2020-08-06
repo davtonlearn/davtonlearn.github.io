@@ -737,6 +737,9 @@ Mobile style's
     .banner-home {
         padding: 3rem 0 5rem 0;
     }
+    .reason-img {
+        height: 100%;
+    }
 }
 
 @media only screen and (max-width: 576px){
