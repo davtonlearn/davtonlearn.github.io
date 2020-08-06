@@ -105,85 +105,108 @@
                         <p>
                             Start your free 14-day trial and access all davtonlms features without spending a cent.
                         </p>
-                        <form action="/dashboard/login.html" method="get">
+                        <form>
                             <div class="form-group">
                                 <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md">&nbsp;&nbsp;&nbsp;</span></span>
                                     </span>
                                     <select class="custom-select" id="account-type" name="">
                                       <option value="">Select an account type</option>
                                       <option value="partner">Partner</option>
-                                      <option value="company">Company/Customer</option>
+                                      <option value="company" selected>Company / Customer</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-person"></span></span>
-                                    </span>
-                                    <input class="form-control" type="text" placeholder="Name" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-at"></span></span>
-                                    </span>
-                                    <input class="form-control" type="text" placeholder="Email" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-business"></span></span>
-                                    </span>
-                                    <input class="form-control" type="text" placeholder="Company Name" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-globe"></span></span>
-                                    </span>
-                                    <input class="form-control" type="text" placeholder="Domain Name" />
-                                    <input class="form-control" type="text" placeholder=".davtonlms.com" disabled />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-call"></span></span>
-                                    </span>
-                                    <input class="form-control" type="text" placeholder="Contact no." />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-log-in"></span></span>
-                                    </span>
-                                    <input class="form-control" type="text" placeholder="Username" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-lock"></span></span>
-                                    </span>
-                                    <input class="form-control" type="password" placeholder="Password" />
-                                </div>
-                            </div>
-                            <div class="form-group text-left">
-                                <label>I have a Partner/ Promo code</label>
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <div class="custom-control custom-radio">
-                                            <input class="custom-control-input" id="yes" type="radio" name="have_promo_code" value="yes" />
-                                            <label class="custom-control-label" for="yes">Yes, I have</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="custom-control custom-radio">
-                                            <input class="custom-control-input" id="no" type="radio" name="have_promo_code" value="no" />
-                                            <label class="custom-control-label" for="no">No, I don’t</label>
-                                        </div>
+                            <div id="partner_form" style="display: none;">
+                                <div class="form-group">
+                                    <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-person"></span></span>
+                                        </span>
+                                        <input class="form-control" type="text" placeholder="Fullname" />
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md">&nbsp;&nbsp;&nbsp;</span></span>
-                                    </span>
-                                    <input class="form-control" type="text" placeholder="Enter Code" />
+                                <div class="form-group">
+                                    <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-at"></span></span>
+                                        </span>
+                                        <input class="form-control" type="text" placeholder="Email" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input id="phone3" type="tel" name="phone_number" class="form-control phone w-100" style="background:#fff" placeholder="Contact No.">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-lock"></span></span>
+                                        </span>
+                                        <input class="form-control" type="password" placeholder="Password" />
+                                    </div>
+                                </div>
+                                <div class="form-group pt-4">
+                                    <a href="../admin/init_setup.html" class="btn btn-primary btn-block" type="submit">Sign Up</a>
                                 </div>
                             </div>
-                            <div class="form-group pt-4">
-                                <button class="btn btn-primary btn-block" type="submit">Sign Up</button>
+                            <div id="company_form">
+                                <div class="form-group">
+                                    <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-person"></span></span>
+                                        </span>
+                                        <input class="form-control" type="text" placeholder="Fullname" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-at"></span></span>
+                                        </span>
+                                        <input class="form-control" type="text" placeholder="Email" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-business"></span></span>
+                                        </span>
+                                        <input class="form-control" type="text" placeholder="Company Name" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input id="phone3" type="tel" name="phone_number" class="form-control phone w-100" style="background:#fff" placeholder="Contact No.">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-lock"></span></span>
+                                        </span>
+                                        <input class="form-control" type="password" placeholder="Password" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-globe"></span></span>
+                                        </span>
+                                        <input class="form-control" type="text" placeholder="Domain Name" title="Enter a domain name that will serve as your customized url" data-toggle="tooltip" data-placement="left"/>
+                                        <input class="form-control" type="text" placeholder=".davtonlms.com" disabled />
+                                    </div>
+                                </div>
+                                <div class="form-group text-left">
+                                    <label>I have a Partner/ Promo code</label>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <div class="custom-control custom-radio">
+                                                <input class="custom-control-input" id="yes" type="radio" name="have_promo_code" value="yes" />
+                                                <label class="custom-control-label" for="yes">Yes, I have</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="custom-control custom-radio">
+                                                <input class="custom-control-input" id="no" type="radio" name="have_promo_code" value="no" />
+                                                <label class="custom-control-label" for="no">No, I don’t</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md">&nbsp;&nbsp;&nbsp;</span></span>
+                                        </span>
+                                        <input class="form-control" type="text" placeholder="Enter Code" />
+                                    </div>
+                                </div>
+                                <div class="form-group pt-4">
+                                    <a href="../admin/init_setup.html" class="btn btn-primary btn-block" type="submit">Sign Up</a>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -306,6 +329,15 @@
     <script src="js/intlTelInput.js"></script>
     <script src="js/slick.js"></script>
     <script src="js/nav.js"></script>
+    <script>
+        $("body").delegate("#account-type", "change", function(e){
+            e.preventDefault()
+            $('#company_form').hide();
+            $('#partner_form').hide();
+            val = $(this).val()
+            $('#'+val+'_form').show()
+        })
+    </script>
 </body>
 
 </html>
