@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	$('[data-toggle="tooltip"]').tooltip();
     "use strict";
     $('.menu > ul > li:has( > ul)').addClass('menu-dropdown-icon');
     $('.menu > ul > li > ul:not(:has(ul))').addClass('normal-sub');
@@ -19,10 +18,28 @@ $(document).ready(function() {
         $(".menu > ul").toggleClass('show-on-mobile');
         e.preventDefault();
     });
+    if ($(window).width() <= 943) {
+        console.log("khjbhhj")
+        $('.navbar.fixed-top').addClass('top-0');
+      }
+        var y = $(this).scrollTop();
+      if (y > 10 || $(window).width() <= 943) {
+        $('.fixed-top').addClass('top-0');
+      } else {
+        $('.fixed-top').removeClass('top-0');
+      }
 });
 $(window).resize(function() {
     $(".menu > ul > li").children("ul").hide();
     $(".menu > ul").removeClass('show-on-mobile');
+});
+$(document).scroll(function() {
+  var y = $(this).scrollTop();
+  if (y > 10 || $(window).width() <= 943) {
+    $('.fixed-top').addClass('top-0');
+  } else {
+    $('.fixed-top').removeClass('top-0');
+  }
 });
 
 
