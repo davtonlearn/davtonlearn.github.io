@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="assets/img/favicon.png">
     <link rel="stylesheet" href="css/slick.css" />
     <link rel="stylesheet" href="css/intlTelInput.css" />
+    <link rel="stylesheet" href="css/iziToast.css">
     <link rel="stylesheet" href="css/davton.css" />
     <link rel="stylesheet" href="css/custom.css" />
     <link rel="stylesheet" href="vendors/ionicons/dist/css/ionicons.min.css" />
@@ -357,7 +358,7 @@
                       <div class="row">
                             <div class="w-100">
                                 <ul>
-                                    <li><a href="" class="btn btn-outline-light py-1 px-2"><i class="mdi mdi-android"></i> <span>Refer and Earn</span> </a></li>
+                                    <li><a href="#" data-toggle="modal" data-target="#partnerModal" class="btn btn-outline-light py-1 px-2"><i class="mdi mdi-android"></i> <span>Refer and Earn</span> </a></li>
                                 </ul>
                             </div>
                             <a href="" class="col-lg-4 col-md-5 col-3 pl-0"><i class="btn btn-dark ion-logo-facebook social facebook"></i></a>
@@ -452,6 +453,49 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal -->
+        <div class="modal" id="partnerModal" role="dialog" aria-labelledby="partnerModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-dark" id="exampleModalLabel">Partner Sign Up</h5>
+                        <button type="button" class="btn btn-clear font-20 p-0 font-weight-bold" id="close-modal">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-body">
+                            <form>
+                                <div id="partner_form">
+                                    <div class="form-group">
+                                        <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-person"></span></span>
+                                            </span>
+                                            <input class="form-control" id="partner_fullname" type="text" placeholder="Fullname" required="" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-at"></span></span>
+                                            </span>
+                                            <input class="form-control" id="partner_email" type="text" placeholder="Email" required="" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="tel" id="partner_phone" name="phone_number" class="form-control phone w-100" style="background:#fff" placeholder="Contact No." required="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group pt-4">
+                                        <button id="partner_register" class="btn btn-primary btn-block" type="submit" disabled="">Register</button>
+                                    </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </footer>
 
     <script src="vendors/jquery/dist/jquery.min.js"></script>
@@ -459,6 +503,7 @@
     <script src="vendors/owl.carousel/dist/owl.carousel.min.js"></script>
     <script src="js/davton.js"></script>
     <script src="js/intlTelInput.js"></script>
+    <script src="js/iziToast.js"></script>
     <script src="js/slick.js"></script>
     <script src="js/nav.js"></script>
 </body>
