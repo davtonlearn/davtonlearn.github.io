@@ -735,7 +735,7 @@ header.request{
     display: inline-block;
     padding: 20px 15px 0;
     width: 30%;
-    margin-left: 30px;
+    /*margin-left: 30px;*/
     float: left;
 }
 
@@ -934,6 +934,10 @@ header.request{
     bottom: 10%
 }
 
+.flex-1{
+    flex: 1
+}
+
 @media (max-width: 1199px){
     .side-nav.opened {
         min-width: 320px;
@@ -1013,6 +1017,9 @@ header.request{
 }
 
 @media only screen and (max-width: 959px) {
+    .flex-1{
+        flex: auto
+    }
     .vid-sec{
         height: 100%;
     }
@@ -1037,12 +1044,12 @@ header.request{
     .menu-mobile {
         display: block;
         float: right;
-        padding: 17px 20px 0;
+        padding: 0px 20px 0;
     }
     .menu-dropdown-icon:before {
         display: block;
-            position: absolute;
-    right: 0;
+        position: absolute;
+        right: 0;
     }
     .menu>ul {
         display: none;
