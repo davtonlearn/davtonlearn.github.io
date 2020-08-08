@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="assets/img/favicon.png">
     <link rel="stylesheet" href="css/slick.css" />
     <link rel="stylesheet" href="css/intlTelInput.css" />
+    <link rel="stylesheet" href="css/iziToast.css">
     <link rel="stylesheet" href="css/davton.css" />
     <link rel="stylesheet" href="css/custom.css" />
     <link rel="stylesheet" href="vendors/ionicons/dist/css/ionicons.min.css" />
@@ -131,13 +132,56 @@
                             Launch your digital training portal in just few minutes with davtonlms. Onboard, promote employee growth, and orchestrate learning across all departments.
                         </p>
                         <div class="form-group">
-                            <a href="register.html" class="btn btn-primary">Get started for free</a>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#partnerModal">Get started for free</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+        <div class="modal" id="partnerModal" role="dialog" aria-labelledby="partnerModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-dark" id="exampleModalLabel">Partner Sign Up</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-body">
+                            <form>
+                                <div id="partner_form">
+                                    <div class="form-group">
+                                        <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-person"></span></span>
+                                            </span>
+                                            <input class="form-control" id="partner_fullname" type="text" placeholder="Fullname" required="" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-at"></span></span>
+                                            </span>
+                                            <input class="form-control" id="partner_email" type="text" placeholder="Email" required="" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="tel" id="partner_phone" name="phone_number" class="form-control phone w-100" style="background:#fff" placeholder="Contact No." required="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group pt-4">
+                                        <button id="partner_register" class="btn btn-primary btn-block" type="submit" disabled="">Register</button>
+                                    </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     <div class="section" style="background-color: #F0F3F6">
         <div class="container">
             <div class="section-title">How to become a partner on davtonlms</div>
@@ -248,7 +292,7 @@
         </div>
     </div>
 
-    <div class="section pt-5" id="get-started" style="background-image: url(assets/img/footer.png); background-size: cover;padding-bottom: 200px">
+    <div class="section pt-5" id="get-started-modal" style="background-image: url(assets/img/footer.png); background-size: cover;padding-bottom: 200px">
         <div class="container">
             <div class="section-title mb-4 font-weight-normal">Get started for free today</div>
             <div class="row">
@@ -257,7 +301,7 @@
                     <div class="form-group">
                         <div class="input-group active">
                             <input class="form-control" id="email" type="email" name="" placeholder="Enter your email" required="required" /><span class="input-group-append">
-                <button class="btn btn-primary" type="submit">Sign Up</button></span>
+                            <button class="btn btn-primary" type="submit">Sign Up</button></span>
                         </div>
                     </div>
                     <p class="text-center text-secondary"><small>Get started for free. No credit card required.</small></p>
@@ -327,7 +371,7 @@
         <div class="container">
             <div class="row sub-links">
                 <div class="col-4 col-md-4 col-lg-2 text-center offset-lg-2">
-                    <div class="btn-group dropup">
+                    <!-- <div class="btn-group dropup">
                         <a href="" class="btn dropdown-toggle d-flex text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ion-ios-phone-portrait"></i><span class="d-none d-sm-inline">Request<span class="d-none d-md-inline"> a callback</span></span></a>
                         <div class="callback dropdown-menu">
                             <header class="request cursor-pointer">
@@ -360,7 +404,17 @@
                                   <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
-                    </div>
+                    </div> -->
+                    <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
                 </div>
                 <div class="col-4 col-md-4 col-lg-4 text-center">
                     <a href="tel:/+2348073914547" class="btn text-white"><i class="ion-md-call "></i><span class="d-none d-sm-inline">Call us<span class="d-none d-md-inline">: +2348073914547</span></span></a>
@@ -372,13 +426,48 @@
         </div>
     </footer>
 
+
+
+        
+
     <script src="vendors/jquery/dist/jquery.min.js"></script>
     <script src="vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="vendors/owl.carousel/dist/owl.carousel.min.js"></script>
     <script src="js/davton.js"></script>
     <script src="js/intlTelInput.js"></script>
     <script src="js/slick.js"></script>
+    <script src="js/iziToast.js"></script>
     <script src="js/nav.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#partner_phone, #partner_email, #partner_fullname').on('input', function(){
+                var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                email = $('#partner_email')
+                if($('#partner_phone').val().length === 14 && $('#partner_email').val().match(re) && $('#partner_fullname') !==''){
+                    $('#partner_register').attr('disabled',false);  
+                }
+                else{
+                   $('#partner_register').attr('disabled',true);   
+                }
+            });
+
+            $('#partner_register').click(function(e){
+                e.preventDefault();
+                    $('')
+                    $('#get-started-modal').modal('hide')
+                    iziToast.show({
+                        title: 'Success!',
+                        titleSize : '20px',
+                        titleColor: '#fff',
+                        message: 'An email will be sent to you shortly.',
+                        messageSize: '18px',
+                        messageColor: '#fff',
+                        backgroundColor: '#4CAF50',
+                        position : 'topRight'
+                    });
+            })
+        })
+    </script>
 </body>
 
 </html>
