@@ -97,3 +97,36 @@ $(document).on('click', '.callback', function(e) {
 $(document).on('click', '.close', function(e) {
     $('.callback').dropdown('toggle')
 });
+
+$(document).ready(function() {
+    $('#partner_phone, #partner_email, #partner_fullname').on('input', function(){
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        email = $('#partner_email')
+        if($('#partner_phone').val().length === 14 && $('#partner_email').val().match(re) && $('#partner_fullname') !==''){
+            $('#partner_register').attr('disabled',false);  
+        }
+        else{
+           $('#partner_register').attr('disabled',true);   
+        }
+    });
+
+    $('#close-modal').click(function(e){
+        e.preventDefault();
+        $('#partnerModal').modal('hide')
+    })
+
+    $('#partner_register').click(function(e){
+        e.preventDefault();
+            $('#partnerModal').modal('hide')
+            iziToast.show({
+                title: 'Success!',
+                titleSize : '20px',
+                titleColor: '#fff',
+                message: 'An email will be sent to you shortly.',
+                messageSize: '18px',
+                messageColor: '#fff',
+                backgroundColor: '#4CAF50',
+                position : 'topRight'
+            });
+    })
+})
