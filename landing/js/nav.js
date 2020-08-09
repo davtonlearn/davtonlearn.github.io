@@ -101,7 +101,7 @@ $(document).on('click', '.close', function(e) {
 $(document).ready(function() {
     $('#partner_phone, #partner_email, #partner_fullname').on('input', function(){
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        email = $('#partner_email')
+        
         if($('#partner_phone').val().length === 14 && $('#partner_email').val().match(re) && $('#partner_fullname') !==''){
             $('#partner_register').attr('disabled',false);  
         }
