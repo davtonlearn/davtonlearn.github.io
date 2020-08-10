@@ -1,0 +1,102 @@
+extend layouts/_landing
+
+block vars
+	-
+		setPage({
+			name: 'companies',
+			title: 'For Companies'
+		});
+
+block content
+
+	.banner.banner-gradient-white
+		.container
+			.row.justify-content-between
+				.col-md.order-md-3
+					img.img-fluid.mx-auto.d-block.banner-img-full(src="/assets/img/for-companies.png", alt=page.title)
+
+				.col-auto.order-md-2
+					.banner-split
+				.col-md.flex-bottom.order-md-1
+					.flex-content
+						small.text-primary Explore Davtonlms today
+						h4.mb-3
+							| Davtonlms helps Onboard, promote employee growth
+						p.mb-5
+							| Launch your digital training portal in just few minutes with davtonlms.
+							| Onboard, promote employee growth, and orchestrate learning across all departments.
+
+						.form-group
+							.input-group.active
+								input.form-control#email(type="email", name="", placeholder="Enter your email", required)
+								span.input-group-append
+									button.btn.btn-primary(type="submit") Sign Up
+
+						p.text-secondary: small Get started for free. No credit card required.
+
+	
+	.section
+		.container
+			.section-title How DavtonLMS works
+
+			.row
+				.col-md-10.mx-auto
+					.step.row
+						.col-md-5.step-details
+							.w-100
+								.step-number Step 1
+								.step-title Create an Account
+								.step-text
+									| We’re eager to help both our partners and their customers. Every tech support engineer at iSpring has completed special training to resolve every customer issue as quickly and efficiently as possible.
+							
+						.col-md-5.step-img
+							img.img-fluid(src="/assets/img/screens/step-1.png", alt="Create an Account")
+
+	.section(style="background-color: #F8F8F8")
+		.container
+			.row
+				.col-md-10.mx-auto
+					.step.row
+						.col-md-5.step-details.order-md-2
+							.w-100
+								.step-number Step 2
+								.step-title Customise your dashboard to taste
+								.step-text
+									| We’re eager to help both our partners and their customers. Every tech support engineer at iSpring has completed special training to resolve every customer issue as quickly and efficiently as possible.
+							
+						.col-md-5.step-img.order-md-1
+							img.img-fluid(src="/assets/img/screens/step-2.png", alt="Customise your dashboard to taste")
+
+	.section
+		.container
+			.row
+				.col-md-10.mx-auto
+					.step.row
+						.col-md-5.step-details
+							.w-100
+								.step-number Step 3
+								.step-title Onboard Your Employees
+								.step-text
+									| We’re eager to help both our partners and their customers. Every tech support engineer at iSpring has completed special training to resolve every customer issue as quickly and efficiently as possible.
+							
+						.col-md-5.step-img
+							img.img-fluid(src="/assets/img/screens/step-3.png", alt="Onboard Your Employees", width="250")
+
+	.section(style="background-color: #F0F3F6")
+		.container
+			.row
+				.col-md-10.mx-auto
+					.step.row
+						.col-md-5.step-details.order-md-2
+							.w-100
+								.step-number Step 4
+								.step-title Experience DavtonLMS
+								.step-text
+									| We’re eager to help both our partners and their customers. Every tech support engineer at iSpring has completed special training to resolve every customer issue as quickly and efficiently as possible.
+							
+						.col-md-5.step-img.order-md-1
+							img.img-fluid(src="/assets/img/screens/step-4.png", alt="Experience DavtonLMS")
+
+	include includes/_testimonies
+
+	include includes/_get_started
