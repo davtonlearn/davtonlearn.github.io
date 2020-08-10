@@ -117,13 +117,69 @@
         </div>
     </header>
 
-    <section class="pt-4">
+    <section class="pt-lg-5 mt-lg-4">
         <div class="px-0 mx-0">
-            <div class="row" style="margin: 100px 0">
-                <div class="col-md-6 px-4 py-5">
-                    <h4 class="font-45 font-weight-bold">Start creating courses</h4>
+            <div class="row">
+                <div class="col-md-6 px-5 py-5">
+                    <!-- <h4 class="font-45 font-weight-bold">Start creating courses</h4> -->
+                    <div class="font-45 font-weight-bold" id="text"></div>
                     <p class="font-25 mt-4">Companies who use Easygenerator create courses 12x faster. We simplify and accelerate your learning development.</p>
-                    <a href="" class="btn btn-primary mt-4 p-3 px-5 font-20" style="border-radius: 50px;">Get Started Now</a>
+                    <a href="#" data-toggle="modal" data-target="#contentModal" class="btn btn-primary mt-4 p-3 px-5 font-20" style="border-radius: 50px;">Get Started Now</a>
+                    <!-- Modal -->
+                    <div class="modal" id="contentModal" role="dialog" aria-labelledby="contentModal" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-dark" id="exampleModalLabel">Content Development Request</h5>
+                                    <button type="button" class="btn btn-clear font-20 p-0 font-weight-bold" id="close-modal">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="modal-body">
+                                        <form>
+                                            <div id="partner_form">
+                                                <div class="form-group">
+                                                    <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-person"></span></span>
+                                                        </span>
+                                                        <input class="form-control" id="partner_fullname" type="text" placeholder="Fullname" required="" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-at"></span></span>
+                                                        </span>
+                                                        <input class="form-control" id="partner_email" type="text" placeholder="Email" required="" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <input type="tel" id="partner_phone" name="phone_number" class="form-control phone w-100" style="background:#fff" placeholder="Contact No." required="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-person"></span></span>
+                                                        </span>
+                                                        <input class="form-control" id="partner_company" type="text" placeholder="Company Name" required="" />
+                                                    </div>
+                                                </div>
+
+                                                <select class="custom-select" id="account-type" name="">
+                                                  <option value="">Select nature of content</option>
+                                                  <option value="">SCORM</option>
+                                                  <option value="">Video course with illustrative graphus & voice over</option>
+                                                  <option value="">Explainer Video</option>
+                                                </select>
+
+                                                <div class="form-group pt-4">
+                                                    <button id="partner_register" class="btn btn-primary btn-block" type="submit" disabled="">Register</button>
+                                                </div>
+                                        </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6 px-0">
                     <img class="w-100" src="assets/img/content.jpg">
@@ -141,7 +197,7 @@
                     <div class="form-group">
                         <div class="input-group active">
                             <input class="form-control" id="email" type="email" name="" placeholder="Enter your email" required="required" /><span class="input-group-append">
-                <button class="btn btn-primary" type="submit">Sign Up</button></span>
+                            <button class="btn btn-primary" type="submit">Sign Up</button></span>
                         </div>
                     </div>
                     <p class="text-center text-secondary"><small>Get started for free. No credit card required.</small></p>
@@ -153,7 +209,7 @@
     <footer class="main">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-lg-2 col-md-3 col-sm-6 col-12 links mb-5 text-center text-sm-left follow">
+                <div class="col-lg-2 col-md-4 col-sm-6 col-12 links mb-5 text-center text-sm-left follow">
                   <h5>Follow us!</h5>
                   <div class="container">
                       <div class="row">
@@ -169,26 +225,33 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-6 col-6 links mb-5">
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 links mb-5">
                   <h5>Company</h5>
                   <ul>
                     <li><a href="about.html">About us</a></li>
                     <li><a href="team.html">Our team</a></li>
                   </ul> 
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-6 col-6 links mb-5">
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 links mb-5">
                   <h5>Work with us</h5>
                   <ul>
                     <li><a href="become.html">Become an instructor</a></li>
                   </ul> 
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-6 col-6 links mb-5">
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 links mb-5">
                   <h5>For Businesses</h5>
                   <ul>
                     <li><a href="corporate.html">Corporate training</a></li>
                   </ul>     
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-6 col-6 links mb-5">
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 links mb-5">
+                  <h5>Contact Us</h5>
+                  <ul>
+                    <li><a href="mailto:info@davtonlearn.com">info@davtonlearn.com</a></li>
+                    <li class="mt-2" style="color: #ccc">2nd Floor, <br>RockHaven Office Suites, <br>Alagomeji, Yaba, <br>Lagos State, Nigeria</li>
+                  </ul>     
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 links mb-5">
                   <h5>Our Partner</h5>
                   <img src="assets/img/aep-logo.jpg" style="width: 120px">   
                 </div>
@@ -307,7 +370,64 @@
     <script src="js/slick.js"></script>
     <script src="js/nav.js"></script>
     <script type="text/javascript">
-        $(".ddd").equalHeights(); 
+
+        // List of sentences
+        var _CONTENT = [ "Start converting your content to e-learning format", "Start digitizing your organization's policies & procedures"];
+
+        // Current sentence being processed
+        var _PART = 0;
+
+        // Character number of the current sentence being processed 
+        var _PART_INDEX = 0;
+
+        // Holds the handle returned from setInterval
+        var _INTERVAL_VAL;
+
+        // Element that holds the text
+        var _ELEMENT = document.querySelector("#text");
+
+        // Implements typing effect
+        function Type() { 
+            var text =  _CONTENT[_PART].substring(0, _PART_INDEX + 1);
+            _ELEMENT.innerHTML = text;
+            _PART_INDEX++;
+
+            // If full sentence has been displayed then start to delete the sentence after some time
+            if(text === _CONTENT[_PART]) {
+                clearInterval(_INTERVAL_VAL);
+                setTimeout(function() {
+                    _INTERVAL_VAL = setInterval(Delete, 50);
+                }, 1000);
+            }
+        }
+
+        // Implements deleting effect
+        function Delete() {
+            var text =  _CONTENT[_PART].substring(0, _PART_INDEX - 1);
+            _ELEMENT.innerHTML = text;
+            _PART_INDEX--;
+
+            // If sentence has been deleted then start to display the next sentence
+            if(text === '') {
+                clearInterval(_INTERVAL_VAL);
+
+                // If last sentence then display the first one, else move to the next
+                if(_PART == (_CONTENT.length - 1))
+                    _PART = 0;
+                else
+                    _PART++;
+                _PART_INDEX = 0;
+
+                // Start to display the next sentence after some time
+                setTimeout(function() {
+                    _INTERVAL_VAL = setInterval(Type, 100);
+                }, 200);
+            }
+        }
+
+        // Start the typing effect on load
+        _INTERVAL_VAL = setInterval(Type, 100);
+
     </script>
 </body>
 
