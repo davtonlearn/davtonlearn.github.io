@@ -528,10 +528,11 @@ header.request{
   padding: 7rem 0 5rem 0;
 }
 .banner-home{
-  padding: 15rem 0 5rem 0;
+  padding: 10rem 0 5rem 0;
 }
 .btn.social{
-  padding: 8px 11px 5px 12px
+  padding: 8px 11px 5px 12px;
+  margin-bottom: 15px
 }
 .about-icon {
     text-align: center;
@@ -938,6 +939,13 @@ header.request{
     flex: 1
 }
 
+.blog .nav-item.active a{
+    color: #016fb2!important
+}
+
+.blog{
+        height: 70px;
+}
 @media (max-width: 1199px){
     .side-nav.opened {
         min-width: 320px;
@@ -947,6 +955,12 @@ header.request{
 }
 
 @media (max-width: 575px) {
+    .blog{
+        height: 90px;
+    }
+    .blog .nav-item a{
+        padding: 0.5rem 0.5rem;
+    }
     .img-discount, .img-article{
         height: auto;
     }
