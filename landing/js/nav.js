@@ -123,7 +123,7 @@ $(document).ready(function() {
             title: 'Success!',
             titleSize : '20px',
             titleColor: '#fff',
-            message: "Your request have been received, we'll contact you shortly",
+            message: "Your request has been received, we'll contact you shortly",
             messageSize: '18px',
             messageColor: '#fff',
             backgroundColor: '#4CAF50',
