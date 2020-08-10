@@ -102,7 +102,7 @@ $(document).ready(function() {
     $('#partner_phone, #partner_email, #partner_fullname').on('input', function(){
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         
-        if($('#partner_phone').val().length === 14 && $('#partner_email').val().match(re) && $('#partner_fullname') !==''){
+        if($('#partner_phone').val().length <= 15 && $('#partner_phone').val().length > 7 && $('#partner_email').val().match(re) && $('#partner_fullname') !==''){
             $('#partner_register').attr('disabled',false);  
         }
         else{
@@ -123,7 +123,7 @@ $(document).ready(function() {
             title: 'Success!',
             titleSize : '20px',
             titleColor: '#fff',
-            message: 'An email will be sent to you shortly.',
+            message: "Your request have been received, we'll contact you shortly",
             messageSize: '18px',
             messageColor: '#fff',
             backgroundColor: '#4CAF50',

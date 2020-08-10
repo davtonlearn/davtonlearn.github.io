@@ -129,7 +129,7 @@
                     <div class="banner-split"></div>
                 </div>
                 <div class="col-md pt-lg-5 order-md-1">
-                    <div class="flex-content"><small class="text-primary">Explore Davton LMS today</small>
+                    <div class="flex-content"><small class="text-primary">Explore Davtonlms today</small>
                         <h4 class="mb-3">We have the right plans that suit your budget</h4>
                         <p class="mb-3">
                             Launch your digital training portal in just few minutes with davtonlms. Onboard, promote employee growth, and orchestrate learning across all departments.
@@ -237,7 +237,7 @@
                         <div class="card-body">
                             <div class="input-group pricing-calculator"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-people mt-2"></span></span>
                                 </span>
-                                <input id="staff-size" class="form-control font-18 font-weight-bold" type="text" placeholder="Enter no of staff" value="5000" title="Enter Your Staff Size" data-toggle="tooltip" data-placement="top" required/>
+                                <input id="staff-size" class="form-control font-18 font-weight-bold" type="text" placeholder="Enter no of staff" value="" title="Enter Your Staff Size" data-toggle="tooltip" data-placement="top" required/>
                                 <select class="form-control pricing-select border-left font-18 font-weight-bold" id="payment-plan">
                                     <option value="1">Quarterly</option>
                                     <option value="2">Biannually</option>
@@ -414,7 +414,7 @@
                   <h5>Contact Us</h5>
                   <ul>
                     <li><a href="mailto:info@davtonlearn.com">info@davtonlearn.com</a></li>
-                    <li class="mt-2" style="color: #ccc">2nd Floor, <br>RockHaven Office Suites, <br>Alagomeji, Yaba, <br>Lagos State, Nigeria</li>
+                    <li class="mt-2" style="color: #ccc">2nd Floor, <br>RockHaven Office Suites, <br>4 Hughes Avenue, Yaba, <br>Lagos, Nigeria</li>
                   </ul>     
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-6 col-6 links mb-5">
@@ -578,6 +578,9 @@
                 }
                 else if(size > 10000){
                     price = 2000;
+                }
+                else{
+                    price = 0
                 }
                 cost = size * price * rate
                 $('#total-cost').html('Your licence cost &#x20A6;'+ addCommas(cost) + ' ' + term)
