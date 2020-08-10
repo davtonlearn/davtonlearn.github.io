@@ -987,6 +987,11 @@ header.request{
     border-radius: 50%;
 }
 
+.seprator.blog{
+    margin: 6px 15px;
+    height: 5px;
+}
+
 @media (max-width: 1199px){
     .side-nav.opened {
         min-width: 320px;
