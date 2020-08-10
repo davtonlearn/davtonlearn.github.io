@@ -1,0 +1,27 @@
+
+/* Theme */
+/* Colors */
+/* Sizes */
+
+.addui-Typing-caret {
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  font-size: 1.25em;
+  padding: 0 1px;
+}
+
+.addui-Typing-blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+ @keyframes 
+blink-animation {  to {
+ visibility: hidden;
+}
+}
+ @-webkit-keyframes 
+blink-animation {  to {
+ visibility: hidden;
+}
+}

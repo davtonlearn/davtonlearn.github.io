@@ -1,0 +1,105 @@
+extend layouts/_landing
+
+block vars
+	-
+		setPage({
+			name: 'individual',
+			title: 'For Individual'
+		});
+
+
+block content
+
+	.banner.banner-gradient-white
+		.container
+			.row.justify-content-between
+
+				.col-md.order-md-3
+					img.img-fluid.mx-auto.d-block.banner-img-full(src="/assets/img/for-individuals.png", alt=page.title)
+				.col-auto.order-md-2
+					.banner-split
+				.col-md.flex-bottom.order-md-1
+					.flex-content
+						small.text-primary Explore Davtonlearn for individual today
+						h4.mb-3
+							| Buy &amp; Explore our courses for Individuals growth
+						p.mb-5
+							| Launch your digital training portal in just few minutes with davtonlms.
+							| Onboard, promote employee growth, and orchestrate learning across all departments.
+
+						.form-group
+							.input-group.active
+								input.form-control#email(type="email", name="", placeholder="Enter your email", required)
+								span.input-group-append
+									button.btn.btn-primary(type="submit") Sign Up
+
+						p.text-secondary: small Get started for free. No credit card required.
+
+	
+	.section
+		.container
+			.heading Featured Courses
+			.courses
+				for course in courses
+					-;
+					.course
+						.card
+							img.card-img(src=course.img, alt=course.title)
+							.card-body
+								.card-title #{course.title}
+								.course-review
+									.course-rating
+										span.course-rating-icon
+											if (course.rating > 1)
+												-;
+												span.ion-md-star
+											else if (course.rating > 0)
+												-;
+												span.ion-md-star-half
+											else
+												span.ion-md-star-outline
+										span.course-rating-icon
+											if (course.rating > 3)
+												-;
+												span.ion-md-star
+											else if (course.rating > 2)
+												-;
+												span.ion-md-star-half
+											else
+												span.ion-md-star-outline
+										span.course-rating-icon
+											if (course.rating > 5)
+												-;
+												span.ion-md-star
+											else if (course.rating > 4)
+												-;
+												span.ion-md-star-half
+											else
+												span.ion-md-star-outline
+										span.course-rating-icon
+											if (course.rating > 7)
+												-;
+												span.ion-md-star
+											else if (course.rating > 6)
+												-;
+												span.ion-md-star-half
+											else
+												span.ion-md-star-outline
+										span.course-rating-icon
+											if (course.rating > 9)
+												-;
+												span.ion-md-star
+											else if (course.rating > 8)
+												-;
+												span.ion-md-star-half
+											else
+												span.ion-md-star-outline
+									.course-views (#{course.views} views)
+								p.course-teacher #{course.teacher}
+							.card-footer
+								.course-price ₦100,400
+						a.btn.btn-primary.btn-block(href="") Start now
+
+	include includes/_testimonies
+
+	include includes/_get_started

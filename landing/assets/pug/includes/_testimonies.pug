@@ -1,0 +1,25 @@
+.section
+		.container
+			.section-title
+				| Join the thousands of people using DavtonLMS
+
+			.testimonies
+
+				.testimony-wrapper
+					for testimony in testimonies
+						-;
+						.testimony
+							.testimony-text
+								| With Davtonlearn, when new people are coming on board, we assign them the training, they take it on their own time, and it's very convenient for everyone. Plus we have records of what people have taken and if they've completed the courses
+							.testimony-user
+								.testimony-user-img
+									img(src="/assets/img/testimonies/user.png", alt="Leslie Cutter")
+								.testimony-user-details
+									.testimony-user-name Leslie Cutter
+									.testimony-user-title Media communications specialist at Anonymous Ltd.
+								a.testimony-user-link(href="javascript:")
+									img(src="/assets/svg/social/linkedin-in.svg", alt="")
+
+				.scroll-slider(data-target=".testimony-wrapper")
+					.scroll-slider-track
+					.scroll-slider-thumb

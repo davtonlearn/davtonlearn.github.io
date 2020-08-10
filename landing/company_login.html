@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Davton Learn</title>
+		<link rel="stylesheet" href="css/davton.css"/>
+		<link rel="stylesheet" href="/vendors/ionicons/dist/css/ionicons.min.css"/>
+		<style>
+
+
+			:root {
+				--primary-color : #20A354;
+				--secondary-color : #787878;
+				--form-text: #979797;
+			}
+
+			.input--indent input {
+				text-indent: 20px;
+			}
+
+			.field--img {
+				position: absolute;
+				top: 15px;
+				left: 10px;
+			}
+
+			.form-control {
+				height: 42px;
+				border: 1px solid #D5D5D5 !important;
+				border-radius: 5px !important;
+			}
+
+			.form-control::placeholder {
+				color: var(--form-text);
+				font-weight: 300 !important;
+			}
+
+			.reset-password--color {
+				color : #656972;
+			}
+
+			.btn--primary {
+				background-color: var(--primary-color);
+				color: var(--white);
+			}
+
+			.btn--primary:hover {
+				background-color: #1E974E;
+				color: var(--white);
+			}
+
+			.border-right-lg {
+				border-right:1px solid #E4E4E4;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="container mt-lg-5 pt-lg-5">
+			<div class="row mt-lg-5 pt-lg-5 justify-content-center" style="align-items: center">
+				<div class="col-lg-6 text-center mb-3 border-right-lg">
+					<div class="p-md-5 p-4">
+						<img src="/assets/svg/davtonlogo.svg" class="img-fluid mb-5" alt="davton learn" />
+						<h3 class="" style="color:#202020; font-weight:600">Learn. Onboard. Promote</h3>
+
+						<div class="width-25">
+							<p>Launch your digital training portal in just few minutes with davtonlms.  Onboard, promote employee growth, and orchestrate learning across all departments.</p>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-lg-5">
+					<h3 class="text-center" style="color:#484747">Account Login</h3>
+					<form class="p-md-5 p-4" id="admin_wrapper" action="" method="post">
+						<div class="form-group input--indent position-relative">
+							<img src="/assets/svg/email.svg" class="field--img" alt="email field" />
+							<input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+						</div>
+
+						<div class="form-group input--indent position-relative">
+							<img src="/assets/svg/password.svg" class="field--img" alt="email field" />
+							<input type="password" class="form-control" id="password" name="password" placeholder="Password">
+						</div>
+
+						<button type="submit" class="btn btn--primary btn-block mt-5 mb-4">Sign In</button>
+
+						<p class="text-center">
+							<a href="#" class="mt-3 reset-password--color">Forgot Password?</a>
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<img src="/assets/img/footer.png" class="img-fluid" alt="davton learn" />
+		</div>
+
+		<footer class="py-0" style="background-color: #14B855" >
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9 mx-auto">
+						<div class="nav flex-row text-center text-uppercase justify-content-center">
+							<li class="nav-item"><a class="nav-link" href="javascript:">Terms Of Use</a></li>
+							<li class="nav-item"><a class="nav-link" href="javascript:">Privacy Policy</a></li>
+							<li class="nav-item"><a class="nav-link" href="javascript:">© 2019 Davtonlearn ALL RIGHTS RESERVED</a></li>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+
+		<script src="/vendors/jquery/dist/jquery.min.js"></script>
+		<script src="/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="/vendors/owl.carousel/dist/owl.carousel.min.js"></script>
+		<script src="js/davton.js"></script>
+	</body>
+</html>
