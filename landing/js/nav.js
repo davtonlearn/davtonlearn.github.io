@@ -98,6 +98,25 @@ $(document).on('click', '.close', function(e) {
     $('.callback').dropdown('toggle')
 });
 
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("game");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
+
+$(document).on('click', '#copy-code', function(e) {
+    myFunction()
+});
+
 $(document).ready(function() {
     $('#partner_phone, #partner_email, #partner_fullname').on('input', function(){
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
