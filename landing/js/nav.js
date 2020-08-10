@@ -112,21 +112,22 @@ $(document).ready(function() {
 
     $('#close-modal').click(function(e){
         e.preventDefault();
-        $('#partnerModal').modal('hide')
+        // console.log($(this).closest('.modal'))
+        $(this).closest('.modal').modal('hide')
     })
 
     $('#partner_register').click(function(e){
         e.preventDefault();
-            $('#partnerModal').modal('hide')
-            iziToast.show({
-                title: 'Success!',
-                titleSize : '20px',
-                titleColor: '#fff',
-                message: 'An email will be sent to you shortly.',
-                messageSize: '18px',
-                messageColor: '#fff',
-                backgroundColor: '#4CAF50',
-                position : 'topRight'
-            });
+        $('#partnerModal').modal('hide')
+        iziToast.show({
+            title: 'Success!',
+            titleSize : '20px',
+            titleColor: '#fff',
+            message: 'An email will be sent to you shortly.',
+            messageSize: '18px',
+            messageColor: '#fff',
+            backgroundColor: '#4CAF50',
+            position : 'topRight'
+        });
     })
 })
