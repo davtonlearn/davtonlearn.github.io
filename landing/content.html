@@ -41,7 +41,7 @@
             <div class="navbar navbar-expand-md navbar-light fixed-top d-block">
                 <div class="menu-container mx-0 px-0 px-lg-5">
                     <div class="menu">
-                        <a class="logo py-1 logo" href="index.html" style="width: 224px;"><img src="assets/svg/logo.svg" class="w-100" alt="Logo"></a>
+                        <a class="logo py-1 logo" href="index.html" style="width: 224px;"><img src="assets/img/davtonn.png" class="w-100" alt="Logo"></a>
                         <ul class="clearfix d-menu">
                             <li><a href="partner.html">Become a Partner</a></li>
                             <li class="menu-dropdown-icon"><a href="#">For Companies</a>
@@ -122,7 +122,7 @@
             <div class="row">
                 <div class="col-md-6 px-5 py-5">
                     <!-- <h4 class="font-45 font-weight-bold">Start creating courses</h4> -->
-                    <div class="font-45 font-weight-bold" id="text"></div>
+                    <div class="font-45 font-weight-bold d-flex" id="text"></div>
                     <p class="font-25 mt-4">Companies who use Easygenerator create courses 12x faster. We simplify and accelerate your learning development.</p>
                     <a href="#" data-toggle="modal" data-target="#contentModal" class="btn btn-primary mt-4 p-3 px-5 font-20" style="border-radius: 50px;">Get Started Now</a>
                     <!-- Modal -->
@@ -372,7 +372,7 @@
     <script type="text/javascript">
 
         // List of sentences
-        var _CONTENT = [ "Start converting your content to e-learning format", "Start digitizing your organization's policies & procedures"];
+        var _CONTENT = [ "converting your content to e-learning format", "digitizing your organization's policies & procedures"];
 
         // Current sentence being processed
         var _PART = 0;
@@ -389,7 +389,7 @@
         // Implements typing effect
         function Type() { 
             var text =  _CONTENT[_PART].substring(0, _PART_INDEX + 1);
-            _ELEMENT.innerHTML = text;
+            _ELEMENT.innerHTML = "Start " + text;
             _PART_INDEX++;
 
             // If full sentence has been displayed then start to delete the sentence after some time
@@ -404,7 +404,7 @@
         // Implements deleting effect
         function Delete() {
             var text =  _CONTENT[_PART].substring(0, _PART_INDEX - 1);
-            _ELEMENT.innerHTML = text;
+            _ELEMENT.innerHTML = "Start " + text;
             _PART_INDEX--;
 
             // If sentence has been deleted then start to display the next sentence
