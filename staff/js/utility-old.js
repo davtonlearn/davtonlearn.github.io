@@ -1371,12 +1371,6 @@ $(function () {
     };
 });
 $(function () {
-    gallen = $('.col-gallery .col-6').length
-    for (i = 1; i <= gallen; i++) {
-        $(".img-gallery").slice(0, 4).show();
-    };
-});
-$(function () {
     $(".card--dashboard").slice(0, 12).show();
     if($('.card--dashboard').length < 3){
         $(".loadPost").hide();
@@ -1414,7 +1408,7 @@ $("body").delegate(".comment-send", "click", function(){
                         </div>
                         <div class="p-2 position-relative info cursor" data-user=`+user_id+`>
                             <p class="weight-semi-bold mb-1" id="reply-name">`+name+`</p>
-                            <p class="font-14 font-weight-light mb-1" id="reply-text">`+comment+`</p>
+                            <p class="font-13 font-weight-light mb-1" id="reply-text">`+comment+`</p>
                         </div>
                     </div>
                 </div>`);
@@ -1444,7 +1438,7 @@ $("body").delegate(".comment-send", "click", function(){
                                     </div>
                                     <div class="p-2 position-relative info cursor" data-user=`+user_id+`>\
                                         <p class="weight-semi-bold mb-1" id="comment-name">`+name+` </p>
-                                        <p class="font-14 font-weight-light mb-1" id="comment-text">`+comment+`</p>
+                                        <p class="font-13 font-weight-light mb-1" id="comment-text">`+comment+`</p>
                                     </div>
                                     <div class="ml-auto">
                                         <a href="#" class="show-comment">Reply</a>
@@ -1478,7 +1472,6 @@ $("body").delegate(".comment-send", "click", function(){
     plural();
 
     $('#input-'+id).val('');
-    $('.emojionearea-editor').text('');
 })
 
 $("body").delegate(".hide-comment", "click", function(e){
@@ -1590,13 +1583,14 @@ $("body").delegate(".info", "click", function(){
             email = "tobi@Davtonlearn"
             staffid = "1122"
             department = "Customer Service"
-            avatar = 'images/tobi.jpg'
+            avatar = 'tobi.jpg'
             isBusiness = true;
             $('#info').find('#fullname').text(firstname + ' ' + lastname);
-            $('#info').find('#email').text('Email: ' + email);
-            $('#info').find('#staffid').text('Staff ID: ' + staffid);
-            $('#info').find('#department').text('Department: ' + staffid);
-            $('#info').find('#avatar').attr('src',avatar);
+            $('#info').find('#email').text(email);
+            $('#info').find('#staffid').text(staffid);
+            $('#info').find('#department').text(department);
+            $('#info').find('#img').text(avatar);
+            $('#info').find('#avatar').attr('src', 'images/' + avatar);
         },
         error: function( jqXhr, textStatus, errorThrown ){
             
@@ -1616,61 +1610,17 @@ $("body").delegate("#send-message", "click", function(e){
     name = $(this).data('fullName');
     status = $(this).data('status');
     img = $(this).data('demoSrc');
-    lastSeen = $(this).data('lastSeen');
-    job = $(this).data('job');
+    dept = $(this).data('dept');
     localStorage.setItem('user_id', user_id)
     localStorage.setItem('name', name)
     localStorage.setItem('status', status)
     localStorage.setItem('img', img)
-    localStorage.setItem('lastSeen', lastSeen)
-    localStorage.setItem('job', job)
+    localStorage.setItem('dept', dept)
     localStorage.setItem('sent', true)
     window.location.href = "message.html";
     // $.redirect('message.html', {'arg1': 'value1', 'arg2': 'value2'});
 })
 
-//Newly Added  
 
-$(document).ready(function() {
-    $(".example1").emojioneArea();
-});
-         
-$("body").delegate(".show-drop", "click", function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    id = $(this).attr('id')
-    $('.post#'+id).slideDown("slow");
-    $(this).text('Hide Comment');
-    $(this).removeClass('show-drop');
-    $(this).addClass('hide-drop');
-});
-$("body").delegate(".hide-drop", "click", function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    id = $(this).attr('id')
-    $('.post#'+id).slideUp("slow");
-    $(this).text('Show Comment');
-    $(this).removeClass('hide-drop');
-    $(this).addClass('show-drop');
-});
 
-$(function () {
-    $(".openDir").click(function () {
-        var desc = $(this).data('desc');
-        var title = $(this).data('title');
-        var ig = $(this).data('ig');
-        var web = $(this).data('web');
-        var email = $(this).data('email');
-        var cat = $(this).data('cat');
-        var phone = $(this).data('phone');
-        var email = $(this).data('email');
-        $(".modal-body .cat").html(cat);
-        $(".modal-body .web").html(`<a href="`+web+`" class="text-primary">`+web+`</a>`);
-        $(".modal-body .ig").html(`<a href="`+ig+`" class="text-primary">`+ig+`</a>`);
-        $(".modal-body .email").html(`<a href="mailto:/`+email+`" class="text-primary">`+email+`</a>`);
-        $(".modal-body .phone").html(`<a href="tel:/`+phone+`" class="text-primary">`+phone+`</a>`);
-        $(".modal-body .desc").html(desc);
-        $(".modal-body .title").html(title);
-        $(".modal-title").html(title);
-    })
-});
+

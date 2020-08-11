@@ -445,9 +445,9 @@ $(document).ready(function () {
         });
     }
 
-    if ($('#assign_staff').length) {
-        $('#assign_staff').modal('show');
-    }
+    // if ($('#assign_staff').length) {
+    //     $('#assign_staff').modal('show');
+    // }
 
 
     if ($('.select2').length) {
@@ -617,7 +617,8 @@ if($('.chat-sidebar').length && localStorage.getItem('sent')){
     name = localStorage.getItem('name');
     status = localStorage.getItem('status');
     img = localStorage.getItem('img');
-    dept = localStorage.getItem('dept');
+    lastSeen = localStorage.getItem('lastSeen');
+    job = localStorage.getItem('job');
     homePageOnly();
     $('.new_message').hide();
     $('#nomessage').hide();
@@ -626,7 +627,8 @@ if($('.chat-sidebar').length && localStorage.getItem('sent')){
     localStorage.removeItem('name')
     localStorage.removeItem('status')
     localStorage.removeItem('img')
-    localStorage.removeItem('dept')
+    localStorage.removeItem('lastSeen')
+    localStorage.removeItem('job')
 }
 
 function homePageOnly(){
@@ -646,7 +648,7 @@ function homePageOnly(){
 
                     $(".chat-sidebar").prepend('\
                                                 <div class="backgrond-muted message_detail cursor active_message" id="'+id+'" >\
-                                                    <div class="px-3 position-relative message_detail_click"  id="'+id+'" data-full-name="'+name+'" data-status="'+status+'" data-demo-src="'+img+'" data-id="'+id+'" data-dept="'+dept+'">\
+                                                    <div class="px-3 position-relative message_detail_click"  id="'+id+'" data-full-name="'+name+'" data-status="'+status+'" data-demo-src="'+img+'" data-id="'+id+'" data-job="'+job+'" data-last-seen="'+lastSeen+'">\
                                                         <div class="row py-2 border-bottom">\
                                                             <div class="col-lg-3 col-3 text-center ">\
                                                                 <img src="img/'+img+'" class="img-fluid" alt="user name" />\
@@ -675,6 +677,12 @@ function homePageOnly(){
 
                 $(".chat_history").append('\
                                         <div id="convo'+id+'" class="chat-conversation" style="min-height:40vh;">\
+                                            <div class="d-flex border-bottom height--50p">\
+                                                <div class="col">\
+                                                    <p class="mb-0 text-dark">Louis <img src="img/'+status+'.svg" /></p>\
+                                                    <p class="small mb-0 text-grey font-weight-light">'+lastSeen+'</p>\
+                                                </div>\
+                                            </div>\
                                             <div class="px-3 mt-2">\
                                                 <div class="row py-2 border-bottom">\
                                                     <div class="col-2 text-md-center">\
@@ -686,7 +694,7 @@ function homePageOnly(){
                                                                 <p class="text-dark mb-0 weight-semi-bold">'+name+'</p>\
                                                             </div>\
                                                         </div>\
-                                                        <p class="text-muted font-13 mb-1">'+dept+'</p>\
+                                                        <p class="text-muted font-13 mb-1">'+job+'</p>\
                                                     </div>\
                                                 </div>\
                                                 <div class="chat-wrapper"></div>\
@@ -707,6 +715,12 @@ function homePageOnly(){
                 success: function( data, textStatus, jQxhr ){
                     $(".chat_history").html('\
                                                 <div id="convo'+id+'" class="chat-conversation" style="min-height:40vh;">\
+                                                    <div class="d-flex border-bottom height--50p">\
+                                                        <div class="col">\
+                                                            <p class="mb-0 text-dark">Louis <img src="img/'+status+'.svg" /></p>\
+                                                            <p class="small mb-0 text-grey font-weight-light">'+lastSeen+'</p>\
+                                                        </div>\
+                                                    </div>\
                                                     <div class="px-3 mt-2">\
                                                         <div class="row py-2 border-bottom">\
                                                             <div class="col-2 text-md-center">\
@@ -718,7 +732,7 @@ function homePageOnly(){
                                                                         <p class="text-dark mb-0 weight-semi-bold">'+name+'</p>\
                                                                     </div>\
                                                                 </div>\
-                                                                <p class="text-muted font-13 mb-1">'+dept+'</p>\
+                                                                <p class="text-muted font-13 mb-1">'+job+'</p>\
                                                             </div>\
                                                         </div>\
                                                     </div>\
@@ -752,8 +766,6 @@ function homePageOnly(){
             // $('#convo'+id).show();
         }
 }
-
-var send_id = 0;
 
 $(document).ready(function() {
     $('.chat-conversation').hide();
@@ -811,299 +823,52 @@ $(document).ready(function() {
 
     })
 
-    $(document).on('click', '.help .dropdown-menu', function (e) {
-      e.stopPropagation();
-    });
-
-    $(document).on('click', '.message-popup', function (e) {
-      e.stopPropagation();
-    });
-
-    $('.close-msg').on('click', function(){
-        $('.btn-message-popup').show()
-        $('.blog-popup').removeClass('show')
-    })
-    $('.btn-message-popup').on('click', function(){
-        // $('.btn-message-popup').addClass('bg-transparent')
-        // $('.btn-message-popup span').addClass('text-transparent')
-        // $('.btn-message-popup').addClass('border-0')
-        // $('.btn-message-popup').addClass('pointer-none')
-    })
-
-    $('.close-single').on('click', function(){
-        $('.single-message-popup').removeClass('show')
-    })
-    $("body").delegate(".btn-single-popup", "click", function(){
-        $('.single-message-container').show();
-        $('.single-message-popup').addClass('show')
-        // $('.btn-message-popup').addClass('bg-transparent')
-        // $('.btn-message-popup span').addClass('text-transparent')
-        // $('.btn-message-popup').addClass('border-0')
-        // $('.btn-message-popup').addClass('pointer-none')
-    })
-    $('.message-container').on('hide.bs.dropdown', function (e) {
-        if (e.clickEvent) {
-          e.preventDefault();
-        }
-    })
-
-    $("body").delegate(".message_detail_click", "click", function(){
-        name = $(this).attr('data-full-name');
-        $('.chat_name').text(name);
-        $('.single-message-container').show();
-        $('.single-message-popup').addClass('show')
-    })
-    $("body").delegate("#blog-message", "click", function(e){
-        e.preventDefault();
-        id = $(this).closest('.widget-body').find('#staffid').text();
-        name = $(this).closest('.widget-body').find('#fullname').text();
-        
-        dept = $(this).closest('.widget-body').find('#department').text();
-        img = $(this).closest('.widget-body').find('#img').text();
-        $('.chat_name').text(name);
-
-        //set current chat time
-        var unique_time = $.now();
-        var currentdate = new Date(); 
-        var hours = currentdate.getHours();
-        var minutes = currentdate.getMinutes();
-        var ampm = hours >= 12 ? 'pm' : 'am';
-        hours = hours % 12;
-        hours = hours ? hours : 12; // the hour '0' should be '12'
-        minutes = minutes < 10 ? '0'+minutes : minutes;
-        var datetime = hours + ":"  
-                    + minutes + " " + ampm
-
-        $("#info .close").click();
-        $('.message-container').show()
-        $('.single-message-container').show()
-        $('.single-message-popup').addClass('show')
-
-        $('.timeline-wrapper').show();
-        $.ajax({
-            url: 'https://reqres.in/api/users',
-            dataType: 'json',
-            type: 'get',
-            contentType: 'application/json',
-            param: '{}',
-            async: true,
-            success: function( data, textStatus, jQxhr ){
-                $(".chat_history").html('\
-                    <div id="convo'+id+'" class="chat-conversation" style="min-height:40vh;">\
-                        <div class="px-3 mt-2">\
-                            <div class="row py-2 border-bottom">\
-                                <div class="col-2 text-md-center">\
-                                    <img class="img-avatar" src="img/'+img+'" class="img-fluid" alt="user name" />\
-                                </div>\
-                                <div class="col-9 pl-lg-0">\
-                                    <div class="row">\
-                                        <div class="col">\
-                                            <p class="text-dark mb-0 weight-semi-bold">'+name+'</p>\
-                                        </div>\
-                                    </div>\
-                                    <p class="text-muted font-13 mb-1">'+dept+'</p>\
-                                </div>\
-                            </div>\
-                        </div>\
-                        <div class="chat-wrapper" style="position: relative;z-index: 999;width: 100%;height: 40vh;overflow-y: scroll;"></div>\
-                    </div>');
-                    $.each(data.data, function(index, item) {
-                        $(".chat-wrapper").append('\
-                                    <div class="row py-2 sent" id="delete'+unique_time+'">\
-                                        <div class="col-lg-12 pl-lg-2">\
-                                            <div class="row chat-time">\
-                                                <div class="text-right">\
-                                                    <div class="text-dim font-weight-light mb-0 message_time chat-time">'+item.id+' pm</div>\
-                                                </div>\
-                                            </div>\
-                                            <div class="wrappers">\
-                                                <p class="text-muted font-13 mb-1">'+item.email+'</p>\
-                                                <i id="delete_chat" class="fa fa-trash-alt cursor font-13" data-id="'+unique_time+'"></i>\
-                                            </div>\
-                                        </div>\
-                                    </div>\
-                            ');
-                    });
-                $('#convo'+id).show();
-                $('.chat_history').show();
-                $('.timeline-wrapper').hide();
-            },
-            error: function( jqXhr, textStatus, errorThrown ){
-                console.log( errorThrown );
-            }
-        });
-    })
-
     $('.js-example-basic-single').select2({
         placeholder: "Select a contact",
-        // dropdownParent: $("#compose"),
-          // ajax: {
-          //   url: "https://reqres.in/api/users",
-          //   dataType: 'json',
-          //   delay: 250,
-          //   data: function (params) {
-          //     return {
-          //       q: params.term, // search term
-          //       page: params.page
-          //     };
-          //   },
-          //   processResults: function (data, params) {
-          //     params.page = params.page || 1;
-          //     return {
-          //       results: data.data,
-          //       pagination: {
-          //         more: (params.page * 30) < data.total_count
-          //       }
-          //     };
-          //   },
-          //   cache: true
-          // },
-          // minimumInputLength: 1,
-          // templateResult: formatRepo,
-          // templateSelection: formatRepoSelection
+        dropdownParent: $("#compose"),
+          ajax: {
+            url: "https://reqres.in/api/users",
+            dataType: 'json',
+            delay: 250,
+            data: function (params) {
+              return {
+                q: params.term, // search term
+                page: params.page
+              };
+            },
+            processResults: function (data, params) {
+              params.page = params.page || 1;
+              return {
+                results: data.data,
+                pagination: {
+                  more: (params.page * 30) < data.total_count
+                }
+              };
+            },
+            cache: true
+          },
+          minimumInputLength: 1,
+          templateResult: formatRepo,
+          templateSelection: formatRepoSelection
 
     }).on("change", function(e) {
         //Initialize variables
         name = $("#select-contact").select2('data')[0].element.dataset['fullName'];
         status = $("#select-contact").select2('data')[0].element.dataset['status'];
         img = $("#select-contact").select2('data')[0].element.dataset['demoSrc'];
-        id = $("#select-contact").select2('data')[0].element.dataset['id'];       
-        dept = $("#select-contact").select2('data')[0].element.dataset['dept'];
+        id = $("#select-contact").select2('data')[0].element.dataset['id'];
+        lastSeen = $("#select-contact").select2('data')[0].element.dataset['lastSeen'];        
+        job = $("#select-contact").select2('data')[0].element.dataset['job'];
+
         //Set cursor to text area
         $('#chat-text').focus();
-        $('.chat_name').text(name);
         var chat = $('#chat-text').val()
         $('#nomessage').hide();
         $('.new_message').hide();
         $('.chat-conversation').hide();
         $('.message_detail').removeClass('active_message');
 
-        chat = ""
-
-        //set current chat time
-        var unique_time = $.now();
-        var currentdate = new Date(); 
-        var hours = currentdate.getHours();
-        var minutes = currentdate.getMinutes();
-        var ampm = hours >= 12 ? 'pm' : 'am';
-        hours = hours % 12;
-        hours = hours ? hours : 12; // the hour '0' should be '12'
-        minutes = minutes < 10 ? '0'+minutes : minutes;
-        var datetime = hours + ":"  
-                    + minutes + " " + ampm
-
-
-        //Check if chat has already been itialized with a selected user
-
-        if($('.message_detail#'+id).length == 0){
-
-            $(".chat-sidebar").prepend('\
-                                        <div class="backgrond-muted message_detail cursor active_message" id="'+id+'" >\
-                                            <div class="px-3 position-relative message_detail_click"  id="'+id+'" data-full-name="'+name+'" data-status="'+status+'" data-demo-src="'+img+'" data-id="'+id+'" data-dept="'+dept+'">\
-                                                <div class="row py-2 border-bottom">\
-                                                    <div class="col-lg-3 col-3 text-center ">\
-                                                        <img src="img/'+img+'" class="img-fluid" alt="user name" />\
-                                                    </div>\
-                                                    <div class="col-lg-9 col-9">\
-                                                        <div class="row">\
-                                                            <div class="col">\
-                                                                <p class="text-dark mb-0 weight-semi-bold">'+name+'</p>\
-                                                            </div>\
-                                                            <div class="text-right col-5">\
-                                                            </div>\
-                                                        </div>\
-                                                        <p class="text-muted font-13 mb-1">'+chat+'</p>\
-                                                    </div>\
-                                                </div>\
-                                            </div>\
-                                            <div class="question_info_1 cursor" id="delete_user" data-id="'+id+'">\
-                                                <img src="img/delete_dark.svg" class="position-absolute" style="right: 5px; bottom: 40px;" />\
-                                            </div> \
-                                        </div>');
-
-            $(".chat_history").append('\
-                                    <div id="convo'+id+'" class="chat-conversation" style="min-height:40vh;">\
-                                        <div class="px-3 mt-2">\
-                                            <div class="row py-2 border-bottom">\
-                                                <div class="col-2 text-md-center">\
-                                                    <img class="img-avatar" src="img/'+img+'" class="img-fluid" alt="user name" />\
-                                                </div>\
-                                                <div class="col-9 pl-lg-0">\
-                                                    <div class="row">\
-                                                        <div class="col">\
-                                                            <p class="text-dark mb-0 weight-semi-bold">'+name+'</p>\
-                                                        </div>\
-                                                    </div>\
-                                                    <p class="text-muted font-13 mb-1">'+dept+'</p>\
-                                                </div>\
-                                            </div>\
-                                            <div class="chat-wrapper"></div>\
-                                        </div>\
-                                    </div>');
-
-                    $('#convo'+id).show();
-                    $('.chat_history').show();
-
-
-        }else{
-            // alert(id)
-            $('.message_detail#'+id).addClass('active_message');
-            $('.timeline-wrapper').show();
-            $.ajax({
-                url: 'https://reqres.in/api/users',
-                dataType: 'json',
-                type: 'get',
-                contentType: 'application/json',
-                param: '{}',
-                async: true,
-                success: function( data, textStatus, jQxhr ){
-                    $(".chat_history").html('\
-                                                <div id="convo'+id+'" class="chat-conversation" style="min-height:40vh;">\
-                                                    <div class="px-3 mt-2">\
-                                                        <div class="row py-2 border-bottom">\
-                                                            <div class="col-2 text-md-center">\
-                                                                <img class="img-avatar" src="img/'+img+'" class="img-fluid" alt="user name" />\
-                                                            </div>\
-                                                            <div class="col-9 pl-lg-0">\
-                                                                <div class="row">\
-                                                                    <div class="col">\
-                                                                        <p class="text-dark mb-0 weight-semi-bold">'+name+'</p>\
-                                                                    </div>\
-                                                                </div>\
-                                                                <p class="text-muted font-13 mb-1">'+dept+'</p>\
-                                                            </div>\
-                                                        </div>\
-                                                    </div>\
-                                                    <div class="chat-wrapper"></div>\
-                                                </div>');
-                                                $.each(data.data, function(index, item) {
-                                                    $(".chat-wrapper").append('\
-                                                                <div class="row py-2 sent" id="delete'+unique_time+'">\
-                                                                    <div class="col-lg-12 pl-lg-2">\
-                                                                        <div class="row chat-time">\
-                                                                            <div class="text-right">\
-                                                                                <div class="text-dim font-weight-light mb-0 message_time chat-time">'+item.id+' pm</div>\
-                                                                            </div>\
-                                                                        </div>\
-                                                                        <div class="wrappers">\
-                                                                            <p class="text-muted font-13 mb-1">'+item.email+'</p>\
-                                                                            <i id="delete_chat" class="fa fa-trash-alt cursor" data-id="'+unique_time+'"></i>\
-                                                                        </div>\
-                                                                    </div>\
-                                                                </div>\
-                                                        ');
-                                                });
-                    $('#convo'+id).show();
-                    $('.chat_history').show();
-                    $('.timeline-wrapper').hide();
-                },
-                error: function( jqXhr, textStatus, errorThrown ){
-                    console.log( errorThrown );
-                }
-            });
-
-            // $('#convo'+id).show();
-        }
+        homePageOnly();
 
     });
 
@@ -1129,19 +894,13 @@ $(document).ready(function() {
         minutes = minutes < 10 ? '0'+minutes : minutes;
         var datetime = hours + ":"  
                     + minutes + " " + ampm
-        if($('.active_message').attr('id')){
-            id = $('.active_message').attr('id')
-        }
-        else{
-            id = $('#staffid').text();
-        }
 
         //Check if the textarea is empty
         if (chat != "") {
             $('#chat-text').focus();
 
                      $('#'+id).html('\
-                            <div class="px-3 position-relative message_detail_click"  id="'+id+'" data-full-name="'+name+'" data-status="'+status+'" data-demo-src="'+img+'" data-id="'+id+'" data-dept="'+dept+'">\
+                            <div class="px-3 position-relative message_detail_click"  id="'+id+'" data-full-name="'+name+'" data-status="'+status+'" data-demo-src="'+img+'" data-id="'+id+'" data-job="'+job+'" data-last-seen="'+lastSeen+'">\
                                 <div class="row py-2 border-bottom">\
                                     <div class="col-lg-3 col-3 text-center ">\
                                         <img src="img/'+img+'" class="img-fluid" alt="user name" />\
@@ -1177,7 +936,6 @@ $(document).ready(function() {
                                             </div>\
                                         </div>\
                                     </div>');
-            // $(".row #delete"+id).show();
 
             $.ajax({
                 url: 'https://reqres.in/api/users',
@@ -1215,7 +973,8 @@ $(document).ready(function() {
         name = $(this).data('fullName');
         status = $(this).data('status');
         img = $(this).data('demoSrc');
-        dept = $(this).data('dept');
+        lastSeen = $(this).data('lastSeen');
+        job = $(this).data('job');
         id = $(this).data('id');
         var unique_time = $.now();
         $('.new_message').hide();
@@ -1236,6 +995,12 @@ $(document).ready(function() {
                 $('.chat-conversation').hide();
                 $(".chat_history").html('\
                                                 <div id="convo'+id+'" class="chat-conversation" style="min-height:40vh;">\
+                                                    <div class="d-flex border-bottom height--50p">\
+                                                        <div class="col">\
+                                                            <p class="mb-0 text-dark">Louis <img src="img/'+status+'.svg" /></p>\
+                                                            <p class="small mb-0 text-grey font-weight-light">'+lastSeen+'</p>\
+                                                        </div>\
+                                                    </div>\
                                                     <div class="px-3 mt-2">\
                                                         <div class="row py-2 border-bottom">\
                                                             <div class="col-2 text-md-center">\
@@ -1247,7 +1012,7 @@ $(document).ready(function() {
                                                                         <p class="text-dark mb-0 weight-semi-bold">'+name+'</p>\
                                                                     </div>\
                                                                 </div>\
-                                                                <p class="text-muted font-13 mb-1">'+dept+'</p>\
+                                                                <p class="text-muted font-13 mb-1">'+job+'</p>\
                                                             </div>\
                                                         </div>\
                                                     </div>\
@@ -1295,7 +1060,7 @@ $(document).on('click','#delete_chat',function(e){
         param: '{}',
         async: true,
         success: function( data, textStatus, jQxhr ){
-            $("#delete"+id).remove();
+            $(".row #delete"+id).remove();
         }
     })
 });
@@ -1371,12 +1136,6 @@ $(function () {
     };
 });
 $(function () {
-    gallen = $('.col-gallery .col-6').length
-    for (i = 1; i <= gallen; i++) {
-        $(".img-gallery").slice(0, 4).show();
-    };
-});
-$(function () {
     $(".card--dashboard").slice(0, 12).show();
     if($('.card--dashboard').length < 3){
         $(".loadPost").hide();
@@ -1414,7 +1173,7 @@ $("body").delegate(".comment-send", "click", function(){
                         </div>
                         <div class="p-2 position-relative info cursor" data-user=`+user_id+`>
                             <p class="weight-semi-bold mb-1" id="reply-name">`+name+`</p>
-                            <p class="font-14 font-weight-light mb-1" id="reply-text">`+comment+`</p>
+                            <p class="font-13 font-weight-light mb-1" id="reply-text">`+comment+`</p>
                         </div>
                     </div>
                 </div>`);
@@ -1444,7 +1203,7 @@ $("body").delegate(".comment-send", "click", function(){
                                     </div>
                                     <div class="p-2 position-relative info cursor" data-user=`+user_id+`>\
                                         <p class="weight-semi-bold mb-1" id="comment-name">`+name+` </p>
-                                        <p class="font-14 font-weight-light mb-1" id="comment-text">`+comment+`</p>
+                                        <p class="font-13 font-weight-light mb-1" id="comment-text">`+comment+`</p>
                                     </div>
                                     <div class="ml-auto">
                                         <a href="#" class="show-comment">Reply</a>
@@ -1478,7 +1237,6 @@ $("body").delegate(".comment-send", "click", function(){
     plural();
 
     $('#input-'+id).val('');
-    $('.emojionearea-editor').text('');
 })
 
 $("body").delegate(".hide-comment", "click", function(e){
@@ -1629,48 +1387,6 @@ $("body").delegate("#send-message", "click", function(e){
     // $.redirect('message.html', {'arg1': 'value1', 'arg2': 'value2'});
 })
 
-//Newly Added  
 
-$(document).ready(function() {
-    $(".example1").emojioneArea();
-});
-         
-$("body").delegate(".show-drop", "click", function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    id = $(this).attr('id')
-    $('.post#'+id).slideDown("slow");
-    $(this).text('Hide Comment');
-    $(this).removeClass('show-drop');
-    $(this).addClass('hide-drop');
-});
-$("body").delegate(".hide-drop", "click", function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    id = $(this).attr('id')
-    $('.post#'+id).slideUp("slow");
-    $(this).text('Show Comment');
-    $(this).removeClass('hide-drop');
-    $(this).addClass('show-drop');
-});
 
-$(function () {
-    $(".openDir").click(function () {
-        var desc = $(this).data('desc');
-        var title = $(this).data('title');
-        var ig = $(this).data('ig');
-        var web = $(this).data('web');
-        var email = $(this).data('email');
-        var cat = $(this).data('cat');
-        var phone = $(this).data('phone');
-        var email = $(this).data('email');
-        $(".modal-body .cat").html(cat);
-        $(".modal-body .web").html(`<a href="`+web+`" class="text-primary">`+web+`</a>`);
-        $(".modal-body .ig").html(`<a href="`+ig+`" class="text-primary">`+ig+`</a>`);
-        $(".modal-body .email").html(`<a href="mailto:/`+email+`" class="text-primary">`+email+`</a>`);
-        $(".modal-body .phone").html(`<a href="tel:/`+phone+`" class="text-primary">`+phone+`</a>`);
-        $(".modal-body .desc").html(desc);
-        $(".modal-body .title").html(title);
-        $(".modal-title").html(title);
-    })
-});
+

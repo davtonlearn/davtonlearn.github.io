@@ -89,6 +89,51 @@
 	background-color: var(--secondary-color) !important;
     color: #fff !important;
 }
+
+.bg-transparent{
+	background: transparent!important;
+}
+.text-transparent{
+	color: transparent!important;
+}
+.pointer-none{
+	pointer-events: none;
+}
+.col .text-dark.mb-0.weight-semi-bold{
+	font-size: 13px;
+}
+.chat-wrapper{
+	position: relative;
+	width: auto;
+	opacity: 1;
+	z-index: 99;
+	pointer-events: auto;
+	height: 180px;
+}
+.sent #delete_chat {
+    position: absolute;
+    background: #F44336;
+    padding: 10px;
+    transition: .1s;
+    color: #fff;
+    font-size: 10px;
+    display: block;
+    border-radius: 6px 0px 0px 6px;
+    left: 66px;
+    top: 25px;
+    width: 34px;
+    height: 43px;
+    opacity: 0
+}
+.sent .wrappers:hover #delete_chat {
+  transition: .1s;
+  left: 60px;
+  top: 24px;
+  opacity: 1;
+}
+.chat-conversation div div div img{
+	max-width: 40px!important;
+}
 @media (max-width: 768px) {
 	 #filters-area span, #filters-group span, #filters-area span input, #filters-group span input{
 		margin-right: 15px;
@@ -104,6 +149,21 @@
 		margin-top: 0;
 	}
 	footer .card.text-white{
-		right: 15px!important;
-	} 
+		/*right: 15px!important;*/
+		right: calc(51vw - 20.3rem)!important;
+	}
+	.btn-single-popup {
+		display: none;
+	}
+	.single-message-popup .card.text-white.m-0{
+		right: calc(80vw - 13.0rem)!important;
+	}
+	.blog-popup .card.text-white.m-0{
+		right: 0!important;
+	}
+	.single-message-container{
+		right: 382px!important;
+    	bottom: 30px!important;
+    	z-index: 99!important;
+	}
 }
