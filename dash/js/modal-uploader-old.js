@@ -32,7 +32,7 @@ if ($('.modal-uploader').length) {
         clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
     });
 
-    $("body").delegate("#d-sub", "click", function(e){
+    $("#d-sub").on("click", function(e) {
         // Make sure that the form isn't actually being sent.
         e.preventDefault();
         e.stopPropagation();
@@ -98,7 +98,7 @@ if ($('.modal-uploader').length) {
                             <div class="px-4 row mt-3">
                                 <div class="col-lg-12 col-12 d-flex">
                                     <img src="images/course_img.png" class="mt-1 mr-2" />
-                                    <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text example`+time+`" id="input-comment-`+time+`" data-img="course_img.png" data-name="Kelvin Sam"/>
+                                    <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text" id="input-comment-`+time+`" data-img="course_img.png" data-name="Kelvin Sam"/>
                                     <button class="btn btn-sm btn-green mt-2 comment-send" data-id="comment-`+time+`" data-load="p`+time+`">Send</button>
                                 </div>
                                 <div class="col-12 comment_reply mx-auto" id="p`+time+`">
@@ -114,10 +114,6 @@ if ($('.modal-uploader').length) {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="text-center my-2">
-                                <button class="btn btn-sm btn-green show-drop" id="comment-`+time+`">Show Comment</button>
                             </div>
 
                             <div class="px-4 row mt-3 post" style="overflow-y:auto;max-height: 280px" id="comment-`+time+`">
@@ -218,7 +214,7 @@ if ($('.modal-uploader').length) {
                             <div class="px-4 row mt-3">
                                 <div class="col-lg-12 col-12 d-flex">
                                     <img src="images/course_img.png" class="mt-1 mr-2" />
-                                    <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text example`+time+`" id="input-comment-`+time+`" data-img="course_img.png" data-name="Kelvin Sam"/>
+                                    <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text" id="input-comment-`+time+`" data-img="course_img.png" data-name="Kelvin Sam"/>
                                     <button class="btn btn-sm btn-green mt-2 comment-send" data-id="comment-`+time+`" data-load="p`+time+`">Send</button>
                                 </div>
                                 <div class="col-12 comment_reply mx-auto" id="p`+time+`">
@@ -236,17 +232,12 @@ if ($('.modal-uploader').length) {
                                 </div>
                             </div>
 
-                            <div class="text-center my-2">
-                                <button class="btn btn-sm btn-green show-drop" id="comment-`+time+`">Show Comment</button>
-                            </div>
-
                             <div class="px-4 row mt-3 post" style="overflow-y:auto;max-height: 280px" id="comment-`+time+`">
 
                             </div>
                         </div>
                     </div>
                 </div>`)
-
             $.ajax({
                 url: 'https://jsonplaceholder.typicode.com/todos/',
                 dataType: 'json',
@@ -264,7 +255,6 @@ if ($('.modal-uploader').length) {
         }
         
         $('#media-text').val("");
-            $(".example"+time).emojioneArea();
         $('#albums-modal').modal('hide');
         $('.backdrop.fade.in').remove();
         // $('#albums-modal').removeClass('show');

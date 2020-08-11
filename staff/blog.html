@@ -17,12 +17,13 @@
         <link rel="stylesheet" href="css/select2.min.css">
         <!-- <link href="css/materialdesignicons.min.css" rel="stylesheet"> -->
         <link href="https://materialdesignicons.com/cdn/2.0.46/css/materialdesignicons.min.css" rel="stylesheet">
-        <link href="css/emojionearea.css" rel="stylesheet">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="css/dropzone.min.css">
         <link rel="stylesheet" href="css/stylee.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/blog.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <link href="css/faceMocion.css" rel="stylesheet" type="text/css" />
 
         <!-- Font Awesome JS -->
         <script src="js/solid.js"></script>
@@ -30,6 +31,47 @@
 
         <!--LightBox -->        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+        <style>
+            .toolti {
+              position: relative;
+              display: inline-block;
+              border-bottom: 1px dotted black;
+            }
+
+            .toolti .tooltiptext {
+              visibility: hidden;
+              width: max-content;
+              background-color: #eee;
+              border: 1px solid #ccc;
+              color: #080808;
+              text-align: left;
+              border-radius: 6px;
+              padding: 5px 7px 5px 2px;
+              position: absolute;
+              z-index: 1;
+              bottom: 32px;
+              right: 0;
+              /*margin-left: -70px;*/
+              opacity: 0;
+              transition: opacity 0.3s;
+            }
+
+            .toolti .tooltiptext::after {
+              content: "";
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              margin-left: -5px;
+              border-width: 10px;
+              border-style: solid;
+              border-color: #eee transparent transparent transparent;
+            }
+
+            .toolti:hover .tooltiptext {
+              visibility: visible;
+              opacity: 1;
+            }
+        </style>
     </head>
 
     <body class="dashboard-body">
@@ -238,9 +280,10 @@
 
                                         <div class="like-share row my-3 px-4">
                                             <div class=" col text-left">
-                                                <a class="like" href="#" data-user='1' data-post='1' data-id="1">
-                                                    <span class="icon" id="icon-1"><i class="fa fa-thumbs-up"></i></span>
-                                                    <span class="like-unlike" id="like-unlike-1">Like</span>
+                                                <a class="like-link" href="#" data-user='1' data-post='1' data-id="1">
+                                                    <!-- <span class="icon" id="icon-1"><i class="fa fa-thumbs-up"></i></span> -->
+                                                    <!-- <span class="like-unlike" id="like-unlike-1">Like</span> -->
+                                                    <input type="hidden" value="like" class="ides otro"/>
                                                 </a>
                                             </div>
                                             <div class="share col text-left">
@@ -249,8 +292,45 @@
                                                     <span>Share</span>
                                                 </a>
                                             </div>
+                                                <div class="toolti mr-2">
+                                                    <span class="n-reaction">2</span> <span class="t-reaction">reactions</span>
+                                                  <div class="tooltiptext">
+                                                    <div>
+                                                        <span class="ml-2 n-val">2000000000</span> 
+                                                        <div dato-descripcion="like" class="i-val selectorFace like text-center i-like"></div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ml-2 n-val">1</span>  
+                                                        <div dato-descripcion="love" class="i-val selectorFace love i-love"></div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ml-2 n-val">1</span> 
+                                                        <div dato-descripcion="yay" class="i-val selectorFace yay text-center i-yay"></div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ml-2 n-val">1</span>  
+                                                        <div dato-descripcion="wow" class="i-val selectorFace wow i-wow"></div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ml-2 n-val">1</span> 
+                                                        <div dato-descripcion="angry" class="i-val selectorFace angry text-center i-angry"></div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ml-2 n-val">1</span>  
+                                                        <div dato-descripcion="sad" class="i-val selectorFace sad i-sad"></div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ml-2 n-val">1</span> 
+                                                        <div dato-descripcion="scared" class="i-val selectorFace scared text-center i-scared"></div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="ml-2 n-val">1</span>  
+                                                        <div dato-descripcion="haha" class="i-val selectorFace haha i-haha"></div>
+                                                    </div>
+                                                  </div>
+                                                </div>
                                             <div class="like-share-value text-right">
-                                                <span class="mr-1 fs-12 likes-val"><span class="num-likes" id="num-likes-1">1</span> <span class="text-likes"></span></span>
+                                                <!-- <span class="mr-1 fs-12 likes-val"><span class="num-likes" id="num-likes-1">1</span> <span class="text-likes"></span></span> -->
                                                 <span class="mr-1 fs-12 comments-val" ><span class="num-comments" id="num-comment-1">0</span> <span class="text-comments"></span></span> 
                                             </div>
                                         </div>
@@ -258,16 +338,16 @@
                                         <hr>
 
                                         <div class="px-4 row mt-3">
-                                            <div class="col-lg-12 col-12 d-flex lead emoji-picker-container">
+                                            <div class="col-lg-12 col-12 d-flex">
                                                 <img src="images/course_img.png" class="mt-1 mr-2" />
-                                                <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text example1" id="input-comment-1" data-img="course_img.png" data-name="Kelvin Sam" />
+                                                <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text" id="input-comment-1" data-img="course_img.png" data-name="Kelvin Sam"/>
                                                 <button class="btn btn-sm btn-green mt-2 comment-send" data-id="comment-1" data-load="p1">Send</button>
                                             </div>
                                             <div class="col-12 comment_reply mx-auto" id="p1">
                                                 <div class="d-flex">
                                                     <div class="p-2 position-relative info cursor" data-user='1'>
                                                         <p class="weight-semi-bold mb-1" id="comment-reply-name"></p>
-                                                        <p class="font-14 font-weight-light mb-1" id="comment-reply-text"></p>
+                                                        <p class="font-13 font-weight-light mb-1" id="comment-reply-text"></p>
                                                         <p class="d-none" id="comment-reply-post-id"></p>
                                                         <p class="d-none" id="comment-reply-comment-id"></p>
                                                     </div>
@@ -278,11 +358,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="text-center my-2">
-                                            <button class="btn btn-sm btn-green show-drop" id="comment-1">Show Comment</button>
-                                        </div>
-
-                                        <div class="px-4 row mt-3 post" style="overflow-y:auto;max-height: 280px; display: none;" id="comment-1">
+                                        <div class="px-4 row mt-3 post" style="overflow-y:auto;max-height: 280px" id="comment-1">
 
                                             <div class="col-12 blog_comment p1" id="comment-1">
                                                 <div class="d-flex">
@@ -291,7 +367,7 @@
                                                     </div>
                                                     <div class="p-2 position-relative info cursor" data-user='1'>
                                                         <p class="weight-semi-bold mb-1" id="comment-name">Brandee Sanderssss </p>
-                                                        <p class="font-14 font-weight-light mb-1" id="comment-text">Comment 6 </p>
+                                                        <p class="font-13 font-weight-light mb-1" id="comment-text">Comment 6 </p>
                                                     </div>
                                                     <div class="ml-auto">
                                                         <a href="#" class="show-comment">Reply</a>
@@ -305,7 +381,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 1  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -316,7 +392,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 1  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -327,7 +403,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 1  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -338,7 +414,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 1  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -349,7 +425,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 1  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -360,7 +436,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 1  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -371,7 +447,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 1  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -382,7 +458,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 1  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -399,7 +475,7 @@
                                                     </div>
                                                     <div class="p-2 position-relative info cursor" data-user='1'>
                                                         <p class="weight-semi-bold mb-1" id="comment-name">Nats </p>
-                                                        <p class="font-14 font-weight-light mb-1" id="comment-text">Comment New </p>
+                                                        <p class="font-13 font-weight-light mb-1" id="comment-text">Comment New </p>
                                                     </div>
                                                     <div class="ml-auto">
                                                         <a href="#" class="show-comment">Reply</a>
@@ -413,7 +489,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee David </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 100  </p>
+                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 100  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -426,7 +502,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             
                             <div class="card--dashboard mt-4">
 
@@ -476,14 +551,14 @@
                                         <div class="px-4 row mt-3">
                                             <div class="col-lg-12 col-12 d-flex">
                                                 <img src="images/course_img.png" class="mt-1 mr-2" />
-                                                <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text example1" id="input-comment-2" data-img="course_img.png" data-name="Kelvin Sam"/>
+                                                <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text" id="input-comment-2" data-img="course_img.png" data-name="Kelvin Sam"/>
                                                 <button class="btn btn-sm btn-green mt-2 comment-send" data-id="comment-2" data-load="p2">Send</button>
                                             </div>
                                             <div class="col-12 comment_reply mx-auto" id="p2">
                                                 <div class="d-flex">
                                                     <div class="p-2 position-relative info cursor" data-user='1'>
                                                         <p class="weight-semi-bold mb-1" id="comment-reply-name"></p>
-                                                        <p class="font-14 font-weight-light mb-1" id="comment-reply-text"></p>
+                                                        <p class="font-13 font-weight-light mb-1" id="comment-reply-text"></p>
                                                         <p class="d-none" id="comment-reply-post-id"></p>
                                                         <p class="d-none" id="comment-reply-comment-id"></p>
                                                     </div>
@@ -494,11 +569,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="text-center my-2">
-                                            <button class="btn btn-sm btn-green show-drop" id="comment-2">Show Comment</button>
-                                        </div>
-
-                                        <div class="px-4 row mt-3 post" style="overflow-y:auto;max-height: 280px;display: none;" id="comment-2">
+                                        <div class="px-4 row mt-3 post" style="overflow-y:auto;max-height: 280px" id="comment-2">
 
                                             <div class="col-12 blog_comment p2" id="comment-2">
                                                 <div class="d-flex">
@@ -507,7 +578,7 @@
                                                     </div>
                                                     <div class="p-2 position-relative info cursor" data-user='1'>
                                                         <p class="weight-semi-bold mb-1" id="comment-name">James Smart </p>
-                                                        <p class="font-14 font-weight-light mb-1" id="comment-text">Comment 26 </p>
+                                                        <p class="font-13 font-weight-light mb-1" id="comment-text">Comment 26 </p>
                                                     </div>
                                                     <div class="ml-auto">
                                                         <a href="#" class="show-comment">Reply</a>
@@ -685,7 +756,7 @@
                                 <!-- <img src="img/video.svg" class="mb-1 mx-4 img-fluid cursor display_image_upload fileinput-button" /> -->
                             </div>
                             <!-- <button type="button" class="btn btn-green px-4 py-2" id="d-sub">Post</button> -->
-                            <button type="submit" id="d-sub" class="button is-solid btn-green close-modal">Post</button>
+                            <button type="submit" id="d-sub" class="button is-solid accent-button close-modal">Post</button>
                         </div>
                     </div>
                 </div>
@@ -729,13 +800,14 @@
                                   <div class="panel widget">
                                     <div class="widget-header bg-success"></div>
                                     <div class="widget-body text-center bg-white">
-                                      <img alt="Profile Picture" id="avatar" class="widget-img img-circle img-border-light" src="">
+                                      <img alt="Profile Picture" id="avatar" class="widget-img img-circle img-border-light" src="images/">
+                                      <span class="d-none" id="img"></span>
                                       <h4 class="" id="fullname"></h4>
-                                      <p class="text-muted mar-btm" id="email"></p>
-                                      <p class="text-muted mar-btm" id="staffid"></p>
-                                      <p class="text-muted mar-btm" id="department"></p>
+                                      <p class="text-muted mar-btm font-14"><b>Email:</b> <span id="email"></span></p>
+                                      <p class="text-muted mar-btm font-14"><b>Staff ID:</b> <span id="staffid"></span></p>
+                                      <p class="text-muted mar-btm font-14"><b>Department:</b> <span id="department"></span></p>
                                       <div class="pad-ver">
-                                        <a href="message.html" class="btn btn-success" style="font-size: 14px">Send Message</a>
+                                        <a id="blog-message" class="btn btn-success text-white" style="font-size: 14px">Send Message</a>
                                         <!-- <button class="btn btn-primary" style="font-size: 14px" id="about-business" style="display: none;">About Business</button> -->
                                       </div>
                                     </div>
@@ -789,6 +861,174 @@
 
         </div>
 
+        <footer>
+
+            <div class="single-message-container" style="position: fixed;bottom: 0px;right: 380px;display: none;">
+
+                <div class="btn-group dropdown">
+                    <div type="button" class="btn btn-green font-14 btn-single-popup" data-toggle="dropdown" aria-expanded="false" style="width: 300px">
+                        <div class="row py-1">
+                            <div class="col-8 text-left">
+                                <span class="text-uppercase text-white font-14 font-weight-500 chat_name"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-menu p-0 border-0 single-message-popup" style="
+                                        background: transparent;background: transparent;
+                                        position: absolute;
+                                        transform: translate3d(-166px, -373px, 0px);
+                                        top: 25px;
+                                        left: 80vw!important;
+                                        will-change: transform;">
+                        <div class="card text-white m-0" style="width: 300px; right: calc(80vw - 10.4rem); max-width: 20rem;bottom: -16px">
+                            <div class="card-header bg-success px-2">
+                                <div class="row w-100 px-0">
+                                    <div class="col-8 text-left pl-4">
+                                        <span class="text-uppercase text-white font-14 font-weight-500 chat_name"></span>
+                                    </div>
+                                    <div class="col-4 text-right px-0">
+                                        <i class="fa fa-times font-20 close-single cursor"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <div>
+                                    <div class="bg-white" style="height: 320px; overflow-y: scroll;">
+                                        <div class="card--dashboard px-3">
+                                            <div class="row">
+
+                                                <div class="col-sm-12 px-0">
+                                                    <div class="timeline-wrapper">
+                                                        <div class="timeline-item">
+                                                            <div class="animated-background facebook">
+                                                                <div class="background-masker header-top"></div>
+                                                                <div class="background-masker header-left"></div>
+                                                                <div class="background-masker header-right"></div>
+                                                                <div class="background-masker header-bottom"></div>
+                                                                <div class="background-masker subheader-left"></div>
+                                                                <div class="background-masker subheader-right"></div>
+                                                                <div class="background-masker subheader-bottom"></div>
+                                                                <div class="background-masker content-top"></div>
+                                                                <div class="background-masker content-first-end"></div>
+                                                                <div class="background-masker content-second-line"></div>
+                                                                <div class="background-masker content-second-end"></div>
+                                                                <div class="background-masker content-third-line"></div>
+                                                                <div class="background-masker content-third-end"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="chat_history">
+                                                    </div>
+
+                                                    <div class="container-fluid pl-0">
+
+                                                        <div class="row border-top clear-both mt-3">
+                                                            <div class="col-10 pr-0 h-100">
+                                                                <div class="form-row">
+                                                                    <input class="form-control rounded-0 border-1 w-100 h-100" id="chat-text" placeholder="Write a message.....">
+                                                                   
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-2 px-0">
+                                                                <div class="h-100 w-100">
+                                                                    <button class="btn btn-green font-12 text-uppercase w-100 h-100" id="chat-send"><i class="fa fa-paper-plane"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message-container" style="position: fixed;bottom: 0px;right: 40px;">
+
+                <div class="btn-group dropdown message-popup">
+                    <div type="button" class="btn btn-green font-14" data-toggle="dropdown" aria-expanded="false" style="width: 300px">
+                        <div class="row py-1">
+                            <div class="col-8 text-left">
+                                <span class="text-uppercase text-white font-14 font-weight-500">messages</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-menu p-0 border-0 blog-popup" style="
+                                        background: transparent;background: transparent;
+                                        position: absolute;
+                                        transform: translate3d(-166px, -373px, 0px);
+                                        top: 25px;
+                                        left: 80vw!important;
+                                        will-change: transform;">
+                        <div class="card text-white m-0" style="width: 300px; right: 0; max-width: 20rem;bottom: -40px">
+                            <div class="card-header bg-success px-2">
+                                <div class="row w-100 px-0">
+                                    <div class="col-8 text-left pl-4">
+                                        <span class="text-uppercase text-white font-14 font-weight-500">messages</span>
+                                    </div>
+                                    <div class="col-4 text-right px-0">
+                                        <i class="fa fa-times font-20 close-msg cursor"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <div>
+                                    <div class="bg-white" style="height: 300px; overflow-y: scroll;">
+                                        <div class="card--dashboard p-3">
+                                            <div class="row">
+                                                <div class="col-sm-12 border-right pr-lg-0">
+                                                    <select class="js-example-basic-single w-100" name="state" id="select-contact">
+                                                                <option></option>
+                                                                <option data-full-name="Korede Bello" data-status="online" data-demo-src="avatar_lg.png" data-id="3" data-dept="Lawyer" data-last-seen="online">Korede Bello</option>
+                                                                <option data-full-name="Davids Kim" data-status="offline" data-demo-src="avatar_lg.png" data-id="2" data-dept="Doctor" data-last-seen="5 mins Ago">Davids Kims</option>
+                                                            </select>
+
+                                                    <div class="chat-sidebar" style="height: 250px">
+                                                        <div id="nomessage" style="text-align: center;">
+                                                            <img src="images/nomessage.png" class="w-100">
+                                                        </div>
+                                                        <div class="backgrond-muted message_detail cursor" id="3">
+                                                            <div class="px-3 position-relative message_detail_click unread" id="3" data-chat-user="korede" data-full-name="Korede Bello" data-status="online" data-demo-src="avatar_lg.png" data-id="3" data-dept="Lawyer">
+                                                                <div class="row py-2 border-bottom">
+                                                                    <div class="col-lg-3 col-3 text-center ">
+                                                                        <img src="img/avatar_lg.png" class="img-fluid" alt="user name">
+                                                                    </div>
+                                                                    <div class="col-lg-9 col-9">
+                                                                        <div class="row">
+                                                                            <div class="col">
+                                                                                <p class="text-dark mb-0 weight-semi-bold">Korede Bello</p>
+                                                                            </div>
+                                                                            <div class="text-right col-5">
+                                                                            </div>
+                                                                        </div>
+                                                                        <p class="text-muted font-13 mb-1">hey</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="question_info_1" id="delete_user" data-id="3">
+                                                                <img src="img/delete_dark.svg" class="position-absolute" style="right: 5px; bottom: 40px;" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </footer>
 
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script src="js/jquery.min.js"></script>
@@ -805,7 +1045,26 @@
         <script src="js/jquery.redirect.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
-        <script src="js/emojionearea.js"></script>
+        <script src="js/faceMocion.js"></script>
+        <!-- <script src="js/face.js"></script> -->
+        <script>
+            $(".facemocion").faceMocion();
+            $(".otro").faceMocion();
+            $('.like-link').on('click', function () {
+                alert('kjhj')
+            })
+            val1 = $( ".selected-icon" ).text();
+            console.log(val1)
+            $("body").on('DOMSubtreeModified', ".selectorFace", function() {
+                console.log('changed');
+            });
+            $('.i-val').each(function(){
+                if ($(this).parent().find('span').text() < 1){
+                    $(this).parent().hide()
+                }
+            })
+        </script>
+
 
 
     </body>
