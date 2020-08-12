@@ -44,6 +44,7 @@ $(document).ready(function () {
                 $('#hr_roles').show()
         }
     }
+    
     if (document.getElementById("departmentSubmit")) {
         let dept_button = document.getElementById("departmentSubmit");
         dept_button.onclick = addDepartment;
