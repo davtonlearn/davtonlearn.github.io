@@ -1,0 +1,135 @@
+.faceMocion {
+    display: none;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-left: 0px;
+    box-sizing: border-box;
+    background: white;
+    color: white;
+    position: absolute;
+    width: auto;
+    height: 65px;
+    line-height: 25px;
+    border-radius: 50px;
+    transition: 0.25sease-in-out;
+    color: black;
+    border: 1px solid #eee;
+    -webkit-box-shadow: 4px 4px 21px -9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 4px 4px 21px -9px rgba(0, 0, 0, 0.75);
+    box-shadow: 4px 4px 21px -9px rgba(0, 0, 0, 0.75);
+}
+.faceMocion div {
+    margin-left: 8px;
+    float: left;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.selectorFace {
+    margin-left: 8px;
+    float: left;
+    width: 16px;
+    height: 17px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.faceMocion div:hover {
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    transform: scale(1.25);
+}
+.angry {
+    margin-left: 8px;
+    float: left;
+    width: 16px;
+    height: 17px;
+    background: url(../img/sqhTN9lgaY1.png) 0 0;
+}
+.scared {
+    background: url(../img/sqhTN9lgaY1.png) 0 -48px;
+}
+.selectorFace.scared {
+    background: url(../img/sqhTN9lgaY1.png) 0 -15px;
+}
+.haha {
+    background: url(../img/sqhTN9lgaY1.png) 0 -96px;
+}
+.selectorFace.haha {
+    background: url(../img/sqhTN9lgaY1.png) 0 -31px;
+}
+.like {
+    background: url(../img/sqhTN9lgaY1.png) 0 -144px;
+}
+.selectorFace.like {
+    background: url(../img/sqhTN9lgaY1.png) 0 -47px;
+}
+.love {
+    background: url(../img/sqhTN9lgaY1.png) 0 -192px;
+}
+.selectorFace.love {
+    background: url(../img/sqhTN9lgaY1.png) 0 -64px;
+}
+.sad {
+    background: url(../img/sqhTN9lgaY1.png) 0 -240px;
+}
+.selectorFace.sad {
+    background: url(../img/sqhTN9lgaY1.png) 0 -80px;
+}
+.wow {
+    background: url(../img/sqhTN9lgaY1.png) 0 -288px;
+}
+.selectorFace.wow {
+    background: url(../img/sqhTN9lgaY1.png) 0 -96px;
+}
+.yay {
+    background: url(../img/sqhTN9lgaY1.png) 0 -336px;
+}
+.selectorFace.yay {
+    background: url(../img/sqhTN9lgaY1.png) 0 -111px;
+}
+.scared,.selectorFace.scared,.haha,.selectorFace.haha,.like,.selectorFace.like,.love,.selectorFace.love,.sad,.wow,.selectorFace.wow,.yay,.selectorFace.yay,.angry,.selectorFace.angry{
+	background-size: 100%!important;
+}
+#c-love{
+    color: #E91E63;
+}
+#c-angry{
+    color: #FF5722;
+}
+#c-wow,#c-scared,#c-haha,#c-yay,#c-sad{
+    color: #FF9800
+}
+#c-like{
+    color: #5890ff
+}
+.i-like{
+    height: 16px;
+    background-position-y: -48px!important;
+    margin-top: 2px;
+}
+.i-love{
+    height: 16px;
+    background-position-y: -192px!important;
+    margin-top: 2px;
+}
+.MensajeTexto {
+    display: none;
+    position: absolute;
+    border: 1px solid #333;
+    background-color: #161616;
+    border-radius: 5px;
+    padding: 3px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+.IconoPequenio {
+    width: 24px;
+    height: 24px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+}

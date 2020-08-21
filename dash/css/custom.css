@@ -126,6 +126,9 @@ button.dropdown-toggle::after{
 .select2-container{
 	width: 100%!important
 }
+#table_id_filter{
+	display: none;
+}
 @media (max-width: 768px) {
 	 #filters-area span, #filters-group span, #filters-area span input, #filters-group span input{
 		margin-right: 15px;
