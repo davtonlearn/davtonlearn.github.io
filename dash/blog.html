@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="css/select2.min.css">
         <!-- <link href="css/materialdesignicons.min.css" rel="stylesheet"> -->
         <link href="https://materialdesignicons.com/cdn/2.0.46/css/materialdesignicons.min.css" rel="stylesheet">
+        <link href="css/emojionearea.css" rel="stylesheet">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="css/dropzone.min.css">
         <link rel="stylesheet" href="css/stylee.css">
@@ -317,16 +318,16 @@
                                         <hr>
 
                                         <div class="px-4 row mt-3">
-                                            <div class="col-lg-12 col-12 d-flex">
+                                            <div class="col-lg-12 col-12 d-flex lead emoji-picker-container">
                                                 <img src="images/course_img.png" class="mt-1 mr-2" />
-                                                <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text" id="input-comment-1" data-img="course_img.png" data-name="Kelvin Sam"/>
+                                                <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text example1" id="input-comment-1" data-img="course_img.png" data-name="Kelvin Sam" />
                                                 <button class="btn btn-sm btn-green mt-2 comment-send" data-id="comment-1" data-load="p1">Send</button>
                                             </div>
                                             <div class="col-12 comment_reply mx-auto" id="p1">
                                                 <div class="d-flex">
                                                     <div class="p-2 position-relative info cursor" data-user='1'>
                                                         <p class="weight-semi-bold mb-1" id="comment-reply-name"></p>
-                                                        <p class="font-13 font-weight-light mb-1" id="comment-reply-text"></p>
+                                                        <p class="font-14 font-weight-light mb-1" id="comment-reply-text"></p>
                                                         <p class="d-none" id="comment-reply-post-id"></p>
                                                         <p class="d-none" id="comment-reply-comment-id"></p>
                                                     </div>
@@ -337,7 +338,11 @@
                                             </div>
                                         </div>
 
-                                        <div class="px-4 row mt-3 post" style="overflow-y:auto;max-height: 280px" id="comment-1">
+                                        <div class="text-center my-2">
+                                            <button class="btn btn-sm btn-green show-drop" id="comment-1">Show Comment</button>
+                                        </div>
+
+                                        <div class="px-4 row mt-3 post" style="overflow-y:auto;max-height: 280px; display: none;" id="comment-1">
 
                                             <div class="col-12 blog_comment p1" id="comment-1">
                                                 <div class="d-flex">
@@ -346,7 +351,7 @@
                                                     </div>
                                                     <div class="p-2 position-relative info cursor" data-user='1'>
                                                         <p class="weight-semi-bold mb-1" id="comment-name">Brandee Sanderssss </p>
-                                                        <p class="font-13 font-weight-light mb-1" id="comment-text">Comment 6 </p>
+                                                        <p class="font-14 font-weight-light mb-1" id="comment-text">Comment 6 </p>
                                                     </div>
                                                     <div class="ml-auto">
                                                         <a href="#" class="show-comment">Reply</a>
@@ -360,7 +365,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -371,7 +376,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -382,7 +387,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -393,7 +398,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -404,7 +409,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -415,7 +420,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -426,7 +431,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -437,7 +442,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -454,7 +459,7 @@
                                                     </div>
                                                     <div class="p-2 position-relative info cursor" data-user='1'>
                                                         <p class="weight-semi-bold mb-1" id="comment-name">Nats </p>
-                                                        <p class="font-13 font-weight-light mb-1" id="comment-text">Comment New </p>
+                                                        <p class="font-14 font-weight-light mb-1" id="comment-text">Comment New </p>
                                                     </div>
                                                     <div class="ml-auto">
                                                         <a href="#" class="show-comment">Reply</a>
@@ -468,7 +473,7 @@
                                                             </div>
                                                             <div class="p-2 position-relative info cursor" data-user='1'>
                                                                 <p class="weight-semi-bold mb-1" id="reply-name">Brandee David </p>
-                                                                <p class="font-13 font-weight-light mb-1" id="reply-text">Reply 100  </p>
+                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 100  </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -481,6 +486,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             
                             <div class="card--dashboard mt-4">
 
@@ -530,14 +536,14 @@
                                         <div class="px-4 row mt-3">
                                             <div class="col-lg-12 col-12 d-flex">
                                                 <img src="images/course_img.png" class="mt-1 mr-2" />
-                                                <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text" id="input-comment-2" data-img="course_img.png" data-name="Kelvin Sam"/>
+                                                <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text example1" id="input-comment-2" data-img="course_img.png" data-name="Kelvin Sam"/>
                                                 <button class="btn btn-sm btn-green mt-2 comment-send" data-id="comment-2" data-load="p2">Send</button>
                                             </div>
                                             <div class="col-12 comment_reply mx-auto" id="p2">
                                                 <div class="d-flex">
                                                     <div class="p-2 position-relative info cursor" data-user='1'>
                                                         <p class="weight-semi-bold mb-1" id="comment-reply-name"></p>
-                                                        <p class="font-13 font-weight-light mb-1" id="comment-reply-text"></p>
+                                                        <p class="font-14 font-weight-light mb-1" id="comment-reply-text"></p>
                                                         <p class="d-none" id="comment-reply-post-id"></p>
                                                         <p class="d-none" id="comment-reply-comment-id"></p>
                                                     </div>
@@ -548,7 +554,11 @@
                                             </div>
                                         </div>
 
-                                        <div class="px-4 row mt-3 post" style="overflow-y:auto;max-height: 280px" id="comment-2">
+                                        <div class="text-center my-2">
+                                            <button class="btn btn-sm btn-green show-drop" id="comment-2">Show Comment</button>
+                                        </div>
+
+                                        <div class="px-4 row mt-3 post" style="overflow-y:auto;max-height: 280px;display: none;" id="comment-2">
 
                                             <div class="col-12 blog_comment p2" id="comment-2">
                                                 <div class="d-flex">
@@ -557,7 +567,7 @@
                                                     </div>
                                                     <div class="p-2 position-relative info cursor" data-user='1'>
                                                         <p class="weight-semi-bold mb-1" id="comment-name">James Smart </p>
-                                                        <p class="font-13 font-weight-light mb-1" id="comment-text">Comment 26 </p>
+                                                        <p class="font-14 font-weight-light mb-1" id="comment-text">Comment 26 </p>
                                                     </div>
                                                     <div class="ml-auto">
                                                         <a href="#" class="show-comment">Reply</a>
@@ -735,7 +745,7 @@
                                 <!-- <img src="img/video.svg" class="mb-1 mx-4 img-fluid cursor display_image_upload fileinput-button" /> -->
                             </div>
                             <!-- <button type="button" class="btn btn-green px-4 py-2" id="d-sub">Post</button> -->
-                            <button type="submit" id="d-sub" class="button is-solid accent-button close-modal">Post</button>
+                            <button type="submit" id="d-sub" class="button is-solid btn-green close-modal">Post</button>
                         </div>
                     </div>
                 </div>
@@ -855,7 +865,7 @@
         <script src="js/jquery.redirect.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
-
+        <script src="js/emojionearea.js"></script>
 
     </body>
 
