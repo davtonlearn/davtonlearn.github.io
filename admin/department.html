@@ -4,7 +4,7 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />-->
+        <!--       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />-->
         <meta name="description" content="DavtonLearn">
         <meta name="author" content="">
         <title>Welcome to DavtonLearn</title>
@@ -133,11 +133,12 @@
                         </a>
                     </li>
 
-                    <li>
+                    <!-- <li>
                         <a href="quizes.html">
                             <img src="img/department_sidebar.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Quizzes
                         </a>
-                    </li>
+                    </li> -->
+
 
                     <p class="text-dull text-left ml-4 my-2 font-12">Communications</p>
 
@@ -215,7 +216,7 @@
                     </div>
                 </ul>
             </nav>
-
+            
             <!-- Page Content  -->
             <div id="content">
                 <div class="position-relative">
@@ -312,7 +313,7 @@
                     </div>
                 </div>
             </div>
-
+            
             <!-- Department Modal -->
             <div class="modal fade" id="dept-modal" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -325,7 +326,7 @@
                             <form>
                                 <div class="form-row">
                                     <div class="form-group col-lg-12">
-                                        <input id="departmentModalInput" type="text" placeholder="Enter a department name" class="form-control">
+                                        <input id="departmentModalInput" type="text" placeholder="Enter a department name" class="form-control"> 
                                     </div>
                                 </div>
                                 <div class="row mt-5">
@@ -352,7 +353,7 @@
                             <form>
                                 <div class="form-row">
                                     <div class="form-group col-lg-12">
-                                        <input id="" type="text" placeholder="" class="form-control font-14" value="Department">
+                                        <input id="" type="text" placeholder="" class="form-control font-14" value="Department"> 
                                     </div>
                                 </div>
 
@@ -443,12 +444,12 @@
                                     var val = $.fn.dataTable.util.escapeRegex(
                                         $(this).val()
                                     );
-
+             
                                     column
                                         .search( val ? '^'+val+'$' : '', true, false )
                                         .draw();
                                 } );
-
+             
                             column.data().unique().sort().each( function ( d, j ) {
                                 // select.append( '<option>'+d+'</option>' )
                             } );
@@ -476,12 +477,12 @@
                                                 </div>`
                         }
                     ]
-                });
+                }); 
                 $('#searchbox').on( 'keyup', function () {
                    table.search( this.value ).draw();
                 } );
 
-
+           
                 $("#min").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
                 $("#max").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
 

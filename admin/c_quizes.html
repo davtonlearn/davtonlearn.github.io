@@ -132,11 +132,12 @@
                         </a>
                     </li>
 
-                    <li>
+                    <!-- <li>
                         <a href="quizes.html">
                             <img src="img/department_sidebar.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Quizzes
                         </a>
-                    </li>
+                    </li> -->
+
 
                     <p class="text-dull text-left ml-4 my-2 font-12">Communications</p>
 
@@ -314,6 +315,71 @@
 
         </div>
 
+        <!-- Add quiz to course -->
+        <div class="modal fade" id="add_course" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title text-center mx-auto">Add Quiz to Course</h6>
+                        <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-lg-12">
+                                    <select class="custom-select select2" name="course_name" style="width: 100%; height: 50px !important">
+                                        <option  disabled>Select Course</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-lg-3 ml-auto mx-0">
+                                    <button type="button" class="btn btn-success btn-block mt-5">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add quiz to course End -->
+
+        <!-- Add quiz to topic Modal -->
+        <div class="modal fade" id="add_topic" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title text-center mx-auto">Add Quiz to topic</h6>
+                        <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-lg-12">
+                                    <select class="custom-select select2" name="course_name" style="width: 100%; height: 50px !important">
+                                        <option  disabled>Select Topic</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row" id="departmentModalItems"></div>
+                            <div class="row mt-5">
+                                <div class="col-lg-3 ml-auto mx-0">
+                                    <button type="button" class="btn btn-success btn-block mt-5">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add quiz to topic Modal End -->
+
 
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script src="js/jquery.min.js"></script>
@@ -374,6 +440,7 @@
                                                 <i class="fa fa-caret-down"></i>
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                
                                                 <a class="dropdown-item font-12 d-lg-none" href="c_view_quiz.html">Edit</a>
                                                 <a class="dropdown-item font-12" href="#">Delete</a>
                                             </div>
