@@ -793,9 +793,39 @@ $(document).ready(function() {
       return repo.first_name || repo.text;
     }
 
-    $('.webinar').select2({
+    $('.create-webinar').select2({
         placeholder: "Select a contact",
-        dropdownParent: $("#webinar"),
+        dropdownParent: $("#create-webinar"),
+          ajax: {
+            url: "https://reqres.in/api/users",
+            dataType: 'json',
+            delay: 250,
+            data: function (params) {
+              return {
+                q: params.term, // search term
+                page: params.page
+              };
+            },
+            processResults: function (data, params) {
+              params.page = params.page || 1;
+              return {
+                results: data.data,
+                pagination: {
+                  more: (params.page * 30) < data.total_count
+                }
+              };
+            },
+            cache: true
+          },
+          minimumInputLength: 1,
+          templateResult: formatRepo,
+          templateSelection: formatRepoSelection
+
+    })
+
+    $('.edit-webinar').select2({
+        placeholder: "Select a contact",
+        dropdownParent: $("#edit-webinar"),
           ajax: {
             url: "https://reqres.in/api/users",
             dataType: 'json',

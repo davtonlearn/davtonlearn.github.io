@@ -263,16 +263,16 @@
                             </div>
 
                             <div class="text-right my-3">
-                                <button class="btn btn-green py-1 font-13" type="button" data-toggle="modal" data-target="#compose">Create Webinar</button>
+                                <button class="btn btn-green py-1 font-13" type="button" data-toggle="modal" data-target="#create-webinar">Create Webinar</button>
                             </div>
 
                             <div class="card--dashboard">
                                 <div class="px-4 py-5 mt-5 text-center d-none">
                                     <img src="img/sad.png" class="img-fluid mt-5" />
                                     <p class="mb-0 mt-3 font-weight-light font-13">You currently have no webinar at the moments.</p>
-                                    <p class="mb-0 font-weight-light font-13">Click “Create Webinar to create new departments.</p>
+                                    <p class="mb-0 font-weight-light font-13">Click “Create Webinar to create new webinar.</p>
 
-                                    <button type="button" class="btn btn-green my-4" data-toggle="modal" data-target="#webinar-modal">Create Webinar</button>
+                                    <button type="button" class="btn btn-green my-4" data-toggle="modal" data-target="#create-webinar">Create Webinar</button>
                                 </div>
                             </div>
 
@@ -319,7 +319,7 @@
                 </div>
             </div>
 
-            <div class="modal fade" id="compose" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="create-webinar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <form action="jhkjhkj" class="modal-content">
                         <div class="modal-header">
@@ -331,7 +331,7 @@
                         <div class="modal-body">
                             <div class="form-row">
                                 <div class="form-group col-lg-9 select2-webinar">
-                                    <select class="js-example-basic-single w-100 contact check1" name="state" id="select-contact"  multiple="multiple">
+                                    <select class="create-webinar w-100 contact check1" name="state" id="select-contact" multiple="multiple">
                                         <option></option>
                                     </select>
                                 </div>
@@ -412,7 +412,7 @@
             </div>
 
             <!-- Edit Webinar Modal -->
-            <div class="modal fade" id="webinar" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
+            <div class="modal fade" id="edit-webinar" tabindex="-1" role="dialog" aria-labelledby="dept-Modal" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -424,7 +424,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-lg-9 select2-webinar">
                                         <label>Invite List</label>
-                                        <select class="webinar w-100 view contact2 check3" name="state" id="select-contact" multiple="multiple" style="height: 100px">
+                                        <select class="edit-webinar w-100 view contact2 check3" name="state" id="select-contact" multiple="multiple" style="height: 100px">
                                             <option></option>
                                         </select>
                                     </div>
@@ -725,12 +725,12 @@
                         {
                           "data": null,
                           "defaultContent": `
-                                            <button class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline" data-toggle="modal" data-target="#webinar">Edit Detail</button>
+                                            <button class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline" data-toggle="modal" data-target="#edit-webinar">Edit Detail</button>
                                             <a href="#" class="dropdown-togge btn btn-outline--green py-1 font-11 py-1 px-2 bg-transparent" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fa fa-caret-down"></i>
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item font-12 d-lg-none" href="#" data-toggle="modal" data-target="#webinar">Edit</a>
+                                                <a class="dropdown-item font-12 d-lg-none" href="#" data-toggle="modal" data-target="#edit-webinar">Edit</a>
                                                 <a class="dropdown-item font-12" href="view_registrant.html">View Registrants</a>
                                                 <a class="dropdown-item font-12" href="view_attendee.html">View Attendees</a>
                                                 <a class="dropdown-item font-12" href="#">Disable</a>
