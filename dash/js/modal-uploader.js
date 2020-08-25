@@ -66,7 +66,7 @@ if ($('.modal-uploader').length) {
                             </div>
 
                             <div class="px-4">
-                                <p class="font-14 font-weight-light">`+$('#media-text').val()+`</p>
+                                <p class="font-14 font-weight-light">`+$('#media-text').val().replace(/\n/g, '<br />')+`</p>
                             </div>
                             <div class="row">
                                 <div class="col col-image" id="col-image-`+time+`">
@@ -158,7 +158,7 @@ if ($('.modal-uploader').length) {
                 dataType: 'json',
                 type: 'post',
                 contentType: 'application/json',
-                data: JSON.stringify({"files":up_file,"media-text":$('#media-text').val()}),
+                data: JSON.stringify({"files":up_file,"media-text":$('#media-text').val().replace(/\n/g, '<br />')}),
                 processData: false,
                 success: function( data, textStatus, jQxhr ){
                     $('#response pre').html( JSON.stringify( data ) );
@@ -186,7 +186,7 @@ if ($('.modal-uploader').length) {
                             </div>
 
                             <div class="px-4">
-                                <p class="font-14 font-weight-light">`+$('#media-text').val()+`</p>
+                                <p class="font-14 font-weight-light">`+$('#media-text').val().replace(/\n/g, '<br />')+`</p>
                             </div>
                             <div class="row">
                                 <div class="col col-image" id="col-image-`+time+`">
@@ -252,7 +252,7 @@ if ($('.modal-uploader').length) {
                 dataType: 'json',
                 type: 'post',
                 contentType: 'application/json',
-                data: JSON.stringify({"media-text":$('#media-text').val()}),
+                data: JSON.stringify({"media-text":$('#media-text').val().replace(/\n/g, '<br />')}),
                 processData: false,
                 success: function( data, textStatus, jQxhr ){
                     $('#response pre').html( JSON.stringify( data ) );
@@ -262,6 +262,7 @@ if ($('.modal-uploader').length) {
                 }
             });
         }
+        $('.emojionearea-editor').text('');
         
         $('#media-text').val("");
             $(".example"+time).emojioneArea();

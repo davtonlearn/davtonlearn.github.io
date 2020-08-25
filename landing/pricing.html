@@ -238,11 +238,16 @@
                         <div class="card-body">
                             <div class="input-group pricing-calculator"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-people mt-2"></span></span>
                                 </span>
-                                <input id="staff-size" class="form-control font-18 font-weight-bold" type="text" placeholder="Enter no of staff" value="" title="Enter Your Staff Size" data-toggle="tooltip" data-placement="top" required/>
+                                <input id="staff-size" class="form-control font-18 font-weight-bold" type="text" placeholder="Staff Size" value="" title="Enter no. of staff" data-toggle="tooltip" data-placement="top" required/>
                                 <select class="form-control pricing-select border-left font-18 font-weight-bold" id="payment-plan">
                                     <option value="1">Quarterly</option>
                                     <option value="2">Biannually</option>
                                     <option selected value="3">Annually</option>
+                                </select>
+                                <select class="form-control pricing-select border-left font-18 font-weight-bold" id="currency">
+                                    <option value="1">USD</option>
+                                    <option value="2">CAD</option>
+                                    <option selected value="3">NGN</option>
                                 </select>
                             </div>
                             <h4 class="mt-4" id="total-cost"></h4>
@@ -530,7 +535,6 @@
 
     <script src="vendors/jquery/dist/jquery.min.js"></script>
     <script src="vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="vendors/owl.carousel/dist/owl.carousel.min.js"></script>
     <script src="js/davton.js"></script>
     <script src="js/intlTelInput.js"></script>
     <script src="js/iziToast.js"></script>
@@ -557,7 +561,10 @@
             function cal_price(){
                 size = $('#staff-size').val();
                 plan = $('#payment-plan').val();
+                currency = $('#currency').val();
                 cost = 0;
+                sign = '&#x20A6;';
+                ex = 1
                 if (plan == 1) {
                     term = 'quarterly'
                     rate = 0.25
@@ -569,6 +576,19 @@
                 if (plan == 3){
                     term = 'annually'
                     rate = 1
+                }
+
+                if (currency == 1) {
+                    sign = '&#x24;'
+                    ex = 0.0026
+                }
+                if (currency == 2){
+                    sign = 'C&#x24;'
+                    ex = 0.0034
+                }
+                if (currency == 3){
+                    sign = '&#x20A6;'
+                    ex = 1
                 }
 
                 if(size > 0 && size <= 5000){
@@ -583,8 +603,9 @@
                 else{
                     price = 0
                 }
-                cost = size * price * rate
-                $('#total-cost').html('Your licence cost &#x20A6;'+ addCommas(cost) + ' ' + term)
+                cost = size * price * rate * ex
+
+                $('#total-cost').html('Your licence cost '+ sign + addCommas(cost) + ' ' + term)
             }
             $('#staff-size').on('input', function(){
                 cal_price();
@@ -592,7 +613,9 @@
             })
             $('#payment-plan').on('change', function(){
                 cal_price();
-
+            })
+            $('#currency').on('change', function(){
+                cal_price();
             })
         })
     </script>
