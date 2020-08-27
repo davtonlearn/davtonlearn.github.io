@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />-->
+        <meta name="description" content="DavtonLearn">
+        <meta name="author" content="">
+        <title>Welcome to DavtonLearn</title>
+        <link rel="shortcut icon" href="img/favicon.png">
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+
+        <!-- Font Awesome JS -->
+        <script defer src="js/solid.js"></script>
+        <script defer src="js/fontawesome.js"></script>
+        <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="css/select2.min.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <style type="text/css">
+            .select2-container{
+                width: 100%!important;
+            }
+        </style>
+    </head>
+
+    <body class="dashboard-body">
+
+        <div class="top_nav">
+            <img src="img/top_strip.jpg" class="img-fluid position-absolute" />
+            <div class="container-fluid dashboard_nav py-0">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <a class="navbar-brand py-0" href="#"><img src="img/logo.svg" class="mt-2" alt="Davton logo" width="" /></a>
+                    <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="nav navbar-nav ml-auto">
+
+                            <li class="nav-item px-md-1">
+                                <a class="nav-link text-dark" href="message.html" data-target="#acc_details">
+                                    <img src="img/mail.svg" alt="Messages" class="mt-1">
+                                </a>
+                            </li>
+
+                            <li class="nav-item px-md-1 d-none">
+                                <a class="nav-link text-dark" href="#" data-target="#acc_details">
+                                    <img src="img/notification.svg" alt="user name" class="">
+                                </a>
+                            </li>
+
+                            <li class="nav-item dropdown pr-md-4 pl-2">
+                                <a class="nav-link text-white dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="py-1 px-2" style="border-radius: 3px; background-color: white; color: #14AD51">M</span>&nbsp; &nbsp; Hr247@asanta.com &nbsp;
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                                    <a class="dropdown-item font-12" href="#">Log Out</a>
+                                    <a class="dropdown-item font-12" href="settings.html">Setting</a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+        <div class="wrapper">
+            <!-- Sidebar  -->
+            <nav id="sidebar" class="">
+                <div class="sidebar-header">
+                    <button type="button" id="sidebarCollapse-1" class="btn bg-trans d-none">
+                        <img src="img/hamburger.svg" />
+                    </button>
+                </div>
+
+
+                <ul class="list-unstyled components">
+                    <p class="text-dark text-left ml-4 mb-2 font-35">Hi Adeyemi Inc. </p>
+                    <p class="text-dull text-left ml-4 my-2 font-14 font-weight-light">Hr247@asanta.com</p>
+
+                    <li>
+                        <a href="index.html">
+                            <img src="img/dashboard.svg" alt="Dashboard" class="mb-1 mr-3 img-fluid" width="15" /> Dashboard
+                        </a>
+
+                    </li>
+
+                    <li>
+                        <a href="transaction.html">
+                            <img src="img/money-transfer.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Transaction
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="invoice.html">
+                            <img src="img/invoices.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Invoice
+                        </a>
+                    </li>
+
+                    <p class="text-dull text-left ml-4 my-2 font-12">Company Management</p>
+
+                    <li>
+                        <a href="companies.html">
+                            <img src="img/company.svg" alt="company" class="mb-1 mr-3 img-fluid" width="15" /> Company
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="staff.html">
+                            <img src="img/staff.svg" alt="STAFF" class="mb-1 mr-3 img-fluid" width="15" /> Staff
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="department.html">
+                            <img src="img/department_sidebar.svg" alt="department" class="mb-1 mr-3 img-fluid" width="15" /> Department
+                        </a>
+                    </li>
+
+                    <li class="active">
+                        <a href="courses.html">
+                            <img src="img/courses.svg" alt="courses" class="mb-1 mr-3 img-fluid" width="15" /> Courses
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="reports.html">
+                            <img src="img/reports.svg" alt="reports" class="mb-1 mr-3 img-fluid" width="15" /> Reports
+                        </a>
+                    </li>
+
+                    <!-- <li class="active">
+                        <a href="quizes.html">
+                            <img src="img/department_sidebar.svg" alt="quizes" class="mb-1 mr-3 img-fluid" width="15" /> Quizzes
+                        </a>
+                    </li> -->
+
+
+                    <p class="text-dull text-left ml-4 my-2 font-12">Communications</p>
+
+                    <li>
+                        <a href="message.html">
+                            <img src="img/communication.svg" alt="Message" class="mb-1 mr-3 img-fluid" width="15" /> Message
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="blog.html">
+                            <img src="img/blog.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Blog
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="webinar.html">
+                            <img src="img/webinar.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Webinar
+                        </a>
+                    </li>
+
+                    <p class="text-dull text-left ml-4 my-2 font-12">Account Management</p>
+
+                    <li>
+                        <a href="admin.html">
+                            <img src="img/admins.png" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Admins
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="audit.html">
+                            <img src="img/activity.svg" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Audit Trails
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="billing.html">
+                            <img src="img/billing.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Billing & Subcription
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="settings.html">
+                            <img src="img/Settings.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Settings
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="img/logout.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Log Out
+                        </a>
+                    </li>
+
+                    <button type="button" class="btn btn-green px-4 position-relative support_button"><img src="img/question.png" class="img-fluid"> Support</button>
+
+                    <div class="support-links pt-4 none">
+
+                        <li class="font-weight-light">
+                            <a href="#">
+                                Help Desk
+                            </a>
+                        </li>
+
+                        <li class="font-weight-light">
+                            <a href="#">
+                                API Documentation
+                            </a>
+                        </li>
+
+                        <li class="font-weight-light">
+                            <a href="#">
+                                Course Development
+                            </a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+
+            <!-- Page Content  -->
+            <div id="content">
+
+                <div class="position-relative">
+
+                    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light d-none display border">
+                        <div class="container-fluid">
+                            <button id="sidebarCollapse" class="btn bg-trans d-inline-block d-lg-none ml-auto" type="button">
+                                <i alt="menu" class="fas fa-align-justify text-consolidated"></i>
+                            </button>
+                        </div>
+                    </nav>
+
+
+                    <div class="row mx-md-2 my-5">
+                        <div class="col-md-12">
+                            
+                            <div class="d-flex">
+                                <div class="col px-0">
+                                    <p class="text-grey text-uppercase font-13"><a href="topics.html"><img src="img/back_button.png" alt="go back to create course" /> Back</a></p>
+                                </div> 
+                            </div>
+
+                            <!-- <iframe src="https://drive.google.com/file/d/1ctAO9CeDB_RRWn8Xm_yOVLIZG8Phl_dZ/preview" width="640" height="480"></iframe> -->
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                   <div class="row">
+
+                                        <div class="col-lg-12 px-3 my-4">
+                                            <span class="text-green text-uppercase">Resources</span>
+                                        </div>
+
+                                        <div class="col-lg-2 my-2">
+                                            <input type="text" id="searchbox" placeholder="Search Quiz" class="form-control form-control-sm font-13 form-border-default bg-trans" />
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <span class="mr-1 mt-1 align-self-baseline d-none">Sort: </span>
+                                            <form id="filters-area" class="row justify-content-end">
+                                                <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                                                    <input name="min" class="w-100 form-control font-13 form-border-default" id="min" type="text" placeholder="From Date:">
+                                                </div>
+                                                <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                                                    <input name="max" class="w-100 form-control font-13 form-border-default" id="max" type="text" placeholder="To Date:">
+                                                </div>
+                                                <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                                                    <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Search</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>   
+
+                                    <div class="text-right my-3">
+                                        <a href="#" data-toggle="modal" data-target="#add_scorm" class="btn font-13 btn-green py-1 text-white ml-2">Add SCORM</a>
+                                        <a href="#" data-toggle="modal" data-target="#add_video" class="btn font-13 btn-green py-1 text-white ml-2">Add Video</a>
+                                        <a href="#" data-toggle="modal" data-target="#add_pdf" class="btn font-13 btn-green py-1 text-white ml-2">Add PDF</a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="card--dashboard">
+                                <div class="px-4 py-5 mt-5 text-center d-none">
+                                    <img src="img/sad.png" class="img-fluid mt-5" />
+                                    <p class="mb-0 mt-3 font-weight-light font-13">You currently have no Topic at the moments.</p>
+
+                                    <a href="#" data-toggle="modal" data-target="#add_topic" class="btn font-13 btn-green py-1 text-white">Add New Topic</a>
+                                </div>
+                            </div>
+
+
+                            <div class="card--dashboard mt-4 p-3">
+                                <table id="quiz" class="table-responsive-lg leaders dataTables_wrapper table table-striped" style="width:100%">
+
+                                    <button class="btn btn-primary float-right font-14 mb-3 export-table" ><i class="fa fa-file-code mr-1"></i> Export Table</button>
+                                    <thead class="border-top--0">
+                                        <tr>
+                                            <th class="text-dark text-center">#</th>
+                                            <th class="text-dark select-filter">Resource Name</th>
+                                            <th class="text-dark select-filter">Resource Type</th>
+                                            <th class="text-dark">Created On</th>
+                                            <th class="text-dark" style="min-width: 100px">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Add SCORM -->
+        <div class="modal fade" id="add_scorm" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title text-center mx-auto">Add SCORM Resource</h6>
+                        <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-lg-12">
+                                    <input id="departmentModalInput" type="text" placeholder="Enter a Resource Title" class="form-control" required=""> 
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <div class="custom-control custom-checkbox mt-2">
+                                        <input type="checkbox" class="custom-control-input" id="check1">
+                                        <label class="custom-control-label" for="check1">Set As Primary Content</label><br >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row mt-4">
+                                <!-- <div class="col-lg-4 mx-auto col-4 my-2 upload-btn-wrapper">
+                                    <button type="button" class="btn btn-green btn-upload btn-block font-13">Browse File</button>
+                                    <input type="file" name="company_profile" required="" accept=".zip,.rar,.7zip">
+                                </div> -->
+                                <div class="col-lg-6 mx-auto col-4 my-2 upload-btn-wrapper">
+                                    <label for="file-upload" class="custom-file-upload btn btn-green btn-upload btn-block font-13">
+                                        Browse File (Zip/Rar Only)
+                                    </label>
+                                    <input id="file-upload" name='upload_cont_img' type="file"  accept=".zip,.rar,.7zip" required="">
+                                </div>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-lg-3 ml-auto mx-0">
+                                    <button type="submit" class="btn btn-success btn-block mt-5">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add SCORM End -->
+
+        <!-- Add PDF -->
+        <div class="modal fade" id="add_pdf" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title text-center mx-auto">Add PDF Resource</h6>
+                        <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group col-lg-12">
+                                <input id="departmentModalInput" type="text" placeholder="Enter a Resource Title" class="form-control" required=""> 
+                            </div>
+                            <div class="form-group col-lg-12">
+                                    <div class="custom-control custom-checkbox mt-2">
+                                        <input type="checkbox" class="custom-control-input" id="check1">
+                                        <label class="custom-control-label" for="check1">Set As Primary Content</label><br >
+                                    </div>
+                                </div>
+                            <div class="form-group row mt-4">
+                                <div class="col-lg-4 mx-auto col-4 my-2 upload-btn-wrapper">
+                                    <label for="file-upload" class="custom-file-upload btn btn-green btn-upload btn-block font-13">
+                                        Browse File (PDF Only)
+                                    </label>
+                                    <input id="file-upload" name='upload_cont_img' type="file" accept="application/pdf" required="">
+                                </div>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-lg-3 ml-auto mx-0">
+                                    <button type="submit" class="btn btn-success btn-block mt-5">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add PDF End -->
+
+        <!-- Add Video -->
+        <div class="modal fade" id="add_video" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title text-center mx-auto">Add Video Resource</h6>
+                        <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group col-lg-12">
+                                <input id="departmentModalInput" type="text" placeholder="Enter a Resource Title" class="form-control" required=""> 
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <div class="custom-control custom-checkbox mt-2">
+                                    <input type="checkbox" class="custom-control-input" id="check1">
+                                    <label class="custom-control-label" for="check1">Set As Primary Content</label><br >
+                                </div>
+                            </div>
+                            <div class="form-group row mt-4">
+                                <div class="col-sm-7 text-center mx-auto">
+                                    <select class="custom-select select2 custom-select-sm c-type w-100" required="">
+                                        <option value="">Select Video type</option>
+                                        <option value="youtube">Youtube Video</option>
+                                        <option value="vimeo">Vimeo Video</option>
+                                        <option value="sharepoint">Sharepoint Video</option>
+                                        <option value="google">Google Drive Video</option>
+                                        <option value="sprout">Sprout Video</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-lg-12">
+                                    <input style="display: none;" id="input-youtube" type="text" placeholder="Enter youtube embed link e.g https://www.youtube.com/embed/OaLK_Q0ey_w" class="form-control group font-16"> 
+                                    <input style="display: none;" id="input-vimeo" type="text" placeholder="Enter vimeo embed link e.g https://player.vimeo.com/video/336812660" class="form-control group font-16"> 
+                                    <input style="display: none;" id="input-sprout" type="text" placeholder="Enter sprout embed link e.g https://videos.sproutvideo.com/embed/2898d2bb141ce2c990/2a3ed5a6d9baecd1" class="form-control group font-16"> 
+                                    <input style="display: none;" id="input-google" type="text" placeholder="Enter google drive embed link e.g https://drive.google.com/file/d/1ctAO9CeDB_RRWn8Xm_yOVLIZG8Phl_dZ/preview" class="form-control group font-16"> 
+                                    <input style="display: none;" id="input-sharepoint" type="text" placeholder="Enter sharepoint embed link e.g https://player.sharepoint.com/video/336812660" class="form-control group font-16"> 
+                                </div>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-lg-3 ml-auto mx-0">
+                                    <button type="submit" class="btn btn-success btn-block mt-5">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Video End -->
+
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Popper.JS -->
+        <script src="js/libs/popper.js/1.14.0/umd/popper.min.js" ></script>
+        <!-- Bootstrap JS -->
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.select.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
+        <script src="js/select2.min.js"></script>
+        <script src="js/utility.js"></script>
+
+        <script>
+            $(document).ready( function () {
+                $('.c-type').on('change', function() {
+                    var c = $(this).val();
+                    $(".group").hide();
+                    $("#input-"+c).show();
+
+                })
+
+
+                var table = $('#quiz').DataTable({
+                    initComplete: function () {
+                        this.api().columns('.select-filter').every( function () {
+                            var column = this;
+                            var colTitle = this.header().innerHTML
+                            var select = $('<div class="col-lg-2 col-md-4 col-sm-6 mb-3"><input type="text" class="form-control  font-13 form-border-default w-100" name="'+colTitle+'" placeholder="'+colTitle+'"/></div>')
+                                .prependTo( $('#filters-area') )
+                                .on( 'change', function () {
+                                    var val = $.fn.dataTable.util.escapeRegex(
+                                        $(this).val()
+                                    );
+             
+                                    column
+                                        .search( val ? '^'+val+'$' : '', true, false )
+                                        .draw();
+                                } );
+             
+                            column.data().unique().sort().each( function ( d, j ) {
+                                // select.append( '<option>'+d+'</option>' )
+                            } );
+                        } );
+                    },
+                    // processing: true,
+                    // serverSide: true,
+                    ajax: 'https://reqres.in/api/users',
+                    columns: [
+                        { data: 'id' },
+                        { data: 'first_name' },
+                        { data: 'last_name' },
+                        { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
+                        {
+                          "data": null,
+                          "defaultContent": `
+                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline">Delete</a>
+                                            <a href="#" class="dropdown-togge btn btn-outline--green py-1 font-11 py-1 px-2 bg-transparent" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-caret-down"></i>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item font-12" href="#">Set as primary content</a>
+                                            </div>
+                                            `
+                        }
+                    ]
+                }); 
+                $('#searchbox').on( 'keyup', function () {
+                   table.search( this.value ).draw();
+                } );
+
+           
+                $("#min").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+                $("#max").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+
+                // Event listener to the two range filtering inputs to redraw on input
+                $('#min, #max').change(function () {
+                    table.draw();
+                });
+
+                $('#file-upload').change(function() {
+                  var i = $(this).prev('label').clone();
+                  var file = $('#file-upload')[0].files[0].name;
+                  $(this).prev('label').text(file);
+                });
+
+            });
+        </script>
+
+    </body>
+
+</html>

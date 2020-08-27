@@ -20,6 +20,41 @@
         <!-- Font Awesome JS -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+        <style type="text/css">
+            .collapsible-link::before {
+              content: '';
+              width: 14px;
+              height: 2px;
+              background: #333;
+              position: absolute;
+              top: calc(50% - 1px);
+              right: 1rem;
+              display: block;
+              transition: all 0.3s;
+            }
+
+            /* Vertical line */
+            .collapsible-link::after {
+              content: '';
+              width: 2px;
+              height: 14px;
+              background: #333;
+              position: absolute;
+              top: calc(50% - 7px);
+              right: calc(1rem + 6px);
+              display: block;
+              transition: all 0.3s;
+            }
+
+            .collapsible-link[aria-expanded='true']::after {
+              transform: rotate(90deg) translateX(-1px);
+            }
+
+            .collapsible-link[aria-expanded='true']::before {
+              transform: rotate(180deg);
+            }
+
+        </style>
     </head>
 
     <body class="dashboard-body">
@@ -147,6 +182,8 @@
                     </div>
                 </nav>
 
+                
+
                 <div class="row mx-md-2 my-5">
                     <div class="col-md-12">
                         <div class="d-flex">
@@ -162,7 +199,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4 border-right pr-0">
+                                <!-- <div class="col-md-4 border-right pr-0">
                                     <div class="px-3 text-enter border-bottom">
                                         <p class="my-2 font-13">Selected Course Topics </p>
                                     </div>
@@ -227,12 +264,159 @@
                                     </div>
 
 
+                                </div> -->
+
+
+
+                                <div class="col-lg-4 mx-auto">
+                                    <!-- Accordion -->
+                                    <div id="accordionExample" class="accordion shadow">
+
+                                        <!-- Accordion item 1 -->
+                                        <div class="card">
+                                            <div id="headingOne" class="card-header bg-white shadow-sm border-0">
+                                                <h6 class="mb-0"><a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="d-block position-relative text-dark text-uppercase collapsible-link py-2 font-16">Module Title 1</a></h6>
+                                            </div>
+                                            <div id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample" class="collapse show">
+                                                
+                                                <ul class="list-unstyled px-4 py-2">
+
+                                                    <li class="py-2 border-bottom">
+                                                        <a id="https://www.youtube.com/embed/OaLK_Q0ey_w" class="play-item d-flex justify-contents-between align-items-center cursor">
+                                                            <i class="fa fa-play mr-3"></i> 
+                                                            <span>Introductory topic of the first module (Youtube Video)</span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="py-2 border-bottom">
+                                                        <a id="https://player.vimeo.com/video/336812660" class="play-item d-flex justify-contents-between align-items-center cursor">
+                                                            <i class="fa fa-play mr-3"></i> 
+                                                            <span>Intermediate topic of the first module (Vimeo Video)</span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="py-2 border-bottom">
+                                                        <a id="https://wtf.tw/ref/duckett.pdf" class="play-item d-flex justify-contents-between align-items-center cursor">
+                                                            <i class="fa fa-play mr-3"></i> 
+                                                            <span>Advanced topic of the first module (PDF File)</span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="py-2 border-bottom">
+                                                        <a id="pc/story.html" class="play-item d-flex justify-contents-between align-items-center cursor">
+                                                            <i class="fa fa-play mr-3"></i> 
+                                                            <span>Expert topic of the first module (SCORM File)</span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="py-2 border-bottom">
+                                                        <a id="https://drive.google.com/file/d/1ctAO9CeDB_RRWn8Xm_yOVLIZG8Phl_dZ/preview" class="play-item d-flex justify-contents-between align-items-center cursor">
+                                                            <i class="fa fa-play mr-3"></i> 
+                                                            <span>Masters topic of the first module (Google Drive File)</span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="py-2 border-bottom">
+                                                        <a href="https://wtf.tw/ref/duckett.pdf" class="d-flex justify-contents-between align-items-center cursor" download target="_blank">
+                                                            <i class="fa fa-download mr-3"></i> 
+                                                            <span>Downloadable resource of the first module</span>
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- Accordion item 2 -->
+                                        <div class="card">
+                                            <div id="headingTwo" class="card-header bg-white shadow-sm border-0">
+                                                <h6 class="mb-0"><a href="" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="d-block position-relative text-dark text-uppercase collapsible-link py-2 font-16">Module Title 2</a></h6>
+                                            </div>
+                                            <div id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionExample" class="collapse">
+                                                <ul class="list-unstyled px-4 py-2">
+
+                                                    <li class="py-2 border-bottom">
+                                                        <a href="#" id="https://www.youtube.com/embed/OaLK_Q0ey_w" class="play-item d-flex justify-contents-between align-items-center cursor">
+                                                            <i class="fa fa-play mr-3"></i> 
+                                                            <span>Introductory topic of the first module</span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="py-2 border-bottom">
+                                                        <a href="#" id="https://player.vimeo.com/video/336812660" class="play-item d-flex justify-contents-between align-items-center cursor">
+                                                            <i class="fa fa-play mr-3"></i> 
+                                                            <span>Intermediate topic of the first module</span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="py-2 border-bottom">
+                                                        <a href="#" id="https://wtf.tw/ref/duckett.pdf" class="play-item d-flex justify-contents-between align-items-center cursor">
+                                                            <i class="fa fa-play mr-3"></i> 
+                                                            <span>Advanced topic of the first module</span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="py-2 border-bottom">
+                                                        <a href="https://wtf.tw/ref/duckett.pdf" class="d-flex justify-contents-between align-items-center" download target="_blank">
+                                                            <i class="fa fa-download mr-3"></i> 
+                                                            <span>Downloadable resource of the first module</span>
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- Accordion item 3 -->
+                                        <div class="card">
+                                            <div id="headingThree" class="card-header bg-white shadow-sm border-0">
+                                                <h6 class="mb-0"><a href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="d-block position-relative text-dark text-uppercase collapsible-link py-2 font-16">Module Title 3</a></h6>
+                                            </div>
+                                            <div id="collapseThree" aria-labelledby="headingThree" data-parent="#accordionExample" class="collapse">
+                                                <ul class="list-unstyled px-4 py-2">
+
+                                                    <li class="py-2 border-bottom">
+                                                        <a href="#" id="https://www.youtube.com/embed/OaLK_Q0ey_w" class="play-item d-flex justify-contents-between align-items-center cursor">
+                                                            <i class="fa fa-play mr-3"></i> 
+                                                            <span>Introductory topic of the first module</span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="py-2 border-bottom">
+                                                        <a href="#" id="https://player.vimeo.com/video/336812660" class="play-item d-flex justify-contents-between align-items-center cursor">
+                                                            <i class="fa fa-play mr-3"></i> 
+                                                            <span>Intermediate topic of the first module</span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="py-2 border-bottom">
+                                                        <a href="#" id="https://wtf.tw/ref/duckett.pdf" class="play-item d-flex justify-contents-between align-items-center cursor">
+                                                            <i class="fa fa-play mr-3"></i> 
+                                                            <span>Advanced topic of the first module</span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="py-2 border-bottom">
+                                                        <a href="https://wtf.tw/ref/duckett.pdf" class="d-flex justify-contents-between align-items-center" download target="_blank">
+                                                            <i class="fa fa-download mr-3"></i> 
+                                                            <span>Downloadable resource of the first module</span>
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
 
                                 <div class="col-md-8">
                                     <div class="px-1 mt-3">
                                         <div>
-                                            <video
+                                            <div class="">
+                                                <iframe class="vid-player" src="https://drive.google.com/file/d/1ctAO9CeDB_RRWn8Xm_yOVLIZG8Phl_dZ/preview" height="400" style="width: 100%;background:url(https://thumbs.gfycat.com/DearWellinformedDalmatian-size_restricted.gif) center center no-repeat;"></iframe>
+                                            </div>
+                                            <!-- <video
                                                    id="vid1"
                                                    class="video-js vjs-default-skin"
                                                    controls
@@ -240,7 +424,7 @@
                                                    width="640" height="350"
                                                    data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=xjS6SftYQaQ"}] }'
                                                    >
-                                            </video>
+                                            </video> -->
 
                                             <h6 class="mt-4 text-dark">Project Management Professional (PMP) </h6>
 
@@ -340,6 +524,14 @@
         <script src="js/utility.js"></script>
         <script src="https://vjs.zencdn.net/7.5.5/video.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/2.6.0/Youtube.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.play-item').on('click', function(){
+                    id = $(this).attr('id')
+                    $('.vid-player').attr('src',id)
+                })
+            })
+        </script>
 
     </body>
 

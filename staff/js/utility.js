@@ -1634,6 +1634,12 @@ $("body").delegate("#send-message", "click", function(e){
 $(document).ready(function() {
     $(".example1").emojioneArea();
 });
+$(document).ready(function() {
+    $(".example2").emojioneArea({
+        pickerPosition: "bottom",
+    });
+});
+
          
 $("body").delegate(".show-drop", "click", function(e){
     e.preventDefault();
