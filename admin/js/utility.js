@@ -80,19 +80,43 @@ $(document).ready(function () {
         }, 1000)
     });
     $('#choose_template').click(function () {
-        console.log('clea')
         if ($('#card_one').is(":visible")) {
             console.log($('#card_one').is(":visible"))
             $('#card_one').hide('slow');
             $('#card_two').show('slow');
+            $('#previous').show('slow');
+            $('#finish').hide('slow');
         }
         else if ($('#card_two').is(":visible")) {
             $('#card_two').hide('slow');
             $('#card_three').show('slow');
-            $('#choose_template').text('Finish');
+            $('#choose_template').hide('slow');
+            $('#finish').show('slow');
         }
         else if ($('#card_three').is(":visible")) {
-            window.location.href = `../dash/index.html`;
+            $('#finish').show('slow');
+        }
+    })
+    $('#previous').click(function () {
+        if ($('#card_one').is(":visible")) {
+            $('#card_one').show('slow');
+            $('#card_two').hide('slow');
+            $('#previous').show('slow');
+            $('#finish').hide('slow');
+        }
+        else if ($('#card_two').is(":visible")) {
+            console.log('hc')
+            $('#card_one').show('slow');
+            $('#card_two').hide('slow');
+            $('#previous').hide('slow');
+            $('#finish').hide('slow');
+        }
+        else if ($('#card_three').is(":visible")) {
+            console.log('hj')
+            $('#card_two').show('slow');
+            $('#card_three').hide('slow');
+            $('#choose_template').show('slow');
+            $('#finish').hide('slow');
         }
     })
     if ($(".support_button").length) {
