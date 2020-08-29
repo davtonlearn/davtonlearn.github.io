@@ -54,6 +54,12 @@
               transform: rotate(180deg);
             }
 
+            button.dropdown-toggle::after{
+                position: relative;
+                margin: 10px 0 5px;
+                right: 0px !important;
+            }
+
         </style>
     </head>
 
@@ -286,6 +292,25 @@
                                                             <i class="fa fa-play mr-3"></i> 
                                                             <span>Introductory topic of the first module (Youtube Video)</span>
                                                         </a>
+                                                        <div class="text-right py-2">
+                                                            <div class="btn-group ml-auto">
+                                                              <button type="button" class="btn btn-outline-dark py-1 font-13">Resources</button>
+                                                              <button type="button" class="btn btn-outline-dark py-1 font-13 dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <span class="sr-only">Toggle Dropdown</span>
+                                                              </button>
+                                                              <div class="dropdown-menu dropdown-menu-right" style="min-width: 250px!important">
+                                                                <a id="pc/story.html" class="play-item d-flex justify-contents-between align-items-center cursor font-14 border-bottom p-2">
+                                                                    <span>Expert topic of the first module (SCORM File)</span>
+                                                                </a>
+                                                                <a id="https://drive.google.com/file/d/1ctAO9CeDB_RRWn8Xm_yOVLIZG8Phl_dZ/preview" class="play-item d-flex justify-contents-between align-items-center cursor font-14 border-bottom p-2">
+                                                                    <span>Masters topic of the first module (Google Drive File)</span>
+                                                                </a>
+                                                                <a href="https://wtf.tw/ref/duckett.pdf" class="d-flex justify-contents-between align-items-center cursor font-14 border-bottom p-2" download target="_blank">
+                                                                    <span>Downloadable resource of the first module</span>
+                                                                </a>
+                                                              </div>
+                                                            </div>
+                                                        <div>
                                                     </li>
 
                                                     <li class="py-2 border-bottom">
@@ -527,7 +552,9 @@
         <script>
             $(document).ready(function(){
                 $('.play-item').on('click', function(){
-                    id = $(this).attr('id')
+                    id = $(this).attr('id');
+                    $('.play-item').css('color','black')
+                    $(this).css('color','#00923a')
                     $('.vid-player').attr('src',id)
                 })
             })
