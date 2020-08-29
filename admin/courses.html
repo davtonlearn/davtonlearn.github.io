@@ -733,7 +733,7 @@
                                                 <a class="dropdown-item font-12" href="modules.html">View Modules</a>
                                                 <a class="dropdown-item font-12" href="quizes.html">View Quizzes</a>
                                                 <a class="dropdown-item font-12" href="view_staff.html">View Staff</a>
-                                                <a class="dropdown-item font-12" data-toggle="modal" data-target="#assign_staff">Assign Staff</a>
+                                                <a class="dropdown-item font-12 get_id" data-toggle="modal" data-target="#assign_staff" href="#">Assign Staff</a>
                                                 <a class="dropdown-item font-12 d-lg-none" href="edit_course.html">Edit</a>
                                                 <a class="dropdown-item font-12" href="#">Disable </a>
                                                 <a class="dropdown-item font-12" href="#">Delete </a>
@@ -796,13 +796,13 @@
                         {
                           "data": null,
                           "defaultContent": `
-                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline" data-target="#edit-path-Modal" data-toggle="modal">Edit Detail</a>
+                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline edit_id" data-target="#edit-path-Modal" data-toggle="modal">Edit Detail</a>
                                             <a href="#" class="dropdown-togge btn btn-outline--green py-1 font-11 py-1 px-2 bg-transparent" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fa fa-caret-down"></i>
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 <a class="dropdown-item font-12" href="assign_staff.html">Assign Staff</a>
-                                                <a class="dropdown-item font-12 d-lg-none" href="#" data-target="#edit-path-Modal" data-toggle="modal">Edit</a>
+                                                <a class="dropdown-item font-12 d-lg-none edit_id" href="#" data-target="#edit-path-Modal" data-toggle="modal">Edit</a>
                                                 <a class="dropdown-item font-12" href="#">Delete </a>
                                             </div>
                                             `
@@ -861,9 +861,9 @@
                         {
                           "data": null,
                           "defaultContent": `
-                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent" data-toggle="modal" data-target="#edit-category-modal">Edit Detail</a>
-                                            <a class="dropdown-togge" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <img src="img/table_option.svg" alt="options" />
+                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent edit_id" data-toggle="modal" data-target="#edit-category-modal">Edit Detail</a>
+                                            <a href="#" class="dropdown-togge btn btn-outline--green py-1 font-11 py-1 px-2 bg-transparent" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-caret-down"></i>
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 <a class="dropdown-item font-12" href="#">Delete</a>

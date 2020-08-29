@@ -356,6 +356,7 @@
                                         <input id="" type="text" placeholder="" class="form-control font-14" value="Department"> 
                                     </div>
                                 </div>
+                                <input type="hidden" class="meta_id" name="dept_id">
 
                                 <div class="row">
                                     <div class="col-lg-3 ml-auto mx-0">
@@ -466,12 +467,12 @@
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
-                          "defaultContent": `<button class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline" data-toggle="modal" data-target="#edit-department">Edit Detail</button>
+                          "defaultContent": `<button class="btn btn-outline--green py-1 font-11 bg-trans d-none d-lg-inline edit_id" data-toggle="modal" data-target="#edit-department">Edit Details</button>
                                                 <a href="#" class="dropdown-togge btn btn-outline--green py-1 font-11 py-1 px-2 bg-transparent" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fa fa-caret-down"></i>
                                             </a>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item font-12 d-lg-none" href="#" data-toggle="modal" data-target="#edit-department">Edit</a>
+                                                    <a class="dropdown-item font-12 d-lg-none edit_id" href="#" data-toggle="modal" data-target="#edit-department">Edit</a>
                                                     <a class="dropdown-item font-12" href="view_staff.html">View Staff</a>
                                                     <a class="dropdown-item font-12" href="#">Delete</a>
                                                 </div>`
