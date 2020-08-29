@@ -1680,3 +1680,10 @@ $(function () {
         $(".modal-title").html(title);
     })
 });
+
+$(document).ready(function(){
+    $("body").delegate(".rate", "click", function(){
+        id = $(this).attr('id');
+        $('#rate_course').find('.rate_id').val(id)
+    })
+})
