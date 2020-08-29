@@ -267,13 +267,13 @@
                                                             </div>
                                                         </form>
                                                     </div>
-                                                </div>   
+                                                </div>
                                             </div>
 
                                             <div class="col-lg-2 my-4 text-right ml-auto">
                                                 <a href="create_course.html" class="text-white btn btn-green btn-sm font-13 btn-block"> Add New Course </a>
                                             </div>
-                                            
+
                                         </div>
 
                                         <div class="px-4 py-5 mt-5 text-center d-none">
@@ -330,13 +330,13 @@
                                                             </div>
                                                         </form>
                                                     </div>
-                                                </div>   
+                                                </div>
                                             </div>
 
                                             <div class="col-lg-3 my-2 text-right dropleft ml-auto">
                                                 <button   class="btn btn-outline--green my-4 font-12" data-toggle="modal" data-target="#path-Modal">+ Create Learning Path</button>
                                             </div>
-                                            
+
                                         </div>
 
                                         <div class="px-4 py-5 mt-5 text-center d-none">
@@ -391,13 +391,13 @@
                                                             </div>
                                                         </form>
                                                     </div>
-                                                </div>   
+                                                </div>
                                             </div>
 
                                             <div class="col-lg-3 my-4 text-right dropleft ml-auto">
                                                 <a class="page-top btn px-3 btn-success dropown-toggle font-13 text-white" href="#" data-toggle="modal" data-target="#category-Modal">Create New Category </a>
                                             </div>
-                                            
+
                                         </div>
 
                                         <div class="px-4 py-5 mt-5 text-center d-none">
@@ -546,7 +546,7 @@
                             <form>
                                 <div class="form-row">
                                     <div class="form-group col-lg-12">
-                                        <input id="departmentModalInput" type="text" placeholder="Enter a Category name" class="form-control"> 
+                                        <input id="departmentModalInput" type="text" placeholder="Enter a Category name" class="form-control">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -560,6 +560,7 @@
                 </div>
             </div>
             <!-- Category Modal End -->
+
 
             <!--Edit Category Modal -->
             <div class="modal fade" id="edit-category-modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
@@ -620,6 +621,7 @@
                 </div>
             </div>
             <!-- Assign Staff Modal End -->
+
 
             <!--Notification Modal-->
             <div  aria-hidden="true" class="onboarding-modal modal fade animated" id="notifications" role="dialog" tabindex="-1">
@@ -698,12 +700,12 @@
                                     var val = $.fn.dataTable.util.escapeRegex(
                                         $(this).val()
                                     );
-             
+
                                     column
                                         .search( val ? '^'+val+'$' : '', true, false )
                                         .draw();
                                 } );
-             
+
                             column.data().unique().sort().each( function ( d, j ) {
                                 // select.append( '<option>'+d+'</option>' )
                             } );
@@ -741,12 +743,12 @@
                                             `
                         }
                     ]
-                }); 
+                });
                 $('#searchbox').on( 'keyup', function () {
                    table.search( this.value ).draw();
                 } );
 
-           
+
                 $("#min").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
                 $("#max").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
 
@@ -773,12 +775,12 @@
                                     var val = $.fn.dataTable.util.escapeRegex(
                                         $(this).val()
                                     );
-             
+
                                     column
                                         .search( val ? '^'+val+'$' : '', true, false )
                                         .draw();
                                 } );
-             
+
                             column.data().unique().sort().each( function ( d, j ) {
                                 // select.append( '<option>'+d+'</option>' )
                             } );
@@ -808,12 +810,12 @@
                                             `
                         }
                     ]
-                }); 
+                });
                 $('#searchbox-group').on( 'keyup', function () {
                    table.search( this.value ).draw();
                 } );
 
-           
+
                 $("#min-group").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
                 $("#max-group").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
 
@@ -840,12 +842,12 @@
                                     var val = $.fn.dataTable.util.escapeRegex(
                                         $(this).val()
                                     );
-             
+
                                     column
                                         .search( val ? '^'+val+'$' : '', true, false )
                                         .draw();
                                 } );
-             
+
                             column.data().unique().sort().each( function ( d, j ) {
                                 // select.append( '<option>'+d+'</option>' )
                             } );
@@ -871,12 +873,12 @@
                                             `
                         }
                     ]
-                }); 
+                });
                 $('#searchbox-cat').on( 'keyup', function () {
                    table.search( this.value ).draw();
                 } );
 
-           
+
                 $("#min-cat").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
                 $("#max-cat").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
 
