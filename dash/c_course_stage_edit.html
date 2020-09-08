@@ -16,9 +16,9 @@
         <link rel="stylesheet" href="css/style.css">
 
         <!-- Font Awesome JS -->
-        <link rel="stylesheet" href="css/style.css">
+        <script defer src="js/solid.js"></script>
+        <script defer src="js/fontawesome.js"></script>
         <link rel="stylesheet" href="css/select2.min.css">
-        <link rel="stylesheet" href="css/star.css">
         <link rel="stylesheet" href="css/custom.css">
     </head>
 
@@ -36,7 +36,7 @@
                         <ul class="nav navbar-nav ml-auto">
 
                             <li class="nav-item px-md-1">
-                                <a class="nav-link text-dark" href="message.html" >
+                                <a class="nav-link text-dark" href="message.html" data-target="#acc_details">
                                     <img src="img/mail.svg" alt="Messages" class="mt-1">
                                 </a>
                             </li>
@@ -210,28 +210,28 @@
                     <div class="col-md-12">
                         <div class="d-flex">
                             <div class="col px-0">
-                                <p class="text-green text-uppercase">COURSES</p>
+                                <p class="text-green text-uppercase">Edit Learning Path</p>
                             </div> 
                         </div>
 
                         <div class="card--dashboard">
-                            <div class="d-flex border-bottom px-4">
+                            <div class="d-flex border-bottom">
                                 <div class="col">
-                                    <p class="my-2 text-uppercase text-green">Assign course to Stages</p>                                
+                                    <p class="my-2 text-uppercase text-green">Assign course to Stages</p>
                                 </div>
                             </div>
 
-                            <div class="row mt-3 px-lg-4">
+                            <div class="row mt-3 px-lg-4" id="d-stage">
                                 <div class="col-lg-12 mb-5">
                                     <div class="">
                                         <div class="form-row">
-                                            <div class="col-lg-4 my-2 border-md-right">
+                                            <div class="col-lg-3 my-2 border-md-right">
                                                 <div class="px-3 py-2">
                                                     <div class="form-row">
                                                         <div class="form-group col-lg-12 d-level">
                                                             <select class="custom-select select2">
                                                                 <option value="">Select Path Level</option>
-                                                                <option>Level 1</option>
+                                                                <option selected="">Level 1</option>
                                                                 <option>Level 2</option>
                                                                 <option>Level 3</option>
                                                                 <option>Level 4</option>
@@ -239,11 +239,11 @@
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="form-row d-stage" style="display: none;">
-                                                        <div class="form-group col-lg-12">
 
-                                                            <input class="form-control w-100 input-stage" type="number" name="" placeholder="Enter the no. of courses for this level" min="1" max="5" value="4" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onKeyDown="if(this.value.length==1 && event.keyCode!=8){ console.log(this.value); return false;}" title="Maximum number of courses allowed is 5" data-toggle="tooltip" data-placement="right" required>
-                                                        </div>
+                                                    <div class="form-group col-lg-12 d-stage px-0" style="display: non;">
+                                                        <select class="search-course w-100" name="state" id="select-contact" multiple="multiple" style="height: 100px">
+                                                            <option></option>
+                                                        </select>
                                                     </div>
 
                                                     <div class="d-stage-level" style="border: 1px solid #E2E2E2; border-radius: 10px;display: none;">
@@ -272,15 +272,37 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="form-row mt-1 text-center">
+                                                    <div class="form-group mx-auto">
+                                                        <div class="px-3 py-2">
+                                                            <a href="" class="font-12 w-100 text-white btn btn-green md-btn-block">Add Course to level</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
 
-                                            <div class="col-lg-8 my-2">
+                                            <!-- <div class="col-lg-8 my-2">
+                                                <div class="px-3 py-2">
+                                                    <p class="weight-semi-bold">Level 1</p>
+                                                    <div class="text-center">
+
+                                                        <img src="img/sad.png" class="img-fluid mb-4" alt="currently have no course(s)" />
+                                                        <p class="text-muted mb-1">You currently have no course added at to this level at the moments.</p>
+
+                                                        <p class="text-muted">Add course by searching the course list</p>
+
+                                                    </div>
+                                                </div>
+                                            </div> -->
+
+                                            <div class="col-lg-9 my-2">
 
                                                 <div class="px-lg-3 px-1 py-2">
                                                     <div class="d-flex align-items-center justify-content-between">
                                                         <span class="weight-semi-bold">Level 1 Courses</span>
-                                                        <a href="c_course_stage_list.html" class="btn btn-outline--green font-12">+ Add New Course</a>
+                                                        <!-- <a href="c_course_stage_list.html" class="btn btn-outline--green font-12">+ Add New Course</a> -->
                                                     </div>
+
                                                     <div class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info">
                                                         <div class="col-lg-3">
                                                             <div style="background-image: url(img/course_placeholder.jpg);
@@ -291,14 +313,43 @@
                                                             </div>
                                                         </div>
 
-                                                        <div class="col-lg-9">
+                                                        <div class="col-lg-7">
                                                             <p class="mb-1">Project Management Professional (PMP) </p>
                                                             <p class="text-muted small mb-1">Last Updated April 2019</p>
                                                             <div class="mb-2">
                                                                 <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
-                                                                <img src="img/star.png"  alt="rating" class="img-fluid mx-2"/>
+                                                                <img src="img/star.png" alt="rating" class="img-fluid mx-2">
                                                                 <span class="text-muted small">(12048 views)</span>
                                                             </div>
+                                                        </div>
+
+                                                        <div class="col-lg-2 align-self-center">
+                                                            <a class="btn btn-green font-12" href="">Remove</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info">
+                                                        <div class="col-lg-3">
+                                                            <div style="background-image: url(img/course_placeholder.jpg);
+                                                                        height: 80px;
+                                                                        width: 100%;
+                                                                        background-size: cover;
+                                                                        background-repeat: no-repeat">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-7">
+                                                            <p class="mb-1">Project Management Professional (PMP) </p>
+                                                            <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                            <div class="mb-2">
+                                                                <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                                <img src="img/star.png" alt="rating" class="img-fluid mx-2">
+                                                                <span class="text-muted small">(12048 views)</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-2 align-self-center">
+                                                            <a class="btn btn-green font-12" href="">Remove</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -308,13 +359,6 @@
                                 </div>
                             </div>
 
-                            <div class="form-row mt-1 text-center">
-                                <div class="form-group col-lg-6 mx-auto">
-                                    <div class="px-3 py-2">
-                                        <a href="#" class="font-14 w-100 text-white btn btn-green px-5 md-btn-block my-2">Save</a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -365,13 +409,14 @@
 
 
         <!-- jQuery CDN - Slim version (=without AJAX) -->
-        <script src="js/jquery.slim.js"></script>
+        <script src="js/jquery.min.js"></script>
         <!-- Popper.JS -->
         <script src="js/libs/popper.js/1.14.0/umd/popper.min.js" ></script>
         <!-- Bootstrap JS -->
         <script src="js/bootstrap.min.js"></script>
         <script src="js/select2.min.js"></script>
         <script src="js/utility.js"></script>
+        <script src="js/stage.js"></script>
         <script>
             $(document).ready( function () {
                 $('[data-toggle="tooltip"]').tooltip()
@@ -381,7 +426,49 @@
                     $('.level-val').text(level)
                     $('.d-stage').show();
                 })
+                // $('.input-stage').on('input', function(){
+                //     $('.d-stage-list').empty();
+                //     var val = $(this).val();
+                //     if(val == ''){
+                //         $('.d-stage-level').hide();
+                //     }
+                //     else{
+                //         if(val >= 5){
+                //             val = 5;
+                //         }
+                //         for(i=1; i <= val; i++){
+                //             $('.d-stage-list').append(`
+                //                     <div class="border-bottom">
+                //                         <div class="px-3 position-relative">
+                //                             <p class="py-2 mb-0 font-13 font-weight-light"><a href="c_course_stage_selected.html" class="stage-title" id="`+ i +`">Course `+ i +`</a></p>
+                //                         </div>
+                //                         <div class="d-nne float-right">
+                //                             <img src="img/delete.svg" class="position-relative cursor" style="right: 25px;top: -33px;width: 18px;" />
+                //                             <img src="img/edit.svg" class="position-relative edit_course cursor d-edit-stage-name" id="`+ i +`" style="right: 10px;top: -34px;width: 18px;" />
+                //                         </div>
+                //                     </div>
 
+
+
+                //                 `)
+                //         }
+                //         $('.d-stage-level').show();
+                //     }
+                // })
+                // // $('.d-edit-stage-name').on('click', function(){
+                // $("body").delegate(".d-edit-stage-name", "click", function(e){
+                //     id = $(this).attr('id')
+                //     $('.input-stage-name').attr("placeholder", $('.stage-title#'+id).text())
+                //     $('.d-stage-name').show();
+
+                //     $('#save-stage-name').on('click', function(){
+                //         $('.stage-title#'+id).text($('.input-stage-name').val())
+                //     })
+
+                //     $('#close-stage-name').on('click', function(){
+                //         $('.d-stage-name').hide();
+                //     })
+                // })
             });
         </script>
 
