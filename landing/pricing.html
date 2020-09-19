@@ -617,6 +617,11 @@
             $('#currency').on('change', function(){
                 cal_price();
             })
+            $(".curr .current").on('DOMSubtreeModified', function () {
+                $(this).addClass($(this).html())
+              // if ($(this).html() == 'USD')
+              //   (alert('uy'))
+            });
         })
     </script>
 </body>

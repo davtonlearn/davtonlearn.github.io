@@ -994,19 +994,11 @@ header.request{
 
 /*select.curr option[value="1"]  { background-image:url(Nigeria-Flag-icon.png);   }*/
 
-/*.curr .current::before {
-  content: "";
-  background-image:url(Nigeria-Flag-icon.png);
-  background-size: 100% 100%;
-  display: inline-block;
-  height: 25px;
-  width:25px;
-  position:relative;
-  top:5px;
-  margin-right: 5px
-}*/
+.curr{
+    padding-top: 4px;
+}
 
-li[data-value="1"]::before {
+li[data-value="1"]::before, .curr .current.USD::before {
   content: "";
   background-image:url(United-States-Flag-icon.png);
   background-size: 100% 100%;
@@ -1018,7 +1010,7 @@ li[data-value="1"]::before {
   margin-right: 5px
 }
 
-li[data-value="2"]::before {
+li[data-value="2"]::before, .curr .current.CAD::before {
   content: "";
   background-image:url(Canada-Flag-icon.png);
   background-size: 100% 100%;
@@ -1030,7 +1022,7 @@ li[data-value="2"]::before {
   margin-right: 5px
 }
 
-li[data-value="3"]::before {
+li[data-value="3"]::before, .curr .current.NGN::before, .curr .current::before {
   content: "";
   background-image:url(Nigeria-Flag-icon.png);
   background-size: 100% 100%;
