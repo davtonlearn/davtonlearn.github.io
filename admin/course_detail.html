@@ -252,6 +252,12 @@
                                                 <p class="font-12">Understand your audience, envision a creative solution, and test your prototype by Cooper Professional Education | By Cooper Professional Education</p>
                                             </div>
                                         </div>
+                                        <div class="col-lg-3">
+                                            <div class="p-4">
+                                                <h5>₦100,400/User</h5>
+                                                <p class="text-muted font-14 mb-1">Mininmum Order: 50</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -267,8 +273,8 @@
 
                                             <p class="font-14">In this course we’ll examine the absolute basics of project management. Everyone has to start somewhere, right? In this fundamental course we will explore the big picture of project management and the project management life cycle. You’ll finish this course with a great grasp of what project management is, what your roles and responsibilities as a project manager will be, and how to move forward in your career as a project manager.</p>
 
-                                            <!-- <div class="mb-3 d-lg-none">
-                                                <button class="btn btn-green font-12 px-4 btn-block" type="button">Request This Course</button>
+                                            <!-- <div class="mb-3">
+                                                <button class="btn btn-green font-12 px-4" type="button">Add Course to Company</button>
                                             </div> -->
                                             <div class="mb-2 d-lg-none">
                                                 <a href="course_preview.html" class="btn btn-outline--green font-12 px-3 btn-block" type="button">Watch Preview</a>
@@ -282,9 +288,9 @@
                                                 </div>
 
                                                 <div class="px-4 my-4">
-                                                    <!-- <div class="mb-3">
-                                                        <button class="btn btn-green font-12 px-4 btn-block" type="button">Add This Course</button>
-                                                    </div> -->
+                                                    <div class="mb-3">
+                                                        <button class="btn btn-green font-12 px-4 btn-block" type="button" data-toggle="modal" data-target="#pay-Modal">Add Course to Company</button>
+                                                    </div>
                                                     <div class="mb-2">
                                                         <a href="course_preview.html" class="btn btn-outline--green font-12 px-3 btn-block" type="button">Watch Preview</a>
                                                     </div>
@@ -358,6 +364,35 @@
 
         </div>
 
+        <!-- Pay Modal -->
+        <div class="modal fade" id="pay-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title text-center mx-auto">Add Course to CompaNy</h6>
+                        <button   class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post">
+
+                            <div class="form-row">
+                                <div class="form-group col-lg-12">
+                                    <input class="form-control w-100" type="number" name="" placeholder="Enter Order Number i.e No. of licence" min="50" title="Minimum number of orders allowed is 50" data-toggle="tooltip" data-placement="right" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 ml-auto mx-0">
+                                    <button class="btn btn-success btn-sm btn-block mt-5">Proceed</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pay End -->
+
 
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script src="js/jquery.min.js"></script>
@@ -370,6 +405,12 @@
         <script type="text/javascript" src="js/dataTables.select.min.js"></script>
         <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
         <script src="js/utility.js"></script>
+        <script>
+            $(document).ready( function () {
+
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+        </script>
     </body>
 
 </html>

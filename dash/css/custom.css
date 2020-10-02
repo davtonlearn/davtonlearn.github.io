@@ -129,6 +129,52 @@ button.dropdown-toggle::after{
 #table_id_filter{
 	display: none;
 }
+.curr{
+    padding-top: 4px;
+}
+
+li[data-value="1"]::before, .curr .current.USD::before {
+  content: "";
+  background-image:url(United-States-Flag-icon.png);
+  background-size: 100% 100%;
+  display: inline-block;
+  height: 25px;
+  width:25px;
+  position:relative;
+  top:5px;
+  margin-right: 5px
+}
+
+li[data-value="2"]::before, .curr .current.CAD::before {
+  content: "";
+  background-image:url(Canada-Flag-icon.png);
+  background-size: 100% 100%;
+  display: inline-block;
+  height: 25px;
+  width:25px;
+  position:relative;
+  top:5px;
+  margin-right: 5px
+}
+
+li[data-value="3"]::before, .curr .current.NGN::before, .curr .current::before {
+  content: "";
+  background-image:url(Nigeria-Flag-icon.png);
+  background-size: 100% 100%;
+  display: inline-block;
+  height: 25px;
+  width:25px;
+  position:relative;
+  top:5px;
+  margin-right: 5px
+}
+
+input.font-16::-webkit-input-placeholder {
+    font-size: 16px!important;
+    font-weight: 500;
+    line-height: 3;
+}
+
 @media (max-width: 768px) {
 	 #filters-area span, #filters-group span, #filters-area span input, #filters-group span input{
 		margin-right: 15px;
