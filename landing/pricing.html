@@ -238,11 +238,11 @@
                         <div class="card-body">
                             <div class="input-group pricing-calculator"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-people mt-2"></span></span>
                                 </span>
-                                <input id="staff-size" class="form-control font-18 font-weight-bold" type="text" placeholder="Staff Size" value="" title="Enter no. of staff" data-toggle="tooltip" data-placement="top" required/>
+                                <input id="staff-size" class="form-control font-18 font-weight-bold" type="text" placeholder="Staff Size" value="" title="Enter no. of staff" data-toggle="tooltip" data-placement="top"  onkeypress='validate(event)' required/>
                                 <select class="form-control pricing-select border-left font-18 font-weight-bold" id="payment-plan">
-                                    <option value="1">Quarterly</option>
-                                    <option value="2">Biannually</option>
-                                    <option selected value="3">Annually</option>
+                                    <option value="10">Quarterly</option>
+                                    <option value="20">Biannually</option>
+                                    <option selected value="30">Annually</option>
                                 </select>
                                 <select class="form-control pricing-select curr border-left font-18 font-weight-bold" id="currency">
                                     <option value="1">USD</option>
@@ -565,15 +565,15 @@
                 cost = 0;
                 sign = '&#x20A6;';
                 ex = 1
-                if (plan == 1) {
+                if (plan == 10) {
                     term = 'quarterly'
                     rate = 0.25
                 }
-                if (plan == 2){
+                if (plan == 20){
                     term = 'half-yearly'
                     rate = 0.5
                 }
-                if (plan == 3){
+                if (plan == 30){
                     term = 'annually'
                     rate = 1
                 }
@@ -591,20 +591,57 @@
                     ex = 1
                 }
 
-                if(size > 0 && size <= 5000){
+                if(size > 0 && size <= 5){
+                    price = 0;
+                }
+                else if(size > 5 && size <= 10){
+                    price = 20000;
+                }
+                else if(size > 10 && size <= 20){
+                    price = 15000;
+                }
+                else if(size > 20 && size <= 50){
+                    price = 12000;
+                }
+                else if(size > 50 && size <= 150){
+                    price = 10000;
+                }
+                else if(size > 150 && size <= 200){
+                    price = 8500;
+                }
+                else if(size > 200 && size <= 300){
+                    price = 8000;
+                }
+                else if(size > 300 && size <= 400){
+                    price = 7500;
+                }
+                else if(size > 400 && size <= 500){
+                    price = 6000;
+                }
+                else if(size > 500 && size <= 1000){
                     price = 5000;
                 }
-                else if(size > 5000 && size <= 10000){
-                    price = 3000;
+                else if(size > 1000 && size <= 2000){
+                    price = 4250;
                 }
-                else if(size > 10000){
+                else if(size > 2000 && size <= 3000){
+                    price = 4000;
+                }
+                else if(size > 3000 && size <= 4000){
+                    price = 2500;
+                }
+                else if(size > 4000 && size <= 5000){
+                    price = 2400;
+                }
+                else if(size > 5000){
                     price = 2000;
                 }
                 else{
                     price = 0
                 }
-                cost = size * price * rate * ex
+                cost = price * rate * ex
 
+                $('.paying').val(cost)
                 $('#total-cost').html('Your licence cost '+ sign + addCommas(cost) + ' ' + term)
             }
             $('#staff-size').on('input', function(){
@@ -623,6 +660,23 @@
               //   (alert('uy'))
             });
         })
+            function validate(evt) {
+              var theEvent = evt || window.event;
+
+              // Handle paste
+              if (theEvent.type === 'paste') {
+                  key = event.clipboardData.getData('text/plain');
+              } else {
+              // Handle key press
+                  var key = theEvent.keyCode || theEvent.which;
+                  key = String.fromCharCode(key);
+              }
+              var regex = /[0-9]|\./;
+              if( !regex.test(key) ) {
+                theEvent.returnValue = false;
+                if(theEvent.preventDefault) theEvent.preventDefault();
+              }
+            }
     </script>
 </body>
 

@@ -9,15 +9,18 @@
         <meta name="author" content="">
         <title>Welcome to DavtonLearn</title>
         <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" />
 
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/credit.css">   
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
         <link rel="stylesheet" href="css/bootstrap-datepicker.css">
         <link rel="stylesheet" href="css/select2.min.css">
         <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="vendors/ionicons/dist/css/ionicons.min.css" />
 
         <!-- Font Awesome JS -->
         <script defer src="js/solid.js"></script>
@@ -208,20 +211,9 @@
                     </div>
                 </nav>
 
-
-                <!-- <div class="row mx-md-2 mt-5">
-                    <div class="col-md-8">
-                        <div class="d-flex">
-                            <div class="col px-0">
-                                <p class="text-green text-uppercase font-16">Subscription & Billing</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
                 <div class="row mx-md-2 my-2">
 
-                    <div class="col-md-12 my-5">
+                    <!-- <div class="col-md-12 my-5">
                         <p class="text-green text-uppercase font-15">Payment Method</p>
                         <div class="w-100 text-right mb-3">
                             <a href="add_payment.html" class="btn btn-green font-12">Add New Credit Card</a>
@@ -249,59 +241,121 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                    </div> -->
 
-                    <div class="col-md-12">
-                        <p class="text-green text-uppercase font-15">Invoice</p>
-                        <div class="row">
-                            <div class="col-lg-2 mb-2">
-                                <input type="text" id="searchbox" placeholder="Search user" class="form-control form-control-sm font-13 form-border-default bg-trans" />
-                            </div>
+                    <div class="col-md-12 my-5">
+                        <p class="text-green text-uppercase font-15">Payment Card</p>
 
-                            <div class="col-lg-12">
-                                <span class="mr-1 mt-1 align-self-baseline d-none">Sort: </span>
-                                <form id="filters-area" class="row justify-content-end">
-                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
-                                        <input name="min" class="w-100 form-control font-13 form-border-default" id="min" type="text" placeholder="From Date:">
+
+                        <div class="row mx-md-2 mb-5">
+                            <div class="col-md-7">
+                                <div class="card">
+                                    <div class="card-header bg-success py-4 text-center">
+                                        <h2 class="text-center text-white">Do the math</h2>
+                                        <span class="font-16 text-white">See how much it costs to use Davtonlms. Enter your no of staff into the calculator to see our charges.</span>
                                     </div>
-                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
-                                        <input name="max" class="w-100 form-control font-13 form-border-default" id="max" type="text" placeholder="To Date:">
-                                    </div>
-                                    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
-                                        <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Search</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="card--dashboard">
-                            <section id="tabs" class="project-tab">
-                                <div class="tab-content my-3" id="nav-tabContent">
-                                    <div class="tab-pane fade show active px-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-
-                                        <div class="px-4 py-5 mt-5 text-center position-relative d-none"> <img src="img/sad.png" class="img-fluid mt-5" />
-                                            <p class="mb-0 mt-3 font-weight-light font-13">You currently have no member of staff at the moment.</p>
-                                            <p class="mb-0 font-weight-light font-13">Click Upload Trainer to add new members.</p> <img src="img/Arrow.png" alt="pointer to add staff button" class="position-absolute arrow_position d-none d-lg-block" /> 
-                                        </div>
-
-                                        <table id="table_id" class="table-responsive-sm leaders dataTables_wrapper table table-striped" style="width:100%">
-
-                                            <button class="btn btn-primary float-right font-14 mb-3 export-table" ><i class="fa fa-file-code mr-1"></i> Export Table</button>
-                                            <thead class="border-top--0">
-                                                <tr>
-                                                    <th class="text-dark text-center">#</th>
-                                                    <th class="text-dark select-filter">Status</th>
-                                                    <th class="text-dark select-filter">Invoice Total</th>
-                                                    <th class="text-dark">Invoice Date</th>
-                                                    <th class="text-dark">Due Date</th>
-                                                    <th class="text-dark" style="min-width:100px;">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                        </table>
+                                    <div class="card-body">
+                                        <form action="card.html">
+                                            <div class="input-group pricing-calculator" style="height: 38px"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md-people"></span></span>
+                                                </span>
+                                                <input id="staff-size" class="form-control font-16 font-weight-500" type="text" placeholder="Staff Size" value="" title="Enter no. of staff" data-toggle="tooltip" data-placement="top" onkeypress='validate(event)' required/>
+                                                <select class="form-control pricing-select border-left font-16 font-weight-500" id="payment-plan">
+                                                    <option value="10">Quarterly</option>
+                                                    <option value="20">Biannually</option>
+                                                    <option selected value="30">Annually</option>
+                                                </select>
+                                                <select class="form-control pricing-select curr border-left font-16 font-weight-500 pt-0" id="currency">
+                                                    <option value="1">USD</option>
+                                                    <option value="2">CAD</option>
+                                                    <option selected value="3">NGN</option>
+                                                </select>
+                                                <input type="hidden" class="paying" name="paying" value="">
+                                            </div>
+                                            <h4 class="mt-4 font-25" id="total-cost"></h4>
+                                            <div class="mt-5 w-100 text-center">
+                                                <button type="submit" class="btn btn-green font-16" style="display: non;">Choose Plan</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-                            </section>
+
+                                <div class="card--dashboard my-4">
+                                    <div class="d-flex">
+                                        <div class="col">
+                                            <p class="text-grey mt-3 mb-1 font-13">Recent Transaction: <span class="text-green font-weight-bold">Subcription, Courses & Payments</span></p>
+                                            <img src="img/medium_line.png" alt="short_line" class="img-fluid" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center px-4 mb-4">
+                                        <div class="col-md-12 my-2">
+                                            <div class="d-flex rounded-5 mt-3 height-100p">
+                                                <div class="col-8">
+                                                    <p class="font-12 px-1 mb-4">Suspendisse posuere diam risus euismod vitae nas</p>
+                                                </div>
+
+                                                <div class="col-3 offset-1 text-md-right">
+                                                    <p class="font-12 px-1 mb-4">20/07/19</p>
+                                                </div>
+                                                <img src="img/transaction_bar.png" class="position-absolute" style="left: 0" />
+                                            </div>
+
+                                            <div class="d-flex rounded-5 height-100p">
+                                                <div class="col-8 ">
+                                                    <p class="font-12 px-1 mb-4">Suspendisse posuere diam risus</p>
+                                                </div>
+
+                                                <div class="col-3 offset-1 text-md-right">
+                                                    <p class="font-12 px-1 mb-4">20/07/19</p>
+                                                </div>
+                                                <img src="img/transaction_bar.png" class="position-absolute" style="left: 0" />
+                                            </div>
+
+                                            <div class="d-flex rounded-5 height-100p">
+                                                <div class="col-8">
+                                                    <p class="font-12 px-1 mb-4">Susp</p>
+                                                </div>
+
+                                                <div class="col-3 offset-1 text-md-right">
+                                                    <p class="font-12 px-1 mb-4">20/07/19</p>
+                                                </div>
+                                                <img src="img/transaction_bar.png" class="position-absolute" style="left: 0" />
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="card--dashboard">
+                                    <div class="d-flex">
+                                        <div class="col">
+                                            <p class="text-grey mt-3 mb-1 font-13">Current Plan: <span class="text-green font-weight-bold">Free Plan</span></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row px-4">
+                                        <img src="img/short_line.png" alt="short_line" class="img-fluid" />
+                                        <p class="text-green font-13 text-uppercase mt-2">Benefits:</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="card--dashboard mt-3 text-center">
+                                    <p class="text-grey mt-3 mb-0 font-13 text-center">20 Days Left</p>
+
+                                    <div class="px-4 text-center">
+                                        <img src="img/short_line.png" alt="short_line" class="img-fluid" />
+                                        <p class="text-green font-12 mt-1 mb-2">Billing & Subcription</p>
+
+                                        <p class="small">You have 20 days left of free trial. Let's help  keep track of your expenses by creating you first purchase. </p>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -370,64 +424,144 @@
         <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
         <script src="js/select2.min.js"></script>
         <script src="js/utility.js"></script>
-        <script>
-            $(document).ready( function () {
-                var table = $('#table_id').DataTable({
-                    initComplete: function () {
-                        this.api().columns('.select-filter').every( function () {
-                            var column = this;
-                            var colTitle = this.header().innerHTML
-                            var select = $('<div class="col-lg-2 col-md-4 col-sm-6 mb-3"><input type="text" class="form-control  font-13 form-border-default w-100" name="'+colTitle+'" placeholder="'+colTitle+'"/></div>')
-                                .prependTo( $('#filters-area') )
-                                .on( 'change', function () {
-                                    var val = $.fn.dataTable.util.escapeRegex(
-                                        $(this).val()
-                                    );
-             
-                                    column
-                                        .search( val ? '^'+val+'$' : '', true, false )
-                                        .draw();
-                                } );
-             
-                            column.data().unique().sort().each( function ( d, j ) {
-                                // select.append( '<option>'+d+'</option>' )
-                            } );
-                        } );
-                    },
-                    // processing: true,
-                    // serverSide: true,
-                    ajax: 'https://reqres.in/api/users',
-                    columns: [
-                        { data: 'id' },
-                        { data: 'last_name' },
-                        { data: 'email' },
-                        { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
-                        { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
-                        {
-                          "data": null,
-                          "defaultContent": `
-                                            <a class="dropdown-item font-12 btn-outline--green" href="view_invoice.html" target="_blank">View Invoice</a>
-                                            `
-                        }
-                    ]
-                }); 
-                $('#searchbox').on( 'keyup', function () {
-                   table.search( this.value ).draw();
-                } );
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+    <script>
+        $('.pricing-select').niceSelect();
+    </script>
+    <script>
+        $(document).ready(function() {
+            cal_price();
+            function addCommas(nStr) {
+                nStr += '';
+                var x = nStr.split('.');
+                var x1 = x[0];
+                var x2 = x.length > 1 ? '.' + x[1] : '';
+                var rgx = /(\d+)(\d{3})/;
+                while (rgx.test(x1)) {
+                    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                }
+                return x1 + x2;
+            }
+            function cal_price(){
+                size = $('#staff-size').val();
+                plan = $('#payment-plan').val();
+                currency = $('#currency').val();
+                cost = 0;
+                sign = '&#x20A6;';
+                ex = 1
+                if (plan == 10) {
+                    term = 'quarterly'
+                    rate = 0.25
+                }
+                if (plan == 20){
+                    term = 'half-yearly'
+                    rate = 0.5
+                }
+                if (plan == 30){
+                    term = 'annually'
+                    rate = 1
+                }
 
-       
-            $("#min").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
-            $("#max").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+                if (currency == 1) {
+                    sign = '&#x24;'
+                    ex = 0.0026
+                }
+                if (currency == 2){
+                    sign = 'C&#x24;'
+                    ex = 0.0034
+                }
+                if (currency == 3){
+                    sign = '&#x20A6;'
+                    ex = 1
+                }
 
-            // Event listener to the two range filtering inputs to redraw on input
-            $('#min, #max').change(function () {
-                table.draw();
+                if(size > 0 && size <= 5){
+                    price = 0;
+                }
+                else if(size > 5 && size <= 10){
+                    price = 20000;
+                }
+                else if(size > 10 && size <= 20){
+                    price = 15000;
+                }
+                else if(size > 20 && size <= 50){
+                    price = 12000;
+                }
+                else if(size > 50 && size <= 150){
+                    price = 10000;
+                }
+                else if(size > 150 && size <= 200){
+                    price = 8500;
+                }
+                else if(size > 200 && size <= 300){
+                    price = 8000;
+                }
+                else if(size > 300 && size <= 400){
+                    price = 7500;
+                }
+                else if(size > 400 && size <= 500){
+                    price = 6000;
+                }
+                else if(size > 500 && size <= 1000){
+                    price = 5000;
+                }
+                else if(size > 1000 && size <= 2000){
+                    price = 4250;
+                }
+                else if(size > 2000 && size <= 3000){
+                    price = 4000;
+                }
+                else if(size > 3000 && size <= 4000){
+                    price = 2500;
+                }
+                else if(size > 4000 && size <= 5000){
+                    price = 2400;
+                }
+                else if(size > 5000){
+                    price = 2000;
+                }
+                else{
+                    price = 0
+                }
+                cost = price * rate * ex
+
+                $('.paying').val(cost)
+                $('#total-cost').html('Your licence cost '+ sign + addCommas(cost) + ' ' + term)
+            }
+            $('#staff-size').on('input', function(){
+                cal_price();
+
+            })
+            $('#payment-plan').on('change', function(){
+                cal_price();
+            })
+            $('#currency').on('change', function(){
+                cal_price();
+            })
+            $(".curr .current").on('DOMSubtreeModified', function () {
+                $(this).addClass($(this).html())
+              // if ($(this).html() == 'USD')
+              //   (alert('uy'))
             });
+        })
+        function validate(evt) {
+              var theEvent = evt || window.event;
 
-
-
-            });
-        </script>
+              // Handle paste
+              if (theEvent.type === 'paste') {
+                  key = event.clipboardData.getData('text/plain');
+              } else {
+              // Handle key press
+                  var key = theEvent.keyCode || theEvent.which;
+                  key = String.fromCharCode(key);
+              }
+              var regex = /[0-9]|\./;
+              if( !regex.test(key) ) {
+                theEvent.returnValue = false;
+                if(theEvent.preventDefault) theEvent.preventDefault();
+              }
+            }
+    </script>
 
     </body>
 
