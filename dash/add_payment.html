@@ -246,25 +246,25 @@
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <label for="inputEmail4">Card Owner</label>
-                                    <input type="text" class="form-control font-14" id="inputEmail4" placeholder="Description">
+                                    <input type="text" class="form-control font-14" id="inputEmail4" placeholder=" Card Owner Name">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputAddress">Card Number</label>
-                                <input type="text" class="form-control font-14" id="inputAddress" placeholder="Card Number" onkeypress='validate(event)' pattern="" size="11" maxlength="11">
+                                <input type="text" class="form-control font-14" id="inputAddress" placeholder="Card Number" onkeypress='validate(event)' size="10" maxlength="10">
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="inputCity">Expiry Date</label>
-                                    <input type="text" class="form-control font-14" id="inputCity">
+                                    <input type="text" class="form-control font-14" size="5" maxlength="5" id="inputCity" placeholder="MM/YY">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="inputZip">CVV/CVC2 Number</label>
-                                    <input type="text" class="form-control font-14" id="inputZip">
+                                    <input type="text" class="form-control font-14" size="3" maxlength="3" id="inputZip" onkeypress='validate(event)' placeholder="CVC">
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-green">Sign in</button>
+                            <button type="submit" class="btn btn-green">Add Card</button>
                         </form>
                     </div>
                     
@@ -345,6 +345,23 @@
                     }
                 })
             })
+            function validate(evt) {
+              var theEvent = evt || window.event;
+
+              // Handle paste
+              if (theEvent.type === 'paste') {
+                  key = event.clipboardData.getData('text/plain');
+              } else {
+              // Handle key press
+                  var key = theEvent.keyCode || theEvent.which;
+                  key = String.fromCharCode(key);
+              }
+              var regex = /[0-9]|\./;
+              if( !regex.test(key) ) {
+                theEvent.returnValue = false;
+                if(theEvent.preventDefault) theEvent.preventDefault();
+              }
+            }
         </script>
 
     </body>
