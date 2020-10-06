@@ -14,7 +14,8 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/jquery.minicolors.css">  
+        <link rel="stylesheet" href="css/jquery.minicolors.css"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" /> 
 
         <!-- Font Awesome JS -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -62,6 +63,57 @@
             .bs-tooltip-left .arrow::before {
               border-left-color: #eee!important;
             }
+
+            .curr{
+                padding-top: 4px;
+            }
+
+            li[data-value="1"]::before, .curr .current.USD::before {
+              content: "";
+              background-image:url(img/United-States-Flag-icon.png);
+              background-size: 100% 100%;
+              display: inline-block;
+              height: 25px;
+              width:25px;
+              position:relative;
+              top:5px;
+              margin-right: 5px
+            }
+
+            li[data-value="2"]::before, .curr .current.CAD::before {
+              content: "";
+              background-image:url(img/Canada-Flag-icon.png);
+              background-size: 100% 100%;
+              display: inline-block;
+              height: 25px;
+              width:25px;
+              position:relative;
+              top:5px;
+              margin-right: 5px
+            }
+
+            li[data-value="3"]::before, .curr .current.NGN::before, .curr .current::before {
+              content: "";
+              background-image:url(img/Nigeria-Flag-icon.png);
+              background-size: 100% 100%;
+              display: inline-block;
+              height: 25px;
+              width:25px;
+              position:relative;
+              top:5px;
+              margin-right: 5px
+            }
+
+            input.font-16::-webkit-input-placeholder {
+                font-size: 16px!important;
+                font-weight: 500;
+                line-height: 3;
+            }
+
+            .input-group>.custom-file, .input-group>.custom-select, .input-group>.form-control, .input-group>.form-control-plaintext{
+                line-height: 27px;
+                border: 1px solid #ccc;
+            }
             
         </style>
     </head>
@@ -83,6 +135,10 @@
             <div class="row justify-content-center">
                 <form class="col-lg-8" action="../dash/index.html">
                     <div class="init_setup_card">
+                        <div class="alert alert-danger error" role="alert" style="display: none;">
+                          Please ensure all fields are completed before you continue.
+                        </div>
+
                         <div class="" id="card_one">
 
                             <div class="px-3 pt-3 border-bottom" style="background: rgba(20, 90, 155, 0.05);">
@@ -101,7 +157,7 @@
                                     <div class="px-3 py-2 text-center">
                                         <p class="font-14 mb-2 font-weight-bold text-left">Select company color</p>
                                         <div class="form-group">
-                                          <input type="text" id="hue-demo" class="form-control demo font-13" data-control="hue" value="#ff6161">
+                                          <input type="text" id="hue-demo" class="form-control demo font-13" data-control="hue" value="#20a354">
                                         </div>
 
                                     </div>
@@ -223,7 +279,7 @@
                                                 <input type="radio" id="default" name="certificate_type" class="custom-control-input">
                                                 <label class="custom-control-label small" for="default">Default</label>
                                             </div>
-                                            <img src="img/default.png" class="img-fluid mt-2" width="180" alt="Default" />
+                                            <img src="img/cert1.png" class="img-fluid mt-2" width="180" alt="Default" />
                                         </div>
 
                                         <div class="col">
@@ -231,7 +287,7 @@
                                                 <input type="radio" id="style_a" name="certificate_type" class="custom-control-input">
                                                 <label class="custom-control-label small" for="style_a">Style A</label>
                                             </div>
-                                            <img src="img/style_a.png" class="img-fluid mt-2" width="180" alt="Style A" />
+                                            <img src="img/cert2.png" class="img-fluid mt-2" width="180" alt="Style A" />
                                         </div>
 
                                         <div class="col">
@@ -239,7 +295,7 @@
                                                 <input type="radio" id="style_b" name="certificate_type" class="custom-control-input">
                                                 <label class="custom-control-label small" for="style_b">Style B</label>
                                             </div>
-                                            <img src="img/style_b.png" class="img-fluid mt-2" width="180" alt="Style B" />
+                                            <img src="img/cert3.png" class="img-fluid mt-2" width="180" alt="Style B" />
                                         </div>
 
                                     </div>
@@ -262,33 +318,39 @@
                             </div>
 
                             <div class="row p-4">
-                                <div class="col-lg-7">
-                                    <p class="font-14 mb-2 weight-semi-bold text-left">Customize Login</p>
+                                <div class="col-lg-10 mx-auto">
 
-                                    <div class="form-row mt-3">
-                                        <div class="form-group col-lg-8">
-                                            <label class="small">How many employees would you love to manage?</label>
-                                            <input value="1" type="number" class="form-control form-control-sm input-staff" name="">
+                                    <div class="card">
+                                        <div class="card-header bg-success py-4 text-center">
+                                            <h2 class="text-center text-white">Do the math</h2>
+                                            <span class="font-16 text-white">See how much it costs to use Davtonlms. Enter your no of staff into the calculator to see our charges.</span>
+                                        </div>
+                                        <div class="card-body">    
+                                            <div class="input-group pricing-calculator" style="height: 38px">
+                                                <span class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <span class="fa fa-user-friends"></span>
+                                                    </span>
+                                                </span>
+                                                <input id="staff-size" class="form-control font-16 font-weight-500" type="text" placeholder="Staff Size" value="" title="Enter no. of staff" data-toggle="tooltip" data-placement="top" onkeypress='validate(event)' style="height: 42px" required/>
+                                                <select class="form-control pricing-select border-left font-16 font-weight-500" id="payment-plan" style="line-height: 27px">
+                                                    <option value="10">Quarterly</option>
+                                                    <option value="20">Biannually</option>
+                                                    <option selected value="30">Annually</option>
+                                                </select>
+                                                <select class="form-control pricing-select curr border-left font-16 font-weight-500 pt-0" id="currency">
+                                                    <option value="1">USD</option>
+                                                    <option value="2">CAD</option>
+                                                    <option selected value="3">NGN</option>
+                                                </select>
+                                                <input type="hidden" class="paying" name="paying" value="">
+                                            </div>
+                                            <h4 class="mt-4 font-25" id="total-cost"></h4>
                                         </div>
                                     </div>
 
-                                    <p class="font-13">Dowload this xlsx document to upload your employees. <a href="#" class="text-primary">Download</a></p>
+                                    <p class="font-13 mt-3">Dowload this xlsx document to upload your employees. <a href="#" class="text-primary">Download</a></p>
 
-                                    <div class="form-row">
-                                        <div class="form-group col-lg-8">
-                                            <label for="upload_employees" class="small">Upload your xlsx file here to onboard multiple employees</label>
-                                            <input type="file" class="form-control form-control-sm font-14" id="upload_employees" placeholder="Start your free 14-day trial and access all davtonlms.." style="padding-bottom: 32px;" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-5">
-                                    <div class="card bg-success">
-                                      <div class="card-body">
-                                        <p class="font-14 text-white">Based on your staff size of <span class="staff-val">1</span>, your minimum subscription will be &#8358; <span class="sub-val">25,000</span>/month.</p>
-
-                                        <p class="font-13 text-white">However, you will recieve 14-day trial period.</p>
-                                      </div>
-                                    </div>
                                 </div>
                             </div>
 
@@ -298,10 +360,10 @@
                     <div class="px-3">
                         <div class="row my-4">
                             <div class="ml-auto px-3">
-                                <a href="../dash/index.html" class="">Continue Later</a>
+                                <a href="#" id="skip" class="">Skip</a>
 
-                                <button class="btn btn-green font-13 ml-5" type="button" id="previous" style="display: none;">Previous</button>
-                                <button class="btn btn-green font-13 ml-5" type="button" id="choose_template">Next</button>
+                                <button class="btn btn-green font-13 ml-5" type="button" id="previous" style="display: none;">Back</button>
+                                <button class="btn btn-green font-13 ml-5" type="button" id="choose_template">Continue</button>
                                 <button class="btn btn-green font-13 ml-5" type="submit" id="finish" style="display: none;">Finish</button>
                             </div>
                         </div>
@@ -310,6 +372,20 @@
 
                 </form>
             </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="confirmation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div class="my-2 w-100 text-center">
+                    <h6 class="pb-4 font-weight-400" style="line-height: 24px">The payment provider will attempt to charge your card for validation. This card will be automatically debited after your 14 days trial period. <br><br>Please proceed to make payment.</h6>
+                    <button class="btn btn-green font-16" style="display: non;">Proceed</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
 
@@ -324,6 +400,7 @@
         <script src="js/pick-a-color-1.2.3.min.js"></script>  
         <script src="js/tinycolor-0.9.15.min.js"></script>  
         <script src="js/jquery.minicolors.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
 
         <script>
             function addCommas(nStr) {
@@ -339,7 +416,7 @@
             }
         </script>
 
-          <script>
+        <script>
             $(document).ready( function() {
 
               $('.demo').each( function() {
@@ -432,7 +509,234 @@
                   };
 
                 };
+
+                $('#choose_template').click(function () {
+                    if ($('#card_one').is(":visible")) {
+                        if ( $('#logo_placeholder').attr('src') == 'img/placeholder-logo.png' || $('#domain_url').val()== ""){
+                            $(".error").slideDown(500)
+                              .delay(3000)
+                              .slideUp(500);
+                              $(window).scrollTop(0); 
+                        }
+                        else{
+                            console.log($('#card_one').is(":visible"))
+                            $('#card_one').hide('slow');
+                            $('#card_two').show('slow');
+                            $('#previous').show('slow');
+                            $('#finish').hide('slow');
+                        }
+                    }
+                    else if ($('#card_two').is(":visible")) {
+                        if (!$("input[name='page_design']:checked").val() || $('#headline').val()== "" || $('#body_text').val()== "" || !$("input[name='certificate_type']:checked").val()) {
+                           $(".error").slideDown(500)
+                              .delay(3000)
+                              .slideUp(500);
+                              $(window).scrollTop(0); 
+                        }
+                        else{
+                            $('#card_two').hide('slow');
+                            $('#card_three').show('slow');
+                            $('#choose_template').hide('slow');
+                            $('#finish').show('slow');
+                        }
+                    }
+                    else if ($('#card_three').is(":visible")) {
+                        $('#finish').show('slow');
+                    }
+                })
+                $('#skip').click(function (e) {
+                    e.preventDefault()
+                    if ($('#card_one').is(":visible")) {
+                        console.log($('#card_one').is(":visible"))
+                        $('#card_one').hide('slow');
+                        $('#card_two').show('slow');
+                        $('#previous').show('slow');
+                        $('#finish').hide('slow');
+                    }
+                    else if ($('#card_two').is(":visible")) {
+                        $('#card_two').hide('slow');
+                        $('#card_three').show('slow');
+                        $('#choose_template').hide('slow');
+                        $('#finish').show('slow');
+                    }
+                    else if ($('#card_three').is(":visible")) {
+                        $('#finish').show('slow');
+                    }
+                })
+                $('#finish').click(function (e) {
+                    e.preventDefault()
+                    if($('#staff-size').val() !== ""){
+                        $('#confirmation').modal('show')
+                    }
+                    else{
+                        $(".error").slideDown(500)
+                              .delay(3000)
+                              .slideUp(500);
+                              $(window).scrollTop(0); 
+                    }
+                })
+                $('#previous').click(function () {
+                    if ($('#card_one').is(":visible")) {
+                        $('#card_one').show('slow');
+                        $('#card_two').hide('slow');
+                        $('#previous').show('slow');
+                        $('#finish').hide('slow');
+                    }
+                    else if ($('#card_two').is(":visible")) {
+                        console.log('hc')
+                        $('#card_one').show('slow');
+                        $('#card_two').hide('slow');
+                        $('#previous').hide('slow');
+                        $('#finish').hide('slow');
+                    }
+                    else if ($('#card_three').is(":visible")) {
+                        console.log('hj')
+                        $('#card_two').show('slow');
+                        $('#card_three').hide('slow');
+                        $('#choose_template').show('slow');
+                        $('#finish').hide('slow');
+                    }
+                })
         </script>
+        <script>
+        $('.pricing-select').niceSelect();
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            cal_price();
+            function addCommas(nStr) {
+                nStr += '';
+                var x = nStr.split('.');
+                var x1 = x[0];
+                var x2 = x.length > 1 ? '.' + x[1] : '';
+                var rgx = /(\d+)(\d{3})/;
+                while (rgx.test(x1)) {
+                    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                }
+                return x1 + x2;
+            }
+
+            function cal_price(){
+                size = $('#staff-size').val();
+                plan = $('#payment-plan').val();
+                currency = $('#currency').val();
+                cost = 0;
+                sign = '&#x20A6;';
+                ex = 1
+                if (plan == 10) {
+                    term = 'quarterly'
+                    rate = 0.25
+                }
+                if (plan == 20){
+                    term = 'half-yearly'
+                    rate = 0.5
+                }
+                if (plan == 30){
+                    term = 'annually'
+                    rate = 1
+                }
+
+                if (currency == 1) {
+                    sign = '&#x24;'
+                    ex = 0.0026
+                }
+                if (currency == 2){
+                    sign = 'C&#x24;'
+                    ex = 0.0034
+                }
+                if (currency == 3){
+                    sign = '&#x20A6;'
+                    ex = 1
+                }
+
+                if(size > 0 && size <= 5){
+                    price = 0;
+                }
+                else if(size > 5 && size <= 10){
+                    price = 20000;
+                }
+                else if(size > 10 && size <= 20){
+                    price = 15000;
+                }
+                else if(size > 20 && size <= 50){
+                    price = 12000;
+                }
+                else if(size > 50 && size <= 150){
+                    price = 10000;
+                }
+                else if(size > 150 && size <= 200){
+                    price = 8500;
+                }
+                else if(size > 200 && size <= 300){
+                    price = 8000;
+                }
+                else if(size > 300 && size <= 400){
+                    price = 7500;
+                }
+                else if(size > 400 && size <= 500){
+                    price = 6000;
+                }
+                else if(size > 500 && size <= 1000){
+                    price = 5000;
+                }
+                else if(size > 1000 && size <= 2000){
+                    price = 4250;
+                }
+                else if(size > 2000 && size <= 3000){
+                    price = 4000;
+                }
+                else if(size > 3000 && size <= 4000){
+                    price = 2500;
+                }
+                else if(size > 4000 && size <= 5000){
+                    price = 2400;
+                }
+                else if(size > 5000){
+                    price = 2000;
+                }
+                else{
+                    price = 0
+                }
+                cost = price * rate * ex
+
+                $('.paying').val(cost)
+                $('#total-cost').html('Your licence cost '+ sign + addCommas(cost) + ' ' + term)
+            }
+            $('#staff-size').on('input', function(){
+                cal_price();
+
+            })
+            $('#payment-plan').on('change', function(){
+                cal_price();
+            })
+            $('#currency').on('change', function(){
+                cal_price();
+            })
+            $(".curr .current").on('DOMSubtreeModified', function () {
+                $(this).addClass($(this).html())
+              // if ($(this).html() == 'USD')
+              //   (alert('uy'))
+            });
+        })
+        function validate(evt) {
+          var theEvent = evt || window.event;
+
+          // Handle paste
+          if (theEvent.type === 'paste') {
+              key = event.clipboardData.getData('text/plain');
+          } else {
+          // Handle key press
+              var key = theEvent.keyCode || theEvent.which;
+              key = String.fromCharCode(key);
+          }
+          var regex = /[0-9]|\./;
+          if( !regex.test(key) ) {
+            theEvent.returnValue = false;
+            if(theEvent.preventDefault) theEvent.preventDefault();
+          }
+        }
+    </script>
 
     </body>
 
