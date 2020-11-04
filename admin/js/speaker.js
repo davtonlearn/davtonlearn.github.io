@@ -24,8 +24,8 @@ $(document).ready(function(){
       return repo.first_name || repo.text;
     }
 
-    $('.select-speaker').select2({
-        placeholder: "Select Speakers",
+    $('.select-cat').select2({
+        placeholder: "Select Categories",
         dropdownParent: $("#create-webinar"),
           ajax: {
             url: "https://reqres.in/api/users",
@@ -54,8 +54,8 @@ $(document).ready(function(){
 
     })
 
-    $('.edit-speaker').select2({
-        placeholder: "Select Speakers",
+    $('.edit-cat').select2({
+        placeholder: "Select Categories",
         dropdownParent: $("#edit-webinar"),
           ajax: {
             url: "https://reqres.in/api/users",

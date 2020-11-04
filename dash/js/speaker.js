@@ -1,6 +1,14 @@
 $(document).ready(function(){
     $('.chat-conversation').hide();
 
+    $('.about-speaker').on('click', function(e){
+      e.preventDefault();
+      name = $(this).attr('data-name');
+      bio = $(this).attr('data-bio');
+      $('.speaker-name').text('About ' + name);
+      $('.speaker-bio').text(bio);
+      $('#about-speaker').modal('show');
+    })
 
     function formatRepo (repo) {
       if (repo.loading) {
@@ -24,8 +32,8 @@ $(document).ready(function(){
       return repo.first_name || repo.text;
     }
 
-    $('.select-speaker').select2({
-        placeholder: "Select Speakers",
+    $('.select-cat').select2({
+        placeholder: "Select Categories",
         dropdownParent: $("#compose"),
           ajax: {
             url: "https://reqres.in/api/users",
@@ -54,8 +62,8 @@ $(document).ready(function(){
 
     })
 
-    $('.edit-speaker').select2({
-        placeholder: "Select Speakers",
+    $('.edit-cat').select2({
+        placeholder: "Select Categories",
         dropdownParent: $("#webinar"),
           ajax: {
             url: "https://reqres.in/api/users",
