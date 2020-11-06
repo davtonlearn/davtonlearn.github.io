@@ -200,19 +200,19 @@
                                     <div class="row">
                                         <div class="col-auto">
                                             <div class="custom-control custom-radio">
-                                                <input class="custom-control-input" id="yes" type="radio" name="have_promo_code" value="yes" />
+                                                <input class="custom-control-input promo" id="yes" type="radio" name="have_promo_code" value="yes" />
                                                 <label class="custom-control-label" for="yes">Yes, I have</label>
                                             </div>
                                         </div>
                                         <div class="col-auto">
                                             <div class="custom-control custom-radio">
-                                                <input class="custom-control-input" id="no" type="radio" name="have_promo_code" value="no" />
+                                                <input class="custom-control-input promo" id="no" type="radio" name="have_promo_code" value="no" />
                                                 <label class="custom-control-label" for="no">No, I don’t</label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group promo-input" style="display: none;">
                                     <div class="input-group"><span class="input-group-prepend"><span class="input-group-text"><span class="icon ion-md">&nbsp;&nbsp;&nbsp;</span></span>
                                         </span>
                                         <input class="form-control" type="text" placeholder="Enter Code" />
@@ -393,6 +393,13 @@
     <script src="js/slick.js"></script>
     <script src="js/nav.js"></script>
     <script>
+        $('.promo').on('input', function() {
+            $('.promo-input').hide();
+            val = $(this).val();
+            if(val == 'yes'){
+                $('.promo-input').show();
+            }
+        });
         $("body").delegate("#account-type", "change", function(e){
             e.preventDefault()
             $('#company_form').hide();
