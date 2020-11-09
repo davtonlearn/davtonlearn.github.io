@@ -231,40 +231,40 @@
                   <ul>
                     <li><a href="about.html">About us</a></li>
                     <li><a href="team.html">Our team</a></li>
-                  </ul> 
+                  </ul>
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-6 col-6 links mb-5">
                   <h5>Work with us</h5>
                   <ul>
                     <li><a href="become.html">Become an instructor</a></li>
-                  </ul> 
+                  </ul>
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-6 col-6 links mb-5">
                   <h5>For Businesses</h5>
                   <ul>
                     <li><a href="corporate.html">Corporate training</a></li>
-                  </ul>     
+                  </ul>
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-6 col-6 links mb-5">
                   <h5>Contact Us</h5>
                   <ul>
                     <li><a href="mailto:info@davtonlearn.com">info@davtonlearn.com</a></li>
                     <li class="mt-2" style="color: #ccc">2nd Floor, <br>RockHaven Office Suites, <br>4 Hughes Avenue, Yaba, <br>Lagos, Nigeria</li>
-                  </ul>     
+                  </ul>
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-6 col-6 links mb-5">
                   <h5>Our Partner</h5>
-                  <img src="assets/img/aep-logo.jpg" style="width: 120px">   
+                  <img src="assets/img/aep-logo.jpg" style="width: 120px">
                 </div>
             </div>
 
             <div class="row pb-3 text-center">
                 <div class="col-5 col-sm-3 col-lg-2 offset-sm-3 offset-lg-4 terms">
-                  <a href="terms.html">Terms of Use</a> 
+                  <a href="terms.html">Terms of Use</a>
                 </div>
                 <div class="seprator d-sm-inline"></div>
                 <div class="col-5 col-sm-3 col-lg-2 px-0 terms last">
-                  <a href="terms.html"> Privacy Policy </a> 
+                  <a href="terms.html"> Privacy Policy </a>
                 </div>
             </div>
 
@@ -378,7 +378,7 @@
         // Current sentence being processed
         var _PART = 0;
 
-        // Character number of the current sentence being processed 
+        // Character number of the current sentence being processed
         var _PART_INDEX = 0;
 
         // Holds the handle returned from setInterval
@@ -388,7 +388,7 @@
         var _ELEMENT = document.querySelector("#text");
 
         // Implements typing effect
-        function Type() { 
+        function Type() {
             var text =  _CONTENT[_PART].substring(0, _PART_INDEX + 1);
             _ELEMENT.innerHTML = "Start " + text;
             _PART_INDEX++;
