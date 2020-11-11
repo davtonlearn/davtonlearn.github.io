@@ -1,0 +1,93 @@
+.carousel-control-next-ico.iconz {
+    background-image: url('data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%333' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e');
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: no-repeat 50% / 100% 100%;
+}
+.card-main {
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px 0px #283593
+}
+
+.card-0 {
+    color: #fff;
+    background-color: #536DFE;
+    position: relative;
+    margin-left: 70px;
+    border-radius: 10px;
+    min-height: 312px
+}
+
+.carousel-indicators li {
+    cursor: pointer;
+    border-radius: 50% !important;
+    width: 10px;
+    height: 10px
+}
+
+.profile {
+    color: #000;
+    background-color: #FFD54F;
+    position: absolute;
+    left: -70px;
+    top: 17%;
+    border-radius: 8px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px
+}
+
+.open-quotes {
+    margin-left: 130px;
+    margin-top: 100px
+}
+
+.content {
+    margin-left: 150px;
+    margin-right: 80px
+}
+
+.close-quotes {
+    margin-bottom: 100px;
+    margin-right: 60px
+}
+
+@media screen and (max-width: 600px) {
+    .card-main {
+        padding: 50px 10px
+    }
+
+    .card-0 {
+        min-height: 432px
+    }
+
+    .profile {
+        top: 24%
+    }
+
+    .profile-pic {
+        width: 90px;
+        height: 90px
+    }
+
+    .open-quotes {
+        margin-left: 100px
+    }
+
+    .content {
+        margin-left: 120px;
+        margin-right: 50px
+    }
+
+    .close-quotes {
+        margin-right: 30px
+    }
+}

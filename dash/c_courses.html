@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="css/bootstrap-datepicker.css">
         <link rel="stylesheet" href="css/select2.min.css">
         <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="css/file-upload-with-preview.min.css">
     </head>
 
     <body class="dashboard-body">
@@ -439,15 +440,37 @@
                                     </div>
                                 </div>
 
-                                <div class="form-row mb-5">
+                                <div class="form-row">
                                     <div class="form-group col-lg-12">
                                         <input class="form-control w-100" type="number" name="" placeholder="Enter the No. of levels" min="1" required>
                                     </div>
                                 </div>
 
+                                <div class="form-row">
+                                    <div class="form-group col-lg-11">
+                                        <div class="custom-file-container" data-upload-id="myUploader">
+
+                                            <label class="custom-file-container__custom-file" >
+                                                <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                                <input type="file" class="custom-file-container__custom-file__custom-file-input" accept="*">
+                                                <span class="custom-file-container__custom-file__custom-file-control font-12"></span>
+
+                                                <p class="font-13 text-green" style="position: absolute;top: 220px;">Change Photo </p>
+                                            </label>
+
+                                            <div class="col--5 custom-file-container__image-preview">
+                                                <label><a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"><img src="img/close-button.svg" class="img-fluid" style="width: 22px;" /></a></label>
+                                            </div>
+
+
+                                        </div>
+                                        <p class="text-blue font-10 mb-0">Maximum size of 1083 x 1083 pixel.</p>
+                                    </div>
+                                </div>
+
                                 <div class="row">
-                                    <div class="col-lg-3 ml-auto mx-0 mt-5">
-                                        <button   class="btn btn-success btn-sm btn-block mt-5">Proceed</button>
+                                    <div class="col-lg-3 ml-auto mx-0 mt-3">
+                                        <button class="btn btn-success btn-sm btn-block mt-5">Proceed</button>
                                     </div>
                                 </div>
                             </form>
@@ -670,6 +693,30 @@
         <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
         <script src="js/select2.min.js"></script>
         <script src="js/utility.js"></script>
+        <script src="js/file-upload-with-preview.min.js"></script>
+        <script>
+            var myUpload = new FileUploadWithPreview('myUploader',{
+                text: {
+                    chooseFile: 'Upload Course Photo..',
+                    browse: 'Upload',
+                    selectedCount: 'files selected'
+                }
+            })
+
+            $('input.cost').keyup(function(event) {
+
+              // skip for arrow keys
+              if(event.which >= 37 && event.which <= 40) return;
+
+              // format number
+              $(this).val(function(index, value) {
+                return value
+                .replace(/\D/g, "")
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                ;
+              });
+            });
+        </script>
         <script>
             $(document).ready( function () {
 
