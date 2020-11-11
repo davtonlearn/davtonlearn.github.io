@@ -1,0 +1,105 @@
+.tracking-detail {
+    padding: 3rem 0
+}
+
+#tracking {
+    margin-bottom: 1rem
+}
+
+[class*=tracking-status-] p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+[class*=tracking-status-] {
+    padding: 0.6rem
+}
+
+.tracking-status-pending {
+    background-color: #ccc
+}
+
+.tracking-status-taking {
+    background-color: #f5a551
+}
+
+.tracking-status-completed {
+    background-color: #21a354
+}
+
+.tracking-status-header {
+    background-color: #21a354
+}
+
+.tracking-item {
+    border-left: 1px solid #e5e5e5;
+    position: relative;
+    padding: 1.2rem 1.5rem 0 2.5rem;
+    font-size: .9rem;
+    margin-left: 3rem;
+    min-height: 5rem
+}
+
+.tracking-item .tracking-date {
+    margin-bottom: .5rem
+}
+
+.tracking-item .tracking-date span {
+    color: #888;
+    font-size: 85%;
+    padding-left: .4rem
+}
+
+.tracking-item .tracking-content {
+    padding: .5rem .8rem;
+    background-color: #f4f4f4;
+    border-radius: .5rem
+}
+
+.tracking-item .tracking-content span {
+    display: block;
+    color: #888;
+    font-size: 85%
+}
+
+.tracking-item .tracking-icon {
+    line-height: 2.6rem;
+    position: absolute;
+    left: -1.3rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    background-color: #fff;
+    color: #fff
+}
+
+.tracking-item .tracking-icon.status-pending {
+    color: #e5e5e5;
+    border: 1px solid #e5e5e5;
+    font-size: .6rem
+}
+
+.tracking-item .tracking-icon.status-taking {
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: .6rem;
+    background: #f5a551;
+}
+
+.tracking-item .tracking-icon.status-completed {
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: .6rem;
+    background: #21a354;
+}
+
+.tracking-item .tracking-content {
+    padding: 0;
+    background-color: transparent
+}
+
+}

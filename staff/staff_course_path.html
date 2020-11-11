@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />-->
+        <meta name="description" content="DavtonLearn">
+        <meta name="author" content="">
+        <title>Welcome to DavtonLearn</title>
+        <link rel="shortcut icon" href="img/favicon.png">
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/star.css">
+        <link rel="stylesheet" href="css/tracking.css">
+        <link rel="stylesheet"  href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" >
+        <link rel="stylesheet"  href="https://cdn.datatables.net/select/1.3.0/css/select.dataTables.min.css" >
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+        <style type="text/css">
+            .nav-pills-custom .nav-link {
+                color: #aaa;
+                background: #fff;
+                position: relative;
+            }
+
+            .nav-pills-custom .nav-link.active {
+                color: #45b649;
+                background: #fff;
+            }
+
+            .single-level{
+                height: 52vh;
+                overflow: scroll;
+            }
+
+            .nav-pills.nav-pills-custom{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .flex-column.nav-pills.nav-pills-custom{
+                flex-direction: row!important;
+            }
+
+            .nav-pills-custom .nav-link::before {
+                content: '';
+                display: block;
+                border-top: 8px solid #fff;
+                border-left: 10px solid transparent;
+                border-right: 8px solid transparent;
+                position: absolute;
+                bottom: -12px;
+                right: 30px;
+                transform: translateY(-50%);
+                opacity: 0;
+            }
+
+
+            /* Add indicator arrow for the active tab */
+            @media (min-width: 767px) {
+                .nav-pills.nav-pills-custom{
+                    display: block;
+                }
+
+                .flex-column.nav-pills.nav-pills-custom{
+                    flex-direction: column!important;
+                }
+                .nav-pills-custom .nav-link::before {
+                    border-top: 8px solid transparent!important;
+                    border-left: 10px solid #fff!important;
+                    border-bottom: 8px solid transparent!important;
+                    border-right:0;
+                    top: 50%!important;
+                    right: -10px!important;
+                    bottom: 20px!important;
+                }
+            }
+
+            .nav-pills-custom .nav-link.active::before {
+                opacity: 1;
+            }
+        </style>
+
+
+        <!-- Font Awesome JS -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="dashboard-body">
+
+        <div class="top_nav">
+            <img src="img/top_strip.jpg" class="img-fluid position-absolute" />
+            <div class="container-fluid dashboard_nav py-0">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <a class="navbar-brand py-0" href="#"><img src="img/logo.svg" class="mt-2" alt="Davton logo" width="" /></a>
+                    <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="nav navbar-nav ml-auto">
+
+                            <li class="nav-item px-md-1">
+                                <a class="nav-link text-dark" href="staff_message.html">
+                                    <img src="img/mail.svg" alt="Messages" class="mt-1">
+                                </a>
+                            </li>
+
+                            <li class="nav-item px-md-1">
+                                <a class="nav-link text-dark" href="#" data-target="#notifications" data-toggle="modal">
+                                    <img src="img/notification.svg" alt="user name" class="">
+                                </a>
+                            </li>
+
+                            <li class="nav-item dropdown pr-md-4 pl-2">
+                                <a class="nav-link text-white dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="images/tobi.jpg" style="border-radius: 50%;width: 30px">&nbsp; &nbsp; Hr247@asanta.com &nbsp;
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                                    <a class="dropdown-item font-12" href="#">Log Out</a>
+                                    <a class="dropdown-item font-12" href="staff_settings.html">Setting</a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+
+        <div class="wrapper">
+            <!-- Sidebar  -->
+            <nav id="sidebar" class="">
+                <div class="sidebar-header">
+                    <button type="button" id="sidebarCollapse-1" class="btn bg-trans d-none">
+                        <img src="img/hamburger.svg" />
+                    </button>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <p class="text-dark text-left ml-4 mb-2 font-35">Hi Adeyemi Inc. </p>
+                    <p class="text-dull text-left ml-4 my-2 font-14 font-weight-light">Welcome to Davtonlearn.</p>
+
+                    <li class="">
+                        <a href="staff_dashboard.html">
+                            <img src="img/dashboard.svg" alt="Dashboard" class="mb-1 mr-3 img-fluid" width="15" /> Dashboard
+                        </a>
+
+                    </li>
+
+                    <li class="active">
+                        <a href="staff_course.html">
+                            <img src="img/courses.svg" alt="department" class="mb-1 mr-3 img-fluid" width="15" /> Courses
+                        </a> 
+                    </li>
+
+                    <li>
+                        <a href="staff_report.html">
+                            <img src="img/reports.svg" alt="reports" class="mb-1 mr-3 img-fluid" width="15" /> Reports
+                        </a> 
+                    </li>
+
+                    <p class="text-dull text-left ml-4 my-2 font-12">Communications</p>
+
+                    <li>
+                        <a href="staff_message.html">
+                            <img src="img/communication.svg" alt="Message" class="mb-1 mr-3 img-fluid" width="15" /> Message
+                        </a> 
+                    </li>
+
+                    <li>
+                        <a href="staff_blog.html">
+                            <img src="img/blog.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Blog
+                        </a> 
+                    </li>
+
+                    <li>
+                        <a href="staff_webinar.html">
+                            <img src="img/blog.png" alt="Webinar" class="mb-1 mr-3 img-fluid" width="15" /> Webinar
+                        </a> 
+                    </li>
+
+                    <p class="text-dull text-left ml-4 my-2 font-12">Account Management</p>
+
+                    <li>
+                        <a href="staff_settings.html">
+                            <img src="img/Settings.svg" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Settings
+                        </a> 
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="img/logout.svg" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Log Out
+                        </a> 
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Page Content  -->
+            <div id="content">
+
+
+                <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light d-none display border">
+                    <div class="container-fluid">
+                        <button id="sidebarCollapse" class="btn bg-trans d-inline-block d-lg-none ml-auto" type="button">
+                            <i alt="menu" class="fas fa-align-justify text-consolidated"></i>
+                        </button>
+                    </div>
+                </nav>
+
+
+                <div class="row mx-md-2 my-5">
+                    <div class="col-md-12">
+
+                        <div class="d-flex">
+                            <div class="col px-0">
+                                <p class="text-dark text-uppercase font-13"><a href="staff_course.html"><img src="img/back_button.svg" alt="go back" class="img-fluid" /> Back</a></p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-column flex-lg-row mt-4">
+                            <div class="col px-0">
+                                <p class="text-green text-uppercase">Project Management Learning Path</p>                                
+                            </div> 
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <!-- Tabs nav -->
+                                <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <a class="nav-link mb-3 p-3 shadow active" id="v-pills-level1-tab" data-toggle="pill" href="#v-pills-level1" role="tab" aria-controls="v-pills-level1" aria-selected="true">
+                                        <span class="font-weight-bold  text-uppercase">Level 1</span></a>
+
+                                    <a class="nav-link mb-3 p-3 shadow" id="v-pills-level2-tab" data-toggle="pill" href="#v-pills-level2" role="tab" aria-controls="v-pills-level2" aria-selected="false">
+                                        <span class="font-weight-bold  text-uppercase">Level 2</span></a>
+
+                                    <a class="nav-link mb-3 p-3 shadow" id="v-pills-level3-tab" data-toggle="pill" href="#v-pills-level3" role="tab" aria-controls="v-pills-level3" aria-selected="false">
+                                        <span class="font-weight-bold  text-uppercase">Level 3</span></a>
+
+                                    <a class="nav-link mb-3 p-3 shadow" id="v-pills-level4-tab" data-toggle="pill" href="#v-pills-level4" role="tab" aria-controls="v-pills-level4" aria-selected="false">
+                                        <span class="font-weight-bold  text-uppercase">Level 4</span></a>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-9">
+                                <!-- Tabs content -->
+                                <div class="tab-content" id="v-pills-tabContent">
+                                    <div class="tab-pane fade shadow rounded bg-white show active p-3" id="v-pills-level1" role="tabpanel" aria-labelledby="v-pills-level1-tab">
+                                        <div class="single-level">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <span class="weight-semi-bold">Level 1 Courses</span>
+                                                <!-- <a href="c_course_stage_list.html" class="btn btn-outline--green font-12">+ Add New Course</a> -->
+                                            </div>
+
+                                            <a href="staff_path_course_preview.html" class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info">
+                                                <div class="col-lg-3">
+                                                    <div style="background-image: url(img/course_placeholder.jpg);
+                                                                height: 80px;
+                                                                width: 100%;
+                                                                background-size: cover;
+                                                                background-repeat: no-repeat">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-9">
+                                                    <p class="mb-1">Project Management Professional (PMP) </p>
+                                                    <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                    <div class="mb-2">
+                                                        <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                        <img src="img/star4.png" alt="rating" class="img-fluid mx-2">
+                                                        <span class="text-muted small">(12048 views)</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                            <a href="staff_path_course_preview.html"  class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info">
+                                                <div class="col-lg-3">
+                                                    <div style="background-image: url(img/course_placeholder.jpg);
+                                                                height: 80px;
+                                                                width: 100%;
+                                                                background-size: cover;
+                                                                background-repeat: no-repeat">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-9">
+                                                    <p class="mb-1">Project Management Professional (PMP) </p>
+                                                    <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                    <div class="mb-2">
+                                                        <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                        <img src="img/star4.5.png" alt="rating" class="img-fluid mx-2">
+                                                        <span class="text-muted small">(12048 views)</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                            <a href="staff_path_course_preview.html" class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info">
+                                                <div class="col-lg-3">
+                                                    <div style="background-image: url(img/course_placeholder.jpg);
+                                                                height: 80px;
+                                                                width: 100%;
+                                                                background-size: cover;
+                                                                background-repeat: no-repeat">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-9">
+                                                    <p class="mb-1">Project Management Professional (PMP) </p>
+                                                    <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                    <div class="mb-2">
+                                                        <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                        <img src="img/star4.png" alt="rating" class="img-fluid mx-2">
+                                                        <span class="text-muted small">(12048 views)</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                            <a href="staff_path_course_preview.html"  class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info">
+                                                <div class="col-lg-3">
+                                                    <div style="background-image: url(img/course_placeholder.jpg);
+                                                                height: 80px;
+                                                                width: 100%;
+                                                                background-size: cover;
+                                                                background-repeat: no-repeat">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-9">
+                                                    <p class="mb-1">Project Management Professional (PMP) </p>
+                                                    <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                    <div class="mb-2">
+                                                        <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                        <img src="img/star4.5.png" alt="rating" class="img-fluid mx-2">
+                                                        <span class="text-muted small">(12048 views)</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                            <a href="staff_path_course_preview.html" class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info">
+                                                <div class="col-lg-3">
+                                                    <div style="background-image: url(img/course_placeholder.jpg);
+                                                                height: 80px;
+                                                                width: 100%;
+                                                                background-size: cover;
+                                                                background-repeat: no-repeat">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-9">
+                                                    <p class="mb-1">Project Management Professional (PMP) </p>
+                                                    <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                    <div class="mb-2">
+                                                        <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                        <img src="img/star4.png" alt="rating" class="img-fluid mx-2">
+                                                        <span class="text-muted small">(12048 views)</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                            <a href="staff_path_course_preview.html"  class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info">
+                                                <div class="col-lg-3">
+                                                    <div style="background-image: url(img/course_placeholder.jpg);
+                                                                height: 80px;
+                                                                width: 100%;
+                                                                background-size: cover;
+                                                                background-repeat: no-repeat">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-9">
+                                                    <p class="mb-1">Project Management Professional (PMP) </p>
+                                                    <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                    <div class="mb-2">
+                                                        <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                        <img src="img/star4.5.png" alt="rating" class="img-fluid mx-2">
+                                                        <span class="text-muted small">(12048 views)</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="tab-pane fade shadow rounded bg-white p-3" id="v-pills-level2" role="tabpanel" aria-labelledby="v-pills-level2-tab">
+                                        <div class="single-level">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <span class="weight-semi-bold">Level 2 Courses</span>
+                                                <!-- <a href="c_course_stage_list.html" class="btn btn-outline--green font-12">+ Add New Course</a> -->
+                                            </div>
+
+                                            <a href="staff_path_course_preview.html" class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info">
+                                                <div class="col-lg-3">
+                                                    <div style="background-image: url(img/course_placeholder.jpg);
+                                                                height: 80px;
+                                                                width: 100%;
+                                                                background-size: cover;
+                                                                background-repeat: no-repeat">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-9">
+                                                    <p class="mb-1">Project Management Professional (PMP) </p>
+                                                    <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                    <div class="mb-2">
+                                                        <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                        <img src="img/star4.png" alt="rating" class="img-fluid mx-2">
+                                                        <span class="text-muted small">(12048 views)</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                            <a href="staff_path_course_preview.html"  class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info">
+                                                <div class="col-lg-3">
+                                                    <div style="background-image: url(img/course_placeholder.jpg);
+                                                                height: 80px;
+                                                                width: 100%;
+                                                                background-size: cover;
+                                                                background-repeat: no-repeat">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-9">
+                                                    <p class="mb-1">Project Management Professional (PMP) </p>
+                                                    <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                    <div class="mb-2">
+                                                        <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                        <img src="img/star4.5.png" alt="rating" class="img-fluid mx-2">
+                                                        <span class="text-muted small">(12048 views)</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="tab-pane fade shadow rounded bg-white p-3" id="v-pills-level3" role="tabpanel" aria-labelledby="v-pills-level3-tab">
+                                        <div class="single-level">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <span class="weight-semi-bold">Level 3 Courses</span>
+                                                <!-- <a href="c_course_stage_list.html" class="btn btn-outline--green font-12">+ Add New Course</a> -->
+                                            </div>
+
+                                            <a href="staff_path_course_preview.html" class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info">
+                                                <div class="col-lg-3">
+                                                    <div style="background-image: url(img/course_placeholder.jpg);
+                                                                height: 80px;
+                                                                width: 100%;
+                                                                background-size: cover;
+                                                                background-repeat: no-repeat">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-9">
+                                                    <p class="mb-1">Project Management Professional (PMP) </p>
+                                                    <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                    <div class="mb-2">
+                                                        <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                        <img src="img/star4.png" alt="rating" class="img-fluid mx-2">
+                                                        <span class="text-muted small">(12048 views)</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                            <a href="staff_path_course_preview.html"  class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info">
+                                                <div class="col-lg-3">
+                                                    <div style="background-image: url(img/course_placeholder.jpg);
+                                                                height: 80px;
+                                                                width: 100%;
+                                                                background-size: cover;
+                                                                background-repeat: no-repeat">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-9">
+                                                    <p class="mb-1">Project Management Professional (PMP) </p>
+                                                    <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                    <div class="mb-2">
+                                                        <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                        <img src="img/star4.5.png" alt="rating" class="img-fluid mx-2">
+                                                        <span class="text-muted small">(12048 views)</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="tab-pane fade shadow rounded bg-white p-3" id="v-pills-level4" role="tabpanel" aria-labelledby="v-pills-level4-tab">
+                                        <div class="single-level">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <span class="weight-semi-bold">Level 4 Courses</span>
+                                                <!-- <a href="c_course_stage_list.html" class="btn btn-outline--green font-12">+ Add New Course</a> -->
+                                            </div>
+
+                                            <a href="staff_path_course_preview.html" class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info">
+                                                <div class="col-lg-3">
+                                                    <div style="background-image: url(img/course_placeholder.jpg);
+                                                                height: 80px;
+                                                                width: 100%;
+                                                                background-size: cover;
+                                                                background-repeat: no-repeat">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-9">
+                                                    <p class="mb-1">Project Management Professional (PMP) </p>
+                                                    <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                    <div class="mb-2">
+                                                        <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                        <img src="img/star4.png" alt="rating" class="img-fluid mx-2">
+                                                        <span class="text-muted small">(12048 views)</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div  aria-hidden="true" class="onboarding-modal modal fade animated" id="acc_details" role="dialog" tabindex="-1">
+                <div class="modal-dialog modal-right" role="document">
+                    <div class="modal-content text-center">
+                        <button aria-label="Close" class="close text-right pr-2" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                        <div class="onboarding-content with-radient px-3">
+
+                            <ul class="list-unstyled">
+                                <li class="font-weight-bold text-left text-green my-2"><a href="#">Sign Out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Learning path Modal -->
+            <div class="modal fade" id="path-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title text-center mx-auto">Create LEARNING PATH(s)</h6>
+                            <button type="button" class="close pr-3" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-lg-9 mx-auto">
+                                        <input id="" type="text" placeholder="Enter Path Title i.e PMP  Learning path" class="form-control form-control-sm">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-lg-9 mx-auto">
+                                        <select id="" class="custom-select custom-select-sm">
+                                            <option>Select the No. of levels you need in your learning Path</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-5">
+                                    <div class="col-lg-3 ml-auto mx-0">
+                                        <button type="button" class="btn btn-success btn-sm btn-block">Next</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Learning path End -->
+
+
+
+            <!--Notification Modal-->
+            <div  aria-hidden="true" class="onboarding-modal modal fade animated" id="notifications" role="dialog" tabindex="-1">
+                <div class="modal-dialog modal-right" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title text-left text-green">Notifications</h6>
+                            <button   class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
+                        </div>
+
+                        <div class="onboarding-content with-radient px-3 pt-3">
+
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <img src="img/notify.png" alt="notify" />
+                                </div>
+
+                                <div class="col-lg-9">
+                                    <p class="font-weight-500 mb-1">Dui nulla id massa turpis.</p>
+                                    <p class="font-13 mb-2">Gravida odio id commodo libero, aliquam. Tempus bibendum vestibulum aliquet morbi amet.</p>
+                                    <p class="font-12"><img class="img-fluid mr-2" src="img/notification_time.png" alt="Time received 20 mins ago"/>20 mins ago</p>
+                                </div>
+                            </div>
+                            <hr class="mb-3 mt-0" />
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <img src="img/notify.png" alt="notify" />
+                                </div>
+
+                                <div class="col-lg-9">
+                                    <p class="font-weight-500 mb-1">Dui nulla id massa turpis.</p>
+                                    <p class="font-13 mb-2">Gravida odio id commodo libero, aliquam. Tempus bibendum vestibulum aliquet morbi amet.</p>
+                                    <p class="font-12"><img class="img-fluid mr-2" src="img/notification_time.png" alt="Time received 20 mins ago"/>20 mins ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+        <div class="modal fade" id="learning_path_draft" tabindex="-1" role="dialog" aria-labelledby="learning_path_draft_title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="">Staff Learning Path</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <div class="row">
+      
+                            <div class="col-md-12 col-lg-12">
+                                <div id="tracking">
+                                    <div class="tracking-status-header">
+                                       <p class="tracking-status text-tight">Level 1</p>
+                                    </div>
+                                    <div class="tracking-list">
+
+                                       <div class="tracking-item">
+                                          <div class="tracking-icon status-completed">
+                                             <i class="fas fa-circle"></i>
+                                          </div>
+                                          <div class="tracking-content row">
+                                            <div class="col-lg-2 col-md-3 col-4 pr-0">
+                                                <img src="img/course_placeholder.jpg" class="w-100">
+                                            </div>
+                                            <div class="col-8">
+                                                <p class="mb-1">Project Management Professional (PMP) Advanced</p>
+                                                <p class="font-12 d-none d-md-block">Understand your audience, envision a creative solution, and test your prototype by Cooper Professional Education | By Cooper Professional Education</p>
+                                            </div>
+                                          </div>
+                                       </div> 
+
+                                       <div class="tracking-item">
+                                          <div class="tracking-icon status-taking">
+                                             <i class="fas fa-circle"></i>
+                                          </div>
+                                          <div class="tracking-content row">
+                                            <div class="col-lg-2 col-md-3 col-4 pr-0">
+                                                <img src="img/course_placeholder.jpg" class="w-100">
+                                            </div>
+                                            <div class="col-8">
+                                                <p class="mb-1">Project Management Professional (PMP) Advanced</p>
+                                                <p class="font-12 d-none d-md-block">Understand your audience, envision a creative solution, and test your prototype by Cooper Professional Education | By Cooper Professional Education</p>
+                                            </div>
+                                          </div>
+                                       </div> 
+
+                                       <div class="tracking-item">
+                                          <div class="tracking-icon status-pending">
+                                             <i class="fas fa-circle"></i>
+                                          </div>
+                                          <div class="tracking-content row">
+                                            <div class="col-lg-2 col-md-3 col-4 pr-0">
+                                                <img src="img/course_placeholder.jpg" class="w-100">
+                                            </div>
+                                            <div class="col-8">
+                                                <p class="mb-1">Project Management Professional (PMP) Advanced</p>
+                                                <p class="font-12 d-none d-md-block">Understand your audience, envision a creative solution, and test your prototype by Cooper Professional Education | By Cooper Professional Education</p>
+                                            </div>
+                                          </div>
+                                       </div>                          
+                                    </div>
+                                </div>
+
+                                <div id="tracking">
+                                    <div class="tracking-status-header">
+                                       <p class="tracking-status text-tight">Level 2</p>
+                                    </div>
+                                    <div class="tracking-list">
+
+                                       <div class="tracking-item">
+                                          <div class="tracking-icon status-pending">
+                                             <i class="fas fa-circle"></i>
+                                          </div>
+                                          <div class="tracking-content row">
+                                            <div class="col-lg-2 col-md-3 col-4 pr-0">
+                                                <img src="img/course_placeholder.jpg" class="w-100">
+                                            </div>
+                                            <div class="col-8">
+                                                <p class="mb-1">Project Management Professional (PMP) Advanced</p>
+                                                <p class="font-12 d-none d-md-block">Understand your audience, envision a creative solution, and test your prototype by Cooper Professional Education | By Cooper Professional Education</p>
+                                            </div>
+                                          </div>
+                                       </div> 
+
+                                       <div class="tracking-item">
+                                          <div class="tracking-icon status-pending">
+                                             <i class="fas fa-circle"></i>
+                                          </div>
+                                          <div class="tracking-content row">
+                                            <div class="col-lg-2 col-md-3 col-4 pr-0">
+                                                <img src="img/course_placeholder.jpg" class="w-100">
+                                            </div>
+                                            <div class="col-8">
+                                                <p class="mb-1">Project Management Professional (PMP) Advanced</p>
+                                                <p class="font-12 d-none d-md-block">Understand your audience, envision a creative solution, and test your prototype by Cooper Professional Education | By Cooper Professional Education</p>
+                                            </div>
+                                          </div>
+                                       </div> 
+
+                                       <div class="tracking-item">
+                                          <div class="tracking-icon status-pending">
+                                             <i class="fas fa-circle"></i>
+                                          </div>
+                                          <div class="tracking-content row">
+                                            <div class="col-lg-2 col-md-3 col-4 pr-0">
+                                                <img src="img/course_placeholder.jpg" class="w-100">
+                                            </div>
+                                            <div class="col-8">
+                                                <p class="mb-1">Project Management Professional (PMP) Advanced</p>
+                                                <p class="font-12 d-none d-md-block">Understand your audience, envision a creative solution, and test your prototype by Cooper Professional Education | By Cooper Professional Education</p>
+                                            </div>
+                                          </div>
+                                       </div>                          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="rate_course" tabindex="-1" role="dialog" aria-labelledby="rate_course_title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+
+                        <div class="modal-body text-center">
+                                <form action="">
+                                    <h1 class="modal-title text_primary font-weight-bold text_primary my-4" style="font-weight: 900;" id="rate_course_title">Rate This Course</h1>
+
+
+                                    <div class="stars mr-2">
+                                            <input class="star star-1" id="star-1" type="radio" name="star" value="1" />
+                                            <label class="star star-1" for="star-1"></label>
+
+                                            <input class="star star-2" id="star-2" type="radio" name="star" value="2" />
+                                            <label class="star star-2" for="star-2"></label>
+
+                                            <input class="star star-3" id="star-3" type="radio" name="star" value="3" />
+                                            <label class="star star-3" for="star-3"></label>
+
+                                            <input class="star star-4" id="star-4" type="radio" name="star" value="4" />
+                                            <label class="star star-4" for="star-4"></label>
+
+                                            <input class="star star-5" id="star-5" type="radio" name="star" value="5" />
+                                            <label class="star star-5" for="star-5"></label>
+                                    </div>
+
+
+                                    <div class="px-lg-5 mt-3">
+                                        <p class="weight-semi-bold mb-0">Level 1 completed, Proceed to Level 2</p>
+                                    </div>
+
+                                    <p class="font-13">Download your report or click view report to view score.</p>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-6">
+                                            <button class="btn btn-green text-uppercase btn-block btn-sm my-3 mt-lg-5 px-4 py-2" type="submit">Submit</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script src="js/jquery.slim.js"></script>
+        <!-- Popper.JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" ></script>
+        <!-- Bootstrap JS -->
+        <script src="js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+        <script src="js/utility.js"></script>
+        <script>
+            $('[data-search]').on('keyup', function() {
+                var searchVal = $(this).val();
+                var filterItems = $('[data-filter-item]');
+
+                if ( searchVal != '' ) {
+                    filterItems.addClass('hidden');
+                    $('[data-filter-item][data-filter-name*="' + searchVal.toLowerCase() + '"]').removeClass('hidden');
+                } else {
+                    filterItems.removeClass('hidden');
+                }
+            });
+        </script>
+
+    </body>
+
+</html>
