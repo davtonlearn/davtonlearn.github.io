@@ -75,6 +75,10 @@
     font-style: normal;
 }
 
+.text-transform-0{
+    text-transform: none!important;
+}
+
 .text-white--dim {
     color: #91FCD1;
 }
@@ -368,7 +372,7 @@ a, a:hover {
 }
 
 .bg-grey{
-  background: #f4f4f4;
+  background: #f4f4f4!important;
 }
 .social{
   border-radius: 50%;
@@ -817,12 +821,12 @@ header.request{
 .menu>ul>li>ul {
     border-top: 2px solid #009fe3;
     display: none;
-    width: 80%;
-    background: #f0f0f0;
+    width: 65%;
+    background: #fff;
     padding: 20px;
     position: absolute;
     z-index: 99;
-    left: 0;
+    left: 30%;
     margin: 0;
     list-style: none;
     box-sizing: border-box;
@@ -842,11 +846,13 @@ header.request{
     margin: 0;
     padding-bottom: 0;
     list-style: none;
-    width: 33.33333%;
+    width: 60%;
     background: none;
     float: left;
 }
-
+.menu>ul>li>ul>li:first-child{
+    width: 40%;
+}
 .menu>ul>li>ul>li a {
     color: #777;
     padding: .2em 0;
@@ -1084,6 +1090,12 @@ li[data-value="3"]::before, .curr .current.NGN::before, .curr .current::before {
         left: 10%!important;
         top: 80%!important;
     }
+    .menu>ul>li>ul{
+        left: 0;
+    }
+    .menu>ul>li>ul>li:first-child {
+        width: 100%;
+    }
 }
 @media (min-width: 576px) and (max-width: 787px) {
     .d-slide-text{
@@ -1203,6 +1215,13 @@ li[data-value="3"]::before, .curr .current.NGN::before, .curr .current::before {
     .banner-home {
         padding: 5rem 0 5rem 0;
     }
+    .menu>ul>li>ul{
+        left: 0;
+    }
+    .menu>ul>li>ul>li:first-child {
+        width: 100%;
+    }
+
 }
 
 @media only screen and (max-width: 576px){

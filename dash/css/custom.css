@@ -132,6 +132,9 @@ button.dropdown-toggle::after{
 .curr{
     padding-top: 4px;
 }
+.modal.show .modal-dialog{
+  padding-top: 5%;
+}
 
 li[data-value="1"]::before, .curr .current.USD::before {
   content: "";
@@ -191,5 +194,8 @@ input.font-16::-webkit-input-placeholder {
 	}
 	footer .card.text-white{
 		right: 15px!important;
-	} 
+	}
+  .modal.show .modal-dialog {
+    padding-top: 10%;
+  } 
 }
