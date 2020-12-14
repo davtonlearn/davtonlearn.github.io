@@ -250,7 +250,10 @@
                                     <option selected value="3">NGN</option>
                                 </select>
                             </div>
-                            <h4 class="mt-4" id="total-cost"></h4>
+                            <h4 class="mt-4 text-center" id="total-cost"></h4>
+                            <div class="text-center start-now mt-4 mb-1" style="display: none;">
+                                <a href="register.html" class="btn btn-primary font-16">Start Now</a>
+                            </div>
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item font-16 font-weight-bold">
@@ -646,7 +649,10 @@
             }
             $('#staff-size').on('input', function(){
                 cal_price();
-
+                if($(this).val()!='')
+                    $('.start-now').show();
+                else
+                    $('.start-now').hide();
             })
             $('#payment-plan').on('change', function(){
                 cal_price();
