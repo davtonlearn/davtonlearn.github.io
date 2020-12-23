@@ -263,7 +263,18 @@
                                                         <a href="c_course_library.html" class="btn dropdown-item font-12" >Add Coures From Library</a>
                                                     </div>
                                                 </div>
+
+                                            <div class="col-lg-2 ml-auto dropleft">
+                                                <button class="text-white btn btn-green btn-sm font-13 dropdown-toggle dropleft btn-block"   id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Add New Course </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <button onclick="location.href='c_create_course.html'" class="btn dropdown-item font-12" data-toggle="modal" data-target="#multiple-modal">Add Customized Course</button>
+                                                    <hr class="p-0 m-0">
+                                                    <button onclick="location.href='c_course_library.html'" class="btn dropdown-item font-12" data-toggle="modal" data-target="#multiple-modal">Add Coures From Library</button>
+                                                    <hr class="p-0 m-0">
+                                                    <button class="btn dropdown-item font-12" data-toggle="modal" data-target="#add_scorm">Add SCORM Course</button>
+                                                </div>
                                             </div>
+                                        </div>
 
                                         <div class="card--dashboard">
                                             <div class="px-4 py-5 mt-5 text-center d-none">
@@ -631,6 +642,43 @@
             </div>
             <!-- Assign Staff Modal End -->
 
+            <!-- Add SCORM -->
+            <div class="modal fade" id="add_scorm" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title text-center mx-auto">Add SCORM Resource</h6>
+                            <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+
+                                <div class="form-group row mt-4">
+                                    <!-- <div class="col-lg-4 mx-auto col-4 my-2 upload-btn-wrapper">
+                                        <button type="button" class="btn btn-green btn-upload btn-block font-13">Browse File</button>
+                                        <input type="file" name="company_profile" required="" accept=".zip,.rar,.7zip">
+                                    </div> -->
+                                    <div class="col-lg-6 mx-auto col-4 my-2 upload-btn-wrapper">
+                                        <label for="file-upload" class="custom-file-upload btn btn-green btn-upload btn-block font-13">
+                                            Browse File (Zip/Rar Only)
+                                        </label>
+                                        <input id="file-upload" name='upload_cont_img' type="file" accept=".zip,.rar,.7zip" required="">
+                                        <span id="file-chosen">No file chosen</span>
+                                    </div>
+                                </div>
+                                <div class="row mt-5">
+                                    <div class="col-lg-3 ml-auto mx-0">
+                                        <button type="submit" class="btn btn-success btn-block mt-5">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add SCORM End -->
+            
+
             <!--Notification Modal-->
             <div  aria-hidden="true" class="onboarding-modal modal fade animated" id="notifications" role="dialog" tabindex="-1">
                 <div class="modal-dialog modal-right" role="document">
@@ -694,6 +742,17 @@
         <script src="js/select2.min.js"></script>
         <script src="js/utility.js"></script>
         <script src="js/file-upload-with-preview.min.js"></script>
+
+        <script type="text/javascript">
+            const actualBtn = document.getElementById('file-upload');
+
+            const fileChosen = document.getElementById('file-chosen');
+
+            actualBtn.addEventListener('change', function(){
+              fileChosen.textContent = this.files[0].name
+            })
+        </script>
+
         <script>
             var myUpload = new FileUploadWithPreview('myUploader',{
                 text: {
