@@ -25,7 +25,7 @@
     var selections = []; //Array containing user choices
     var quiz = $('#quiz'); //Quiz div object
 
-    var total_seconds = 60;
+    var total_seconds = 10;
     var c_minutes = parseInt(total_seconds / 60);
     var c_seconds = parseInt(total_seconds % 60);
     var timer;
@@ -187,6 +187,29 @@
             score.append('You got ' + numCorrect + ' questions out of ' +
                 questions.length + ' right!!!');
         }
+
+        /*
+        *
+        *
+        * This line submits the quiz 	*
+        								*
+        								*
+        								*/
+        $.ajax({
+            url: 'https://reqres.in/api/users',
+            dataType: 'json',
+            type: 'post',
+            contentType: 'application/json',
+            data: JSON.stringify({"score":numCorrect}),
+            processData: false,
+            success: function( data, textStatus, jQxhr ){
+                $('#response pre').html( JSON.stringify( data ) );
+            },
+            error: function( jqXhr, textStatus, errorThrown ){
+                console.log( errorThrown );
+            }
+        });
+
         return score;
     }
 
