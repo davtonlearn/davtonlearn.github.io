@@ -25,7 +25,7 @@
     var selections = []; //Array containing user choices
     var quiz = $('#quiz'); //Quiz div object
 
-    var total_seconds = 10;
+    var total_seconds = 60;
     var c_minutes = parseInt(total_seconds / 60);
     var c_seconds = parseInt(total_seconds % 60);
     var timer;
