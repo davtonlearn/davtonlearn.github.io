@@ -180,7 +180,7 @@
             }
         }
 
-        if (numCorrect <= 1) {
+        if (numCorrect <= 1){
             score.append('You got ' + numCorrect + ' question out of ' +
                 questions.length + ' right!!!');
         } else {
