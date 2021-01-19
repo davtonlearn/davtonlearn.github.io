@@ -111,14 +111,7 @@ $(document).ready(function () {
             $('.hide_upload').hide('slow');
         })
     }
-    if ($(".display_image_upload").length) {
-        $('.display_image_upload').click(function () {
-            $('.blog_upload').show('slow');
-            $('.hide_upload').show('slow');
-            $('.text_upload').hide('slow');
-            $('.dropzone').get(0).dropzone.hiddenFileInput.click();
-        })
-    }
+    
     // bar chart if element exists
     if ($("#barChart").length) {
         var barChart1 = $("#barChart");

@@ -271,6 +271,16 @@ if ($('.modal-uploader').length) {
         // $('#albums-modal').removeClass('show');
         modalUploader.removeAllFiles(true);
     });
+    
+    $("body").delegate(".start-post, .fileinput-button", "click", function(e){
+        if(($('.preview-box').length) > 0){
+            $('#create-media').show();
+        }
+        else{
+            $('#create-media').hide();
+        }
+
+    });
 
     modalUploader.on("addedfile", function(file) {
         //Get the file count
@@ -279,6 +289,7 @@ if ($('.modal-uploader').length) {
         file.previewElement.querySelector(".start").onclick = function() { modalUploader.enqueueFile(file); };
         //Set the new file count
         $('#modal-uploader-file-count').html(count);
+        $('#create-media').show();
     });
 
     modalUploader.on("removedfile", function(file) {

@@ -156,77 +156,43 @@
                         <div class="d-flex">
                             <div class="col px-0">
                                 <p class="text-green text-uppercase">Take Quiz</p>                                
-                            </div> 
-
-                            <div class="col text-right px-0">
-                                <button class="btn btn-green py-1 font-12 px-4">Submit Quiz</button>                                
-                            </div>
+                            </div>                         
                         </div>
 
                         <div class="card--dashboard profile-height-default">
-                            <div class="d-flex flex-column flex-lg-row mt-3">
-                                <div class="col">
-                                    <h5 class="text-dark text-uppercase">Question 1 of 60</h5>                                
-                                </div> 
 
-                                <div class="col">
-                                    <p class="text-dark font-12 text-uppercase text-md-right">01:07:55</p>
-                                </div> 
-                            </div>
-
-                            <div class="row mt-3 px-4 pb-5 position-relative">
-                                <div class="col-lg-7 my-3">
-                                    <p class="small">Enim ipsum lorem tincidunt dis etiam. Porttitor porttitor diam fringilla eros, porta nisi quam donec placerat. Enim ipsum lorem tincidunt dis etiam. Porttitor porttitor diam fringilla eros, porta nisi quam donec placerat ?</p>
-
-                                    <div class="custom-control custom-radio my-3">
-                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadio1">A Enim ipsum lorem tincidunt dis etiam. Porttitor porttitor .</label>
-                                    </div>
-
-
-                                    <div class="custom-control custom-radio my-3">
-                                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadio2">B Enim ipsum lorem tincidunt dis etiam. Porttitor porttitor .</label>
-                                    </div>
-
-                                    <div class="custom-control custom-radio my-3">
-                                        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadio3">C Enim ipsum lorem tincidunt dis etiam. Porttitor porttitor .</label>
-                                    </div>
-
-                                    <div class="custom-control custom-radio my-3">
-                                        <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadio4">D Enim ipsum lorem tincidunt dis etiam. Porttitor porttitor .</label>
-                                    </div>
-
-
-                                    <div class="mt-4">
-                                        <button class="btn btn-outline--green font-12  px-5 text-uppercase md-btn-block my-2">Back</button>
-                                        <button class="btn btn-green font-12 px-4 text-uppercase ml-lg-5 md-btn-block my-2">Next Question</button>
-
-                                    </div>
+                            <div class="row mt-3 px-4 pb-5 position-relative test">
+                                <div id="quiz-time-left" class="font-18" style="position: absolute;right: 40px;top: 20px;"></div>
+                                <div id='container' class="px-5">
+                                    <br/>
+                                    <div id='quiz'></div>
+                                    <div class='button cursor btn btn-outline--green font-12 px-5 text-uppercase my-2 mr-3' id='prev'>Prev</div>
+                                    <div class='button cursor btn btn-green font-12 px-4 text-uppercase my-2' id='next'>Next</div>
                                 </div>
 
                                 <img src="img/quiz_time.png" class="position-absolute d-none d-lg-block" style="right:40px; width: 400px; top: 0;" />
                             </div>
-                        </div>
 
 
-                        <div class="card--dashboard profile-height-default">
+                            <div class="row mt-3 px-4 pb-5 text-center result">
 
-                            <div class="row mt-3 px-4 pb-5 text-center justify-content-center">
-                                <div class="col-lg-7 my-3">
+                                <div class="col-lg-12 my-3 quiz-submitted" style="display: none;">
                                     <img src="img/quiz_success.png" alt="quiz completed" class="img-fluid mt-5 mb-4" />
-                                    <h4>Quiz completed, There you go! </h4>
-                                    <p class="font-14">Download your report or click view report to view score.</p>
+                                    <h4>Quiz completed, There you go! </h4>                                
+                                </div>
 
-                                    <div class="mt-4">
-                                        <button class="btn btn-outline--green font-12  px-5 text-uppercase md-btn-block my-2">View report</button>
-                                        <button class="btn btn-green font-12 px-4 text-uppercase ml-lg-5 md-btn-block my-2">Download Report</button>
-                                    </div>
+                                <div class="col-lg-12 my-3 quiz-ended mx-auto" style="display: none;">
+                                    <img src="https://images.vexels.com/media/users/3/132347/isolated/preview/be0aa6f53b4ac58a4a3612d6dc7a7854-stopwatch-timer-icon-by-vexels.png" width="150" alt="quiz completed" class="img-fluid mt-5 mb-4" />
+                                    <h4>Quiz Ended, Unfortunately you ran out of time! </h4>
+                                </div>
+
+                                <div class="text-center mx-auto">
+                                    <p class="result-show"></p>
+                                    <a href="staff_report.html" class="btn btn-green py-1 font-12 px-4">View Report</a> 
                                 </div>
 
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -283,6 +249,9 @@
         <!-- Bootstrap JS -->
         <script src="js/bootstrap.min.js"></script>
         <script src="js/utility.js"></script>
+        <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+        <!-- <script src="quiz/question.js"></script> -->
+        <script src="quiz/quiz-script.js"></script>
 
     </body>
 

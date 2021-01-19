@@ -1,0 +1,109 @@
+.feather {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+.f2 {
+  width: 16px;
+  height: 16px;
+}
+.filled{
+    fill:#000;
+}
+.icon{
+    width: auto;
+    height: auto;
+}
+.start-post div{
+    border: 1px solid #ccc; 
+    border-radius: 50px;
+}
+.blog-video{
+    color: #238ac5;
+}
+.bg-ash{
+    background: #eee;
+}
+.shadow-none, .emojionearea, .emojionearea.form-control{
+    box-shadow: none;
+    border-radius: 20px!important;
+}
+.btn-round{
+    border-radius: 50px;
+}
+.modal-uploader .preview-box .preview-body .name{
+    max-width: 90px;
+}
+.modal-uploader .preview-box .remove-button{
+    width: 25px;
+    height: 25px;
+    top: 10px;
+}
+.btn-green-outline{
+    background: transparent;
+    border: 1px solid var(--primary-color);
+}
+.btn-green-outline:hover{
+    background: var(--primary-color);
+    color: #fff;
+}
+.interest-item:nth-child(2n) {
+    color: #ca473f;
+}
+.interest-item:nth-child(3n) {
+    color: #c1991f;
+}
+.interest-item:nth-child(4n) {
+    color: #165a9b;
+}
+.interest-item:nth-child(5n) {
+    color: #1652f5031a9b;
+}
+.blog_comment .info{
+    width: 100%;
+    background: #eee;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-bottom: 10px; 
+}
+.blog_comment .info .font-14{
+    font-size:12px !important;
+}
+.card--dashboard .text-center.my-2{
+    text-align: left!important;
+    padding: 10px;
+    margin-bottom: 0!important;
+}
+.show-drop, .hide-drop{
+    background: #fff;
+    color: #666;
+    border: 0;
+    box-shadow: none;
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.show-drop:hover, .hide-drop:hover, .hide-drop:focus{
+    background: transparent;
+    color: #000!important;
+}
+.loadReply {
+    border-radius: 50%;
+    padding: 5px 8px;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    color: #666;
+    text-align: left;
+}
+.loadReply:hover, .loadReply:focus {
+    color: #000!important;
+    background: transparent;
+}
+.blog_comment .w-100.text-center.mt-1.mb-3{
+    text-align: left!important;
+}
