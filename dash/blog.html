@@ -20,13 +20,12 @@
         <link href="css/emojionearea.css" rel="stylesheet">
 
         <!-- Font Awesome JS -->
-        <!-- <script src="js/solid.js"></script>
-        <script src="js/fontawesome.js"></script> -->
+        <script src="js/solid.js"></script>
+        <script src="js/fontawesome.js"></script>
 
         <!--LightBox -->        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g==" crossorigin="anonymous"></script>
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="css/dropzone.min.css">
         <link rel="stylesheet" href="css/stylee.css">
@@ -297,8 +296,8 @@
 
                                         <div class="like-share row my-3 px-5">
                                             <div class="like-share-value text-right">
-                                                <span class="mr-1 fs-12 likes-val"><span class="num-likes" id="num-likes-1">1</span> <span class="text-likes"></span></span>
-                                                <span class="mr-1 fs-12 comments-val" ><span class="num-comments" id="num-comment-1">0</span> <span class="text-comments"></span></span> 
+                                                <span class="mr-1 font-12 likes-val"><span class="num-likes" id="num-likes-1">1</span> <span class="text-likes"></span></span>
+                                                <span class="mr-1 font-12 comments-val" ><span class="num-comments" id="num-comment-1">0</span> <span class="text-comments"></span></span> 
                                             </div>
                                         </div>
 
@@ -306,198 +305,1363 @@
 
                                         <div class="like-share row my-0 px-5">
                                             <div class="text-left mr-4 d-flex align-items-center">
-                                                <a class="like" href="#" data-user='1' data-post='1' data-id="1">
-                                                    <span class="icon" id="icon-1"><i data-feather="thumbs-up" class="f2"></i></span>
-                                                    <span class="like-unlike font-16" id="like-unlike-1">Like</span>
+                                                <a class="like font-weight-500 d-flex align-items-center" href="#" data-user='1' data-post='1' data-id="1">
+                                                    <span class="icon" id="icon-1"><i data-feather="" class="far fa-thumbs-up font-20 mr-1"></i></span>
+                                                    <span class="like-unlike font-14" id="like-unlike-1">Like</span>
                                                 </a>
                                             </div>
                                             <div class="text-left mr-4 d-flex align-items-center">
-                                                <a class="like" href="#" data-user='1' data-post='1' data-id="1">
-                                                    <span class="icon" id="icon-1"><i class="far fa-comment-dots"></i></span>
-                                                    <span class="font-16" id="cmt-1">Comment</span>
+                                                <a class="show-comments font-weight-500 d-flex align-items-center" href="#" data-user='1' data-post='1' data-id="1">
+                                                    <span class="icon" id="icon-1"><i class="fa fa-comment-dots font-20 mr-1"></i></span>
+                                                    <span class="font-14" id="cmt-1">Comment</span>
                                                 </a>
                                             </div>
                                             <div class="share text-left mr-4 d-flex align-items-center">
-                                                <a href="#" class="share_link" data-post='1' data-user='1' data-id="1">
-                                                    <span><i data-feather="corner-up-right" class="f2"></i></span>
-                                                    <span class="font-16">Share</span>
+                                                <a class="share_link font-weight-500 d-flex align-items-center cursor" data-post='1' data-user='1' data-id="1">
+                                                    <span><i class="font-20 mr-1 fa fa-share"></i></span>
+                                                    <span class="font-14">Share</span>
                                                 </a>
                                             </div>
                                             <div class="share text-left mr-4 d-flex align-items-center">
-                                                <a href="#" class="share_link" data-post='1' data-user='1' data-id="1">
-                                                    <span><i data-feather="send" class="f2"></i></span>
-                                                    <span class="font-16">Send</span>
+                                                <a class="font-weight-500 d-flex align-items-center cursor" data-post='1' data-user='1' data-id="1">
+                                                    <span><i class="font-20 mr-1 fa fa-paper-plane"></i></span>
+                                                    <span class="font-14">Send</span>
                                                 </a>
                                             </div>
                                         </div>
 
-                                        <hr>
+                                        <div class="comments" style="display: none;">
 
-                                        <div class="px-4 row mt-3">
-                                            <div class="col-lg-12 col-12 d-flex lead emoji-picker-container">
-                                                <img src="images/course_img.png" class="mt-1 mr-2" />
-                                                <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text example1" id="input-comment-1" data-img="course_img.png" data-name="Kelvin Sam" />
-                                                <button class="btn btn-sm btn-green mt-2 comment-send btn-round ml-2" data-id="comment-1" data-load="p1">Send</button>
-                                            </div>
-                                            <div class="col-12 comment_reply mx-auto" id="p1">
-                                                <div class="d-flex">
-                                                    <div class="p-2 position-relative info cursor" data-user='1'>
-                                                        <p class="weight-semi-bold mb-1" id="comment-reply-name"></p>
-                                                        <p class="font-14 font-weight-light mb-1" id="comment-reply-text"></p>
-                                                        <p class="d-none" id="comment-reply-post-id"></p>
-                                                        <p class="d-none" id="comment-reply-comment-id"></p>
-                                                    </div>
-                                                    <div class="ml-auto mt-2">
-                                                        <a href="#" class="hide-comment"><i class="fa fa-close"></i></a>
-                                                    </div>
+                                            <hr>
+
+                                            <div class="px-4 row mt-3">
+                                                <div class="col-lg-12 col-12 d-flex lead emoji-picker-container px-1">
+                                                    <img src="images/course_img.png" class="mt-1 mr-2" />
+                                                    <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text example1" id="input-comment-1" data-img="course_img.png" data-name="Kelvin Sam" />
+                                                    <button class="btn btn-sm btn-green mt-2 comment-send btn-round ml-2" data-id="comment-1" data-load="p1">Send</button>
                                                 </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="px-4 row mt-3 post" style="overflow-y:auto;max-height: 280px; display: none;" id="comment-1">
-
-                                            <div class="col-12 blog_comment p1" id="comment-1">
-                                                <div class="d-flex">
-                                                    <div class="mr-2">
-                                                        <img src="images/course_img.png" class="mt-1" />
-                                                    </div>
-                                                    <div class="p-2 position-relative info cursor" data-user='1'>
-                                                        <p class="weight-semi-bold mb-1" id="comment-name">Brandee Sanderssss </p>
-                                                        <p class="font-14 font-weight-light mb-1" id="comment-text">Comment 6 </p>
-                                                    </div>
-                                                    <div class="ml-auto">
-                                                        <a href="#" class="show-comment">Reply</a>
-                                                    </div>
-                                                </div>
-                                                <div class="replies">
-                                                    <div class="col-12 reply r1" id="reply-1">
-                                                        <div class="d-flex">
-                                                            <div class="mr-2">
-                                                                <img src="images/course_img.png" class="mt-1" />
-                                                            </div>
-                                                            <div class="p-2 position-relative info cursor" data-user='1'>
-                                                                <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
-                                                            </div>
+                                                <div class="col-12 comment_reply mx-auto" id="p1">
+                                                    <div class="d-flex">
+                                                        <div class="p-2 position-relative info cursor" data-user='1'>
+                                                            <p class="weight-semi-bold mb-1" id="comment-reply-name"></p>
+                                                            <p class="font-14 font-weight-light mb-1" id="comment-reply-text"></p>
+                                                            <p class="d-none" id="comment-reply-post-id"></p>
+                                                            <p class="d-none" id="comment-reply-comment-id"></p>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-12 reply r1" id="reply-1">
-                                                        <div class="d-flex">
-                                                            <div class="mr-2">
-                                                                <img src="images/course_img.png" class="mt-1" />
-                                                            </div>
-                                                            <div class="p-2 position-relative info cursor" data-user='1'>
-                                                                <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
-                                                            </div>
+                                                        <div class="ml-auto mt-2">
+                                                            <a href="#" class="hide-comment"><i class="fa fa-times"></i></a>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-12 reply r1" id="reply-1">
-                                                        <div class="d-flex">
-                                                            <div class="mr-2">
-                                                                <img src="images/course_img.png" class="mt-1" />
-                                                            </div>
-                                                            <div class="p-2 position-relative info cursor" data-user='1'>
-                                                                <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 reply r1" id="reply-1">
-                                                        <div class="d-flex">
-                                                            <div class="mr-2">
-                                                                <img src="images/course_img.png" class="mt-1" />
-                                                            </div>
-                                                            <div class="p-2 position-relative info cursor" data-user='1'>
-                                                                <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 reply r1" id="reply-1">
-                                                        <div class="d-flex">
-                                                            <div class="mr-2">
-                                                                <img src="images/course_img.png" class="mt-1" />
-                                                            </div>
-                                                            <div class="p-2 position-relative info cursor" data-user='1'>
-                                                                <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 reply r1" id="reply-1">
-                                                        <div class="d-flex">
-                                                            <div class="mr-2">
-                                                                <img src="images/course_img.png" class="mt-1" />
-                                                            </div>
-                                                            <div class="p-2 position-relative info cursor" data-user='1'>
-                                                                <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 reply r1" id="reply-1">
-                                                        <div class="d-flex">
-                                                            <div class="mr-2">
-                                                                <img src="images/course_img.png" class="mt-1" />
-                                                            </div>
-                                                            <div class="p-2 position-relative info cursor" data-user='1'>
-                                                                <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 reply r1" id="reply-1">
-                                                        <div class="d-flex">
-                                                            <div class="mr-2">
-                                                                <img src="images/course_img.png" class="mt-1" />
-                                                            </div>
-                                                            <div class="p-2 position-relative info cursor" data-user='1'>
-                                                                <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="w-100 text-center mt-1 mb-3">
-                                                        <a href="#" class="btn btn-green loadReply" data-id="r1" id="r1">Load more replies</a>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div class="col-12 blog_comment p1" id="comment-2">
-                                                <div class="d-flex">
-                                                    <div class="mr-2">
-                                                        <img src="images/course_img.png" class="mt-1" />
+                                            <div class="px-4 row mt-3 post" style="overflow-y:auto;max-height: 280px;" id="comment-1">
+
+                                                <div class="col-12 blog_comment p1" id="comment-1">
+                                                    <div class="row">
+                                                        <div class="col-1 px-1">
+                                                            <img src="images/course_img.png" class="mt-1" />
+                                                        </div>
+                                                        <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                            <p class="weight-semi-bold mb-1" id="comment-name">Brandee Sanderssss <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                            <p class="font-14 font-weight-light mb-1" id="comment-text">Comment 6 </p>
+                                                        </div>
+                                                        <div class="col-12 mb-3">
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Like</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">13000 Likes</span>
+                                                        
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Reply</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">2000 Replies</span>
+                                                        </div>
                                                     </div>
-                                                    <div class="p-2 position-relative info cursor" data-user='1'>
-                                                        <p class="weight-semi-bold mb-1" id="comment-name">Nats </p>
-                                                        <p class="font-14 font-weight-light mb-1" id="comment-text">Comment New </p>
+
+                                                    <div class="row lead emoji-picker-container px-5 mb-3">
+                                                        <div class="col-1 px-1">
+                                                            <img src="images/course_img.png" class="mt-1" />
+                                                        </div>
+                                                        <div class="col-9 px-1">
+                                                            <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text example1" id="input-comment-1" data-img="course_img.png" data-name="Kelvin Sam" />
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <button class="btn btn-sm btn-green mt-2 comment-send btn-round ml-2" data-id="comment-1" data-load="p1">Send</button>
+                                                        </div>
                                                     </div>
-                                                    <div class="ml-auto">
-                                                        <a href="#" class="show-comment">Reply</a>
-                                                    </div>
-                                                </div>
-                                                <div class="replies">
-                                                    <div class="col-12 reply" id="reply-2">
-                                                        <div class="d-flex">
-                                                            <div class="mr-2">
-                                                                <img src="images/course_img.png" class="mt-1" />
+
+                                                    <div class="replies">
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
                                                             </div>
-                                                            <div class="p-2 position-relative info cursor" data-user='1'>
-                                                                <p class="weight-semi-bold mb-1" id="reply-name">Brandee David </p>
-                                                                <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 100  </p>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
                                                             </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 text-center mt-1 mb-3">
+                                                            <a href="#" class="btn btn-green loadReply" data-id="r1" id="r1">Load more replies</a>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="w-100 text-center mt-4">
-                                            <a href="#" class="btn btn-green loadMore" data-id="p1" id="p1">Load More</a>
-                                        </div>
 
-                                        <div class="text-center my-2">
-                                            <button class="btn btn-sm btn-green show-drop" id="comment-1">Show Comment</button>
+                                                <div class="col-12 blog_comment p1" id="comment-1">
+                                                    <div class="row">
+                                                        <div class="col-1 px-1">
+                                                            <img src="images/course_img.png" class="mt-1" />
+                                                        </div>
+                                                        <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                            <p class="weight-semi-bold mb-1" id="comment-name">Brandee Sanderssss <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                            <p class="font-14 font-weight-light mb-1" id="comment-text">Comment 6 </p>
+                                                        </div>
+                                                        <div class="col-12 mb-3">
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Like</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">13000 Likes</span>
+                                                        
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Reply</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">2000 Replies</span>
+                                                        </div>
+                                                    </div>
+
+                                                    
+
+                                                    <div class="replies">
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 text-center mt-1 mb-3">
+                                                            <a href="#" class="btn btn-green loadReply" data-id="r1" id="r1">Load more replies</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 blog_comment p1" id="comment-1">
+                                                    <div class="row">
+                                                        <div class="col-1 px-1">
+                                                            <img src="images/course_img.png" class="mt-1" />
+                                                        </div>
+                                                        <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                            <p class="weight-semi-bold mb-1" id="comment-name">Brandee Sanderssss <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                            <p class="font-14 font-weight-light mb-1" id="comment-text">Comment 6 </p>
+                                                        </div>
+                                                        <div class="col-12 mb-3">
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Like</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">13000 Likes</span>
+                                                        
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Reply</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">2000 Replies</span>
+                                                        </div>
+                                                    </div>
+
+                                                    
+
+                                                    <div class="replies">
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 text-center mt-1 mb-3">
+                                                            <a href="#" class="btn btn-green loadReply" data-id="r1" id="r1">Load more replies</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 blog_comment p1" id="comment-1">
+                                                    <div class="row">
+                                                        <div class="col-1 px-1">
+                                                            <img src="images/course_img.png" class="mt-1" />
+                                                        </div>
+                                                        <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                            <p class="weight-semi-bold mb-1" id="comment-name">Brandee Sanderssss <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                            <p class="font-14 font-weight-light mb-1" id="comment-text">Comment 6 </p>
+                                                        </div>
+                                                        <div class="col-12 mb-3">
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Like</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">13000 Likes</span>
+                                                        
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Reply</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">2000 Replies</span>
+                                                        </div>
+                                                    </div>
+
+                                                    
+
+                                                    <div class="replies">
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 text-center mt-1 mb-3">
+                                                            <a href="#" class="btn btn-green loadReply" data-id="r1" id="r1">Load more replies</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 blog_comment p1" id="comment-1">
+                                                    <div class="row">
+                                                        <div class="col-1 px-1">
+                                                            <img src="images/course_img.png" class="mt-1" />
+                                                        </div>
+                                                        <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                            <p class="weight-semi-bold mb-1" id="comment-name">Brandee Sanderssss <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                            <p class="font-14 font-weight-light mb-1" id="comment-text">Comment 6 </p>
+                                                        </div>
+                                                        <div class="col-12 mb-3">
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Like</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">13000 Likes</span>
+                                                        
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Reply</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">2000 Replies</span>
+                                                        </div>
+                                                    </div>
+
+                                                    
+
+                                                    <div class="replies">
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 text-center mt-1 mb-3">
+                                                            <a href="#" class="btn btn-green loadReply" data-id="r1" id="r1">Load more replies</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 blog_comment p1" id="comment-1">
+                                                    <div class="row">
+                                                        <div class="col-1 px-1">
+                                                            <img src="images/course_img.png" class="mt-1" />
+                                                        </div>
+                                                        <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                            <p class="weight-semi-bold mb-1" id="comment-name">Brandee Sanderssss <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                            <p class="font-14 font-weight-light mb-1" id="comment-text">Comment 6 </p>
+                                                        </div>
+                                                        <div class="col-12 mb-3">
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Like</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">13000 Likes</span>
+                                                        
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Reply</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">2000 Replies</span>
+                                                        </div>
+                                                    </div>
+
+                                                    
+
+                                                    <div class="replies">
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 text-center mt-1 mb-3">
+                                                            <a href="#" class="btn btn-green loadReply" data-id="r1" id="r1">Load more replies</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 blog_comment p1" id="comment-1">
+                                                    <div class="row">
+                                                        <div class="col-1 px-1">
+                                                            <img src="images/course_img.png" class="mt-1" />
+                                                        </div>
+                                                        <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                            <p class="weight-semi-bold mb-1" id="comment-name">Brandee Sanderssss <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                            <p class="font-14 font-weight-light mb-1" id="comment-text">Comment 6 </p>
+                                                        </div>
+                                                        <div class="col-12 mb-3">
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Like</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">13000 Likes</span>
+                                                        
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Reply</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">2000 Replies</span>
+                                                        </div>
+                                                    </div>
+
+                                                    
+
+                                                    <div class="replies">
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 text-center mt-1 mb-3">
+                                                            <a href="#" class="btn btn-green loadReply" data-id="r1" id="r1">Load more replies</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 blog_comment p1" id="comment-1">
+                                                    <div class="row">
+                                                        <div class="col-1 px-1">
+                                                            <img src="images/course_img.png" class="mt-1" />
+                                                        </div>
+                                                        <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                            <p class="weight-semi-bold mb-1" id="comment-name">Brandee Sanderssss <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                            <p class="font-14 font-weight-light mb-1" id="comment-text">Comment 6 </p>
+                                                        </div>
+                                                        <div class="col-12 mb-3">
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Like</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">13000 Likes</span>
+                                                        
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Reply</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">2000 Replies</span>
+                                                        </div>
+                                                    </div>
+
+                                                    
+
+                                                    <div class="replies">
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 text-center mt-1 mb-3">
+                                                            <a href="#" class="btn btn-green loadReply" data-id="r1" id="r1">Load more replies</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 blog_comment p1" id="comment-1">
+                                                    <div class="row">
+                                                        <div class="col-1 px-1">
+                                                            <img src="images/course_img.png" class="mt-1" />
+                                                        </div>
+                                                        <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                            <p class="weight-semi-bold mb-1" id="comment-name">Brandee Sanderssss <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                            <p class="font-14 font-weight-light mb-1" id="comment-text">Comment 6 </p>
+                                                        </div>
+                                                        <div class="col-12 mb-3">
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Like</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">13000 Likes</span>
+                                                        
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Reply</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">2000 Replies</span>
+                                                        </div>
+                                                    </div>
+
+                                                    
+
+                                                    <div class="replies">
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 text-center mt-1 mb-3">
+                                                            <a href="#" class="btn btn-green loadReply" data-id="r1" id="r1">Load more replies</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 blog_comment p1" id="comment-1">
+                                                    <div class="row">
+                                                        <div class="col-1 px-1">
+                                                            <img src="images/course_img.png" class="mt-1" />
+                                                        </div>
+                                                        <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                            <p class="weight-semi-bold mb-1" id="comment-name">Brandee Sanderssss <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                            <p class="font-14 font-weight-light mb-1" id="comment-text">Comment 6 </p>
+                                                        </div>
+                                                        <div class="col-12 mb-3">
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Like</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">13000 Likes</span>
+                                                        
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Reply</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">2000 Replies</span>
+                                                        </div>
+                                                    </div>
+
+                                                    
+
+                                                    <div class="replies">
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 text-center mt-1 mb-3">
+                                                            <a href="#" class="btn btn-green loadReply" data-id="r1" id="r1">Load more replies</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 blog_comment p1" id="comment-1">
+                                                    <div class="row">
+                                                        <div class="col-1 px-1">
+                                                            <img src="images/course_img.png" class="mt-1" />
+                                                        </div>
+                                                        <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                            <p class="weight-semi-bold mb-1" id="comment-name">Brandee Sanderssss <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                            <p class="font-14 font-weight-light mb-1" id="comment-text">Comment 6 </p>
+                                                        </div>
+                                                        <div class="col-12 mb-3">
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Like</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">13000 Likes</span>
+                                                        
+                                                            <a href="#" class="font-12 font-weight-500 show-comment mr-2">Reply</a>
+                                                        
+                                                            <span href="#" class="font-12 show-comment mr-2">2000 Replies</span>
+                                                        </div>
+                                                    </div>
+
+                                                    
+
+                                                    <div class="replies">
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 reply r1 px-0" id="reply-1">
+                                                            <div class="row">
+                                                                <div class="col-1 px-1">
+                                                                    <img src="images/course_img.png" class="mt-1" />
+                                                                </div>
+                                                                <div class="col-11 p-2 position-relative info cursor" data-user='1'>
+                                                                    <p class="weight-semi-bold mb-1" id="reply-name">Brandee Colly <span class="font-12 float-right font-weight-400">3h</span></p>
+                                                                    <p class="font-14 font-weight-light mb-1" id="reply-text">Reply 1  </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 text-center mt-1 mb-3">
+                                                            <a href="#" class="btn btn-green loadReply" data-id="r1" id="r1">Load more replies</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="w-100 text-left mt-4">
+                                                <a href="#" class="font-14 btn loadMore" data-id="p1" id="p1">Load More Comments</a>
+                                            </div>
+
+                                            <!-- <div class="text-center my-2">
+                                                <button class="btn btn-sm btn-green show-drop" id="comment-1">Load More Comments</button>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -564,7 +1728,7 @@
                                                         <p class="d-none" id="comment-reply-comment-id"></p>
                                                     </div>
                                                     <div class="ml-auto mt-2">
-                                                        <a href="#" class="hide-comment"><i class="fa fa-close"></i></a>
+                                                        <a href="#" class="hide-comment"><i class="fa fa-times"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -772,7 +1936,7 @@
                                                         <div class="preview-box">
                                                             <!-- This is used as the file preview template -->
                                                             <div class="remove-button" data-dz-remove>
-                                                                <i class="fa fa-close"></i>
+                                                                <i class="fa fa-times"></i>
                                                             </div>
                                                             <div>
                                                                 <span class="preview"><img src="" data-dz-thumbnail alt=""/></span>
@@ -828,7 +1992,7 @@
             </div>
 
             <!-- Share Modal -->
-            <div class="modal" id="share" tabindex="-1" role="dialog" aria-labelledby="shareModal" aria-hidden="true">
+            <div class="modal mt-5" id="share" tabindex="-1" role="dialog" aria-labelledby="shareModal" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -841,11 +2005,11 @@
                             <h6 class="modal-course-title"></h6>
                             <h6 class="modal-course-url"></h6>
                             <div class="footer-link mx-auto text-center py-4">
-                                <a class="fb mr-3" href="#"><i class="fa fa-36px fa-facebook"></i></a>
-                                <a class="twit mr-3" href="#"><i class="fa fa-36px fa-twitter"></i></a>
-                                <a class="insta mr-3" href="#"><i class="fa fa-36px fa-instagram"></i></a>
-                                <a class="google mr-3" href="#"><i class="fa fa-36px fa-email"></i></a>
-                                <a class="whatsapp mr-3" href="#"><i class="fa fa-36px fa-whatsapp"></i></a>
+                                <a class="fb mr-3" href="#"><i class="fab fa-2x fa-facebook"></i></a>
+                                <a class="twit mr-3" href="#"><i class="fab fa-2x fa-twitter"></i></a>
+                                <a class="insta mr-3" href="#"><i class="fab fa-2x fa-instagram"></i></a>
+                                <a class="google mr-3" href="#"><i class="fab fa-2x fa-email"></i></a>
+                                <a class="whatsapp mr-3" href="#"><i class="fab fa-2x fa-whatsapp"></i></a>
                             </div>
                         </div>
                     </div>
@@ -926,6 +2090,8 @@
         </div>
 
 
+
+
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script src="js/jquery.min.js"></script>
         <!-- Popper.JS -->
@@ -943,8 +2109,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
         <script src="js/emojionearea.js"></script>
         <script>
-  feather.replace()
-</script>
+            $('.show-comments').on('click', function(e){
+                e.preventDefault();
+                $('.comments').slideDown();
+            })
+        </script>
 
     </body>
 
