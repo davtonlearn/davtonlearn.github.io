@@ -1391,12 +1391,17 @@ $("body").delegate("#send-message", "click", function(e){
 //Newly Added  
 
 $(document).ready(function() {
-    $(".example1").emojioneArea();
+    $(".example1").emojioneArea({
+        search: false,
+        hidePickerOnBlur: false
+    });
 });
 
 $(document).ready(function() {
     $(".example2").emojioneArea({
         pickerPosition: "bottom",
+        search: false,
+        hidePickerOnBlur: false
     });
 });
          

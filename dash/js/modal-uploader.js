@@ -265,7 +265,9 @@ if ($('.modal-uploader').length) {
         $('.emojionearea-editor').text('');
         
         $('#media-text').val("");
-            $(".example"+time).emojioneArea();
+        $(".example"+time).emojioneArea({
+            search: false
+        });
         $('#albums-modal').modal('hide');
         $('.backdrop.fade.in').remove();
         // $('#albums-modal').removeClass('show');
