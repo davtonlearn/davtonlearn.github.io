@@ -1079,38 +1079,9 @@ $(document).on('click','#delete_user',function(e){
 });
 
 // For Community
-$(function () {
-    
-    $('.loadMore').hide();
-    postlen = $('.card--dashboard').length
-    for (i = 1; i <= postlen; i++) {
-        $(".p"+i).slice(0, 4).show();
-        if(($(".p"+i).length)>4){
-            $('.loadMore#p'+i).show();
-        }
-    };
-    $(".loadMore").on('click', function (e) {
-        e.preventDefault();
-        id = $(this).data("id");
-        $("." + id + ":hidden").slice(0, 4).slideDown();
-        if ($("." + id + ":hidden").length == 0) {
-            $(".loadMore#"+id).fadeOut('slow');
-        }
-        $('.post').animate({
-            scrollTop: $(this).offset().top
-        }, 1500);
-    });
-});
+
 
 $(function () {
-    $('.loadReply').hide();
-    replen = $('.card--dashboard').length
-    for (i = 1; i <= replen; i++) {
-        $(".r"+i).slice(0, 2).show();
-        if(($(".r"+i).length)>2){
-            $('.loadReply#r'+i).show();
-        }
-    };
     $(".loadReply").on('click', function (e) {
         e.preventDefault();
         id = $(this).data("id");
@@ -1135,56 +1106,377 @@ $(function () {
         $(".img-gallery").slice(0, 4).show();
     };
 });
-$(function () {
-    $(".card--dashboard").slice(0, 12).show();
-    if($('.card--dashboard').length < 3){
-        $(".loadPost").hide();
-    }
-    $(".loadPost").on('click', function (e) {
-        e.preventDefault();
-        $(".card--dashboard:hidden").slice(0, 4).slideDown();
-        if ($(".card--dashboard:hidden").length == 0) {
-            $(".loadPost").fadeOut('slow');
+
+// Get current time to use as unique id
+function gettime(){
+    var unique_time = $.now();
+    return unique_time
+}
+
+//Use to get the how long ago the message was sent
+function timeSince(date) {
+
+  var seconds = Math.floor((new Date() - date) / 1000);
+
+  var interval = seconds / 31536000;
+
+  if (interval > 1) {
+    return Math.floor(interval) + "y";
+  }
+  interval = seconds / 604800;
+  if (interval > 1) {
+    return Math.floor(interval) + "w";
+  }
+  interval = seconds / 86400;
+  if (interval > 1) {
+    return Math.floor(interval) + "d";
+  }
+  interval = seconds / 3600;
+  if (interval > 1) {
+    return Math.floor(interval) + "h";
+  }
+  interval = seconds / 60;
+  if (interval > 1) {
+    return Math.floor(interval) + "m";
+  }
+  return Math.floor(seconds) + "s";
+}
+
+function getMorePost(){
+    $.ajax({
+            url: 'https://reqres.in/api/users',
+            dataType: 'json',
+            type: 'get',
+            contentType: 'application/json',
+            param: '{}',
+            async: true,
+            success: function( data, textStatus, jQxhr ){
+                $(".card-content").append(`
+                    <div class="card--dashboard my-3" style="display: block;">
+
+                                <div class="row">
+                                    <div class="col-md-12 my-2 pt-2">
+                                        <div class="px-4 row">
+                                            <div class="col-9 d-flex">
+                                                <div class="mr-2">
+                                                    <img src="images/course_img.png" class="mt-1">
+                                                </div>
+                                                <div class="info cursor" data-user="1">
+                                                    <p class="font-weight-bold mb-0 font-14">Brandee Sanders
+                                                    </p><p class="font-weight-light font-14">5 mins ago</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="px-4">
+                                            <p class="font-14 font-weight-light">I am Post 1</p>
+                                        </div>
+
+                                        <div class="like-comment row my-3 px-5">
+                                            <div class="like-comment-value text-right">
+                                                <span class="mr-1 font-12 likes-val"><span class="num-likes" id="num-likes-1">1</span> <span class="text-likes">like</span></span>
+                                                <span class="mr-1 font-12 comments-val"><span class="num-comments" id="num-comment-1">0</span> <span class="text-comments">comment</span></span> 
+                                            </div>
+                                        </div>
+
+                                        <hr>
+
+                                        <div class="like-share row my-0 px-5">
+                                            <div class="text-left mr-4 ">
+                                                <a class="like font-weight-500 d-flex align-items-center" href="#" data-user="1" data-post="1" data-id="1">
+                                                    <span class="icon" id="icon-1"><i class="far fa-thumbs-up font-20 mr-1"></i></span>
+                                                    <span class="like-unlike font-14" id="like-unlike-1">Like</span>
+                                                </a>
+                                            </div>
+                                            <div class="text-left mr-4 d-flex align-items-center">
+                                                <a class="show-comments font-weight-500 d-flex align-items-center" href="#" data-user="1" data-post="1" data-id="1">
+                                                    <span><svg class="svg-inline--fa fa-comment-dots fa-w-16 font-20 mr-1" aria-hidden="true" data-prefix="fa" data-icon="comment-dots" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32zM128 272c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"></path></svg><!-- <i class="fa fa-comment-dots font-20 mr-1"></i> --></span>
+                                                    <span class="font-14" id="cmt-1">Comment</span>
+                                                </a>
+                                            </div>
+                                            <div class="share text-left mr-4 d-flex align-items-center">
+                                                <a class="share_link font-weight-500 d-flex align-items-center cursor" data-post="1" data-user="1" data-id="1">
+                                                    <span><svg class="svg-inline--fa fa-share fa-w-16 font-20 mr-1" aria-hidden="true" data-prefix="fa" data-icon="share" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M503.691 189.836L327.687 37.851C312.281 24.546 288 35.347 288 56.015v80.053C127.371 137.907 0 170.1 0 322.326c0 61.441 39.581 122.309 83.333 154.132 13.653 9.931 33.111-2.533 28.077-18.631C66.066 312.814 132.917 274.316 288 272.085V360c0 20.7 24.3 31.453 39.687 18.164l176.004-152c11.071-9.562 11.086-26.753 0-36.328z"></path></svg><!-- <i class="font-20 mr-1 fa fa-share"></i> --></span>
+                                                    <span class="font-14">Share</span>
+                                                </a>
+                                            </div>
+                                            <div class="share text-left mr-4 d-flex align-items-center">
+                                                <a class="font-weight-500 d-flex align-items-center cursor" data-post="1" data-user="1" data-id="1">
+                                                    <span><svg class="svg-inline--fa fa-paper-plane fa-w-16 font-20 mr-1" aria-hidden="true" data-prefix="fa" data-icon="paper-plane" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"></path></svg><!-- <i class="font-20 mr-1 fa fa-paper-plane"></i> --></span>
+                                                    <span class="font-14">Send</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="comments" style="display: none;">
+
+                                            <hr>
+
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                `);
+            },
+            error: function( jqXhr, textStatus, errorThrown ){
+                console.log( errorThrown );
+            }
+        });
+}
+
+function getComments(comments){
+    since = timeSince(1611410592880);
+    $.ajax({
+            url: 'https://reqres.in/api/users',
+            dataType: 'json',
+            type: 'get',
+            contentType: 'application/json',
+            param: '{}',
+            async: true,
+            success: function( data, textStatus, jQxhr ){
+                for (i = 0; i < data.data.length; i++){
+                    $(comments.parent()).append(`
+                        <div class="col-12 blog_comment reply-item pt-1 px-4" data-reply-id="1" style="display:block">
+                            <div class="row main-comment">
+                                <div class="col-1 px-1">
+                                    <img src="`+img+`" class="mt-1" />
+                                </div>
+                                <div class="col-11 p-2 position-relative info cursor">
+                                    <p class="weight-semi-bold mb-1" id="comment-name"> `+name+` <span class="font-12 float-right font-weight-400">`+since+`</span></p>
+                                    <p class="font-14 font-weight-light mb-1" id="comment-text">Love</p>
+                                </div>
+                                <div class="col-12 mb-2">
+                                    <a href="#" class="font-12 font-weight-500 add-reply-likes mr-2">Like</a>
+                                
+                                    <span href="#" class="font-12 reply-likes mr-2"><span class="reply-likes-value">0</span> <span class="reply-likes-text">Like</span></span>
+                                
+                                    <a href="#" class="font-12 font-weight-500 add-reply-comments mr-2">Reply</a>
+                                
+                                    <span href="#" class="font-12 reply-comments mr-2"><span class="reply-comments-value">0</span> <span class="reply-comments-text">Reply</span></span>
+                                </div>
+                                <div class="w-100 text-left px-4 mb-2">
+                                    <a href="#" class="font-10 btn loadReply">Load Previous Replies</a>
+                                </div>
+                            </div>
+
+                            <div class="replies">
+                            </div>
+                        </div>
+                    `);
+                    $(comments.parent()).slideDown();
+                }
+            },
+            error: function( jqXhr, textStatus, errorThrown ){
+                console.log( errorThrown );
+            }
+        });
+}
+
+function getReply(id, comments){
+    since = timeSince(1611410592880);
+    $.ajax({
+        url: 'https://reqres.in/api/users',
+        dataType: 'json',
+        type: 'get',
+        contentType: 'application/json',
+        param: '{}',
+        async: true,
+        success: function( data, textStatus, jQxhr ){
+            for (i = 0; i < data.data.length; i++){
+                $(comments.parent()).after(`
+                    <div class="col-12 blog_comment reply-item pt-1 pl-4" data-reply-id="1" style="display:block">
+                        <div class="row main-comment">
+                            <div class="col-1 px-1">
+                                <img src="`+img+`" class="mt-1" />
+                            </div>
+                            <div class="col-11 p-2 position-relative info cursor">
+                                <p class="weight-semi-bold mb-1" id="comment-name"> `+name+` <span class="font-12 float-right font-weight-400">`+since+`</span></p>
+                                <p class="font-14 font-weight-light mb-1" id="comment-text">Love</p>
+                            </div>
+                            <div class="col-12 mb-2">
+                                <a href="#" class="font-12 font-weight-500 add-reply-likes mr-2">Like</a>
+                            
+                                <span href="#" class="font-12 reply-likes mr-2"><span class="reply-likes-value">0</span> <span class="reply-likes-text">Like</span></span>
+                            
+                                <a href="#" class="font-12 font-weight-500 add-reply-comments mr-2">Reply</a>
+                            
+                                <span href="#" class="font-12 reply-comments mr-2"><span class="reply-comments-value">0</span> <span class="reply-comments-text">Reply</span></span>
+                            </div>
+                            <div class="w-100 text-left px-4 mb-2">
+                                <a href="#" class="font-10 btn loadReply">Load Previous Replies</a>
+                            </div>
+                        </div>
+
+                        <div class="replies">
+                        </div>
+                    </div>
+                `);
+                $(comments.parent()).slideDown();
+            }
+        },
+        error: function( jqXhr, textStatus, errorThrown ){
+            console.log( errorThrown );
         }
+    });
+}
+
+$(function () {
+    $("body").delegate(".loadReply", "click", function(e){
+        e.preventDefault();
+        comments = $(this).parent();
+        id = $(this).closest('.blog_comment').attr('data-reply-id')
+        console.log(comments)
+        console.log(id)
+        getReply(id, comments);
         $('html,body').animate({
-            scrollTop: $(this).offset().top
+            scrollTop: $(this).offset().top - 130
         }, 1500);
     });
 });
 
+$(function () {
+    $(".card--dashboard").slice(0, 12).show();
+
+    // Load more post when users get to the bottom of the page
+    $(window).bind('scroll', function() {
+        if($(window).scrollTop() >= $('.card-content').offset().top + $('.card-content').outerHeight() - window.innerHeight) {
+            getMorePost();
+        }
+    });
+    
+    // Load more post when users show more botton is clicked
+    $(".loadPost").on('click', function (e) {
+        e.preventDefault();
+        getMorePost();
+        $('html,body').animate({
+            scrollTop: $(this).offset().top - 130
+        }, 1500);
+    });
+});
+
+// Global User Info from Database
+img = 'images/course_img.png' // Will be a global value
+name = 'James Smart'; // Will be a global value
+
+function createInput(){
+    time = gettime();
+    inputname = "example" + time;
+    $("." + inputname).emojioneArea({
+        search: false
+    });
+    return inputname
+}
+
+// Open comment box
+$("body").delegate(".show-comments", "click", function(e){
+    e.preventDefault();
+    section = $(this).closest('.card--dashboard').find('.comments');
+    if(section.hasClass('open')){
+        return
+    }
+    else{
+        $(section).html('');
+        time = gettime();
+        $(section).append(`
+            <div class="px-4 row my-3">
+                <div class="col-lg-12 col-12 d-flex lead emoji-picker-container px-1">
+                    <img src="`+img+`" class="mt-1 mr-2" />
+                    <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text example`+time+`" id="input-comment-1" data-img="course_img.png" data-name="Kelvin Sam" />
+                    <button class="btn btn-sm btn-green mt-2 comment-send btn-round ml-2" data-id="comment-1" data-load="p1">Send</button>
+                </div>
+                <div class="col-12 comment_reply mx-auto" id="p1">
+                    <div class="d-flex">
+                        <div class="p-2 position-relative info cursor" data-user='1'>
+                            <p class="weight-semi-bold mb-1" id="comment-reply-name"></p>
+                            <p class="font-14 font-weight-light mb-1" id="comment-reply-text"></p>
+                            <p class="d-none" id="comment-reply-post-id"></p>
+                            <p class="d-none" id="comment-reply-comment-id"></p>
+                        </div>
+                        <div class="ml-auto mt-2">
+                            <a href="#" class="hide-comment"><i class="fa fa-times"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `);
+
+        $(".example" + time).emojioneArea({
+            search: false
+        });
+        $(section).slideDown();
+        $(section).addClass('open');
+        $(".example" + time).data('emojioneArea').setFocus();
+        getComments(section);
+        $(section.parent().parent()).append(`
+            <div class="w-100 text-left px-4">
+                <a href="#" class="font-14 btn loadMore">Load More Comments</a>
+            </div>`
+        )
+    }
+})
+
+$(function () {
+    $("body").delegate(".loadMore", "click", function(e){
+        e.preventDefault();
+        comments = $(this).closest('.card--dashboard').find('.comments');
+        console.log(comments)
+        getComments(comments);
+        $('html,body').animate({
+            scrollTop: $(this).offset().top - 130
+        }, 1500);
+    });
+});
+
+// Comment on a Post
 $("body").delegate(".comment-send", "click", function(){
-    var id = $(this).data('id');
-    var post_id = $(this).data('load');
-    var comment = $('#input-'+id).val();
-    var img = $('.comment-text').data('img');
-    var name = $('.comment-text').data('name');
-    comment_id = $(".comment_reply#"+post_id).find("#comment-reply-comment-id").text();
-    var time = $.now(); 
-    user_id = $(".comment_reply div div").data('user')
+
+    section = $(this).closest('.card--dashboard').find('.comments');
+
+    comment = $(this).closest('.comments').find('.emojionearea-editor').html();
+    user_id = $(".comment_reply div div").data('user');
+
+    time = gettime();
+    since = (timeSince(time))
     
     //Check if the textarea is empty
     if (comment != "") {
-        if($('.comment_reply').is(':visible')){
-            $("."+post_id+"#"+comment_id).find('.replies').prepend(`
-                <div class="col-12 reply" id="reply-1" style="display:block">
-                    <div class="d-flex">
-                        <div class="mr-2">
-                            <img src="images/`+img+`" class="mt-1" />
+            $(section).after(`
+
+                <div class="col-12 blog_comment reply-item pt-1 px-4" data-reply-id="`+time+`" style="display:block">
+                    <div class="row main-comment">
+                        <div class="col-1 px-1">
+                            <img src="`+img+`" class="mt-1" />
                         </div>
-                        <div class="p-2 position-relative info cursor" data-user=`+user_id+`>
-                            <p class="weight-semi-bold mb-1" id="reply-name">`+name+`</p>
-                            <p class="font-13 font-weight-light mb-1" id="reply-text">`+comment+`</p>
+                        <div class="col-11 p-2 position-relative info cursor">
+                            <p class="weight-semi-bold mb-1" id="comment-name"> `+name+` <span class="font-12 float-right font-weight-400">`+since+`</span></p>
+                            <p class="font-14 font-weight-light mb-1" id="comment-text">`+comment+`</p>
+                        </div>
+                        <div class="col-12 mb-2">
+                            <a href="#" class="font-12 font-weight-500 add-reply-likes mr-2">Like</a>
+                        
+                            <span href="#" class="font-12 reply-likes mr-2"><span class="reply-likes-value">0</span> <span class="reply-likes-text">Like</span></span>
+                        
+                            <a href="#" class="font-12 font-weight-500 add-reply-comments mr-2">Reply</a>
+                        
+                            <span href="#" class="font-12 reply-comments mr-2"><span class="reply-comments-value">0</span> <span class="reply-comments-text">Reply</span></span>
                         </div>
                     </div>
+
+                    <div class="replies">
+                    </div>
                 </div>`);
-            $('.comment_reply').slideUp("slow");
-            
+
+            $(".example"+time).emojioneArea({
+                search: false
+            });
+
             $.ajax({
                 url: 'https://jsonplaceholder.typicode.com/todos/',
                 dataType: 'json',
                 type: 'post',
                 contentType: 'application/json',
-                data: JSON.stringify({'post_id':post_id,'comment_id':comment_id,'reply_name':name,'reply_text':comment}),
+                data: JSON.stringify({'post_id':time,'reply_text':comment}),
                 processData: false,
                 success: function( data, textStatus, jQxhr ){
                     $('#response pre').html( JSON.stringify( data ) );
@@ -1195,50 +1487,280 @@ $("body").delegate(".comment-send", "click", function(){
                 }
             });
         }
-        else{
-            $(".post#"+id).prepend(`<div class=" d-block col-12 blog_comment `+post_id+`" id="`+time+`">
-                                <div class="d-flex">
-                                    <div class="mr-2">
-                                        <img src="images/`+img+`" class="mt-1" />
-                                    </div>
-                                    <div class="p-2 position-relative info cursor" data-user=`+user_id+`>\
-                                        <p class="weight-semi-bold mb-1" id="comment-name">`+name+` </p>
-                                        <p class="font-14 font-weight-light mb-1" id="comment-text">`+comment+`</p>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <a href="#" class="show-comment">Reply</a>
-                                    </div>
-                                </div>
-                                <div class="replies">
-
-                                </div>
-                            </div>`);
-
-            $.ajax({
-                url: 'https://jsonplaceholder.typicode.com/todos/',
-                dataType: 'json',
-                type: 'post',
-                contentType: 'application/json',
-                data: JSON.stringify({'post_id':post_id,'reply_name':name,'reply_text':comment}),
-                processData: false,
-                success: function( data, textStatus, jQxhr ){
-                    $('#response pre').html( JSON.stringify( data ) );
-                },
-                error: function( jqXhr, textStatus, errorThrown ){
-                    // $(".like-unlike#like-unlike-" + id).html('Like');
-                    // $(".icon#icon-"+id).html('<i class="fa fa-thumbs-up mt-1"></i>');
-                }
-            });
-        }
-
-    }
-
-    $(".num-comments#num-"+id).text(parseInt($(".num-comments#num-"+id).text()) + 1);
+        num_comment = $(this).closest('.card--dashboard').find('.num-comments');
+        $(num_comment).text(parseInt((num_comment).text())+1)
+    // $(".num-comments#num-"+id).text(parseInt($(".num-comments#num-"+id).text()) + 1);
     plural();
 
-    $('#input-'+id).val('');
-    $('.emojionearea-editor').text('');
+    $(this).closest('.comments').find('.emojionearea-editor').html('');
+});
+
+// Like a comment of a post
+$("body").delegate(".add-reply-likes", "click", function(e){
+    e.preventDefault();
+    val = $(this).closest('.reply-item').find('.reply-likes-value').first().text();
+
+    if($(this).hasClass('text-primary')){
+        val = parseInt(parseInt(val) - 1);
+        $(this).removeClass('text-primary')
+    }
+    else{
+        val = parseInt(parseInt(val) + 1);
+        $(this).addClass('text-primary')
+    }
+    if(val <= 1){
+        $(this).closest('.reply-item').find('.reply-likes-text').first().text('Like');
+    }
+    else{
+        $(this).closest('.reply-item').find('.reply-likes-text').first().text('Likes');
+    }
+    $(this).closest('.reply-item').find('.reply-likes-value').first().text(val);
 })
+
+// Open reply a comment box
+$("body").delegate(".add-reply-comments", "click", function(e){
+    e.preventDefault();
+    if($(this).closest('.blog_comment').find('.emoji-picker-container')){
+        $(this).closest('.blog_comment').find('.emoji-picker-container').remove();
+    }
+    var time = gettime();
+    $(this).closest('.main-comment').append(`
+        <div class="row lead emoji-picker-container pl-4 mb-3 w-100">
+            <div class="col-1 px-1">
+                <img src="images/course_img.png" class="mt-1" />
+            </div>
+            <div class="col-10 px-0">
+                <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text example`+time+`" id="input-comment-1" />
+            </div>
+            <div class="col-1 px-0">
+                <button class="btn btn-sm btn-green mt-2 reply-send btn-round ml-2" data-id="comment-1" data-load="p1">Send</button>
+            </div>
+        </div>`
+    ).slideDown('slow');
+    $(".example"+time).emojioneArea({
+        search: false
+    });
+    $('.comments').slideDown();
+    $(".example"+time).data('emojioneArea').setFocus();
+});
+
+// Reply to a comment 
+$("body").delegate(".reply-send", "click", function(e){
+    e.preventDefault();
+    unique_time = gettime();
+
+    comment = $(this).closest('.reply-item').find('.emojionearea-editor').html();
+    unique_id = $(this).closest('.reply-item').attr('data-reply-id');
+
+    time = gettime();
+    since = (timeSince(unique_time));
+
+    val = $(this).closest('.reply-item').find('.reply-comments-value').first().text();
+    val = parseInt(parseInt(val) + 1);
+
+    $(this).closest('.reply-item').find('.reply-comments-value').first().text(val)
+    if(val <= 1){
+        $(this).closest('.reply-item').find('.reply-comments-text').text('Reply');
+    }
+    else{
+        $(this).closest('.reply-item').find('.reply-comments-text').text('Replies');
+    }
+
+    $($(this).parent().parent().parent()).after(`
+        <div class="col-12 blog_comment reply-item pt-2 pl-4" data-reply-id="`+unique_time+`" style="display:block">
+            <div class="row main-comment">
+                <div class="col-1 px-1">
+                    <img src="`+img+`" class="mt-1" />
+                </div>
+                <div class="col-11 p-2 position-relative info cursor">
+                    <p class="weight-semi-bold mb-1" id="comment-name"> `+name+` <span class="font-12 float-right font-weight-400">`+since+`</span></p>
+                    <p class="font-12 font-weight-light mb-1" id="comment-text">`+comment+`</p>
+                </div>
+                <div class="col-12 mb-2">
+                    <a href="#" class="font-12 font-weight-500 add-reply-likes mr-2">Like</a>
+                
+                    <span href="#" class="font-12 reply-likes mr-2"><span class="reply-likes-value">0</span> <span class="reply-likes-text">Like</span></span>
+                
+                    <a href="#" class="font-12 font-weight-500 add-reply-comments mr-2">Reply</a>
+                
+                    <span href="#" class="font-12 reply-comments mr-2"><span class="reply-comments-value">0</span> <span class="reply-comments-text">Reply</span></span>
+                </div>
+                <div class="w-100 text-left px-4 mb-2">
+                    <a href="#" class="font-10 btn loadReply">Load Previous Replies</a>
+                </div>
+            </div>
+        </div>
+    `);
+    $(this).closest('.emoji-picker-container').remove();
+
+    $.ajax({
+        url: 'https://jsonplaceholder.typicode.com/todos/',
+        dataType: 'json',
+        type: 'post',
+        contentType: 'application/json',
+        data: JSON.stringify({'unique_id':unique_id,'reply_text':comment}),
+        processData: false,
+        success: function( data, textStatus, jQxhr ){
+            $('#response pre').html( JSON.stringify( data ) );
+        },
+        error: function( jqXhr, textStatus, errorThrown ){
+            // $(".like-unlike#like-unlike-" + id).html('Like');
+            // $(".icon#icon-"+id).html('<i class="fa fa-thumbs-up mt-1"></i>');
+        }
+    });
+});
+
+function getUserBio(url) {
+    console.log(url);
+    var result = null;
+    $.ajax({
+        url: url,
+        type: 'get',
+        dataType: 'json',
+        async: false,
+        success: function(data) {
+            result = data.data;
+            console.log(result.avatar)
+        }
+    });
+   return `
+        <div class="row w-100">
+            <div class="col-12 d-flex">
+                <div class="mr-2">
+                    <img src="`+result.avatar+`" class="mt-1 avatar-img" />
+                </div>
+                <div class="">
+                    <p class="font-weight-bold mb-0 font-14">`+result.first_name+`</a>
+                    <p class="font-weight-light font-14 my-0">Email: `+result.email+`</p>
+                    <p class="font-weight-light font-14 my-0">Staff ID: `+result.id+`</p>
+                    <p class="font-weight-light font-14 my-0">Department: `+result.id+`</p>
+                    <a href="#" class="btn btn-green btn-round font-14 mt-2">Message</a>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+
+
+$(".pop").popover({
+        trigger: "manual",
+        html: true,
+        animation: false,
+        container: document.body,
+        placement: 'right'
+    })
+    .on("mouseenter", function() {
+        var _this = this;
+        id = $(this).attr('data-user');
+        $(this).data("bs.popover").options.content = getUserBio('https://reqres.in/api/users/' + id);
+        $(this).popover("show");
+        $(".popover").on("mouseleave", function() {
+            $(_this).popover('hide');
+        });
+    }).on("mouseleave", function() {
+        var _this = this;
+        setTimeout(function() {
+            if (!$(".popover:hover").length) {
+                $(_this).popover("hide");
+            }
+        }, 300);
+    });
+
+// http://davidwalsh.name/javascript-debounce-function
+// var debounce = debounce || function (func, wait, immediate) {
+//     var timeout;
+//     return function() {
+//         var context = this, args = arguments;
+//         var later = function() {
+//             timeout = null;
+//             if (!immediate) func.apply(context, args);
+//         };
+//         var callNow = immediate && !timeout;
+//         clearTimeout(timeout);
+//         timeout = setTimeout(later, wait);
+//         if (callNow) func.apply(context, args);
+//     };
+// };
+
+// function hideAll() {
+//     $("[data-toggle=popover]").each(function () {
+//         var popover = $(this).data('bs.popover');
+//         if (popover.tip().is(':visible')) popover.hide();
+//     });
+// }
+
+// $("[data-toggle=popover]")
+// .popover({
+//     animation: false, 
+//     container: document.body, 
+//     delay: 50, 
+//     html: true, 
+//     trigger: 'manual', 
+//     content: getValues($(this)[0]),
+//     placement: 'auto right'
+// })
+// .each(function () {
+//     var popover = $(this).data('bs.popover');
+//     var $tip = popover.tip();
+//     var delay = popover.options.delay || 0;
+//     var showDelay = delay.show || delay || 0;
+//     var hideDelay = delay.hide || delay || 0;
+//     var showTimeout = null
+//     var hideTimeout = null;
+//     console.log($tip);
+
+//     $(this).add($tip).hover(function show() {
+//         if (hideTimeout) {
+//             clearTimeout(hideTimeout);
+//             hideTimeout = null;
+//         } else if (!$tip.is(':visible')) {
+//             hideAll();
+//             showTimeout = setTimeout(function () {
+//                 popover.show();
+//                 showTimeout = null;
+//             }, showDelay);
+//         }
+//     }, function hide() {
+//         if (showTimeout) {
+//             clearTimeout(showTimeout);
+//             showTimeout = null;
+//         } else if ($tip.is(':visible')) {
+//             hideTimeout = setTimeout(function () {
+//                 popover.hide();
+//                 hideTimeout = null;
+//             }, hideDelay);
+//         }
+//     });
+// });
+
+// $(window).on('scroll resize', debounce(hideAll, 100, true));
+
+// $("body").delegate(".info", "mouseover", function(e){
+//     console.log('open');
+//     $.ajax({
+//         url: 'https://reqres.in/api/users',
+//         dataType: 'json',
+//         type: 'get',
+//         contentType: 'application/json',
+//         param: '{}',
+//         async: true,
+//         success: function( data, textStatus, jQxhr ){
+//             $(".info").popover({
+//                 title: '<h3 class="custom-title"><i class="fa fa-info-circle"></i> Popover Info</h3>',
+//                 content: '<p>This is a <em>simple example</em> demonstrating how to insert HTML code inside <mark><strong>Bootstrap popover</strong></mark>.</p>',
+//                 html: true,
+//                 trigger: 'hover',
+//                 placement: 'left'
+//             }); 
+//         },
+//         error: function( jqXhr, textStatus, errorThrown ){
+//             console.log( errorThrown );
+//         }
+//     });
+// });
+
+
 
 $("body").delegate(".hide-comment", "click", function(e){
     e.preventDefault();
@@ -1265,7 +1787,7 @@ $("body").delegate(".show-comment", "click", function(e){
 
 //Pluralize like(s) and comment(s)
 function plural() {
-    $.each($('.like-share'), function(index, val) {
+    $.each($('.like-comment'), function(index, val) {
         $(this).find(".text-likes").text($(this).find(".num-likes").text() >= 2 ? 'likes' : 'like');
         $(this).find(".text-comments").text($(this).find(".num-comments").text() >= 2 ? 'comments' : 'comment');
     });
@@ -1282,55 +1804,38 @@ $(document).ready(function(){
 });
 
 $("body").delegate(".like", "click", function(){
-    id = $(this).data("id");
-    user_id = $(this).data("user");
-    post_id = $(this).data("post");
-    if ($(".like-unlike#like-unlike-" + id).html() === 'Like') {
-        $(".like-unlike#like-unlike-" + id).html('Unlike');
-        $(".icon#icon-"+id).html('<i class="fa fa-thumbs-down mt-1"></i>');
-        $(".like").css("pointer-events", "auto");
-        $(".num-likes#num-likes-"+id).text(parseInt($(".num-likes#num-likes-"+id).text()) + 1);
-        plural();
-        // $(this).css("pointer-events", "none");
-        $.ajax({
-            url: 'https://jsonplaceholder.typicode.com/todos/',
-            dataType: 'json',
-            type: 'post',
-            contentType: 'application/json',
-            data: JSON.stringify({'user_id':user_id,'post_id':post_id,'message':'1'}),
-            processData: false,
-            success: function( data, textStatus, jQxhr ){
-                $('#response pre').html( JSON.stringify( data ) );
-            },
-            error: function( jqXhr, textStatus, errorThrown ){
-                // $(".like-unlike#like-unlike-" + id).html('Like');
-                // $(".icon#icon-"+id).html('<i class="fa fa-thumbs-up mt-1"></i>');
-            }
-        });
+    like_val = $(this).closest('.card--dashboard').find('.num-likes');
+    post_id = $(this).closest('.card--dashboard').attr('data-post-id');
+    if (!$(this).hasClass('text-primary')) {
+        $(this).addClass('text-primary');
+        $(this).html('<i class="fa fa-thumbs-up font-20 mr-1 text-primary"></i>Like');
+        val_added = 1
     }
     else {
-        // $(this).css("pointer-events", "none");
-        $(".like-unlike#like-unlike-" + id).html('Like');
-        $(".icon#icon-"+id).html('<i class="fa fa-thumbs-up mt-1"></i>');
-        $(".like").css("pointer-events", "auto");
-        $(".num-likes#num-likes-"+id).text(parseInt($(".num-likes#num-likes-"+id).text()) - 1);
-        plural();
-        $.ajax({
-            url: 'https://jsonplaceholder.typicode.com/todos/',
-            dataType: 'json',
-            type: 'post',
-            contentType: 'application/json',
-            data: JSON.stringify({'user_id':user_id,'post_id':post_id,'message':'-1'}),
-            processData: false,
-            success: function( data, textStatus, jQxhr ){
-                $('#response pre').html( JSON.stringify( data ) );
-            },
-            error: function( jqXhr, textStatus, errorThrown ){
-                $(".like-unlike#like-unlike-" + id).html('Unlike');
-                $(".icon#icon-"+id).html('<i class="fa fa-thumbs-down mt-1"></i>');
-            }
-        });
+        $(this).removeClass('text-primary');
+        $(this).html('<i class="far fa-thumbs-up font-20 mr-1"></i>Like');
+        val_added = -1
     }
+
+    $(".like").css("pointer-events", "auto");
+    $(like_val).text(parseInt($(like_val).text()) + val_added);
+    plural();
+    // $(this).css("pointer-events", "none");
+    $.ajax({
+        url: 'https://jsonplaceholder.typicode.com/todos/',
+        dataType: 'json',
+        type: 'post',
+        contentType: 'application/json',
+        data: JSON.stringify({'post_id':post_id,'value':val_added}),
+        processData: false,
+        success: function( data, textStatus, jQxhr ){
+            $('#response pre').html( JSON.stringify( data ) );
+        },
+        error: function( jqXhr, textStatus, errorThrown ){
+            // $(".like-unlike#like-unlike-" + id).html('Like');
+            // $(".icon#icon-"+id).html('<i class="fa fa-thumbs-up mt-1"></i>');
+        }
+    });
     return false;
 });
 
