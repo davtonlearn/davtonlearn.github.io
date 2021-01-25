@@ -1,3 +1,6 @@
+#content{
+    /*width: 100%;*/
+}
 .modal-backdrop.in{
     display: none!important;
 }
@@ -9,6 +12,7 @@
 }
 .blog_comment, .dasboard-top-wrapper{
     background: #fff;
+    border: 0
 }
 .blog_comment div div.mr-2{
 	min-width: 50px;
@@ -98,6 +102,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .text-muted, a.text-muted:hover, a.text-muted:focus, a.text-muted:focus {
     color: #606060;
 }
+.loadMore:focus, .loadMore:hover{
+    color: #000;
+}
 .mar-btm {
     margin-bottom: 15px;
 }
@@ -149,6 +156,35 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .form-control{
     height: 32px;
+}
+
+.add-reply-comments::before {
+  content: "|";
+  margin-right: 10px;
+  font-weight: 400;
+}
+
+.emojioneemoji{
+    width: 16px;
+}
+
+.avatar-img{
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.popover{
+    min-width: 330px; /* Max Width of the popover (depending on the container!) */
+    font-family: inherit;
+    border: 1px solid var(--primary-color);
+}
+
+.popover{
+}
+
+.popover .arrow {
+    display: none;
 }
 
 @media (max-width: 767px){

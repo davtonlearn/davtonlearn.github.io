@@ -98,7 +98,7 @@ if ($('.modal-uploader').length) {
                             <div class="px-4 row mt-3">
                                 <div class="col-lg-12 col-12 d-flex">
                                     <img src="images/course_img.png" class="mt-1 mr-2" />
-                                    <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text example`+time+`" id="input-comment-`+time+`" data-img="course_img.png" data-name="Kelvin Sam"/>
+                                    <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text example`+time+`" id="input-comment-`+time+`" data-img="course_img.png" data-name="Kelvin Samy"/>
                                     <button class="btn btn-sm btn-green mt-2 comment-send" data-id="comment-`+time+`" data-load="p`+time+`">Send</button>
                                 </div>
                                 <div class="col-12 comment_reply mx-auto" id="p`+time+`">
@@ -218,7 +218,7 @@ if ($('.modal-uploader').length) {
                             <div class="px-4 row mt-3">
                                 <div class="col-lg-12 col-12 d-flex">
                                     <img src="images/course_img.png" class="mt-1 mr-2" />
-                                    <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text example`+time+`" id="input-comment-`+time+`" data-img="course_img.png" data-name="Kelvin Sam"/>
+                                    <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text example`+time+`" id="input-comment-`+time+`" data-img="course_img.png" data-name="Kelvin Samz"/>
                                     <button class="btn btn-sm btn-green mt-2 comment-send" data-id="comment-`+time+`" data-load="p`+time+`">Send</button>
                                 </div>
                                 <div class="col-12 comment_reply mx-auto" id="p`+time+`">
