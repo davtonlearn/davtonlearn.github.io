@@ -1139,84 +1139,111 @@ function timeSince(date) {
   if (interval > 1) {
     return Math.floor(interval) + "m";
   }
-  return Math.floor(seconds) + "s";
+  return "Now";
 }
 
 function getMorePost(){
     $.ajax({
-            url: 'https://reqres.in/api/users',
-            dataType: 'json',
-            type: 'get',
-            contentType: 'application/json',
-            param: '{}',
-            async: true,
-            success: function( data, textStatus, jQxhr ){
+        url: 'https://reqres.in/api/users',
+        dataType: 'json',
+        type: 'get',
+        contentType: 'application/json',
+        param: '{}',
+        async: true,
+        success: function( data, textStatus, jQxhr ){
+            im = '';
+            result = '';
+            // if(data.hasimage){
+                imglen = 5;
+                uniqueid = 44;
+                imgsrc = 'https://www.businessinsider.in/photo/80011697/happy-new-year-2021-wishes-and-messages-for-your-dear-ones.jpg?imgsize=431835';
+                function showPostImg(){
+                    for (i=0; i<imglen; i++){
+                        result += `
+                            <div class="col-12 post-image">
+                                <a href="`+imgsrc+`" data-lightbox="im`+uniqueid+`" class="content">
+                                    <div class="content-overlay"></div>
+                                    <img src="`+imgsrc+`" class="img-fluid mt-2 comm-img" />
+                                    <div class="content-details fadeIn-top">
+                                        <h3><i class="fa fa-search-plus fa-2x"></i></h3>
+                                    </div>
+                                </a>
+                            </div>`
+                    }
+                    return result
+                }
+                im = showPostImg();
+            // }
                 $(".card-content").append(`
                     <div class="card--dashboard my-3" style="display: block;">
 
-                                <div class="row">
-                                    <div class="col-md-12 my-2 pt-2">
-                                        <div class="px-4 row">
-                                            <div class="col-9 d-flex">
-                                                <div class="mr-2">
-                                                    <img src="images/course_img.png" class="mt-1">
-                                                </div>
-                                                <div class="info cursor" data-user="1">
-                                                    <p class="font-weight-bold mb-0 font-14">Brandee Sanders
-                                                    </p><p class="font-weight-light font-14">5 mins ago</p>
-                                                </div>
-                                            </div>
+                        <div class="row">
+                            <div class="col-md-12 my-2 pt-2">
+                                <div class="px-4 row">
+                                    <div class="col-9 d-flex">
+                                        <div class="mr-2">
+                                            <img src="images/course_img.png" class="mt-1">
                                         </div>
-
-                                        <div class="px-4">
-                                            <p class="font-14 font-weight-light">I am Post 1</p>
-                                        </div>
-
-                                        <div class="like-comment row my-3 px-5">
-                                            <div class="like-comment-value text-right">
-                                                <span class="mr-1 font-12 likes-val"><span class="num-likes" id="num-likes-1">1</span> <span class="text-likes">like</span></span>
-                                                <span class="mr-1 font-12 comments-val"><span class="num-comments" id="num-comment-1">0</span> <span class="text-comments">comment</span></span> 
-                                            </div>
-                                        </div>
-
-                                        <hr>
-
-                                        <div class="like-share row my-0 px-5">
-                                            <div class="text-left mr-4 ">
-                                                <a class="like font-weight-500 d-flex align-items-center" href="#" data-user="1" data-post="1" data-id="1">
-                                                    <span class="icon" id="icon-1"><i class="far fa-thumbs-up font-20 mr-1"></i></span>
-                                                    <span class="like-unlike font-14" id="like-unlike-1">Like</span>
-                                                </a>
-                                            </div>
-                                            <div class="text-left mr-4 d-flex align-items-center">
-                                                <a class="show-comments font-weight-500 d-flex align-items-center" href="#" data-user="1" data-post="1" data-id="1">
-                                                    <span><svg class="svg-inline--fa fa-comment-dots fa-w-16 font-20 mr-1" aria-hidden="true" data-prefix="fa" data-icon="comment-dots" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32zM128 272c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 0c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"></path></svg><!-- <i class="fa fa-comment-dots font-20 mr-1"></i> --></span>
-                                                    <span class="font-14" id="cmt-1">Comment</span>
-                                                </a>
-                                            </div>
-                                            <div class="share text-left mr-4 d-flex align-items-center">
-                                                <a class="share_link font-weight-500 d-flex align-items-center cursor" data-post="1" data-user="1" data-id="1">
-                                                    <span><svg class="svg-inline--fa fa-share fa-w-16 font-20 mr-1" aria-hidden="true" data-prefix="fa" data-icon="share" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M503.691 189.836L327.687 37.851C312.281 24.546 288 35.347 288 56.015v80.053C127.371 137.907 0 170.1 0 322.326c0 61.441 39.581 122.309 83.333 154.132 13.653 9.931 33.111-2.533 28.077-18.631C66.066 312.814 132.917 274.316 288 272.085V360c0 20.7 24.3 31.453 39.687 18.164l176.004-152c11.071-9.562 11.086-26.753 0-36.328z"></path></svg><!-- <i class="font-20 mr-1 fa fa-share"></i> --></span>
-                                                    <span class="font-14">Share</span>
-                                                </a>
-                                            </div>
-                                            <div class="share text-left mr-4 d-flex align-items-center">
-                                                <a class="font-weight-500 d-flex align-items-center cursor" data-post="1" data-user="1" data-id="1">
-                                                    <span><svg class="svg-inline--fa fa-paper-plane fa-w-16 font-20 mr-1" aria-hidden="true" data-prefix="fa" data-icon="paper-plane" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"></path></svg><!-- <i class="font-20 mr-1 fa fa-paper-plane"></i> --></span>
-                                                    <span class="font-14">Send</span>
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="comments" style="display: none;">
-
-                                            <hr>
-
-                                            
+                                        <div class="info cursor" data-user="1">
+                                            <p class="font-weight-bold mb-0 font-14">Brandee Sanders
+                                            </p><p class="font-weight-light font-14">5 mins ago</p>
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="px-4">
+                                    <p class="font-14 font-weight-light">I am Post 1</p>
+                                </div>
+
+                                <div class="row">
+                                    `+im+`
+                                </div>
+
+                                <div class="like-comment row my-3 px-5">
+                                    <div class="like-comment-value text-right">
+                                        <span class="mr-1 font-12 likes-val"><span class="num-likes" id="num-likes-1">1</span> <span class="text-likes">like</span></span>
+                                        <span class="mr-1 font-12 comments-val"><span class="num-comments" id="num-comment-1">0</span> <span class="text-comments">comment</span></span> 
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="like-share row my-0 px-5">
+                                    <div class="text-left mr-4 ">
+                                        <a class="like font-weight-500 d-flex align-items-center" href="#" data-user="1" data-post="1" data-id="1">
+                                            <span class="icon" id="icon-1"><i class="far fa-thumbs-up font-20 mr-1"></i></span>
+                                            <span class="like-unlike font-14" id="like-unlike-1">Like</span>
+                                        </a>
+                                    </div>
+                                    <div class="text-left mr-4 d-flex align-items-center">
+                                        <a class="show-comments font-weight-500 d-flex align-items-center" href="#" data-user="1" data-post="1" data-id="1">
+                                            <span><i class="fa fa-comment-dots font-20 mr-1"></i></span>
+                                            <span class="font-14" id="cmt-1">Comment</span>
+                                        </a>
+                                    </div>
+                                    <div class="share text-left mr-4 d-flex align-items-center">
+                                        <a class="share_link font-weight-500 d-flex align-items-center cursor" data-post="1" data-user="1" data-id="1">
+                                            <span><i class="font-20 mr-1 fa fa-share"></i></span>
+                                            <span class="font-14">Share</span>
+                                        </a>
+                                    </div>
+                                    <div class="share text-left mr-4 d-flex align-items-center">
+                                        <a class="font-weight-500 d-flex align-items-center cursor" data-post="1" data-user="1" data-id="1">
+                                            <span><i class="font-20 mr-1 fa fa-paper-plane"></i></span>
+                                            <span class="font-14">Send</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="comments" style="display: none;">
+
+                                    <hr>
+
+                                    
+                                </div>
                             </div>
+                        </div>
+                    </div>
                 `);
             },
             error: function( jqXhr, textStatus, errorThrown ){
@@ -1420,7 +1447,6 @@ $(function () {
     $("body").delegate(".loadMore", "click", function(e){
         e.preventDefault();
         comments = $(this).closest('.card--dashboard').find('.comments');
-        console.log(comments)
         getComments(comments);
         $('html,body').animate({
             scrollTop: $(this).offset().top - 130
@@ -1641,148 +1667,44 @@ function getUserBio(url) {
     `;
 }
 
-
-
-$(".pop").popover({
+$(".pop")
+.popover({
         trigger: "manual",
         html: true,
         animation: false,
         container: document.body,
         placement: 'right'
     })
-    .on("mouseenter", function() {
-        var _this = this;
-        id = $(this).attr('data-user');
-        $(this).data("bs.popover").options.content = getUserBio('https://reqres.in/api/users/' + id);
-        $(this).popover("show");
-        $(".popover").on("mouseleave", function() {
-            $(_this).popover('hide');
-        });
-    }).on("mouseleave", function() {
-        var _this = this;
-        setTimeout(function() {
-            if (!$(".popover:hover").length) {
-                $(_this).popover("hide");
-            }
-        }, 300);
+.on("mouseenter", function() {
+    var _this = this;
+    id = $(this).attr('data-user');
+    $(this).data("bs.popover").options.content = getUserBio('https://reqres.in/api/users/' + id);
+    $(this).popover("show");
+    $(".popover").on("mouseleave", function() {
+        $(_this).popover('hide');
     });
-
-// http://davidwalsh.name/javascript-debounce-function
-// var debounce = debounce || function (func, wait, immediate) {
-//     var timeout;
-//     return function() {
-//         var context = this, args = arguments;
-//         var later = function() {
-//             timeout = null;
-//             if (!immediate) func.apply(context, args);
-//         };
-//         var callNow = immediate && !timeout;
-//         clearTimeout(timeout);
-//         timeout = setTimeout(later, wait);
-//         if (callNow) func.apply(context, args);
-//     };
-// };
-
-// function hideAll() {
-//     $("[data-toggle=popover]").each(function () {
-//         var popover = $(this).data('bs.popover');
-//         if (popover.tip().is(':visible')) popover.hide();
-//     });
-// }
-
-// $("[data-toggle=popover]")
-// .popover({
-//     animation: false, 
-//     container: document.body, 
-//     delay: 50, 
-//     html: true, 
-//     trigger: 'manual', 
-//     content: getValues($(this)[0]),
-//     placement: 'auto right'
-// })
-// .each(function () {
-//     var popover = $(this).data('bs.popover');
-//     var $tip = popover.tip();
-//     var delay = popover.options.delay || 0;
-//     var showDelay = delay.show || delay || 0;
-//     var hideDelay = delay.hide || delay || 0;
-//     var showTimeout = null
-//     var hideTimeout = null;
-//     console.log($tip);
-
-//     $(this).add($tip).hover(function show() {
-//         if (hideTimeout) {
-//             clearTimeout(hideTimeout);
-//             hideTimeout = null;
-//         } else if (!$tip.is(':visible')) {
-//             hideAll();
-//             showTimeout = setTimeout(function () {
-//                 popover.show();
-//                 showTimeout = null;
-//             }, showDelay);
-//         }
-//     }, function hide() {
-//         if (showTimeout) {
-//             clearTimeout(showTimeout);
-//             showTimeout = null;
-//         } else if ($tip.is(':visible')) {
-//             hideTimeout = setTimeout(function () {
-//                 popover.hide();
-//                 hideTimeout = null;
-//             }, hideDelay);
-//         }
-//     });
-// });
-
-// $(window).on('scroll resize', debounce(hideAll, 100, true));
-
-// $("body").delegate(".info", "mouseover", function(e){
-//     console.log('open');
-//     $.ajax({
-//         url: 'https://reqres.in/api/users',
-//         dataType: 'json',
-//         type: 'get',
-//         contentType: 'application/json',
-//         param: '{}',
-//         async: true,
-//         success: function( data, textStatus, jQxhr ){
-//             $(".info").popover({
-//                 title: '<h3 class="custom-title"><i class="fa fa-info-circle"></i> Popover Info</h3>',
-//                 content: '<p>This is a <em>simple example</em> demonstrating how to insert HTML code inside <mark><strong>Bootstrap popover</strong></mark>.</p>',
-//                 html: true,
-//                 trigger: 'hover',
-//                 placement: 'left'
-//             }); 
-//         },
-//         error: function( jqXhr, textStatus, errorThrown ){
-//             console.log( errorThrown );
-//         }
-//     });
-// });
-
-
-
-$("body").delegate(".hide-comment", "click", function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('.comment_reply').slideUp("slow");
+})
+.on("mouseleave", function() {
+    var _this = this;
+    setTimeout(function() {
+        if (!$(".popover:hover").length) {
+            $(_this).popover("hide");
+        }
+    }, 300);
 });
 
-$("body").delegate(".show-comment", "click", function(e){
-    e.preventDefault();
-    e.stopPropagation();
-
-    name = $((this).closest('.blog_comment')).find('#comment-name').text();
-    text = $((this).closest('.blog_comment')).find('#comment-text').text();
-    post_id = $((this).closest('.blog_comment')).attr('class').split(' ').pop();
-    comment_id = $((this).closest('.blog_comment')).attr('id');
-
-    $(".comment_reply#"+post_id).find("#comment-reply-name").text(name);
-    $(".comment_reply#"+post_id).find("#comment-reply-text").text(text);
-    $(".comment_reply#"+post_id).find("#comment-reply-post-id").text(post_id);
-    $(".comment_reply#"+post_id).find("#comment-reply-comment-id").text(comment_id);
-    $('.comment_reply#'+post_id).slideDown("slow");
-
+// Prevent Lightbox Popup from displaying
+$(document).ready(function(){
+    $('.post-image a').on('click', function(e){
+        $('body').css({'position':'fixed'});
+        console.log('kj')
+    });
+    $('.lb-close, .lightbox').on('click', function(e){
+        $('body').css({'position':'unset'});
+    });
+    $(document).keyup(function(e) {
+      if (e.keyCode == 27){ $('body').css({'position':'unset'})}
+    });
 });
 
 //Pluralize like(s) and comment(s)
@@ -1837,40 +1759,6 @@ $("body").delegate(".like", "click", function(){
         }
     });
     return false;
-});
-
-$("body").delegate(".info", "click", function(){
-    user_id = $(this).data("user");
-    $.ajax({
-        url: 'https://reqres.in/api/users',
-        dataType: 'json',
-        type: 'post',
-        contentType: 'application/json',
-        data: JSON.stringify({'user_id':user_id}),
-        processData: false,
-        success: function( data, textStatus, jQxhr ){
-            firstname = "tobi"
-            lastname = "obasa"
-            email = "tobi@Davtonlearn"
-            staffid = "1122"
-            department = "Customer Service"
-            avatar = 'images/tobi.jpg'
-            isBusiness = true;
-            $('#info').find('#fullname').text(firstname + ' ' + lastname);
-            $('#info').find('#email').text('Email: ' + email);
-            $('#info').find('#staffid').text('Staff ID: ' + staffid);
-            $('#info').find('#department').text('Department: ' + staffid);
-            $('#info').find('#avatar').attr('src',avatar);
-        },
-        error: function( jqXhr, textStatus, errorThrown ){
-            
-        }
-    });
-    $('#info').modal('show');
-})
-
-$("body").delegate("#about-business", "click", function(e){
-        $(this).popover('show'); 
 });
 
 
