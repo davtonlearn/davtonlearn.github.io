@@ -78,158 +78,43 @@ if ($('.modal-uploader').length) {
         var up_file = modalUploader.files
         var time = gettime();
         var since = timeSince(time);
-        
-        if (modalUploader.files != "") {
 
-            var im = '';
-            var result = '';
-        // if(data.hasimage){
-            var imglen = 5;
-            var uniqueid = 44;
-            var imgsrc = 'https://www.businessinsider.in/photo/80011697/happy-new-year-2021-wishes-and-messages-for-your-dear-ones.jpg?imgsize=431835';
-            function showPostImg(){
-                for (i = 0; i < up_file.length; i++){
-                    result += `
-                        <div class="col-12 post-image">
-                            <a href="`+up_file[i].dataURL+`" data-lightbox="im`+uniqueid+`" class="content">
-                                <div class="content-overlay"></div>
-                                <img src="`+up_file[i].dataURL+`" class="img-fluid mt-2 comm-img" />
-                                <div class="content-details fadeIn-top">
-                                    <h3><i class="fa fa-search-plus fa-2x"></i></h3>
-                                </div>
-                            </a>
-                        </div>`
-                }
-                return result
-            }
-            im = showPostImg();
-        // }
-            $(".card-content").prepend(
-                `<div class="card--dashboard my-3" style="display: block;">
-
-                        <div class="row">
-                            <div class="col-md-12 my-2 pt-2">
-                                <div class="px-4 row">
-                                    <div class="col-9 d-flex">
-                                        <div class="mr-2">
-                                            <img src="images/course_img.png" class="mt-1">
-                                        </div>
-                                        <div class="info cursor" data-user="1">
-                                            <p class="font-weight-bold mb-0 font-14">`+name+`</p>
-                                            <p class="font-weight-light font-14">`+since+`</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="px-4">
-                                    <p class="font-14 font-weight-light">`+$('#media-text').val().replace(/\n/g, '<br />')+`</p>
-                                </div>
-
-                                <div class="row">
-                                    `+im+`
-                                </div>
-
-                                <div class="like-comment row my-3 px-5">
-                                    <div class="like-comment-value text-right">
-                                        <span class="mr-1 font-12 likes-val"><span class="num-likes" id="num-likes-1">0</span> <span class="text-likes">like</span></span>
-                                        <span class="mr-1 font-12 comments-val"><span class="num-comments" id="num-comment-1">0</span> <span class="text-comments">comment</span></span> 
-                                    </div>
-                                </div>
-
-                                <hr>
-
-                                <div class="like-share row my-0 px-5">
-                                    <div class="text-left mr-4 ">
-                                        <a class="like font-weight-500 d-flex align-items-center" href="#">
-                                            <span class="icon" id="icon-1"><i class="far fa-thumbs-up font-20 mr-1"></i></span>
-                                            <span class="like-unlike font-14" id="like-unlike-1">Like</span>
-                                        </a>
-                                    </div>
-                                    <div class="text-left mr-4 d-flex align-items-center">
-                                        <a class="show-comments font-weight-500 d-flex align-items-center" href="#">
-                                            <span><i class="fa fa-comment-dots font-20 mr-1"></i></span>
-                                            <span class="font-14" id="cmt-1">Comment</span>
-                                        </a>
-                                    </div>
-                                    <div class="share text-left mr-4 d-flex align-items-center">
-                                        <a class="share_link font-weight-500 d-flex align-items-center cursor">
-                                            <span><i class="font-20 mr-1 fa fa-share"></i></span>
-                                            <span class="font-14">Share</span>
-                                        </a>
-                                    </div>
-                                    <div class="share text-left mr-4 d-flex align-items-center">
-                                        <a class="font-weight-500 d-flex align-items-center cursor">
-                                            <span><i class="font-20 mr-1 fa fa-paper-plane"></i></span>
-                                            <span class="font-14">Send</span>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="comments" style="display: none;">
-
-                                    <hr>
-
-                                    
-                                </div>
+        var im = '';
+        var result = '';
+    // if(data.hasimage){
+        var imglen = 5;
+        var uniqueid = 44;
+        var imgsrc = 'https://www.businessinsider.in/photo/80011697/happy-new-year-2021-wishes-and-messages-for-your-dear-ones.jpg?imgsize=431835';
+        function showPostImg(){
+            for (i = 0; i < up_file.length; i++){
+                result += `
+                    <div class="col-12 post-image">
+                        <a href="`+up_file[i].dataURL+`" data-lightbox="im`+uniqueid+`" class="content">
+                            <div class="content-overlay"></div>
+                            <img src="`+up_file[i].dataURL+`" class="img-fluid mt-2 comm-img" />
+                            <div class="content-details fadeIn-top">
+                                <h3><i class="fa fa-search-plus fa-2x"></i></h3>
                             </div>
-                        </div>
+                        </a>
                     </div>`
-            )
+            }
+            return result
+        }
+        im = showPostImg();
+    // }
+        $(".card-content").prepend(
+            `<div class="card--dashboard my-3" style="display: block;">
 
-                for (i = 0; i < up_file.length; i++) {
-                    if(i==0){
-                        $(".col-image#col-image-"+time).append(`
-                            <div class="col-12 img-p`+time+` post-image" style="display:block;">
-                                <a href="`+up_file[i].dataURL+`" data-lightbox="img-p`+time+`" class="content">
-                                    <div class="content-overlay"></div>
-                                    <img src="`+up_file[i].dataURL+`" class="img-fluid mt-2 comm-img" />
-                                    <div class="content-details fadeIn-top">
-                                        <h3>VIEW IMAGE</h3>
-                                    </div>
-                                </a>
-                                
-                            </div>`)
-                    }
-                    else{
-                        $(".col-image#col-image-"+time).append(`
-                            <div class="col-12 img-p`+time+` post-image">
-                                <a href="`+up_file[i].dataURL+`" data-lightbox="img-p`+time+`" ><img class="img-fluid mt-2 comm-img" src="`+up_file[i].dataURL+`"></a>
-                            </div>`)
-                    }
-                }
-
-                $('html,body').animate({
-                    scrollTop: $('.card-content').offset().top
-                }, 1500);
-
-            $.ajax({
-                url: 'https://jsonplaceholder.typicode.com/todos/',
-                dataType: 'json',
-                type: 'post',
-                contentType: 'application/json',
-                data: JSON.stringify({"files":up_file,"media-text":$('#media-text').val().replace(/\n/g, '<br />')}),
-                processData: false,
-                success: function( data, textStatus, jQxhr ){
-                    $('#response pre').html( JSON.stringify( data ) );
-                },
-                error: function( jqXhr, textStatus, errorThrown ){
-                    console.log( errorThrown );
-                }
-            });
-        }else{
-            $(".card-content").prepend(`
-                <div class="card--dashboard mt-4" style="display: block;">
-
-                    <div class="row mb-4">
+                    <div class="row">
                         <div class="col-md-12 my-2 pt-2">
                             <div class="px-4 row">
                                 <div class="col-9 d-flex">
                                     <div class="mr-2">
-                                        <img src="images/course_img.png" class="mt-1" />
+                                        <img src="images/course_img.png" class="mt-1">
                                     </div>
-                                    <div class="info cursor" data-user='1'>
-                                        <p class="font-weight-bold mb-0 font-14">Brandee Sanders</p>
-                                        <p class="font-weight-light font-14">`+datetime+`</p>
+                                    <div class="info cursor" data-user="1">
+                                        <p class="font-weight-bold mb-0 font-14">`+name+`</p>
+                                        <p class="font-weight-light font-14">`+since+`</p>
                                     </div>
                                 </div>
                             </div>
@@ -237,80 +122,78 @@ if ($('.modal-uploader').length) {
                             <div class="px-4">
                                 <p class="font-14 font-weight-light">`+$('#media-text').val().replace(/\n/g, '<br />')+`</p>
                             </div>
+
                             <div class="row">
-                                <div class="col col-image" id="col-image-`+time+`">
-                                    
-                                </div>
+                                `+im+`
                             </div>
 
-                            <div class="like-share row my-3 px-4">
-                                <div class=" col text-left">
-                                    <a class="like" data-user='1' data-post='`+time+`' data-id="`+time+`">
-                                        <span class="icon" id="icon-`+time+`"><i class="fa fa-thumbs-up"></i></span>
-                                        <span class="like-unlike" id="like-unlike-`+time+`">Like</span>
-                                    </a>
-                                </div>
-                                <div class="share col text-left">
-                                    <a class="share_link" data-post='`+time+`' data-user='1' data-id="`+time+`">
-                                        <span><i class="fa fa-share"></i></span>
-                                        <span>Share</span>
-                                    </a>
-                                </div>
-                                <div class="like-share-value text-right">
-                                    <span class="mr-1 fs-12 likes-val"><span class="num-likes" id="num-likes-`+time+`">0</span> <span class="text-likes">like</span></span>
-                                    <span class="mr-1 fs-12 comments-val"><span class="num-comments" id="num-comment-`+time+`">0</span> <span class="text-comments">comment</span></span>
+                            <div class="like-comment row my-3 px-5">
+                                <div class="like-comment-value text-right">
+                                    <span class="mr-1 font-12 likes-val"><span class="num-likes" id="num-likes-1">0</span> <span class="text-likes">like</span></span>
+                                    <span class="mr-1 font-12 comments-val"><span class="num-comments" id="num-comment-1">0</span> <span class="text-comments">comment</span></span> 
                                 </div>
                             </div>
 
                             <hr>
 
-                            <div class="px-4 row mt-3">
-                                <div class="col-lg-12 col-12 d-flex">
-                                    <img src="images/course_img.png" class="mt-1 mr-2" />
-                                    <input type="text" placeholder="Add a comment" class="form-control mt-2 comment-text example`+time+`" id="input-comment-`+time+`" data-img="course_img.png" data-name="Kelvin Samz"/>
-                                    <button class="btn btn-sm btn-green mt-2 comment-send" data-id="comment-`+time+`" data-load="p`+time+`">Send</button>
+                            <div class="like-share row my-0 px-5">
+                                <div class="text-left mr-4 ">
+                                    <a class="like font-weight-500 d-flex align-items-center" href="#">
+                                        <span class="icon" id="icon-1"><i class="far fa-thumbs-up font-20 mr-1"></i></span>
+                                        <span class="like-unlike font-14" id="like-unlike-1">Like</span>
+                                    </a>
                                 </div>
-                                <div class="col-12 comment_reply mx-auto" id="p`+time+`">
-                                    <div class="d-flex">
-                                        <div class="p-2 position-relative">
-                                            <p class="weight-semi-bold mb-1" id="comment-reply-name"></p>
-                                            <p class="font-13 font-weight-light mb-1" id="comment-reply-text"></p>
-                                            <p class="d-none" id="comment-reply-post-id"></p>
-                                            <p class="d-none" id="comment-reply-comment-id"></p>
-                                        </div>
-                                        <div class="ml-auto mt-2">
-                                            <a href="#" class="hide-comment"><i class="mdi mdi-close"></i></a>
-                                        </div>
-                                    </div>
+                                <div class="text-left mr-4 d-flex align-items-center">
+                                    <a class="show-comments font-weight-500 d-flex align-items-center" href="#">
+                                        <span><i class="fa fa-comment-dots font-20 mr-1"></i></span>
+                                        <span class="font-14" id="cmt-1">Comment</span>
+                                    </a>
+                                </div>
+                                <div class="share text-left mr-4 d-flex align-items-center">
+                                    <a class="share_link font-weight-500 d-flex align-items-center cursor">
+                                        <span><i class="font-20 mr-1 fa fa-share"></i></span>
+                                        <span class="font-14">Share</span>
+                                    </a>
+                                </div>
+                                <div class="share text-left mr-4 d-flex align-items-center">
+                                    <a class="font-weight-500 d-flex align-items-center cursor">
+                                        <span><i class="font-20 mr-1 fa fa-paper-plane"></i></span>
+                                        <span class="font-14">Send</span>
+                                    </a>
                                 </div>
                             </div>
 
-                            <div class="text-center my-2">
-                                <button class="btn btn-sm btn-green show-drop" id="comment-`+time+`">Show Comment</button>
-                            </div>
+                            <div class="comments" style="display: none;">
 
-                            <div class="px-4 row mt-3 post" style="overflow-y:auto;max-height: 280px" id="comment-`+time+`">
+                                <hr>
 
+                                
                             </div>
                         </div>
                     </div>
-                </div>`)
+                </div>`
+        )
 
-            $.ajax({
-                url: 'https://jsonplaceholder.typicode.com/todos/',
-                dataType: 'json',
-                type: 'post',
-                contentType: 'application/json',
-                data: JSON.stringify({"media-text":$('#media-text').val().replace(/\n/g, '<br />')}),
-                processData: false,
-                success: function( data, textStatus, jQxhr ){
-                    $('#response pre').html( JSON.stringify( data ) );
-                },
-                error: function( jqXhr, textStatus, errorThrown ){
-                    console.log( errorThrown );
-                }
-            });
-        }
+            
+        $('html,body').animate({
+            scrollTop: $('.card-content').offset().top - 40
+        }, 1500);
+
+        $.ajax({
+            url: 'https://jsonplaceholder.typicode.com/todos/',
+            dataType: 'json',
+            type: 'post',
+            contentType: 'application/json',
+            data: JSON.stringify({"files":up_file,"media-text":$('#media-text').val().replace(/\n/g, '<br />')}),
+            processData: false,
+            success: function( data, textStatus, jQxhr ){
+                $('#response pre').html( JSON.stringify( data ) );
+            },
+            error: function( jqXhr, textStatus, errorThrown ){
+                console.log( errorThrown );
+            }
+        });
+        
         $('.emojionearea-editor').text('');
         
         $('#media-text').val("");

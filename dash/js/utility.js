@@ -1312,7 +1312,7 @@ function getReply(id, comments){
         success: function( data, textStatus, jQxhr ){
             for (i = 0; i < data.data.length; i++){
                 $(comments.parent()).after(`
-                    <div class="col-12 blog_comment reply-item pt-1 pl-4" data-reply-id="1" style="display:block">
+                    <div class="col-12 blog_comment reply-item pt-1 pl-4 pr-0" data-reply-id="1" style="display:block">
                         <div class="row main-comment">
                             <div class="col-1 px-1">
                                 <img src="`+img+`" class="mt-1" />
@@ -1593,7 +1593,7 @@ $("body").delegate(".reply-send", "click", function(e){
     }
 
     $($(this).parent().parent().parent()).after(`
-        <div class="col-12 blog_comment reply-item pt-2 pl-4" data-reply-id="`+unique_time+`" style="display:block">
+        <div class="col-12 blog_comment reply-item pt-2 pl-4 pr-0" data-reply-id="`+unique_time+`" style="display:block">
             <div class="row main-comment">
                 <div class="col-1 px-1">
                     <img src="`+img+`" class="mt-1" />
