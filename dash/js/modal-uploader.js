@@ -68,7 +68,7 @@ if ($('.modal-uploader').length) {
       if (interval > 1) {
         return Math.floor(interval) + "m";
       }
-      return Math.floor(seconds) + "s";
+      return "Now";
     }
 
     $("body").delegate("#d-sub", "click", function(e){
@@ -88,12 +88,12 @@ if ($('.modal-uploader').length) {
             var uniqueid = 44;
             var imgsrc = 'https://www.businessinsider.in/photo/80011697/happy-new-year-2021-wishes-and-messages-for-your-dear-ones.jpg?imgsize=431835';
             function showPostImg(){
-                for (i=0; i<imglen; i++){
+                for (i = 0; i < up_file.length; i++){
                     result += `
                         <div class="col-12 post-image">
-                            <a href="`+imgsrc+`" data-lightbox="im`+uniqueid+`" class="content">
+                            <a href="`+up_file[i].dataURL+`" data-lightbox="im`+uniqueid+`" class="content">
                                 <div class="content-overlay"></div>
-                                <img src="`+imgsrc+`" class="img-fluid mt-2 comm-img" />
+                                <img src="`+up_file[i].dataURL+`" class="img-fluid mt-2 comm-img" />
                                 <div class="content-details fadeIn-top">
                                     <h3><i class="fa fa-search-plus fa-2x"></i></h3>
                                 </div>
@@ -115,14 +115,14 @@ if ($('.modal-uploader').length) {
                                             <img src="images/course_img.png" class="mt-1">
                                         </div>
                                         <div class="info cursor" data-user="1">
-                                            <p class="font-weight-bold mb-0 font-14">Brandee Sanders
-                                            </p><p class="font-weight-light font-14">5 mins ago</p>
+                                            <p class="font-weight-bold mb-0 font-14">`+name+`</p>
+                                            <p class="font-weight-light font-14">`+since+`</p>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="px-4">
-                                    <p class="font-14 font-weight-light">I am Post 1</p>
+                                    <p class="font-14 font-weight-light">`+$('#media-text').val().replace(/\n/g, '<br />')+`</p>
                                 </div>
 
                                 <div class="row">
@@ -131,7 +131,7 @@ if ($('.modal-uploader').length) {
 
                                 <div class="like-comment row my-3 px-5">
                                     <div class="like-comment-value text-right">
-                                        <span class="mr-1 font-12 likes-val"><span class="num-likes" id="num-likes-1">1</span> <span class="text-likes">like</span></span>
+                                        <span class="mr-1 font-12 likes-val"><span class="num-likes" id="num-likes-1">0</span> <span class="text-likes">like</span></span>
                                         <span class="mr-1 font-12 comments-val"><span class="num-comments" id="num-comment-1">0</span> <span class="text-comments">comment</span></span> 
                                     </div>
                                 </div>
@@ -140,25 +140,25 @@ if ($('.modal-uploader').length) {
 
                                 <div class="like-share row my-0 px-5">
                                     <div class="text-left mr-4 ">
-                                        <a class="like font-weight-500 d-flex align-items-center" href="#" data-user="1" data-post="1" data-id="1">
+                                        <a class="like font-weight-500 d-flex align-items-center" href="#">
                                             <span class="icon" id="icon-1"><i class="far fa-thumbs-up font-20 mr-1"></i></span>
                                             <span class="like-unlike font-14" id="like-unlike-1">Like</span>
                                         </a>
                                     </div>
                                     <div class="text-left mr-4 d-flex align-items-center">
-                                        <a class="show-comments font-weight-500 d-flex align-items-center" href="#" data-user="1" data-post="1" data-id="1">
+                                        <a class="show-comments font-weight-500 d-flex align-items-center" href="#">
                                             <span><i class="fa fa-comment-dots font-20 mr-1"></i></span>
                                             <span class="font-14" id="cmt-1">Comment</span>
                                         </a>
                                     </div>
                                     <div class="share text-left mr-4 d-flex align-items-center">
-                                        <a class="share_link font-weight-500 d-flex align-items-center cursor" data-post="1" data-user="1" data-id="1">
+                                        <a class="share_link font-weight-500 d-flex align-items-center cursor">
                                             <span><i class="font-20 mr-1 fa fa-share"></i></span>
                                             <span class="font-14">Share</span>
                                         </a>
                                     </div>
                                     <div class="share text-left mr-4 d-flex align-items-center">
-                                        <a class="font-weight-500 d-flex align-items-center cursor" data-post="1" data-user="1" data-id="1">
+                                        <a class="font-weight-500 d-flex align-items-center cursor">
                                             <span><i class="font-20 mr-1 fa fa-paper-plane"></i></span>
                                             <span class="font-14">Send</span>
                                         </a>
