@@ -317,7 +317,7 @@
                                 </div>
                             </div>
 
-                            <div class="row p-4">
+                            <div class="row p-0 p-sm-4">
                                 <div class="col-lg-10 mx-auto">
 
                                     <div class="card">
@@ -327,25 +327,34 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="input-group pricing-calculator" style="height: 38px">
-                                                <span class="input-group-prepend">
+                                                <span class="input-group-prepend d-none d-sm-flex">
                                                     <span class="input-group-text">
                                                         <span class="fa fa-user-friends"></span>
                                                     </span>
                                                 </span>
-                                                <input id="staff-size" class="form-control font-16 font-weight-500" type="text" placeholder="Staff Size" value="" title="Enter no. of staff" data-toggle="tooltip" data-placement="top" onkeypress='validate(event)' style="height: 42px" required/>
-                                                <select class="form-control pricing-select border-left font-16 font-weight-500" id="payment-plan" style="line-height: 27px">
+                                                <input id="staff-size" class=" form-control font-16 font-weight-500" type="text" placeholder="Staff Size" value="" title="Enter no. of staff" data-toggle="tooltip" data-placement="top" onkeypress='validate(event)' style="height: 42px" required/>
+                                                <select class=" form-control pricing-select border-left font-16 font-weight-500" id="payment-plan" style="line-height: 27px">
                                                     <option value="10">Quarterly</option>
                                                     <option value="20">Biannually</option>
                                                     <option selected value="30">Annually</option>
                                                 </select>
-                                                <select class="form-control pricing-select curr border-left font-16 font-weight-500 pt-0" id="currency">
+                                                <select class=" form-control pricing-select curr border-left font-16 font-weight-500 pt-0" id="currency">
                                                     <option value="1">USD</option>
                                                     <option value="2">CAD</option>
                                                     <option selected value="3">NGN</option>
                                                 </select>
                                                 <input type="hidden" class="paying" name="paying" value="">
                                             </div>
-                                            <h4 class="mt-4 font-25" id="total-cost"></h4>
+
+                                            <div class="mt-4">
+                                                <h4 class="font-25" id="total-cost"></h4>
+                                            </div>
+
+                                            <div class="mt-4 d-flex align-items-center justify-content-between">
+                                                <label class="mb-0 font-weight-500">Enter Coupon Code(for 50% discount): </label>
+                                                <input class="form-control" type="text" name="">
+                                            </div>
+
                                         </div>
                                     </div>
 
