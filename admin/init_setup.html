@@ -714,9 +714,8 @@
                 cal_price();
             })
             $(".curr .current").on('DOMSubtreeModified', function () {
-                $(this).addClass($(this).html())
-              // if ($(this).html() == 'USD')
-              //   (alert('uy'))
+                flag = "current " + $(this).html()
+                $(this).attr('class', flag)
             });
         })
         function validate(evt) {
