@@ -81,6 +81,8 @@ if ($('.modal-uploader').length) {
 
         var im = '';
         var result = '';
+
+
     // if(data.hasimage){
         var imglen = 5;
         var uniqueid = 44;
@@ -102,76 +104,77 @@ if ($('.modal-uploader').length) {
         }
         im = showPostImg();
     // }
+
+
         $(".card-content").prepend(
-            `<div class="card--dashboard my-3" style="display: block;">
-
-                    <div class="row">
-                        <div class="col-md-12 my-2 pt-2">
-                            <div class="px-4 row">
-                                <div class="col-9 d-flex">
-                                    <div class="mr-2">
-                                        <img src="images/course_img.png" class="mt-1">
-                                    </div>
-                                    <div class="info cursor" data-user="1">
-                                        <p class="font-weight-bold mb-0 font-14">`+name+`</p>
-                                        <p class="font-weight-light font-14">`+since+`</p>
-                                    </div>
+            `<div class="card--dashboard my-3" style="display: block
+                <div class="row">
+                    <div class="col-md-12 my-2 pt-2">
+                        <div class="px-4 row">
+                            <div class="col-9 d-flex">
+                                <div class="mr-2">
+                                    <img src="images/course_img.png" class="mt-1">
+                                </div>
+                                <div class="info cursor" data-user="1">
+                                    <p class="font-weight-bold mb-0 font-14">`+name+`</p>
+                                    <p class="font-weight-light font-14">`+since+`</p>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="px-4">
-                                <p class="font-14 font-weight-light">`+$('#media-text').val().replace(/\n/g, '<br />')+`</p>
-                            </div>
+                        <div class="px-4">
+                            <p class="font-14 font-weight-light">`+$('#media-text').val().replace(/\n/g, '<br />')+`</p>
+                        </div>
 
-                            <div class="row">
-                                `+im+`
-                            </div>
+                        <div class="row">
+                            `+im+`
+                        </div>
 
-                            <div class="like-comment row my-3 px-5">
-                                <div class="like-comment-value text-right">
-                                    <span class="mr-1 font-12 likes-val"><span class="num-likes" id="num-likes-1">0</span> <span class="text-likes">like</span></span>
-                                    <span class="mr-1 font-12 comments-val"><span class="num-comments" id="num-comment-1">0</span> <span class="text-comments">comment</span></span> 
-                                </div>
+                        <div class="like-comment row my-3 px-5">
+                            <div class="like-comment-value text-right">
+                                <span class="mr-1 font-12 likes-val"><span class="num-likes" id="num-likes-1">0</span> <span class="text-likes">like</span></span>
+                                <span class="mr-1 font-12 comments-val"><span class="num-comments" id="num-comment-1">0</span> <span class="text-comments">comment</span></span> 
                             </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="like-share row my-0 px-5">
+                            <div class="text-left mr-4 ">
+                                <a class="like font-weight-500 d-flex align-items-center" href="#">
+                                    <span class="icon" id="icon-1"><i class="far fa-thumbs-up font-20 mr-1"></i></span>
+                                    <span class="like-unlike font-14" id="like-unlike-1">Like</span>
+                                </a>
+                            </div>
+                            <div class="text-left mr-4 d-flex align-items-center">
+                                <a class="show-comments font-weight-500 d-flex align-items-center" href="#">
+                                    <span><i class="fa fa-comment-dots font-20 mr-1"></i></span>
+                                    <span class="font-14" id="cmt-1">Comment</span>
+                                </a>
+                            </div>
+                            <div class="share text-left mr-4 d-flex align-items-center">
+                                <a class="share_link font-weight-500 d-flex align-items-center cursor">
+                                    <span><i class="font-20 mr-1 fa fa-share"></i></span>
+                                    <span class="font-14">Share</span>
+                                </a>
+                            </div>
+                            <div class="share text-left mr-4 d-flex align-items-center">
+                                <a class="font-weight-500 d-flex align-items-center cursor">
+                                    <span><i class="font-20 mr-1 fa fa-paper-plane"></i></span>
+                                    <span class="font-14">Send</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="comments" style="display: none;">
 
                             <hr>
 
-                            <div class="like-share row my-0 px-5">
-                                <div class="text-left mr-4 ">
-                                    <a class="like font-weight-500 d-flex align-items-center" href="#">
-                                        <span class="icon" id="icon-1"><i class="far fa-thumbs-up font-20 mr-1"></i></span>
-                                        <span class="like-unlike font-14" id="like-unlike-1">Like</span>
-                                    </a>
-                                </div>
-                                <div class="text-left mr-4 d-flex align-items-center">
-                                    <a class="show-comments font-weight-500 d-flex align-items-center" href="#">
-                                        <span><i class="fa fa-comment-dots font-20 mr-1"></i></span>
-                                        <span class="font-14" id="cmt-1">Comment</span>
-                                    </a>
-                                </div>
-                                <div class="share text-left mr-4 d-flex align-items-center">
-                                    <a class="share_link font-weight-500 d-flex align-items-center cursor">
-                                        <span><i class="font-20 mr-1 fa fa-share"></i></span>
-                                        <span class="font-14">Share</span>
-                                    </a>
-                                </div>
-                                <div class="share text-left mr-4 d-flex align-items-center">
-                                    <a class="font-weight-500 d-flex align-items-center cursor">
-                                        <span><i class="font-20 mr-1 fa fa-paper-plane"></i></span>
-                                        <span class="font-14">Send</span>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="comments" style="display: none;">
-
-                                <hr>
-
-                                
-                            </div>
+                            
                         </div>
                     </div>
-                </div>`
+                </div>
+            </div>`
         )
 
             
