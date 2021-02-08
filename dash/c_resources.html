@@ -343,15 +343,11 @@
                             </div>
 
                             <div class="form-group row mt-4">
-                                <!-- <div class="col-lg-4 mx-auto col-4 my-2 upload-btn-wrapper">
-                                    <button type="button" class="btn btn-green btn-upload btn-block font-13">Browse File</button>
-                                    <input type="file" name="company_profile" required="" accept=".zip,.rar,.7zip">
-                                </div> -->
                                 <div class="col-lg-6 mx-auto col-4 my-2 upload-btn-wrapper">
-                                    <label for="file-upload" class="custom-file-upload btn btn-green btn-upload btn-block font-13">
+                                    <label for="file-upload" class="fileupload custom-file-upload btn btn-green btn-upload btn-block font-13">
                                         Browse File (Zip/Rar Only)
                                     </label>
-                                    <input id="file-upload" name='upload_cont_img' type="file"  accept=".zip,.rar,.7zip" required="">
+                                    <input id="file-upload" class="fileupload" name='upload_cont_img' type="file"  accept=".zip,.rar,.7zip" required="">
                                 </div>
                             </div>
                             <div class="row mt-5">
@@ -386,11 +382,11 @@
                                     </div>
                                 </div>
                             <div class="form-group row mt-4">
-                                <div class="col-lg-4 mx-auto col-4 my-2 upload-btn-wrapper">
-                                    <label for="file-upload" class="custom-file-upload btn btn-green btn-upload btn-block font-13">
+                                <div class="col-lg-6 mx-auto col-4 my-2 upload-btn-wrapper">
+                                    <label for="file-upload" class="fileupload custom-file-upload btn btn-green btn-upload btn-block font-13">
                                         Browse File (PDF Only)
                                     </label>
-                                    <input id="file-upload" name='upload_cont_img' type="file" accept="application/pdf" required="">
+                                    <input id="file-upload" class="fileupload" name='upload_cont_img' type="file"  accept="application/pdf" required="">
                                 </div>
                             </div>
                             <div class="row mt-5">
@@ -544,13 +540,23 @@
                     table.draw();
                 });
 
-                $('#file-upload').change(function() {
-                  var i = $(this).prev('label').clone();
-                  var file = $('#file-upload')[0].files[0].name;
-                  $(this).prev('label').text(file);
-                });
+                // $('#file-upload').change(function() {
+                //   var i = $(this).prev('label').clone();
+                //   var file = $('#file-upload')[0].files[0].name;
+                //   $(this).prev('label').text(file);
+                // });
 
             });
+        </script>
+
+        <script>
+            $(document).ready(function(){
+                $('.fileupload').change(function() {
+                  var i = $(this).prev('label').clone();
+                  var file = $(this)[0].files[0].name;
+                  $(this).prev('label').text(file);
+                });
+            })
         </script>
 
     </body>
