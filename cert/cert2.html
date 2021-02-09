@@ -89,13 +89,16 @@
 				font-size: 20px;
 				margin: 10px;
 			}
-			.logo1{
-				max-width: 200px;
-				margin-right: 20px;
+			.d{
+				display: flex;
+			    justify-content: center;
+			    gap: 90px;
+			    margin-top: 20px;
+			    align-items: center;
 			}
-			.logo2{
-				max-width: 100px;
-				margin-left: 20px;
+			.d img{
+				max-height: 60px;
+				max-width: 200px;
 			}
 		</style>
 	</head>
@@ -112,12 +115,20 @@
 			<p class="w2">THE CERTIFICATE IS PROUDLY PRESENTED TO</p>
 			<p class="w3">Name Surname</p>
 			<p class="w4">Lorem ipsum dolor sit amet, viris sanctus partiendo ex sit, eum eu postulant iudicabit incorrupte. Eos ubique assueverit comprehensam ad. Erat nihil ut vix, cu possit repudiare scriptorem pri, mea an convenire molestiae.</p>
-			<p class="w5">Tutor Name</p>
-			<p class="sep"></p>
+			<div class="d">
+				<div>
+					<p class="w5">February 14, 2021</p>
+					<p class="sep"></p>
+				</div>
+				<div>
+					<p class="w5">Tutor Signature</p>
+					<p class="sep"></p>
+				</div>
+			</div>
 			<p class="w6">&</p>
-			<div style="display: flex;justify-content: center;align-items: center;">
+			<div class="d" style="gap:40px">
 				<img src="dav.png" class="logo1">	
-				<img src="https://www.naijatechguide.com/wp-content/uploads/2018/08/paystack.png" class="logo2">
+				<img src="https://www.african-markets.com/images/markets/ngse/Interswitch.png" class="logo2">
 			</div>
 		</div>
 	</body>
