@@ -21,11 +21,12 @@
         correctAnswer: 4
     }];
 
+
     var questionCounter = 0; //Tracks question number
     var selections = []; //Array containing user choices
     var quiz = $('#quiz'); //Quiz div object
 
-    var total_seconds = 10;
+    var total_seconds = 30;
     var c_minutes = parseInt(total_seconds / 60);
     var c_seconds = parseInt(total_seconds % 60);
     var timer;
@@ -34,6 +35,21 @@
 
     // Display initial question
     displayNext();
+
+    //Retake
+    $('#retake').on('click', function(e) {
+        e.preventDefault();
+        $('.result').hide();
+        $('.test').show();
+
+        questionCounter = 0; //Tracks question number
+        selections = []; //Array containing user choices
+
+        total_seconds = 30;
+        timer = setTimeout(CheckTime, 1000);
+        displayNext();
+
+    })
 
     // Click handler for the 'next' button
     $('#next').on('click', function(e) {
@@ -85,7 +101,7 @@
     });
     $('.button').on('mouseleave', function() {
         $(this).removeClass('active');
-    });
+    });   
 
     // Creates and returns the div that contains the questions and 
     // the answer selections
@@ -126,6 +142,51 @@
         selections[questionCounter] = +$('input[name="answer"]:checked').val();
     }
 
+    // Computes score and returns a paragraph element to be displayed
+    function displayScore() {
+        // var score = $('<p>',{id: 'question'});
+        var score = $('.result-show');
+
+        var numCorrect = 0;
+        for (var i = 0; i < selections.length; i++) {
+            if (selections[i] === questions[i].correctAnswer) {
+                numCorrect++;
+            }
+        }
+
+        if (numCorrect <= 1){
+            score.html('You got ' + numCorrect + ' question out of ' +
+                questions.length + ' right!!!');
+        } else {
+            score.html('You got ' + numCorrect + ' questions out of ' +
+                questions.length + ' right!!!');
+        }
+
+        /*
+        *
+        *
+        * This line submits the quiz    *
+                                        *
+                                        *
+                                        */
+        $.ajax({
+            url: 'https://reqres.in/api/users',
+            dataType: 'json',
+            type: 'post',
+            contentType: 'application/json',
+            data: JSON.stringify({"score":numCorrect}),
+            processData: false,
+            success: function( data, textStatus, jQxhr ){
+                $('#response pre').html( JSON.stringify( data ) );
+            },
+            error: function( jqXhr, textStatus, errorThrown ){
+                console.log( errorThrown );
+            }
+        });
+
+        return score;
+    }
+
     // Displays next requested element
     function displayNext() {
         quiz.fadeOut(function() {
@@ -151,65 +212,18 @@
                     $('#next').text('Submit');
                 }
                 else{
-
                     $('#next').text('Next');
                 }
             } else {
-                var scoreElem = displayScore();
-                quiz.append(scoreElem).fadeIn();
-                $('#next').hide();
-                $('#prev').hide();
+                clearInterval(timer);
                 $('.test').hide();
                 $('.result').show();
+                $('.quiz-ended').hide();
                 $('.quiz-submitted').show();
-                clearInterval(timer);
+                displayScore();
+                console.log("iuhuhiu");
             }
         });
-    }
-
-    // Computes score and returns a paragraph element to be displayed
-    function displayScore() {
-        // var score = $('<p>',{id: 'question'});
-        var score = $('.result-show');
-
-        var numCorrect = 0;
-        for (var i = 0; i < selections.length; i++) {
-            if (selections[i] === questions[i].correctAnswer) {
-                numCorrect++;
-            }
-        }
-
-        if (numCorrect <= 1){
-            score.append('You got ' + numCorrect + ' question out of ' +
-                questions.length + ' right!!!');
-        } else {
-            score.append('You got ' + numCorrect + ' questions out of ' +
-                questions.length + ' right!!!');
-        }
-
-        /*
-        *
-        *
-        * This line submits the quiz 	*
-        								*
-        								*
-        								*/
-        $.ajax({
-            url: 'https://reqres.in/api/users',
-            dataType: 'json',
-            type: 'post',
-            contentType: 'application/json',
-            data: JSON.stringify({"score":numCorrect}),
-            processData: false,
-            success: function( data, textStatus, jQxhr ){
-                $('#response pre').html( JSON.stringify( data ) );
-            },
-            error: function( jqXhr, textStatus, errorThrown ){
-                console.log( errorThrown );
-            }
-        });
-
-        return score;
     }
 
     function CheckTime() {
@@ -217,9 +231,10 @@
 
         if (total_seconds <= 0) {
             // score();
-            $('.result').show();
-            $('.quiz-ended').show();
             $('.test').hide();
+            $('.result').show();
+            $('.quiz-submitted').hide();
+            $('.quiz-ended').show();
             displayScore();
         } else {
             total_seconds = total_seconds - 1;
