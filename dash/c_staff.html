@@ -424,7 +424,7 @@
 
 
             <!-- Multiple staff upload Modal -->
-            <div class="modal fade" id="multiple-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal fade" id="multiple-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="margin-top: -50px">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -435,24 +435,20 @@
                             <form> 
                                 <div class="text-center mt-3">
                                     <img src="img/xls.svg" alt="multiple staff upload" class="img-fluid" >
-                                    <p class="font-13 text-dark mt-3"><a href="#" class="text-green">Download</a> and Upload edited our xlsx file here to add multiple users</p>
+                                    <p class="font-13 text-dark mt-3"><a href="https://davtonlms.com/template/davton_staff_onboard_template.xlsx" class="text-green">Download</a> and Upload edited xlsx file here to upload staffs</p>
                                 </div>
 
-                                <div class="custom-file my-2">
-                                    <input type="file" class="custom-file-input" id="customFile">
-                                    <div class="dummy-label">
-
+                                <div class="form-group row mt-4">
+                                    <div class="col-lg-12 mx-auto col-4 my-2 upload-btn-wrapper">
+                                        <label for="xlsx-upload" class="p-3 custom-file-upload btn btn-green btn-upload btn-block font-13" style="line-height: 0;position: relative;">
+                                            Browse File (XLSX Only)
+                                        </label>
+                                        <input id="xlsx-upload" name='upload_cont_img' type="file" accept=".xls,.xlsx" required="">
+                                        <span id="xlsx-chosen">No file chosen</span>
                                     </div>
-                                    <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
-
-
 
                                 <div class="row mt-5">
-                                    <div class="col-lg-9 ml-auto mx-0">
-                                        <p class="font-13 mt-2">Dowload our xlsx document. <a class="text-blue ml-3" href="#">Download</a></p>
-                                    </div>
-
                                     <div class="col-lg-3 ml-auto mx-0">
                                         <button   class="btn btn-success btn-block">Submit</button>
                                     </div>
@@ -952,6 +948,18 @@
 
             });
         </script>
+
+        <script type="text/javascript">
+            const actualBtn = document.getElementById('xlsx-upload');
+
+            const fileChosen = document.getElementById('xlsx-chosen');
+
+            actualBtn.addEventListener('change', function(){
+              fileChosen.textContent = this.files[0].name
+            })
+        </script>
+
+
     </body>
 
 </html>
