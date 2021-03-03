@@ -307,11 +307,11 @@ z-index: 2;
 #sidebar {
     width: 250px;
     position: fixed;
-    margin-top: 65px;
+    margin-top: 75px;
     top: 0;
     left: 0;
     height: 90vh;
-    z-index: 999;
+    z-index: 0;
     text-align: center;
     font-size: 1em;
     background: #fff;
@@ -1279,12 +1279,44 @@ button.width-100 {
     left: 10px
 }
 
+.logo-wrapper{
+    width: 250px;
+    background: #fff;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.logo-wrapper a img{
+    max-height: 80px;
+}
+
+.payment-alert{
+    background: #F44336;
+    border: 0;
+    border-radius: 0;
+    width: calc(100% - 250px);
+    float: right;
+}
+
+
 
 /* ---------------------------------------------------
 MEDIAQUERIES
 ----------------------------------------------------- */
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
+    .logo-wrapper{
+        width: 200px;
+        height: 96px
+    }
+
+    .payment-alert{
+        width: 100%;
+        top: 20px;
+    }
+
     #sidebar {
         min-width: 80px;
         max-width: 80px;
