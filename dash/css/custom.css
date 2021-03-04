@@ -43,7 +43,8 @@
     font-weight: 800;
 }
 .dasboard-top-wrapper{
-	background: #fff
+	background: #fff;
+  display: none;
 }
 .hidden {
 	display: none;
