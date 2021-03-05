@@ -226,16 +226,10 @@
                                     <nav>
                                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist"> 
                                             <a class="nav-dash nav-item nav-link active text-uppercase weight-semi-bold py-3" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Courses</a> 
-                                            <a class="nav-item nav-link text-uppercase weight-semi-bold py-3" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Staff</a> </div>
+                                            <a class="nav-item nav-link text-uppercase weight-semi-bold py-3" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Staff in Group</a> </div>
                                     </nav>
                                     <div class="tab-content my-3" id="nav-tabContent">
                                         <div class="tab-pane fade px-4 show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-
-                                            <div class="text-right">
-                                                <div class="col-lg-3 my-4 text-right ml-auto">
-                                                    <button class="text-white btn btn-green btn-sm font-13 btn-block" data-toggle="modal" data-target="#add_course_to_group"> Add Course to Group</button>
-                                                </div>
-                                            </div>
 
                                             <div class="card--dashboard mt-4 p-3">
                                                 <table id="staff" class="table-responsive-lg leaders dataTables_wrapper table table-striped" style="width:100%">
@@ -245,6 +239,7 @@
                                                         <tr>
                                                             <th class="text-dark">#</th>
                                                             <th class="text-dark">Course Title</th>
+                                                            <th class="text-dark">Date Assigned</th>
                                                             <th class="text-dark" style="min-width: 100px">ACTION</th>
                                                         </tr>
                                                     </thead>
@@ -256,11 +251,6 @@
 
                                         <div class="tab-pane fade px-4" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab">
                                             
-                                            <div class="text-right">
-                                                <div class="col-lg-2 my-4 text-right ml-auto">
-                                                    <button class="text-white btn btn-green btn-sm font-13 btn-block" data-toggle="modal" data-target="#add_staff_to_group"> Add Staff to Group</button>
-                                                </div>
-                                            </div>
 
                                             <div class="card--dashboard mt-4 p-3">
                                                 <table id="staff_group" class="table-responsive-lg text-center leaders dataTables_wrapper table table-striped" style="width:100%">
@@ -469,16 +459,11 @@
                     columns: [
                         { data: 'id' },
                         { data: 'first_name' },
+                        { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
                           "defaultContent": `
                                             <a href="c_group_course.html" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline edit_id">View report</a>
-                                            <a href="#" class="dropdown-togge btn btn-outline--green py-1 font-11 py-1 px-2 bg-transparent" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-caret-down"></i>
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item font-12" href="#">Delete </a>
-                                            </div>
                                             `
                         }
                     ]
@@ -536,12 +521,6 @@
                           "data": null,
                           "defaultContent": `
                                             <a href="c_group_staff.html" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline edit_id">View report</a>
-                                            <a href="#" class="dropdown-togge btn btn-outline--green py-1 font-11 py-1 px-2 bg-transparent" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-caret-down"></i>
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item font-12" href="#">Delete </a>
-                                            </div>
                                             `
                         }
                     ]
