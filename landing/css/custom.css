@@ -1224,6 +1224,12 @@ li[data-value="3"]::before, .curr .current.NGN::before, .curr .current::before {
 
 }
 
+@media (min-width: 1200px){
+    .container {
+        max-width: 90vw!important;
+    }
+}
+
 @media only screen and (max-width: 576px){
     .nav-pills {
         display: flex;
