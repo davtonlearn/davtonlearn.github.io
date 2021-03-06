@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />-->
+        <meta name="description" content="DavtonLearn">
+        <meta name="author" content="">
+        <title>Welcome to DavtonLearn</title>
+        <link rel="shortcut icon" href="img/favicon.png">
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+
+        <!-- Font Awesome JS -->
+        <script defer src="js/solid.js"></script>
+        <script defer src="js/fontawesome.js"></script>
+        <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <style>
+            .form-control {
+                font-size: 1rem;
+                color: #B7B7B7;
+            }
+            .custom-select {
+                color: #4F4F4F;
+            }
+
+            #learning_path_draft .modal-dialog {
+                max-width: 440px !important;
+            }
+
+        </style>
+    </head>
+
+    <body class="dashboard-body">
+
+        <div class="top_nav">
+            <img src="img/top_strip.jpg" class="img-fluid position-absolute" />
+            <div class="container-fluid dashboard_nav p-0">
+                <nav class="navbar navbar-expand-lg navbar-dark p-5 p-lg-0">
+                    <div class="logo-wrapper mx-auto text-center align-items-center d-flex">
+                        <a class="navbar-brand px-4 mx-auto" href="#"><img src="img/abbey.png" class="mw-10" alt="Davton logo"></a>
+                    </div>
+                    <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation" style="right: 15px; position: absolute;">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse p-3" id="navbarNav">
+                        <ul class="nav navbar-nav ml-auto">
+
+                            <li class="nav-item px-md-1">
+                                <a class="nav-link text-dark" href="message.html" data-target="#">
+                                    <img src="img/mail.svg" alt="Messages" class="mt-1">
+                                </a>
+                            </li>
+
+                            <li class="nav-item px-md-1">
+                                <a class="nav-link text-dark" href="#" data-target="#notifications" data-toggle="modal">
+                                    <img src="img/notification.svg" alt="user name" class="">
+                                </a>
+                            </li>
+
+                            <li class="nav-item dropdown pr-md-4 pl-2" style="z-index: 9999999">
+                                <a class="nav-link text-white dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="py-1 px-2" style="border-radius: 3px; background-color: white; color: #14AD51">M</span>&nbsp; &nbsp; Hr247@asanta.com &nbsp;
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                                    <a class="dropdown-item font-12" href="#">Log Out</a>
+                                    <a class="dropdown-item font-12" href="settings.html">Setting</a>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <!-- Sidebar  -->
+            <nav id="sidebar" class="">
+                <div class="sidebar-header">
+                    <button type="button" id="sidebarCollapse-1" class="btn bg-trans d-none">
+                        <img src="img/hamburger.svg" />
+                    </button>
+                </div>
+
+
+                <ul class="list-unstyled components">
+                    <p class="text-dark text-left ml-4 mb-2 font-35">Hi Adeyemi Inc. </p>
+                    <p class="text-dull text-left ml-4 my-2 font-14 font-weight-light">Welcome to Davtonlearn.</p>
+
+                    <li class="active">
+                        <a href="staff_dashboard.html">
+                            <img src="img/dashboard.png" alt="Dashboard" class="mb-1 mr-3 img-fluid" width="15" /> Dashboard
+                        </a>
+
+                    </li>
+
+                    <li>
+                        <a href="staff_course.html">
+                            <img src="img/courses.png" alt="department" class="mb-1 mr-3 img-fluid" width="15" /> Courses
+                        </a> 
+                    </li>
+
+                    <li>
+                        <a href="staff_report.html">
+                            <img src="img/reports.png" alt="reports" class="mb-1 mr-3 img-fluid" width="15" /> Reports
+                        </a> 
+                    </li>
+
+                    <p class="text-dull text-left ml-4 my-2 font-12">Communications</p>
+
+                    <li>
+                        <a href="staff_message.html">
+                            <img src="img/communication.png" alt="Message" class="mb-1 mr-3 img-fluid" width="15" /> Message
+                        </a> 
+                    </li>
+
+                    <li>
+                        <a href="staff_blog.html">
+                            <img src="img/blog.png" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Blog
+                        </a> 
+                    </li>
+
+                    <li>
+                        <a href="staff_webinar.html">
+                            <img src="img/blog.png" alt="Webinar" class="mb-1 mr-3 img-fluid" width="15" /> Webinar
+                        </a> 
+                    </li>
+
+                    <p class="text-dull text-left ml-4 my-2 font-12">Account Management</p>
+
+                    <li>
+                        <a href="staff_settings.html">
+                            <img src="img/Settings.png" alt="Admin" class="mb-1 mr-3 img-fluid" width="15" /> Settings
+                        </a> 
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="img/logout.png" alt="Blog" class="mb-1 mr-3 img-fluid" width="15" /> Log Out
+                        </a> 
+                    </li>
+                </ul>
+
+            </nav>
+
+
+            <!-- Page Content  -->
+            <div id="content">
+                <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light d-none display border">
+                    <div class="container-fluid">
+                        <button id="sidebarCollapse" class="btn bg-trans d-inline-block d-lg-none ml-auto" type="button">
+                            <i alt="menu" class="fas fa-align-justify text-consolidated"></i>
+                        </button>
+                    </div>
+                </nav>
+
+
+
+                <div class="row mx-md-1 my-5">
+                    <div class="col-md-12">
+
+                        <div class="row">
+
+                            <div class="col-md-4 px-md-2 my-3 my-lg-0">
+                                <a href="staff_course.html">
+                                    <div class="step-card--green">
+                                        <div class="px-3 pt-2 pb-2 position-relative">
+                                            <h2 class="text-white font-weight-bold">01</h2>
+                                            <p class="weight-semi-bold font-35 text-white mb-0">Assigned Courses</p>
+                                            <p class="mb-0 text-white--dim">oops! You have no courses.</p>
+                                            <img src="img/staff_card.png" class="img-fluid position-absolute card-image" />
+                                            <button class="btn btn-white mt-1 font-12 py-1">Manage Courses</button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-4 px-md-2 my-3 my-lg-0">
+                                <a href="staff_course.html">
+                                    <div class="step-card--blue">
+                                        <div class="px-3 pt-2 pb-2 position-relative">
+                                            <h2 class="text-white font-weight-bold">01</h2>
+                                            <p class="weight-semi-bold font-35 text-white mb-0">Requested Courses</p>
+                                            <p class="mb-0 text-white--dim">No Course requested yet.</p>
+                                            <img src="img/courses_card.png" class="img-fluid position-absolute card-image" />
+                                            <button class="btn btn-white mt-1 font-12 py-1">Manage Courses</button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-4 px-md-2 my-3 my-lg-0">
+                                <a href="staff_course.html">
+                                    <div class="step-card--green">
+                                        <div class="px-3 pt-2 pb-2 position-relative">
+                                            <h2 class="text-white font-weight-bold">01</h2>
+                                            <p class="weight-semi-bold font-35 text-white mb-0">Completed Courses</p>
+                                            <p class="mb-0 text-white--dim">No Course assigned yet.</p>
+                                            <img src="img/department_card.png" class="img-fluid position-absolute card-image" />
+                                            <button class="btn btn-white mt-1 font-12 py-1">Manage Corses</button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row mx-md-1 my-lg-5">
+
+                    <div class="col-md-4 px-md-2 my-3 my-lg-0">
+                        <a href="staff_report_detail.html">
+                            <div class="step-card--purple">
+                                <div class="px-3 pt-2 pb-2 position-relative">
+                                    <h2 class="text-white font-weight-bold">01</h2>
+                                    <p class="weight-semi-bold font-35 text-white mb-0">Uncompleted Courses</p>
+                                    <p class="mb-0 text-white--dim">You have 0 uncompleted courses.</p>
+                                    <img src="img/reports_card.png" class="img-fluid position-absolute card-image" />
+                                    <button class="btn btn-white mt-1 font-12 py-1">View Reports</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 px-md-2 my-3 my-lg-0">
+                        <a href="staff_settings.html">
+                            <div class="step-card step-card--white">
+                                <div class="px-3 pt-4 pb-2 position-relative">
+                                    <p class="weight-semi-bold font-35 text-dark mb-0 mt-1">Manage Account</p>
+                                    <p class="mb-3 text-dark small line-height--14">Use the button below to manage<br> everthing regarding your account.</p>
+                                    <img src="img/manage_account_card.png" width="120" class="img-fluid position-absolute card-image" />
+                                    <button class="btn btn-card--white mt-1 font-12 py-1 px-4">Start Now</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 px-md-2 my-3 my-lg-0">
+                        <a href="#">
+                            <div class="step-card--orange">
+                                <div class="px-3 pt-4 pb-2 position-relative">
+                                    <p class="weight-semi-bold font-35 text-white mb-0 mt-1">My Learning Group</p>
+                                    <p class="mb-0 text-white small line-height--14">Use the button below to <br /> create new groups and add <br /> staffs to 
+                                        each group.</p>
+                                    <img src="img/learning_group.png" class="img-fluid position-absolute card-image" />
+                                    <button class="btn btn-card--green mt-2 font-12 py-1">Manage Group</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="dasboard-bottom-wrapper">
+                    <div class="row mx-md-1 py-5">
+                        <div class="col-md-12">
+                            <div class="" style="box-shadow: -5.04622px 5.04622px 10.8133px rgba(0, 0, 0, 0.13);">
+                                
+                                <div class="table-top row mx-0 align-items-center">
+                                    <div class="col-7">
+                                        <p class="mt-1 mb-0">Score Board Overview</p>
+                                    </div>
+
+                                    <div class="col-5 mt-3">
+                                        <span class="mr-1 mt-1 align-self-baseline d-none">Sort: </span>
+                                        <form id="filters-area" class="row justify-content-end">
+                                            <div class="col-sm-4 mb-3">
+                                                <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Search</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="card--dashboard p-3">
+                                    <table id="leaders" class="table-responsive-lg leaders dataTables_wrapper table table-striped" style="width:100%">
+                                        <thead class="border-top--0">
+                                            <tr>
+                                                <th class="text-dark">#</th>
+                                                <th class="text-dark select-filter">Course</th>
+                                                <th class="text-dark">Result (%)</th>
+                                                <th class="text-dark">Trophy (Points)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 d-none">
+                            <div style="box-shadow: -5.04622px 5.04622px 10.8133px rgba(0, 0, 0, 0.13);">
+                                <div class="table-top px-2 py-3 d-flex flex-column flex-lg-row">
+                                    <div class="col">
+                                        <p class="mt-1 mb-0">Learning Chart</p>
+                                    </div>
+                                    <div class="col-lg-4 text-md-right">
+                                        <a href="reports.html" class="btn font-12 py-1 mt-4 mt-lg-0" style="border: 2px solid #4F4F4F !important;background-color: #fff0;">View Report</a>
+                                    </div>
+                                </div>
+                                <div class="card rounded-0 height-260">
+                                    <div class="el-chart-w"><div class="el-chart-w">
+
+                                        <canvas height="183" id="barChart" width="379" style="display: block; width: 379px; height: 183px;" class="chartjs-render-monitor"></canvas>
+
+                                        <p id="caption" class="small text-center">The chart is displaying Income & Expense</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!--Notification Modal-->
+            <div  aria-hidden="true" class="onboarding-modal modal fade animated" id="notifications" role="dialog" tabindex="-1">
+                <div class="modal-dialog modal-right" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title text-left text-green">Notifications</h6>
+                            <button   class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
+                        </div>
+
+                        <div class="onboarding-content with-radient px-3 pt-3">
+
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <img src="img/notify.png" alt="notify" />
+                                </div>
+
+                                <div class="col-lg-9">
+                                    <p class="font-weight-500 mb-1">Dui nulla id massa turpis.</p>
+                                    <p class="font-13 mb-2">Gravida odio id commodo libero, aliquam. Tempus bibendum vestibulum aliquet morbi amet.</p>
+                                    <p class="font-12"><img class="img-fluid mr-2" src="img/notification_time.png" alt="Time received 20 mins ago"/>20 mins ago</p>
+                                </div>
+                            </div>
+                            <hr class="mb-3 mt-0" />
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <img src="img/notify.png" alt="notify" />
+                                </div>
+
+                                <div class="col-lg-9">
+                                    <p class="font-weight-500 mb-1">Dui nulla id massa turpis.</p>
+                                    <p class="font-13 mb-2">Gravida odio id commodo libero, aliquam. Tempus bibendum vestibulum aliquet morbi amet.</p>
+                                    <p class="font-12"><img class="img-fluid mr-2" src="img/notification_time.png" alt="Time received 20 mins ago"/>20 mins ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="refresher_quiz" tabindex="-1" role="dialog" aria-labelledby="refresher_quiz_title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="mt-4 text-center">
+                        <img src="img/modal_quiz_icon.png" class="img-fluid" alt="Refresher Quiz" />
+                    </div>
+                    <div class="modal-body text-center">
+                        <h1 class="modal-title text_primary font-weight-bold text_primary" style="font-weight: 900;" id="refresher_quiz_title">Up for the Challenge ?</h1>
+
+                        <div class="px-lg-5 mt-3">
+                            <p class="weight-semi-bold">We have a random 5mins quiz for you from you courses</p>
+                        </div>
+
+                        <p class="font-13">This quiz result wouldn’t reflect on you report....Just have fun!!! </p>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <button class="text-uppercase btn btn-outline--green btn-sm px-4 py-2 mt-5 mb-3" data-dismiss="modal" data-toggle="modal" data-target="#learning_path_draft">Chicken Out</button>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <a href="staff_quiz.html" class="btn btn-green text-uppercase btn-sm my-3 mt-lg-5 px-4 py-2">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <!-- <div class="modal fade" id="learning_path_draft" tabindex="-1" role="dialog" aria-labelledby="learning_path_draft_title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title text-cente mx-auto" id="">My Learning Path Progress</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body text-center">
+
+                        <div class="position-relative">
+                            <img src="img/learning_path_draft.png" alt="learning path" class="img-fluid my-5" />
+
+
+                            <img src="img/path_done.png" alt="learning path finished" class="img-fluid position-absolute" style="top:40px; left: 15px;" data-toggle="tooltip" data-placement="bottom" title="Level" />
+
+                            <img src="img/path_done.png" alt="learning path finished" class="img-fluid position-absolute" style="top:85px; right: 30px;" data-toggle="tooltip" data-placement="bottom" title="Level" />
+
+                            <img src="img/path_done.png" alt="learning path finished" class="img-fluid position-absolute" style="top:104px; left: 190px;" data-toggle="tooltip" data-placement="bottom" title="Level" />
+
+                            <img src="img/path_undone.png" alt="learning path finished" class="img-fluid position-absolute" style="top:175px; left: 100px;" data-toggle="tooltip" data-placement="bottom" title="Level" />
+
+                            <img src="img/path_undone.png" alt="learning path finished" class="img-fluid position-absolute" style="top:215px; right: 30px;" data-toggle="tooltip" data-placement="bottom" title="Level" />
+
+                            <img src="img/path_undone.png" alt="learning path finished" class="img-fluid position-absolute" style="top:270px; left: 30px;" data-toggle="tooltip" data-placement="bottom" title="Level" />
+
+                            <img src="img/path_undone.png" alt="learning path finished" class="img-fluid position-absolute" style="bottom: 38px; left: 195px;" data-toggle="tooltip" data-placement="bottom" title="Level" />
+
+
+                            <img src="img/path_finished.svg" alt="learning path finished" class="img-fluid position-absolute" style="bottom:35px;" />
+
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <a href="staff_course_library.html" class="btn btn-green text-uppercase btn-sm my-3 mt-lg-5 px-4 py-2">Start Course</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div> -->
+
+
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Popper.JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" ></script>
+        <!-- Bootstrap JS -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/chart.js/dist/Chart.min.js"></script>
+        <script src="js/utility.js"></script>
+        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.select.min.js"></script>
+        <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
+        <script src="js/utility.js"></script>
+        <script>
+            $(document).ready( function () {
+                $(".view").attr('disabled','disabled');
+                $('#edit').on('click', function () {
+                   $("input").removeAttr('disabled');
+                   $('#edit').hide();
+                   $('#submit').show();
+                } );
+                $('#edit-company').on('hidden.bs.modal', function (event) {
+                   $(".view").attr('disabled','disabled');
+                   $('#edit').show();
+                   $('#submit').hide();
+                });
+            });
+        </script>
+        <script>
+            $(document).ready( function () {
+                var table = $('#leaders').DataTable({
+                    initComplete: function () {
+                        this.api().columns('.select-filter').every( function () {
+                            var column = this;
+                            var colTitle = this.header().innerHTML
+                            var select = $('<div class="col-sm-6 mb-3"><input type="text" class="form-control  font-13 form-border-default w-100" name="'+colTitle+'" placeholder="'+colTitle+'"/></div>')
+                                .prependTo( $('#filters-area') )
+                                .on( 'change', function () {
+                                    var val = $.fn.dataTable.util.escapeRegex(
+                                        $(this).val()
+                                    );
+             
+                                    column
+                                        .search( val ? '^'+val+'$' : '', true, false )
+                                        .draw();
+                                } );
+             
+                            column.data().unique().sort().each( function ( d, j ) {
+                                // select.append( '<option>'+d+'</option>' )
+                            } );
+                        } );
+                    },
+                    // processing: true,
+                    // serverSide: true,
+                    ajax: 'https://reqres.in/api/users',
+                    columns: [
+                        { data: 'id' },
+                        { data: 'last_name' },
+                        { data: 'id', render: function (dataField) { return `<span class="px-3 py-1 text-white result--green">`+dataField+`0</span> `; } },
+                        { data: 'id', render: function (dataField) { return  `
+                                                        <div class="py-1 px-1 text-white trophy--blue m-0">
+                                                            <img src="img/cup.png" class="img-fluid" />
+                                                            <span class="ml-2">`+dataField+`9</span>
+                                                        </div> `; } }
+                    ]
+                }); 
+                $('#searchbox').on( 'keyup', function () {
+                   table.search( this.value ).draw();
+                } );
+
+
+
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                // $('#refresher_quiz').modal("show")
+            });
+        </script>
+
+    </body>
+
+</html>
