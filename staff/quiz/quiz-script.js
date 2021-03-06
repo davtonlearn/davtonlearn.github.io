@@ -99,11 +99,12 @@
     $('.button').on('mouseenter', function() {
         $(this).addClass('active');
     });
+
     $('.button').on('mouseleave', function() {
         $(this).removeClass('active');
-    });   
+    });
 
-    // Creates and returns the div that contains the questions and 
+    // Creates and returns the div that contains the questions and
     // the answer selections
     function createQuestionElement(index) {
         var qElement = $('<div>', {
@@ -202,7 +203,7 @@
                 // Controls display of 'prev' button
                 if (questionCounter === 1) {
                     $('#prev').show();
-                } 
+                }
                 else if (questionCounter === 0) {
 
                     $('#prev').hide();
@@ -243,6 +244,7 @@
             timer = setTimeout(CheckTime, 1000);
         }
     }
+
     timer = setTimeout(CheckTime, 1000);
 
 })();
