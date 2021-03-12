@@ -231,9 +231,9 @@
                                     <option selected value="30">Annually</option>
                                 </select>
                                 <select class="form-control pricing-select curr border-left font-18 font-weight-bold" id="currency">
-                                    <option value="1">USD</option>
-                                    <option value="2">CAD</option>
-                                    <option selected value="3">NGN</option>
+                                    <option value="usd">USD</option>
+                                    <option value="cad">CAD</option>
+                                    <option selected value="ngn">NGN</option>
                                 </select>
                             </div>
                             <h4 class="mt-4 text-center" id="total-cost"></h4>
@@ -567,15 +567,15 @@
                     rate = 1
                 }
 
-                if (currency == 1) {
+                if (currency == 'usd') {
                     sign = '&#x24;'
                     ex = 0.0026
                 }
-                if (currency == 2){
+                if (currency == 'cad'){
                     sign = 'C&#x24;'
                     ex = 0.0034
                 }
-                if (currency == 3){
+                if (currency == 'ngn'){
                     sign = '&#x20A6;'
                     ex = 1
                 }
