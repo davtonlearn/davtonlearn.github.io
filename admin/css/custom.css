@@ -21,8 +21,8 @@
 }
 #min,#max,#min-group,#max-group,#min-cat,#max-cat{
 	width: 120px;
-   	/*margin-right: 15px;*/
-   	/*margin-top: -19px;*/
+   	border: 1px solid #aaa;
+  height: 39px;
 }
 #searchbox, #searchbox-cat, #searchbox-group{
 	display: none;
@@ -48,7 +48,7 @@
 .mil select{
 	min-width: 135px!important;
 }
-#filters-area span, #filters-group span, #filters-area span input, #filters-group span input{
+/*#filters-area span, #filters-group span, #filters-area span input, #filters-group span input{
 	margin-right: 15px;
 	width: 120px!important;
 }
@@ -67,7 +67,7 @@
 #filters-area span span b, #filters-group span span b{
 	left: 105px;
     top: -26px;
-}
+}*/
 .select2-container--open .select2-dropdown--below{
 	min-width: 240px!important;
 }
@@ -113,7 +113,7 @@ button.dropdown-toggle::after{
   border-left-color: #eee!important;
 }
 @media (max-width: 768px) {
-	 #filters-area span, #filters-group span, #filters-area span input, #filters-group span input{
+	/* #filters-area span, #filters-group span, #filters-area span input, #filters-group span input{
 		margin-right: 15px;
 		width: 100%!important;
 	}
@@ -121,7 +121,7 @@ button.dropdown-toggle::after{
 	    left: 95%;
 	    top: -19px;
 	    position: inherit;
-	}
+	}*/
 	#min,#max,#min-group,#max-group,#min-cat,#max-cat{
 		width: 100%;
 		margin-top: 0;

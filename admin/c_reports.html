@@ -21,6 +21,7 @@
         <script defer src="js/solid.js"></script>
         <script defer src="js/fontawesome.js"></script>
         <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="css/select2.min.css">
         <link rel="stylesheet" href="css/custom.css">
 
     </head>
@@ -233,35 +234,13 @@
                 <div class="row mx-md-2 my-5">
                     <div class="col-md-12">
 
-                        <div class="d-flex">
-                            <div class="col px-0">
-                                <p class="text-grey text-uppercase"><a href="companies.html" class="font-13"><img src="img/back_button.svg" alt="back button" class="img-fluid" /> Back</a></p>
-                            </div> 
-                        </div>
-
                         <div class="d-flex flex-column flex-lg-row mb-5">
                             <div class="col-lg-2 px-0">
-                                <p class="text-green text-uppercase mb-0 mt-2">
-                                    REPORTS</p>
-                            </div>
-
-                            <div class="col-lg-3 px-0 my-">
-                                <input type="text" class="typeahead form-control form-border-default bg-trans" placeholder="Search Course, department, learning group and staff name" />
+                                <p class="text-green text-uppercase mb-0 mt-2">Company Report</p>
                             </div>
 
                             <div class="col px-0 text-right">
-                                <select class="col-lg-3 mr-2 custom-select my-2 font-12" style="border: 1px solid #4F4F4F; background-color: #fff0;">
-                                    <option disabled selected>All Courses</option>
-                                    <option value="Filter">Filter</option>
-                                    <option value="WY">Wyoming</option>
-
-                                    <optgroup label="Pacific Time Zone">
-                                        <option value="CA">California</option>
-                                        <option value="NV">Nevada</option>
-                                        <option value="OR">Oregon</option>
-                                        <option value="WA">Washington</option>
-                                    </optgroup>
-                                </select>
+                                
 
                                 <button class="btn btn-green px-lg-4 mx-lg-2 md-btn-block my-2 my-lg-0">Excel</button>
                                 <button class="btn btn-red px-lg-4 mx-lg-2 md-btn-block my-2 my-lg-0">PDF</button>
@@ -269,23 +248,58 @@
                             </div>
                         </div>
 
-                        <div class="card--dashboard container-fluid">
+                        <div class="card--dashboard">
                             <div class="d-flex border-bottom px-2">
-                                <div class="col-lg-3">
-                                    <h6 class="text-green my-3 weight-semi-bold text-uppercase">Company Report</h6>                            
-                                </div>
 
-                                <div class="col-lg-9 mt-2">
+                                <div class="col-lg-12 mt-2">
                                     <span class="mr-1 mt-1 align-self-baseline d-none">Sort: </span>
                                     <form id="filters-area" class="row justify-content-end">
-                                        <div class="col-md-4 col-sm-6 mb-3">
+                                        <div class="col-lg-3 col-md-4 mb-2">
+                                            <select class="custom-select select2 filter font-18 w-100" name="department_filter">
+                                                <option value="">All Departments</option>
+                                                <option>Project</option>
+                                                <option>Finance</option>
+                                                <option>Tech</option>
+                                                <option>Business</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 mb-2">
+                                            <select class="custom-select select2 filter font-14 w-100" name="gender_filter">
+                                                <option value="">All Gender</option>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 mb-2">
+                                            <select class="custom-select select2 filter font-14 w-100" name="gender_filter">
+                                                <option value="">All Grades</option>
+                                                <option>Below 40</option>
+                                                <option>40-60</option>
+                                                <option>60-80</option>
+                                                <option>Above 80</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 mb-2">
+                                            <select class="custom-select select2 filter font-14 w-100" name="gender_filter">
+                                                <option value="">All Status</option>
+                                                <option>Completed</option>
+                                                <option>Uncompleted</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-4 mb-2">
                                             <input name="min" class="w-100 form-control font-13 form-border-default" id="min" type="text" placeholder="From Date:">
                                         </div>
-                                        <div class="col-md-4 col-sm-6 mb-3">
+
+                                        <div class="col-lg-3 col-md-4 mb-2">
                                             <input name="max" class="w-100 form-control font-13 form-border-default" id="max" type="text" placeholder="To Date:">
                                         </div>
-                                        <div class="col-md-3 col-sm-6 mb-3">
-                                            <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Search</button>
+
+                                        <div class="col-lg-3 col-md-4 mb-2">
+                                            <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 39px"><i class="fa fa-search mr-1"></i> Filter</button>
                                         </div>
                                     </form>
                                 </div>
