@@ -68,6 +68,9 @@
 	left: 105px;
     top: -26px;
 }*/
+.select2-container {
+    width: 100%!important;
+}
 .select2-container--open .select2-dropdown--below{
 	min-width: 240px!important;
 }
