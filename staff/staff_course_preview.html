@@ -60,6 +60,15 @@
                 right: 0px !important;
             }
 
+            .show-scorm{
+                z-index: 9999;
+                background: rgba(0,0,0,0.7);
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                display: none;
+            }
+
         </style>
     </head>
 
@@ -231,7 +240,7 @@
                                                                 <span class="sr-only">Toggle Dropdown</span>
                                                               </button>
                                                               <div class="dropdown-menu dropdown-menu-right" style="min-width: 250px!important">
-                                                                <a id="pc/story.html" class="play-item d-flex justify-contents-between align-items-center cursor font-14 border-bottom p-2">
+                                                                <a id="pc/story.html" class="play-item d-flex justify-contents-between align-items-center cursor font-14 border-bottom p-2" data-type="scorm">
                                                                     <span>Expert topic of the first module (SCORM File)</span>
                                                                 </a>
                                                                 <a id="https://drive.google.com/file/d/1ctAO9CeDB_RRWn8Xm_yOVLIZG8Phl_dZ/preview" class="play-item d-flex justify-contents-between align-items-center cursor font-14 border-bottom p-2">
@@ -260,7 +269,7 @@
                                                     </li>
 
                                                     <li class="py-2 border-bottom">
-                                                        <a id="pc/story.html" class="play-item d-flex justify-contents-between align-items-center cursor">
+                                                        <a id="pc/story.html" class="play-item d-flex justify-contents-between align-items-center cursor" data-type="scorm">
                                                             <i class="fa fa-play mr-3"></i> 
                                                             <span>Expert topic of the first module (SCORM File)</span>
                                                         </a>
@@ -374,21 +383,12 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-8">
+                                <div class="col-lg-8">
                                     <div class="px-1 mt-3">
                                         <div>
-                                            <div class="">
+                                            <div class="player">
                                                 <iframe class="vid-player" src="https://drive.google.com/file/d/1ctAO9CeDB_RRWn8Xm_yOVLIZG8Phl_dZ/preview" height="400" style="width: 100%;background:url(https://thumbs.gfycat.com/DearWellinformedDalmatian-size_restricted.gif) center center no-repeat;" allowfullscreen></iframe>
                                             </div>
-                                            <!-- <video
-                                                   id="vid1"
-                                                   class="video-js vjs-default-skin"
-                                                   controls
-                                                   autoplay
-                                                   width="640" height="350"
-                                                   data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=xjS6SftYQaQ"}] }'
-                                                   >
-                                            </video> -->
 
                                             <h6 class="mt-4 text-dark">Project Management Professional (PMP) </h6>
 
@@ -435,7 +435,10 @@
                 </div>
             </div>
 
-
+            <div class="show-scorm">
+                <iframe class="scorm-player" src="pc/story.html" style="margin-top:50px; height: 88vh; width: 100%;background:url(https://thumbs.gfycat.com/DearWellinformedDalmatian-size_restricted.gif) center center no-repeat;z-index: 99" allowfullscreen></iframe>
+                <a href="#" class="hide-scorm"><i class="fa fa-times text-white font-weight-300" style="position: absolute;top: 15px;right: 20px;font-size: 25px"></i></a>
+            </div>
 
             <!--Notification Modal-->
             <div  aria-hidden="true" class="onboarding-modal modal fade animated" id="notifications" role="dialog" tabindex="-1">
@@ -491,10 +494,26 @@
         <script>
             $(document).ready(function(){
                 $('.play-item').on('click', function(){
-                    id = $(this).attr('id');
-                    $('.play-item').css('color','black')
-                    $(this).css('color','#00923a')
-                    $('.vid-player').attr('src',id)
+                    id = $(this).attr('id');   
+                    data = $(this).attr('data-type'); 
+
+                    if(data == "scorm"){
+                        $('.show-scorm').show();
+                        $('.scorm-player').attr('src',id);
+                    }
+
+                    else{
+                        $('.play-item').css('color','black')
+                        $(this).css('color','#00923a')
+                        $('.vid-player').attr('src',id)
+                        $('html, body').animate({
+                            scrollTop: $('.player').offset().top - 70
+                        }, 1500);
+                    }
+                })
+
+                $('.hide-scorm').on('click', function(){
+                    $('.show-scorm').hide();
                 })
             })
         </script>
