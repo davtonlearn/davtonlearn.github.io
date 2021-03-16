@@ -194,8 +194,6 @@
                     </div>
                 </nav>
 
-                
-
                 <div class="row mx-md-2 my-5">
                     <div class="col-md-12">
                         <div class="d-flex">
@@ -385,9 +383,12 @@
 
                                 <div class="col-lg-8">
                                     <div class="px-1 mt-3">
-                                        <div>
+                                        <div class="player-wrapper" style="position: relative;">
+
+                                            <a href="#" id="toggle_fullscreen" style="position: absolute;width: 100%;top: 11px;"><i class="fa fa-expand text-white font-weight-300 " style="position: absolute;top: 0;right: 15px;font-size: 45px;background: rgba(0,0,0,0.7);padding: 10px;"></i></a>
+
                                             <div class="player">
-                                                <iframe class="vid-player" src="https://drive.google.com/file/d/1ctAO9CeDB_RRWn8Xm_yOVLIZG8Phl_dZ/preview" height="400" style="width: 100%;background:url(https://thumbs.gfycat.com/DearWellinformedDalmatian-size_restricted.gif) center center no-repeat;" allowfullscreen></iframe>
+                                                <iframe class="vid-player" src="https://drive.google.com/file/d/1ctAO9CeDB_RRWn8Xm_yOVLIZG8Phl_dZ/preview" height="400" style="z-index:99;width: 100%;background:url(https://thumbs.gfycat.com/DearWellinformedDalmatian-size_restricted.gif) center center no-repeat;"></iframe>
                                             </div>
 
                                             <h6 class="mt-4 text-dark">Project Management Professional (PMP) </h6>
@@ -436,7 +437,7 @@
             </div>
 
             <div class="show-scorm">
-                <iframe class="scorm-player" src="pc/story.html" style="margin-top:50px; height: 88vh; width: 100%;background:url(https://thumbs.gfycat.com/DearWellinformedDalmatian-size_restricted.gif) center center no-repeat;z-index: 99" allowfullscreen></iframe>
+                <!-- <iframe class="scorm-player" src="pc/story.html" style="margin-top:50px; height: 88vh; width: 100%;background:url(https://thumbs.gfycat.com/DearWellinformedDalmatian-size_restricted.gif) center center no-repeat;z-index: 99" allowfullscreen></iframe> -->
                 <a href="#" class="hide-scorm"><i class="fa fa-times text-white font-weight-300" style="position: absolute;top: 15px;right: 20px;font-size: 25px"></i></a>
             </div>
 
@@ -496,25 +497,46 @@
                 $('.play-item').on('click', function(){
                     id = $(this).attr('id');   
                     data = $(this).attr('data-type'); 
-
-                    if(data == "scorm"){
-                        $('.show-scorm').show();
-                        $('.scorm-player').attr('src',id);
-                    }
-
-                    else{
                         $('.play-item').css('color','black')
                         $(this).css('color','#00923a')
                         $('.vid-player').attr('src',id)
                         $('html, body').animate({
-                            scrollTop: $('.player').offset().top - 70
+                            scrollTop: $('.player').offset().top - 150
                         }, 1500);
-                    }
+                    // }
                 })
 
-                $('.hide-scorm').on('click', function(){
-                    $('.show-scorm').hide();
-                })
+            $('#toggle_fullscreen').on('click', function(){
+              // if already full screen; exit
+              // else go fullscreen
+              if (
+                document.fullscreenElement ||
+                document.webkitFullscreenElement ||
+                document.mozFullScreenElement ||
+                document.msFullscreenElement
+              ) {
+                if (document.exitFullscreen) {
+                  document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                  document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) {
+                  document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                  document.msExitFullscreen();
+                }
+              } else {
+                element = $('.vid-player').get(0);
+                if (element.requestFullscreen) {
+                  element.requestFullscreen();
+                } else if (element.mozRequestFullScreen) {
+                  element.mozRequestFullScreen();
+                } else if (element.webkitRequestFullscreen) {
+                  element.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+                } else if (element.msRequestFullscreen) {
+                  element.msRequestFullscreen();
+                }
+              }
+            });
             })
         </script>
 
