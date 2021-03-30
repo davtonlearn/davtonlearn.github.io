@@ -225,23 +225,42 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                    <div class="row">
-                                        <div class="col-lg-2 my-2">
-                                            <input type="text" id="searchbox" placeholder="Search Staff" class="form-control form-control-sm font-13 form-border-default bg-trans" />
-                                        </div>
 
                                         <div class="col-lg-12">
                                             <span class="mr-1 mt-1 align-self-baseline d-none">Sort: </span>
                                             <form id="filters-area" class="row justify-content-end">
-                                                <div class="col-lg-3 col-md-4 mb-2">
-                                                    <input type="text" id="course_search" placeholder="Search Course" class="form-control form-control-sm font-13 form-border-default bg-trans" style="height: 40px;" />
+                                                <div class="col-lg-2 col-md-4 mb-2">
+                                                    <input type="text" placeholder="Search Name" class="searchitem form-control form-control-sm font-13 form-border-default bg-trans" style="height: 40px;" />
+                                                </div>                                                <div class="col-lg-2 col-md-4 mb-2">
+                                                    <select class="custom-select select2 filter font-18 w-100" name="department_filter">
+                                                        <option value="">Gender</option>
+                                                        <option>Male</option>
+                                                        <option>Female</option>
+                                                    </select>
                                                 </div>
-                                                <div class="col-lg-3 col-md-4 mb-2">
+                                                <div class="col-lg-2 col-md-4 mb-2">
                                                     <select class="custom-select select2 filter font-18 w-100" name="department_filter">
                                                         <option value="">Department</option>
                                                         <option>Project</option>
                                                         <option>Finance</option>
                                                         <option>Tech</option>
                                                         <option>Business</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-2 col-md-4 mb-2">
+                                                    <select class="custom-select select2 filter font-18 w-100" name="department_filter">
+                                                        <option value="">Score</option>
+                                                        <option>Below 40</option>
+                                                        <option>40 - 80</option>
+                                                        <option>Above 80</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-2 col-md-4 mb-2">
+                                                    <select class="custom-select select2 filter font-18 w-100" name="department_filter">
+                                                        <option value="">Status</option>
+                                                        <option>Completed</option>
+                                                        <option>Uncompleted</option>
+                                                        <option>In Progress</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
@@ -279,7 +298,7 @@
                                             <th class="text-dark text-center">#</th>
                                             <th class="text-dark">Full Name</th>
                                             <th class="text-dark">Department</th>
-                                            <th class="text-dark">Email</th>
+                                            <th class="text-dark">Gender</th>
                                             <th class="text-dark">Score(100%)</th>
                                             <th class="text-dark">Status(Completed/Uncompleted)</th>
                                             <th class="text-dark" style="min-width: 100px">ACTION</th>
@@ -389,12 +408,15 @@
         <script>
             $(document).ready( function () {
                 var table = $('#staff').DataTable({
+
                     initComplete: function () {
                         this.api().columns('.select-filter').every( function () {
                             var column = this;
                             var colTitle = this.header().innerHTML
-                            var select = $('<div class="col-lg-2 col-md-4 col-sm-6 mb-3"><input type="text" class="form-control  font-13 form-border-default w-100" name="'+colTitle+'" placeholder="'+colTitle+'"/></div>')
-                                .prependTo( $('#filters-area') )
+                            // var select = $('<div class="col-lg-2 col-md-4 col-sm-6 mb-3"><input type="text" class="form-control font-13 form-border-default w-100" name="'+colTitle+'" placeholder="'+colTitle+'"/></div>')
+                            var select = $('<div class="col-lg-2 col-md-4 col-sm-6 mb-3"><select class="custom-select fif font-14 w-100" name="department_filter">'+colTitle+'</select></div>')
+                                // .appendTo( $('#filters-area') )
+                                .prependTo($('#filters-area'))
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
                                         $(this).val()
@@ -406,22 +428,23 @@
                                 } );
              
                             column.data().unique().sort().each( function ( d, j ) {
-                                // select.append( '<option>'+d+'</option>' )
+                                select.children().append( '<option>'+d+'</option>' )
                             } );
                         } );
+                        console.log("draw() callback; initializing Select2's.");
+                        $('.fif').select2();
                     },
-                    // drawCallback: function(dt) {
-                    //   console.log("draw() callback; initializing Select2's.");
-                    //   $('.f').select2({tags: true, width: "6em"});
-                    // },
+                    lengthMenu: [5, 10, 20, 50, 100, 200, 500],
+                    // drawCallback: function() {},
                     // processing: true,
                     // serverSide: true,
-                    ajax: 'https://reqres.in/api/users',
+                    // ajax: 'https://reqres.in/api/users/',
+                    ajax: {'url' : 'https://jsonplaceholder.typicode.com/users/', "dataSrc": ""},
                     columns: [
                         { data: 'id' },
-                        { data: 'first_name', render: function (dataField) { return 'Obasa '+dataField; } },
-                        { data: 'id', render: function (dataField) { return 'Finance'+dataField; } },
-                        { data: 'email' },
+                        { data: 'name', render: function (dataField) { return dataField; } },
+                        { data: 'company.name', render: function (dataField) { return dataField; } },
+                        { data: 'id', render: function (dataField) { return 'Male'+dataField; } },
                         { data: 'id', render: function (dataField) { return dataField+'1'; } },
                         { data: 'id', render: function (dataField) { return 'Completed'+dataField; } },
                         {
@@ -432,20 +455,18 @@
                         }
                     ]
                 }); 
-                $('#searchbox').on( 'keyup', function () {
+                $('.searchitem').on( 'keyup', function () {
                    table.search( this.value ).draw();
                 } );
 
        
-            $("#min").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
-            $("#max").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+                $("#min").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+                $("#max").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
 
-            // Event listener to the two range filtering inputs to redraw on input
-            $('#min, #max').change(function () {
-                table.draw();
-            });
-
-
+                // Event listener to the two range filtering inputs to redraw on input
+                $('#min, #max').change(function () {
+                    table.draw();
+                });
 
             });
         </script>
