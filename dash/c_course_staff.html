@@ -232,6 +232,18 @@
                                         <div class="col-lg-12">
                                             <span class="mr-1 mt-1 align-self-baseline d-none">Sort: </span>
                                             <form id="filters-area" class="row justify-content-end">
+                                                <div class="col-lg-3 col-md-4 mb-2">
+                                                    <input type="text" id="course_search" placeholder="Search Course" class="form-control form-control-sm font-13 form-border-default bg-trans" style="height: 40px;" />
+                                                </div>
+                                                <div class="col-lg-3 col-md-4 mb-2">
+                                                    <select class="custom-select select2 filter font-18 w-100" name="department_filter">
+                                                        <option value="">Department</option>
+                                                        <option>Project</option>
+                                                        <option>Finance</option>
+                                                        <option>Tech</option>
+                                                        <option>Business</option>
+                                                    </select>
+                                                </div>
                                                 <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
                                                     <input name="min" class="w-100 form-control font-13 form-border-default" id="min" type="text" placeholder="From Date:">
                                                 </div>
@@ -266,10 +278,10 @@
                                         <tr>
                                             <th class="text-dark text-center">#</th>
                                             <th class="text-dark">Full Name</th>
-                                            <th class="text-dark select-filter">Department</th>
+                                            <th class="text-dark">Department</th>
                                             <th class="text-dark">Email</th>
-                                            <th class="text-dark">Score</th>
-                                            <th class="text-dark">Status</th>
+                                            <th class="text-dark">Score(100%)</th>
+                                            <th class="text-dark">Status(Completed/Uncompleted)</th>
                                             <th class="text-dark" style="min-width: 100px">ACTION</th>
                                         </tr>
                                     </thead>
@@ -407,15 +419,15 @@
                     ajax: 'https://reqres.in/api/users',
                     columns: [
                         { data: 'id' },
-                        { data: 'first_name' },
-                        { data: 'last_name' },
+                        { data: 'first_name', render: function (dataField) { return 'Obasa '+dataField; } },
+                        { data: 'id', render: function (dataField) { return 'Finance'+dataField; } },
                         { data: 'email' },
-                        { data: 'email' },
-                        { data: 'email' },
+                        { data: 'id', render: function (dataField) { return dataField+'1'; } },
+                        { data: 'id', render: function (dataField) { return 'Completed'+dataField; } },
                         {
                           "data": null,
                           "defaultContent": `
-                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Delete</a>
+                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Unassign</a>
                                             `
                         }
                     ]
