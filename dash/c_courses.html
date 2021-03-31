@@ -236,14 +236,14 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="col-lg-2 my-2">
-                                                    <input type="text" id="searchbox" placeholder="Search Course" class="form-control form-control-sm font-13 form-border-default bg-trans" />
+                                                    <!-- <input type="text" id="searchbox" placeholder="Search Courses" class="searchitem form-control form-control-sm font-13 form-border-default bg-trans" /> -->
                                                 </div>
 
                                                 <div class="col-lg-12 mb-4">
                                                     <span class="mr-1 mt-1 align-self-baseline d-none">Sort: </span>
                                                     <form id="filters-area" class="row justify-content-end">
                                                         <div class="col-lg-3 col-md-4 mb-2">
-                                                            <input type="text" id="course_search" placeholder="Search Course" class="form-control form-control-sm font-13 form-border-default bg-trans" style="height: 40px;" />
+                                                            <input type="text" placeholder="Search Course" class="searchitem form-control form-control-sm font-13 form-border-default bg-trans" style="height: 40px;" />
                                                         </div>
 
                                                         <div class="col-lg-3 col-md-4 mb-2">
@@ -640,7 +640,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-lg-3">
-                                        <button id="departmentSubmit" class="btn btn-success btn-modal btn-block" type="button">Assign</button>
+                                        <button id="departmentSubmit" class="btn btn-success btn-modal btn-block font-14" type="button" style="height: 35px;">Assign</button>
                                     </div>
                                 </div>
                             </form>
@@ -662,10 +662,10 @@
                             <form>
                                 <div class="form-row">
                                     <div class="form-group col-lg-9">
-                                        <input type="text" class="form-control font-14" name="" placeholder="Set Course Duration" style="height: 39px;">
+                                        <input type="text" class="form-control font-14" name="" placeholder="Set Course Duration">
                                     </div>
                                     <div class="form-group col-lg-3">
-                                        <button id="departmentSubmit" class="btn btn-success btn-modal btn-block" type="button">Set</button>
+                                        <button id="departmentSubmit" class="btn btn-success btn-modal btn-block font-14" type="button" style="height: 35px;">Set</button>
                                     </div>
                                 </div>
                             </form>
@@ -836,14 +836,16 @@
                             } );
                         } );
                     },
+                    lengthMenu: [5, 10, 20, 50, 100, 200, 500],
                     // processing: true,
                     // serverSide: true,
-                    ajax: 'https://reqres.in/api/users',
+                    // ajax: 'https://reqres.in/api/users',
+                    ajax: {'url' : 'https://jsonplaceholder.typicode.com/users/', "dataSrc": ""},
                     columns: [
                         { data: 'id' },
-                        { data: 'first_name' },
-                        { data: 'last_name' },
-                        { data: 'email' },
+                        { data: 'name' },
+                        { data: 'company.name' },
+                        { data: 'address.street' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
@@ -867,7 +869,7 @@
                         }
                     ]
                 }); 
-                $('#searchbox').on( 'keyup', function () {
+                $('.searchitem').on( 'keyup', function () {
                    table.search( this.value ).draw();
                 } );
 
