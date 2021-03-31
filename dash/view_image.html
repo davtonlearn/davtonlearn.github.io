@@ -32,17 +32,19 @@
 
         <div class="top_nav">
             <img src="img/top_strip.jpg" class="img-fluid position-absolute" />
-            <div class="container-fluid dashboard_nav py-0">
-                <nav class="navbar navbar-expand-lg navbar-dark">
-                    <a class="navbar-brand py-0" href="#"><img src="img/logo.svg" class="mt-2" alt="Davton logo" width="" /></a>
-                    <button class="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="container-fluid dashboard_nav p-0">
+                <nav class="navbar navbar-expand-lg navbar-dark p-5 p-lg-0">
+                    <div class="logo-wrapper mx-auto text-center align-items-center d-flex">
+                        <a class="navbar-brand px-4 mx-auto" href="#"><img src="img/abbey.png" class="mw-100" alt="Davton logo"></a>
+                    </div>
+                    <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation" style="right: 15px; position: absolute;">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="collapse navbar-collapse p-3" id="navbarNav">
                         <ul class="nav navbar-nav ml-auto">
 
                             <li class="nav-item px-md-1">
-                                <a class="nav-link text-dark" href="message.html" data-target="#acc_details">
+                                <a class="nav-link text-dark" href="message.html" data-target="#">
                                     <img src="img/mail.svg" alt="Messages" class="mt-1">
                                 </a>
                             </li>
@@ -53,7 +55,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item dropdown pr-md-4 pl-2">
+                            <li class="nav-item dropdown pr-md-4 pl-2" style="z-index: 9999999">
                                 <a class="nav-link text-white dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="py-1 px-2" style="border-radius: 3px; background-color: white; color: #14AD51">M</span>&nbsp; &nbsp; Hr247@asanta.com &nbsp;
                                 </a>
