@@ -632,7 +632,7 @@
                             <form>
                                 <div class="form-row">
                                     <div class="form-group col-lg-9">
-                                        <select class="form-control custom-select select2 font-12" name="staff[]" multiple="multiple" style="width: 100%; height: 50px !important">
+                                        <select class="form-control custom-select select2 font-12" name="staff[]" multiple="multiple" placeholder="Select Staff" style="width: 100%; height: 50px !important">
                                             <option  disabled>Select Staff</option>
                                             <option value="1">One</option>
                                             <option value="2">Two</option>
@@ -647,56 +647,34 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- <div class="modal fade" id="assign_staff" role="dialog" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            </div>            
+            <!-- Assign Staff Modal End -->
+
+            <!-- Set Course Duration Modal -->
+            <div class="modal fade" id="duration" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h6 class="modal-title text-center mx-auto">Assign Course to Staff</h6>
+                            <h6 class="modal-title text-center mx-auto">Set Course Duration</h6>
                             <button type="button" class="close pr-3 ml-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><img src="img/modal_cancel.svg" alt="close modal" /></span> </button>
                         </div>
                         <div class="modal-body">
                             <form>
                                 <div class="form-row">
-                                    <div class="form-group col-lg-12">
-                                        <select class="custom-select select2" name="course_name" style="width: 100%; height: 50px !important">
-                                            <option  disabled>Select Staff</option>
-                                            <option>Lois Lane</option>
-                                            <option>Clark Kent</option>
-                                            <option>Ralph and Alice Kramden</option>
-                                            <option>Holly Golightly</option>
-                                            <option>Liza Doolittle</option>
-                                            <option>Henry Higgins</option>
-                                            <option>Joseph Arimathea</option>
-                                            <option>Mary Magdalene</option>
-                                            <option>Simon Cyrene</option>
-                                            <option>Ann Chovey</option>
-                                            <option>Barry Cuda</option>
-                                            <option>Barry Mundy</option>
-                                            <option>John Dory</option>
-                                            <option>Murray Cod</option>
-                                            <option>Coral Trout</option>
-                                            <option>Red Salmon</option>
-                                            <option>Tiger Prawn</option>
-                                            <option>Rock Cod</option>
-                                            <option>Rock Lobster</option>
-                                            <option>Ray Manta</option>
-                                            <option>E.L. Moray</option>
-                                        </select>
+                                    <div class="form-group col-lg-9">
+                                        <input type="text" class="form-control font-14" name="" placeholder="Set Course Duration" style="height: 39px;">
                                     </div>
-                                </div>
-                                <div class="form-row" id="departmentModalItems"></div>
-                                <div class="row mt-5">
-                                    <div class="col-lg-3 ml-auto mx-0">
-                                        <button type="button" class="btn btn-success btn-block mt-5">Submit</button>
+                                    <div class="form-group col-lg-3">
+                                        <button id="departmentSubmit" class="btn btn-success btn-modal btn-block" type="button">Set</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-            </div> -->
-            <!-- Assign Staff Modal End -->
+            </div>            
+            <!-- Set Course Duration Modal End -->
+
 
             <!-- Add SCORM -->
             <div class="modal fade" id="add_scorm" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -876,6 +854,7 @@
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 <a class="dropdown-item font-12" href="c_course_detail.html">Course Preview</a>
+                                                <a class="dropdown-item font-12 get_id" href="#" data-toggle="modal" data-target="#duration">Set Course Duration</a>
                                                 <a class="dropdown-item font-12" href="c_course_report.html">View Stat</a>
                                                 <a class="dropdown-item font-12" href="c_modules.html">View Modules</a>
                                                 <a class="dropdown-item font-12" href="c_course_quizes.html">View Quizzes</a>
