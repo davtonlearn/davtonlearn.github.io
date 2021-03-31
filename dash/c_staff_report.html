@@ -21,6 +21,7 @@
         <script defer src="js/solid.js"></script>
         <script defer src="js/fontawesome.js"></script>
         <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="css/select2.min.css">
         <link rel="stylesheet" href="css/custom.css">
     </head>
 
@@ -28,28 +29,30 @@
 
         <div class="top_nav">
             <img src="img/top_strip.jpg" class="img-fluid position-absolute" />
-            <div class="container-fluid dashboard_nav py-0">
-                <nav class="navbar navbar-expand-lg navbar-dark">
-                    <a class="navbar-brand py-0" href="#"><img src="img/logo.svg" class="mt-2" alt="Davton logo" width="" /></a>
-                    <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="container-fluid dashboard_nav p-0">
+                <nav class="navbar navbar-expand-lg navbar-dark p-5 p-lg-0">
+                    <div class="logo-wrapper mx-auto text-center align-items-center d-flex">
+                        <a class="navbar-brand px-4 mx-auto" href="#"><img src="img/abbey.png" class="mw-100" alt="Davton logo"></a>
+                    </div>
+                    <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation" style="right: 15px; position: absolute;">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="collapse navbar-collapse p-3" id="navbarNav">
                         <ul class="nav navbar-nav ml-auto">
 
                             <li class="nav-item px-md-1">
-                                <a class="nav-link text-dark" href="message.html" data-target="#acc_details">
-                                    <img src="img/mail.svg" alt="Messages" class="">
+                                <a class="nav-link text-dark" href="message.html" data-target="#">
+                                    <img src="img/mail.svg" alt="Messages" class="mt-1">
                                 </a>
                             </li>
 
                             <li class="nav-item px-md-1">
-                                <a class="nav-link text-dark" href="#" data-toggle="modal" data-target="#notifications">
-                                    <img src="img/notification.svg" alt="notifications" class="">
+                                <a class="nav-link text-dark" href="#" data-target="#notifications" data-toggle="modal">
+                                    <img src="img/notification.svg" alt="user name" class="">
                                 </a>
                             </li>
 
-                            <li class="nav-item dropdown pr-md-4 pl-2">
+                            <li class="nav-item dropdown pr-md-4 pl-2" style="z-index: 9999999">
                                 <a class="nav-link text-white dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="py-1 px-2" style="border-radius: 3px; background-color: white; color: #14AD51">M</span>&nbsp; &nbsp; Hr247@asanta.com &nbsp;
                                 </a>
@@ -65,7 +68,6 @@
                 </nav>
             </div>
         </div>
-
 
 
         <div class="wrapper">
@@ -237,7 +239,7 @@
                                 <div class="tab-content my-3" id="nav-tabContent">
                                     <div class="tab-pane fade px-4 show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
-                                        <div class="d-flex flex-column flex-lg-row mb-5">
+                                        <div class="d-flex flex-column flex-lg-row mb-3">
                                             <div class="col-lg-2">
                                                 <h6 class="text-green my-3 weight-semi-bold text-uppercase">Staff Report</h6>
                                             </div>
@@ -369,6 +371,36 @@
                                     </div>
 
                                     <div class="tab-pane fade px-4" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                               <div class="row">
+                                                    <div class="col-lg-2 my-2">
+                                                        <input type="text" id="searchbox-group" placeholder="Search Learning Path" class="form-control form-control-sm font-13 form-border-default bg-trans" />
+                                                    </div>
+
+                                                    <div class="col-lg-12">
+                                                        <span class="mr-1 mt-1 align-self-baseline d-none">Sort: </span>
+                                                        <form id="filters-group" class="row justify-content-end">
+                                                            <div class="col-lg-2 col-md-4 mb-2">
+                                                                <input type="text" placeholder="Search Course" class="searchitem form-control form-control-sm font-13 form-border-default bg-trans" style="height: 40px;" />
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-4 mb-2">
+                                                                <select class="custom-select select2 filter font-18 w-100" name="department_filter">
+                                                                    <option value="">Status</option>
+                                                                    <option>Completed</option>
+                                                                    <option>Uncompleted</option>
+                                                                    <option>In Progress</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                                                                <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Search</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>   
+                                            </div>
+                                            
+                                        </div>
                                         <div class="card--dashboard mt-4 p-3">
                                             <table id="staff" class="table-responsive-lg leaders dataTables_wrapper table table-striped" style="width:100%">
 
@@ -483,17 +515,19 @@
                             } );
                         } );
                     },
+                    lengthMenu: [5, 10, 20, 50, 100, 200, 500],
                     // processing: true,
                     // serverSide: true,
-                    ajax: 'https://reqres.in/api/users',
+                    // ajax: 'https://reqres.in/api/users',
+                    ajax: {'url' : 'https://jsonplaceholder.typicode.com/users/', "dataSrc": ""},
                     columns: [
                         { data: 'id' },
-                        { data: 'first_name' },
+                        { data: 'name' },
                         { data: 'id' },
-                        { data: 'first_name' },
+                        { data: 'company.name' },
                     ]
                 }); 
-                $('#searchbox').on( 'keyup', function () {
+                $('.searchitem').on( 'keyup', function () {
                    table.search( this.value ).draw();
                 } );
 

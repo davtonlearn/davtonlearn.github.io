@@ -30,17 +30,19 @@
 
         <div class="top_nav">
             <img src="img/top_strip.jpg" class="img-fluid position-absolute" />
-            <div class="container-fluid dashboard_nav py-0">
-                <nav class="navbar navbar-expand-lg navbar-dark">
-                    <a class="navbar-brand py-0" href="#"><img src="img/logo.svg" class="mt-2" alt="Davton logo" width="" /></a>
-                    <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="container-fluid dashboard_nav p-0">
+                <nav class="navbar navbar-expand-lg navbar-dark p-5 p-lg-0">
+                    <div class="logo-wrapper mx-auto text-center align-items-center d-flex">
+                        <a class="navbar-brand px-4 mx-auto" href="#"><img src="img/abbey.png" class="mw-100" alt="Davton logo"></a>
+                    </div>
+                    <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation" style="right: 15px; position: absolute;">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="collapse navbar-collapse p-3" id="navbarNav">
                         <ul class="nav navbar-nav ml-auto">
 
                             <li class="nav-item px-md-1">
-                                <a class="nav-link text-dark" href="staff_message.html">
+                                <a class="nav-link text-dark" href="message.html" data-target="#">
                                     <img src="img/mail.svg" alt="Messages" class="mt-1">
                                 </a>
                             </li>
@@ -51,14 +53,14 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item dropdown pr-md-4 pl-2">
+                            <li class="nav-item dropdown pr-md-4 pl-2" style="z-index: 9999999">
                                 <a class="nav-link text-white dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="images/tobi.jpg" style="border-radius: 50%;width: 30px">&nbsp; &nbsp; Hr247@asanta.com &nbsp;
+                                    <span class="py-1 px-2" style="border-radius: 3px; background-color: white; color: #14AD51">M</span>&nbsp; &nbsp; Hr247@asanta.com &nbsp;
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
                                     <a class="dropdown-item font-12" href="#">Log Out</a>
-                                    <a class="dropdown-item font-12" href="staff_settings.html">Setting</a>
+                                    <a class="dropdown-item font-12" href="settings.html">Setting</a>
                                 </div>
                             </li>
 
@@ -67,6 +69,7 @@
                 </nav>
             </div>
         </div>
+
 
 
 
@@ -179,13 +182,16 @@
 
                                 <nav>
                                     <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                        <a class="nav-dash nav-item nav-link active text-uppercase weight-semi-bold py-3" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Requested</a> 
 
-                                        <a class="nav-dash nav-item nav-link text-uppercase weight-semi-bold py-3" id="nav-assigned-tab" data-toggle="tab" href="#nav-assigned" role="tab" aria-controls="nav-assigned" aria-selected="false">Assigned</a>
+                                        <a class="nav-dash nav-item nav-link text-uppercase weight-semi-bold py-3 first active" id="nav-assigned-tab" data-toggle="tab" href="#nav-assigned" role="tab" aria-controls="nav-assigned" aria-selected="false">Assigned</a>
 
-                                        <a class="nav-dash nav-item nav-link text-uppercase weight-semi-bold py-3" id="nav-assigned-tab" data-toggle="tab" href="#nav-self" role="tab" aria-controls="nav-self" aria-selected="false">Self Enrolled</a>
+                                        <a class="nav-dash nav-item nav-link text-uppercase weight-semi-bold py-3 middle" id="nav-assigned-tab" data-toggle="tab" href="#nav-self" role="tab" aria-controls="nav-self" aria-selected="false">Self Enrolled</a>
 
-                                        <a class="nav-item nav-link text-uppercase weight-semi-bold py-3" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Completed</a>
+                                        <a class="nav-dash nav-item nav-link text-uppercase weight-semi-bold py-3 middle" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Requested</a> 
+
+                                        <a class="nav-item nav-link text-uppercase weight-semi-bold py-3 middle" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Completed</a>
+
+                                        <a class="nav-item nav-link text-uppercase weight-semi-bold py-3 last" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Uncompleted</a>
                                     </div>
                                 </nav>
 
@@ -404,15 +410,13 @@
                                                                 <p class="mb-1">Project Management Learning Path</p>
                                                                 <p class="text-muted small mb-1">Assigned April 2019</p>
                                                                 <div class="mb-2 row ">
-                                                                    <div class="col-lg-4 pt-1">
-                                                                        <button class="btn btn-primary weight-semi-bold font-11 py-0 weight-semi-bold rounded-0 btn-block" type="button">Learning Path </button>
-                                                                    </div>
-
                                                                     <div class="col-lg-7 pt-1">
                                                                         <div class="progress">
                                                                             <div class="progress-bar bg-warning text-dark" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0% Completed</div>
                                                                         </div>
                                                                     </div>
+
+                                                                    <span>20 day(s) left</span>
                                                                 </div>
                                                                 <p class="font-12">Understand your audience, envision a creative solution, and test your prototype by Cooper Professional Education | By Cooper Professional Education</p>
                                                             </div>
@@ -451,15 +455,14 @@
                                                                 <p class="mb-1">Project Management Learning Path</p>
                                                                 <p class="text-muted small mb-1">Assigned April 2019</p>
                                                                 <div class="mb-2 row ">
-                                                                    <div class="col-lg-4 pt-1">
-                                                                        <button class="btn btn-primary weight-semi-bold font-11 py-0 weight-semi-bold rounded-0 btn-block" type="button">Learning Path </button>
-                                                                    </div>
 
                                                                     <div class="col-lg-7 pt-1">
                                                                         <div class="progress">
                                                                             <div class="progress-bar bg-warning text-dark" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20% Completed</div>
                                                                         </div>
                                                                     </div>
+
+                                                                    <span>20 day(s) left</span>
                                                                 </div>
                                                                 <p class="font-12">Understand your audience, envision a creative solution, and test your prototype by Cooper Professional Education | By Cooper Professional Education</p>
                                                             </div>
@@ -508,7 +511,248 @@
                                         </div>
                                     </div>
 
+                                    <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                        <div class="">
+
+                                            <div class="row mt-3 px-4">
+                                                <div class="col-lg-12 mb-5">
+                                                    <div data-filter-item data-filter-name="apple">
+                                                        <div class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info">
+                                                            <div class="col-lg-3" data-toggle="modal" data-target="#rate_course">
+                                                                <div style="background-image: url(img/course_placeholder.jpg);
+                                                                            height: 150px;
+                                                                            width: 100%;
+                                                                            background-size: cover;
+                                                                            background-repeat: no-repeat">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-6">
+                                                                <p class="mb-1">Project Management Professional (PMP) Advanced</p>
+                                                                <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                                <div class="mb-2">
+                                                                    <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                                    <img src="img/star4.png"  alt="rating" class="img-fluid mx-2"/>
+                                                                </div>
+                                                                <p class="font-12">Understand your audience, envision a creative solution, and test your prototype by Cooper Professional Education | By Cooper Professional Education</p>
+                                                            </div>
+
+                                                            <div class="col-lg-3">
+                                                                <div class="show_button mt-lg-4">
+                                                                    <div class="mb-3">
+                                                                        <a href="staff_course_detail.html" class="btn btn-green font-12 width-150 md-btn-block" type="button">Preview Course</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div data-filter-item data-filter-name="project management">
+                                                        <div class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info">
+                                                            <div class="col-lg-3" data-toggle="modal" data-target="#rate_course">
+                                                                <div style="background-image: url(img/course_placeholder.jpg);
+                                                                            height: 150px;
+                                                                            width: 100%;
+                                                                            background-size: cover;
+                                                                            background-repeat: no-repeat">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-6">
+                                                                <p class="mb-1">Project Management Professional (PMP) </p>
+                                                                <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                                <div class="mb-2">
+                                                                    <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                                    <img src="img/star3.5.png"  alt="rating" class="img-fluid mx-2"/>
+                                                                </div>
+                                                                <p class="font-12">Understand your audience, envision a creative solution, and test your prototype by Cooper Professional Education | By Cooper Professional Education</p>
+                                                            </div>
+
+                                                            <div class="col-lg-3">
+                                                                <div class="show_button mt-lg-4">
+                                                                    <div class="mb-3">
+                                                                        <a href="staff_course_detail.html" class="btn btn-green font-12 width-150 md-btn-block" type="button">Preview Course</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div data-filter-item data-filter-name="project management">
+                                                        <div class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info" >
+                                                            <div class="col-lg-3" data-toggle="modal" data-target="#rate_course">
+                                                                <div style="background-image: url(img/course_placeholder.jpg);
+                                                                            height: 150px;
+                                                                            width: 100%;
+                                                                            background-size: cover;
+                                                                            background-repeat: no-repeat">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-6">
+                                                                <p class="mb-1">Project Management Professional (PMP) </p>
+                                                                <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                                <div class="mb-2">
+                                                                    <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                                    <img src="img/star.png"  alt="rating" class="img-fluid mx-2"/>
+                                                                </div>
+                                                                <p class="font-12">Understand your audience, envision a creative solution, and test your prototype by Cooper Professional Education | By Cooper Professional Education</p>
+                                                            </div>
+
+                                                            <div class="col-lg-3">
+                                                                <div class="show_button mt-lg-4">
+                                                                    <div class="mb-3">
+                                                                        <a href="staff_course_detail.html" class="btn btn-green font-12 width-150 md-btn-block" type="button">Preview Course</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div data-filter-item data-filter-name="project management">
+                                                        <div class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info" >
+                                                            <div class="col-lg-3" data-toggle="modal" data-target="#rate_course">
+                                                                <div style="background-image: url(img/course_placeholder.jpg);
+                                                                            height: 150px;
+                                                                            width: 100%;
+                                                                            background-size: cover;
+                                                                            background-repeat: no-repeat">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-6">
+                                                                <p class="mb-1">Project Management Professional (PMP) </p>
+                                                                <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                                <div class="mb-2">
+                                                                    <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                                    <img src="img/star.png"  alt="rating" class="img-fluid mx-2"/>
+                                                                </div>
+                                                                <p class="font-12">Understand your audience, envision a creative solution, and test your prototype by Cooper Professional Education | By Cooper Professional Education</p>
+                                                            </div>
+
+                                                            <div class="col-lg-3">
+                                                                <div class="show_button mt-lg-4">
+                                                                    <div class="mb-3">
+                                                                        <a href="staff_course_detail.html" class="btn btn-green font-12 width-150 md-btn-block" type="button">Preview Course</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div data-filter-item data-filter-name="project management">
+                                                        <div class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info" >
+                                                            <div class="col-lg-3" data-toggle="modal" data-target="#rate_course">
+                                                                <div style="background-image: url(img/course_placeholder.jpg);
+                                                                            height: 150px;
+                                                                            width: 100%;
+                                                                            background-size: cover;
+                                                                            background-repeat: no-repeat">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-6">
+                                                                <p class="mb-1">Project Management Professional (PMP) </p>
+                                                                <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                                <div class="mb-2">
+                                                                    <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                                    <img src="img/star.png"  alt="rating" class="img-fluid mx-2"/>
+                                                                </div>
+                                                                <p class="font-12">Understand your audience, envision a creative solution, and test your prototype by Cooper Professional Education | By Cooper Professional Education</p>
+                                                            </div>
+
+                                                            <div class="col-lg-3">
+                                                                <div class="show_button mt-lg-4">
+                                                                    <div class="mb-3">
+                                                                        <a href="staff_course_detail.html" class="btn btn-green font-12 width-150 md-btn-block" type="button">Preview Course</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="tab-pane fade" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab">
+                                        <div class="">
+
+                                            <div class="row mt-3 px-4">
+                                                <div class="col-lg-12 mb-5">
+
+                                                    <div data-filter-item data-filter-name="project management">
+                                                        <div class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info">
+                                                            <div class="col-lg-3 rate" id="1" data-toggle="modal" data-target="#rate_course">
+                                                                <div style="background-image: url(img/course_placeholder.jpg);
+                                                                            height: 150px;
+                                                                            width: 100%;
+                                                                            background-size: cover;
+                                                                            background-repeat: no-repeat">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-6 rate" id="1" data-toggle="modal" data-target="#rate_course">
+                                                                <p class="mb-1">Project Management</p>
+                                                                <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                                <div class="mb-2">
+                                                                    <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                                    <img src="img/star5.png"  alt="rating" class="img-fluid mx-2"/>
+                                                                </div>
+                                                                <p class="font-12">Understand your audience, envision a creative solution, and test your prototype by Cooper Professional Education | By Cooper Professional Education</p>
+                                                            </div>
+
+                                                            <div class="col-lg-3">
+                                                                <div class="show_button mt-lg-4">
+                                                                    <div class="mb-3">
+                                                                        <a href="#" class="btn btn-green font-12 width-150 md-btn-block" type="button">View Certificate</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div data-filter-item data-filter-name="project management">
+                                                        <div class="d-flex flex-column flex-lg-row border-bottom py-3 my-3 course_info">
+                                                            <div class="col-lg-3 rate" id="2" data-toggle="modal" data-target="#rate_course">
+                                                                <div style="background-image: url(img/course_placeholder.jpg);
+                                                                            height: 150px;
+                                                                            width: 100%;
+                                                                            background-size: cover;
+                                                                            background-repeat: no-repeat">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-6 rate" id="2" data-toggle="modal" data-target="#rate_course">
+                                                                <p class="mb-1">Project Management</p>
+                                                                <p class="text-muted small mb-1">Last Updated April 2019</p>
+                                                                <div class="mb-2">
+                                                                    <button class="btn btn-green font-11 py-0 weight-semi-bold rounded-0" type="button">HIGHEST RATED</button>
+                                                                    <img src="img/star4.5.png"  alt="rating" class="img-fluid mx-2"/>
+                                                                </div>
+                                                                <p class="font-12">Understand your audience, envision a creative solution, and test your prototype by Cooper Professional Education | By Cooper Professional Education</p>
+                                                            </div>
+
+                                                            <div class="col-lg-3">
+                                                                <div class="show_button mt-lg-4">
+                                                                    <div class="mb-3">
+                                                                        <a href="#" class="btn btn-green font-12 width-150 md-btn-block" type="button">View Certificate</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade last" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab">
                                         <div class="">
 
                                             <div class="row mt-3 px-4">
