@@ -661,10 +661,12 @@
                         <div class="modal-body">
                             <form>
                                 <div class="form-row">
-                                    <div class="form-group col-lg-9">
-                                        <input type="text" class="form-control font-14" name="" placeholder="Set Course Duration">
+                                    <div class="form-group col-lg-6">
+                                        <input 
+                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" 
+                                        type="number" pattern="\d*" class="form-control font-14" name="" placeholder="Set Course Duration(Days)" maxlength="2" min="0">
                                     </div>
-                                    <div class="form-group col-lg-3">
+                                    <div class="form-group col-lg-6">
                                         <button id="departmentSubmit" class="btn btn-success btn-modal btn-block font-14" type="button" style="height: 35px;">Set</button>
                                     </div>
                                 </div>
