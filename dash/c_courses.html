@@ -235,17 +235,9 @@
                                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <div class="col-lg-2 my-2">
-                                                    <!-- <input type="text" id="searchbox" placeholder="Search Courses" class="searchitem form-control form-control-sm font-13 form-border-default bg-trans" /> -->
-                                                </div>
-
                                                 <div class="col-lg-12 mb-4">
                                                     <span class="mr-1 mt-1 align-self-baseline d-none">Sort: </span>
                                                     <form id="filters-area" class="row justify-content-end">
-                                                        <div class="col-lg-3 col-md-4 mb-2">
-                                                            <input type="text" placeholder="Search Course" class="searchitem form-control form-control-sm font-13 form-border-default bg-trans" style="height: 40px;" />
-                                                        </div>
-
                                                         <div class="col-lg-3 col-md-4 mb-2">
                                                             <select class="custom-select select2 filter font-18 w-100" name="department_filter">
                                                                 <option value="">Categories</option>
@@ -301,6 +293,14 @@
                                         <div class="card--dashboard mt-4 p-3">
                                             <table id="courses" class="table-responsive-xl leaders dataTables_wrapper table table-striped" style="width:100%">
 
+                                                <div class="row text-center mb-3">
+                                                    <div class="col-lg-3 col-md-4 col-sm-6 mx-auto mb-2">
+                                                        <input type="text" placeholder="Search Course Title" class="searchitem form-control form-control-sm font-13 form-border-default bg-trans" style="height: 35px;" />
+                                                    </div> 
+                                                </div>
+
+                                                <hr>
+                                                
                                                 <button class="btn btn-primary float-right font-14 mb-3 export-table" ><i class="fa fa-file-code mr-1"></i> Export Table</button>
                                                 <thead class="border-top--0">
                                                     <tr>
@@ -338,7 +338,7 @@
                                                                 <input name="max" class="w-100 form-control font-13 form-border-default" id="max-group" type="text" placeholder="To Date:">
                                                             </div>
                                                             <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
-                                                                <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Search</button>
+                                                                <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Filter</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -362,13 +362,20 @@
 
 
                                         <table id="learning_path" class="leaders dataTables_wrapper table table-striped" style="width:100%">
+                                            <div class="row text-center mb-3">
+                                                <div class="col-lg-3 col-md-4 col-sm-6 mx-auto mb-2">
+                                                    <input type="text" placeholder="Search Path Title" class="searchitem2 form-control form-control-sm font-13 form-border-default bg-trans" style="height: 35px;" />
+                                                </div> 
+                                            </div>
+
+                                            <hr>
 
                                             <button class="btn btn-primary float-right font-14 mb-3 export-table" ><i class="fa fa-file-code mr-1"></i> Export Table</button>
                                             <thead class="border-top--0">
                                                 <tr>
                                                     <th class="text-dark text-center">#</th>
                                                     <th class="text-dark">Path Title</th>
-                                                    <th class="text-dark group-filter">Level</th>
+                                                    <th class="text-dark">Level</th>
                                                     <th class="text-dark">Created On</th>
                                                     <th class="text-dark" style="min-width: 100px">ACTION</th>
                                                 </tr>
@@ -397,7 +404,7 @@
                                                                 <input name="max" class="w-100 form-control font-13 form-border-default" id="max-cat" type="text" placeholder="To Date:">
                                                             </div>
                                                             <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
-                                                                <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Search</button>
+                                                                <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Filter</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -421,6 +428,13 @@
 
                                         <div class="card--dashboard mt-4 p-3">
                                             <table id="categories" class="leaders dataTables_wrapper table table-striped" style="width:100%">
+                                                <div class="row text-center mb-3">
+                                                    <div class="col-lg-3 col-md-4 col-sm-6 mx-auto mb-2">
+                                                        <input type="text" placeholder="Search Category Title" class="searchitem3 form-control form-control-sm font-13 form-border-default bg-trans" style="height: 35px;" />
+                                                    </div> 
+                                                </div>
+
+                                                <hr>
 
                                                 <button class="btn btn-primary float-right font-14 mb-3 export-table" ><i class="fa fa-file-code mr-1"></i> Export Table</button>
                                                 <thead class="border-top--0">
@@ -871,10 +885,13 @@
                         }
                     ]
                 }); 
-                $('.searchitem').on( 'keyup', function () {
-                   table.search( this.value ).draw();
-                } );
-
+                $('.searchitem').on('keyup', function () {
+                   table.column(1).search( this.value ).draw();
+                   $(this).parent().parent().parent().find('.export-table').show();
+                   if($(this).val() != ''){
+                        $(this).parent().parent().parent().find('.export-table').hide();
+                    }
+                });
            
                 $("#min").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
                 $("#max").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
@@ -913,13 +930,15 @@
                             } );
                         } );
                     },
+                    lengthMenu: [5, 10, 20, 50, 100, 200, 500],
                     // processing: true,
                     // serverSide: true,
-                    ajax: 'https://reqres.in/api/users',
+                    // ajax: 'https://reqres.in/api/users',
+                    ajax: {'url' : 'https://jsonplaceholder.typicode.com/users/', "dataSrc": ""},
                     columns: [
                         { data: 'id' },
-                        { data: 'first_name' },
-                        { data: 'last_name' },
+                        { data: 'name' },
+                        { data: 'id', render: function (dataField) { return '2'+dataField; } },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
@@ -937,10 +956,13 @@
                         }
                     ]
                 }); 
-                $('#searchbox-group').on( 'keyup', function () {
-                   table.search( this.value ).draw();
-                } );
-
+                $('.searchitem2').on('keyup', function () {
+                   table.column(1).search( this.value ).draw();
+                   $(this).parent().parent().parent().find('.export-table').show();
+                   if($(this).val() != ''){
+                        $(this).parent().parent().parent().find('.export-table').hide();
+                    }
+                });
            
                 $("#min-group").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
                 $("#max-group").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
@@ -979,12 +1001,14 @@
                             } );
                         } );
                     },
+                    lengthMenu: [5, 10, 20, 50, 100, 200, 500],
                     // processing: true,
                     // serverSide: true,
-                    ajax: 'https://reqres.in/api/users',
+                    // ajax: 'https://reqres.in/api/users',
+                    ajax: {'url' : 'https://jsonplaceholder.typicode.com/users/', "dataSrc": ""},
                     columns: [
                         { data: 'id' },
-                        { data: 'first_name' },
+                        { data: 'name' },
                         { data: 'id', render: function (dataField) { return '2020/04/0'+dataField; } },
                         {
                           "data": null,
@@ -1000,10 +1024,13 @@
                         }
                     ]
                 }); 
-                $('#searchbox-cat').on( 'keyup', function () {
-                   table.search( this.value ).draw();
-                } );
-
+                $('.searchitem3').on('keyup', function () {
+                   table.column(1).search( this.value ).draw();
+                   $(this).parent().parent().parent().find('.export-table').show();
+                   if($(this).val() != ''){
+                        $(this).parent().parent().parent().find('.export-table').hide();
+                    }
+                });
            
                 $("#min-cat").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
                 $("#max-cat").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });

@@ -268,7 +268,7 @@
                                                         <input name="max" class="w-100 form-control font-13 form-border-default" id="max" type="text" placeholder="To Date:">
                                                     </div>
                                                     <div class="col-md-3 col-sm-6 mb-3">
-                                                        <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Search</button>
+                                                        <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Filter</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -386,6 +386,14 @@
                                                             </div>
                                                             <div class="col-lg-2 col-md-4 mb-2">
                                                                 <select class="custom-select select2 filter font-18 w-100" name="department_filter">
+                                                                    <option value="">Grade</option>
+                                                                    <option>Failed</option>
+                                                                    <option>Pass</option>
+                                                                    <option>NIL</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-4 mb-2">
+                                                                <select class="custom-select select2 filter font-18 w-100" name="department_filter">
                                                                     <option value="">Status</option>
                                                                     <option>Completed</option>
                                                                     <option>Uncompleted</option>
@@ -393,7 +401,7 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
-                                                                <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Search</button>
+                                                                <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Filter</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -409,8 +417,9 @@
                                                     <tr>
                                                         <th class="text-dark">#</th>
                                                         <th class="text-dark">Course Title</th>
-                                                        <th class="text-dark">Score (100%)</th>
-                                                        <th class="text-dark">Status (Completed/Uncompleted)</th>
+                                                        <th class="text-dark">Score</th>
+                                                        <th class="text-dark">Grade</th>
+                                                        <th class="text-dark">Status</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
