@@ -51,7 +51,7 @@
 .mil select{
 	min-width: 135px!important;
 }
-#filters-area span, #filters-group span, #filters-area span input, #filters-group span input{
+/*#filters-area span, #filters-group span, #filters-area span input, #filters-group span input{
 	margin-right: 15px;
 	width: 120px!important;
 }
@@ -70,6 +70,9 @@
 #filters-area span span b, #filters-group span span b{
 	left: 105px;
     top: -26px;
+}*/
+.select2-container {
+    width: 100%!important;
 }
 .select2-container--open .select2-dropdown--below{
 	/*min-width: 240px!important;*/
@@ -88,14 +91,6 @@
 #nav-answer-tab.active,#nav-ask-tab.active{
 	background-color: var(--secondary-color) !important;
     color: #fff !important;
-}
-
-select {
-  text-align-last: right;
-}
-
-option {
-  direction: rtl;
 }
 
 .bg-transparent{
