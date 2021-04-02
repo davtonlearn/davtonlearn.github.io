@@ -72,7 +72,7 @@
     top: -26px;
 }*/
 .select2-container--open .select2-dropdown--below{
-	min-width: 240px!important;
+	/*min-width: 240px!important;*/
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow b{
 	margin-top: 3px!important;
