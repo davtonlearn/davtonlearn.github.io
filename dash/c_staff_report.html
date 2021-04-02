@@ -252,13 +252,7 @@
 
                                         
                                         <div class="d-lg-flex px-2">
-
-                                            <div class="col-lg-3 px-3 px-lg-0 mt-2 d-flex" style="justify-content: flex-end;">
-                                                <input type="text" class="typeahead form-control form-border-default bg-trans w-100" placeholder="Search Course, department, learning group and staff name" style="height: 35px" />
-                                            </div>
-
-
-                                            <div class="col-lg-9 mt-2">
+                                            <div class="col-lg-9 mt-2 ml-auto">
                                                 <span class="mr-1 mt-1 align-self-baseline d-none">Sort: </span>
                                                 <form id="filters-area" class="row justify-content-end">
                                                     <div class="col-md-4 col-sm-6 mb-3">
@@ -268,7 +262,7 @@
                                                         <input name="max" class="w-100 form-control font-13 form-border-default" id="max" type="text" placeholder="To Date:">
                                                     </div>
                                                     <div class="col-md-3 col-sm-6 mb-3">
-                                                        <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Filter</button>
+                                                        <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 39px"><i class="fa fa-search mr-1"></i> Filter</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -401,7 +395,7 @@
                                                                 </select>
                                                             </div>
                                                             <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
-                                                                <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 34px"><i class="fa fa-search mr-1"></i> Filter</button>
+                                                                <button class="btn btn-green font-13 w-100" style="min-width: 110px;height: 39px"><i class="fa fa-search mr-1"></i> Filter</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -411,6 +405,13 @@
                                         </div>
                                         <div class="card--dashboard mt-4 p-3">
                                             <table id="staff" class="table-responsive-lg leaders dataTables_wrapper table table-striped" style="width:100%">
+                                                <div class="row text-center mb-3">
+                                                    <div class="col-lg-3 col-md-4 col-sm-6 mx-auto mb-2">
+                                                        <input type="text" placeholder="Search Path Title" class="searchitem2 form-control form-control-sm font-13 form-border-default bg-trans" style="height: 35px;" />
+                                                    </div> 
+                                                </div>
+
+                                                <hr>
 
                                                 <button class="btn btn-primary float-right font-14 mb-3 export-table" ><i class="fa fa-file-code mr-1"></i> Export Table</button>
                                                 <thead class="border-top--0">
@@ -537,9 +538,13 @@
                         { data: 'company.name' },
                     ]
                 }); 
-                $('.searchitem').on( 'keyup', function () {
-                   table.search( this.value ).draw();
-                } );
+                $('.searchitem').on('keyup', function () {
+                   table.column(1).search( this.value ).draw();
+                   $(this).parent().parent().parent().find('.export-table').show();
+                   if($(this).val() != ''){
+                        $(this).parent().parent().parent().find('.export-table').hide();
+                    }
+                });
 
        
             $("#min").datepicker({format: 'dd/mm/yyyy', autoclose:true, onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
