@@ -305,13 +305,123 @@
                                             <th class="text-dark text-center">#</th>
                                             <th class="text-dark">Full Name</th>
                                             <th class="text-dark">Department</th>
-                                            <th class="text-dark">Gender</th>
+                                            <th class="text-dark select-filter">Gender</th>
                                             <th class="text-dark">Score(100%)</th>
-                                            <th class="text-dark">Status(Completed/Uncompleted)</th>
+                                            <th class="text-dark select-filter">Status(Completed/Uncompleted)</th>
                                             <th class="text-dark" style="min-width: 100px">ACTION</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1">1</td>
+                                            <td>Leanne Graham</td>
+                                            <td>Romaguera-Crona</td>
+                                            <td>Female</td>
+                                            <td>11</td>
+                                            <td>Completed</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Unassign</a>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="even">
+                                            <td class="sorting_1">2</td>
+                                            <td>Ervin Howell</td>
+                                            <td>Deckow-Crist</td>
+                                            <td>Male</td>
+                                            <td>21</td>
+                                            <td>Completed</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Unassign</a>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1">3</td>
+                                            <td>Clementine Bauch</td>
+                                            <td>Romaguera-Jacobson</td>
+                                            <td>Female</td>
+                                            <td>31</td>
+                                            <td>Uncompleted</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Unassign</a>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="even">
+                                            <td class="sorting_1">4</td>
+                                            <td>Patricia Lebsack</td>
+                                            <td>Robel-Corkery</td>
+                                            <td>Male4</td>
+                                            <td>41</td>
+                                            <td>Completed</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Unassign</a>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1">5</td>
+                                            <td>Chelsey Dietrich</td>
+                                            <td>Keebler LLC</td>
+                                            <td>Male5</td>
+                                            <td>51</td>
+                                            <td>Completed</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Unassign</a>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="even">
+                                            <td class="sorting_1">6</td>
+                                            <td>Mrs. Dennis Schulist</td>
+                                            <td>Considine-Lockman</td>
+                                            <td>Male</td>
+                                            <td>63</td>
+                                            <td>Completed</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Unassign</a>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1">7</td>
+                                            <td>Kurtis Weissnat</td>
+                                            <td>Johns Group</td>
+                                            <td>Male</td>
+                                            <td>71</td>
+                                            <td>Completed7</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Unassign</a>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="even">
+                                            <td class="sorting_1">8</td>
+                                            <td>Nicholas Runolfsdottir V</td>
+                                            <td>Abernathy Group</td>
+                                            <td>Male</td>
+                                            <td>81</td>
+                                            <td>Uncompleted</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Unassign</a>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="odd">
+                                            <td class="sorting_1">9</td>
+                                            <td>Glenna Reichert</td>
+                                            <td>Yost and Sons</td>
+                                            <td>Male9</td>
+                                            <td>91</td>
+                                            <td>Uncompleted</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Unassign</a>
+                                            </td>
+                                        </tr>
+                                        <tr role="row" class="even">
+                                            <td class="sorting_1">10</td>
+                                            <td>Clementina DuBuque</td>
+                                            <td>Hoeger LLC</td>
+                                            <td>Male</td>
+                                            <td>101</td>
+                                            <td>Completed</td>
+                                            <td>
+                                                <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Unassign</a>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -421,12 +531,12 @@
                             var column = this;
                             var colTitle = this.header().innerHTML
                             // var select = $('<div class="col-lg-2 col-md-4 col-sm-6 mb-3"><input type="text" class="form-control font-13 form-border-default w-100" name="'+colTitle+'" placeholder="'+colTitle+'"/></div>')
-                            var select = $('<div class="col-lg-2 col-md-4 col-sm-6 mb-3"><select class="custom-select fif font-14 w-100" name="department_filter">'+colTitle+'</select></div>')
+                            var select = $('<div class="col-lg-2 col-md-4 col-sm-6 mb-3"><select class="custom-select fif font-14 w-100" name="department_filter"><option value="">'+colTitle+'</option></select></div>')
                                 // .appendTo( $('#filters-area') )
                                 .prependTo($('#filters-area'))
                                 .on( 'change', function () {
                                     var val = $.fn.dataTable.util.escapeRegex(
-                                        $(this).val()
+                                        $(this).find(':selected').val()
                                     );
              
                                     column
@@ -446,21 +556,21 @@
                     // processing: true,
                     // serverSide: true,
                     // ajax: 'https://reqres.in/api/users/',
-                    ajax: {'url' : 'https://jsonplaceholder.typicode.com/users/', "dataSrc": ""},
-                    columns: [
-                        { data: 'id' },
-                        { data: 'name', render: function (dataField) { return dataField; } },
-                        { data: 'company.name', render: function (dataField) { return dataField; } },
-                        { data: 'id', render: function (dataField) { return 'Male'+dataField; } },
-                        { data: 'id', render: function (dataField) { return dataField+'1'; } },
-                        { data: 'id', render: function (dataField) { return 'Completed'+dataField; } },
-                        {
-                          "data": null,
-                          "defaultContent": `
-                                            <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Unassign</a>
-                                            `
-                        }
-                    ]
+                    // ajax: {'url' : 'https://jsonplaceholder.typicode.com/users/', "dataSrc": ""},
+                    // columns: [
+                    //     { data: 'id' },
+                    //     { data: 'name', render: function (dataField) { return dataField; } },
+                    //     { data: 'company.name', render: function (dataField) { return dataField; } },
+                    //     { data: 'id', render: function (dataField) { return 'Male'+dataField; } },
+                    //     { data: 'id', render: function (dataField) { return dataField+'1'; } },
+                    //     { data: 'id', render: function (dataField) { return 'Completed'+dataField; } },
+                    //     {
+                    //       "data": null,
+                    //       "defaultContent": `
+                    //                         <a href="#" class="btn btn-outline--green py-1 font-11 bg-transparent d-none d-lg-inline">Unassign</a>
+                    //                         `
+                    //     }
+                    // ]
                 }); 
                 $('.searchitem').on('keyup', function () {
                    table.column(1).search( this.value ).draw();
