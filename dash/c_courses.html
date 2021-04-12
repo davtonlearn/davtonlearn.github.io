@@ -872,7 +872,7 @@
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                 <a class="dropdown-item font-12" href="c_course_detail.html">Course Preview</a>
-                                                <a class="dropdown-item font-12 get_id" href="#" data-toggle="modal" data-target="#duration">Set Course Duration</a>
+                                                <a class="dropdown-item font-12 get_id set_duration" href="#" data-id="2">Set Course Duration</a>
                                                 <a class="dropdown-item font-12" href="c_course_report.html">View Stat</a>
                                                 <a class="dropdown-item font-12" href="c_modules.html">View Modules</a>
                                                 <a class="dropdown-item font-12" href="c_course_quizes.html">View Quizzes</a>
@@ -900,8 +900,6 @@
                 $('#min, #max').change(function () {
                     table.draw();
                 });
-
-
 
             });
         </script>
@@ -972,8 +970,10 @@
                     table.draw();
                 });
 
-
-
+                $(document).on('click', '.set_duration', function() {
+                    id = $(this).attr('data-id');
+                    $('#duration').modal('show');
+                });
             });
         </script>
 
@@ -1039,9 +1039,6 @@
                 $('#min-cat, #max-cat').change(function () {
                     table.draw();
                 });
-
-
-
             });
         </script>
     </body>
