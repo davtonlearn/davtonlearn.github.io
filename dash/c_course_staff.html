@@ -543,14 +543,22 @@
                                         .search( val ? '^'+val+'$' : '', true, false )
                                         .draw();
                                 } );
-             
                             column.data().unique().sort().each( function ( d, j ) {
-                                select.children().append( '<option>'+d+'</option>' )
+                                var searchterms = ["Completed", "Male"];
+                                for (var s of searchterms){
+                                    if(d == s) {
+                                        console.log(s);
+                                        select.children().append( '<option selected="selected">'+d+'</option>' )
+                                    } else {
+                                        select.children().append( '<option>'+d+'</option>' )
+                                    }
+                                }
                             } );
                         } );
                         console.log("draw() callback; initializing Select2's.");
                         $('.fif').select2();
                     },
+                    // "oSearch": {"sSearch": "Leanne Graham"},
                     lengthMenu: [5, 10, 20, 50, 100, 200, 500],
                     // drawCallback: function() {},
                     // processing: true,
