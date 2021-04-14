@@ -854,7 +854,7 @@ button.dropdown-toggle::after {
     color: #fff !important;
 }
 
-#nav-home-tab.active {
+#nav-home-tab.active, .first {
     border-radius: 9px 0px 0px 0px;
 }
 
@@ -872,6 +872,23 @@ button.dropdown-toggle::after {
 
 #nav-assigned-tab.active {
     border-radius: 0px;
+}
+
+.nav-item.nav-link.active {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+}
+
+.nav-item.nav-link.active {
+    border-radius: 0px 0px 0px 0px!important;
+}
+
+.nav-item.nav-link.active:first-child  {
+    border-radius: 9px 0px 0px 0px!important;
+}
+
+.nav-item.nav-link.active:last-child {
+    border-radius: 0px 9px 0px 0px!important;
 }
 
 .height-260 {
