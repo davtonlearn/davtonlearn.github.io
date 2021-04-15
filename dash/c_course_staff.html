@@ -524,10 +524,12 @@
         <script src="js/utility.js"></script>
         <script>
             $(document).ready( function () {
-                var table = $('#staff').DataTable({
+                var i = 0;
+                var searchterms = ["Male", "Completed"];
 
+                var table = $('#staff').DataTable({
                     initComplete: function () {
-                        this.api().columns('.select-filter').every( function () {
+                        this.api().columns('.select-filter').every(function () {
                             var column = this;
                             var colTitle = this.header().innerHTML
                             // var select = $('<div class="col-lg-2 col-md-4 col-sm-6 mb-3"><input type="text" class="form-control font-13 form-border-default w-100" name="'+colTitle+'" placeholder="'+colTitle+'"/></div>')
@@ -542,19 +544,17 @@
                                     column
                                         .search( val ? '^'+val+'$' : '', true, false )
                                         .draw();
-                                } );
-                            column.data().unique().sort().each( function ( d, j ) {
-                                var searchterms = ["Completed", "Male"];
-                                for (var s of searchterms){
-                                    if(d == s) {
-                                        console.log(s);
-                                        select.children().append( '<option selected="selected">'+d+'</option>' )
-                                    } else {
-                                        select.children().append( '<option>'+d+'</option>' )
-                                    }
+                                });
+
+                            column.data().unique().sort().each(function ( d, j ) {
+                                if(d == searchterms[i]) {
+                                    select.children().append( '<option selected="selected">'+d+'</option>' )
+                                } else {
+                                    select.children().append( '<option>'+d+'</option>' )
                                 }
-                            } );
-                        } );
+                            });
+                            i++;
+                        });
                         console.log("draw() callback; initializing Select2's.");
                         $('.fif').select2();
                     },
