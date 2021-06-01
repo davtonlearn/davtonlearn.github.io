@@ -1367,7 +1367,7 @@ $(function () {
 
     // Load more post when users get to the bottom of the page
     $(window).bind('scroll', function() {
-        if($(window).scrollTop() - 2600 >= $('.card-content').offset().top + $('.card-content').outerHeight() - window.innerHeight) {
+        if($(window).scrollTop() >= $('.card-content').offset().top + $('.card-content').outerHeight() - window.innerHeight) {
             getMorePost();
         }
     });
