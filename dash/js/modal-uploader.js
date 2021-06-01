@@ -107,7 +107,7 @@ if ($('.modal-uploader').length) {
 
 
         $(".card-content").prepend(
-            `<div class="card--dashboard my-3" style="display: block">
+            `<div class="card--dashboard" style="display: block">
                 <div class="row">
                     <div class="col-md-12 my-2 pt-2">
                         <div class="px-4 row">
