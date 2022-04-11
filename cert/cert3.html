@@ -7,10 +7,10 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto&family=Sansita+Swashed&display=swap" rel="stylesheet">
 
 		<style type="text/css">
-			body {margin-top: 0px;margin-left: 0px;}
-			#page_1 {position:relative; overflow: hidden;margin: 0px 0px 0px 0px;padding: 0px;border: none;width: 1040px;height: 720px;margin: 0 auto;text-align: center;}
-			#page_1 #p1dimg1 {position:absolute;top:0px;left:0px;z-index:-1;width:1040px;height:720px;}
-			#page_1 #p1dimg1 #p1img1 {width:1040px;height:720px;}
+			html, body {margin: 0 0 0 0;}
+			#page_1 {position:relative; overflow: hidden;margin: 0px 0px 0px 0px;padding: 0px;border: none;width: 1068px;height: 825px;margin: 0 auto;text-align: center;}
+			#page_1 #p1dimg1 {position:absolute;top:0px;left:0px;z-index:-1;}
+			#page_1 #p1dimg1 #p1img1 {width:100%;height:100%;}
 			.dclr {clear:both;float:none;height:1px;margin:0px;padding:0px;overflow:hidden;}
 			.w0{
 				font-style: normal;
@@ -90,8 +90,6 @@
 				margin: 10px;
 			}
 			.d{
-				display: flex;
-			    justify-content: center;
 			    gap: 100px;
 			    margin-top: 20px;
 			    align-items: center;
@@ -100,6 +98,9 @@
 				max-height: 60px;
 				max-width: 200px;
 			}
+			@media print {
+				@page {size: landscape; margin: 0 0 0 0;}
+		    }
 		</style>
 	</head>
 
@@ -113,7 +114,7 @@
 			<p class="w0">CERTIFICATE</p>
 			<p class="w1"><span>OF ACHIEVEMENT</span></p>
 			<p class="w2">THE CERTIFICATE IS PROUDLY PRESENTED TO</p>
-			<p class="w3">Name Surname</p>
+			<p class="w3">Tobi Obasa</p>
 			<p class="w4">This is to Certify that the above name has completed the Project Management training/course</p>
 			<div class="d">
 				<div>
@@ -125,9 +126,9 @@
 					<p class="sep"></p>
 				</div>
 			</div>
-			<p class="w6">&</p>
+			<p class="w6"><br></p>
 			<div class="d" style="gap:40px">
-				<img src="dav.png" class="logo1">	
+				<img src="dav.png" class="logo1">&nbsp;&nbsp;&nbsp;&nbsp;	
 				<img src="https://miro.medium.com/max/1854/1*vo6Ikqfli9sytNKZwxbjdA.png" class="logo2">
 			</div>
 		</div>
